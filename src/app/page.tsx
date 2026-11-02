@@ -6,6 +6,7 @@ import {
   Hero,
   HowItWorks,
   Manifesto,
+  MidCta,
   ProductCheck,
   StepDown,
   Trust,
@@ -61,6 +62,7 @@ export default function Home() {
         <ProductCheck />
         <HowItWorks />
         <YourResult />
+        <MidCta />
         <StepDown />
         <Trust />
         <Faq />

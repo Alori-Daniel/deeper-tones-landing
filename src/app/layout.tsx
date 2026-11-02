@@ -1,26 +1,19 @@
 import type { Metadata, Viewport } from "next";
-import { Archivo, Instrument_Serif, Source_Serif_4 } from "next/font/google";
+import { Archivo, Source_Serif_4 } from "next/font/google";
 import { site } from "@/lib/site";
 import "./globals.css";
 
+// Two families: Source Serif 4 (variable weight, upright only) for headlines and the phone mockups,
+// and Archivo for text and UI.
 const sourceSerif = Source_Serif_4({
   variable: "--font-source-serif",
   subsets: ["latin"],
-  style: ["normal", "italic"],
-});
-
-// Display serif for headlines, and a grotesk (with its width axis for the expanded caps) for text.
-const instrumentSerif = Instrument_Serif({
-  variable: "--font-instrument",
-  subsets: ["latin"],
-  weight: "400",
-  style: ["normal", "italic"],
+  style: "normal",
 });
 
 const archivo = Archivo({
   variable: "--font-archivo",
   subsets: ["latin"],
-  axes: ["wdth"],
 });
 
 export const metadata: Metadata = {
@@ -60,7 +53,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${sourceSerif.variable} ${instrumentSerif.variable} ${archivo.variable} h-full antialiased`}>
+    <html lang="en" className={`${sourceSerif.variable} ${archivo.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col font-sans">{children}</body>
     </html>
   );

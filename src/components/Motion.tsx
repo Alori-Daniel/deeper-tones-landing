@@ -43,7 +43,14 @@ export function Motion() {
         if (stages) pin.dataset.stage = String(Math.min(stages, Math.floor(p * (stages + 1))));
       }
       if (reduce) return;
+      // On phones the zone cards are one row of equal cards; parallax would only knock them out of line.
+      // Crossing below the breakpoint (resize, rotation) must also clear what was already set.
+      const parallax = window.innerWidth >= 640;
       for (const el of layers) {
+        if (!parallax) {
+          if (el.style.translate) el.style.translate = "";
+          continue;
+        }
         const r = el.getBoundingClientRect();
         if (r.bottom < -200 || r.top > vh + 200) continue;
         const offset = r.top + r.height / 2 - vh / 2;

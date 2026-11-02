@@ -57,7 +57,7 @@ export function WaitlistForm({ id }: { id?: string }) {
           autoComplete="email"
           inputMode="email"
           placeholder="Your email address"
-          className="h-12 w-full rounded-[10px] border border-black/10 bg-white px-4 text-base text-foreground placeholder:text-subtle focus:border-primary focus:outline-none sm:flex-1"
+          className="h-12 w-full rounded-[10px] border border-black/10 bg-white px-4 text-base text-foreground placeholder:text-muted focus:border-primary focus:outline-none sm:flex-1"
         />
         <button
           type="submit"
@@ -68,7 +68,15 @@ export function WaitlistForm({ id }: { id?: string }) {
           <span aria-hidden>→</span>
         </button>
       </div>
-      <p className={`mt-3 text-xs ${status === "error" ? "text-danger" : "text-subtle"}`} aria-live="polite">
+      {/* Error sits on a white pill: red text straight on the lavender field was about 4:1. */}
+      <p
+        className={
+          status === "error"
+            ? "mt-3 inline-block rounded-md border border-danger/30 bg-white px-3 py-1.5 text-xs font-medium text-[#a8071a]"
+            : "mt-3 text-xs text-foreground/80"
+        }
+        aria-live="polite"
+      >
         {status === "error" ? message : "One email when the app is ready. No spam, unsubscribe any time."}
       </p>
     </form>

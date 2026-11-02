@@ -14,11 +14,16 @@ export function LogoMark({ size = 28, className }: { size?: number; className?: 
   );
 }
 
-export function Logo() {
+// `markOnlyOnPhones` is for the header: below sm only the mark shows, with the name kept for assistive tech.
+export function Logo({ markOnlyOnPhones = false }: { markOnlyOnPhones?: boolean }) {
   return (
-    <Link href="/" className="group flex items-center gap-2.5 font-display text-[26px] leading-none">
+    <Link
+      href="/"
+      aria-label={markOnlyOnPhones ? `${site.name} home` : undefined}
+      className="group flex items-center gap-2.5 whitespace-nowrap font-display text-[24px] font-semibold leading-none tracking-[-0.01em] sm:text-[26px]"
+    >
       <LogoMark className="transition-transform duration-500 group-hover:rotate-[-12deg]" />
-      {site.name}
+      <span className={markOnlyOnPhones ? "hidden sm:inline" : undefined}>{site.name}</span>
     </Link>
   );
 }
@@ -35,8 +40,8 @@ const nav = [
 export function Header() {
   return (
     <header className="site-header fixed inset-x-0 top-0 z-50">
-      <div className="mx-auto flex h-[72px] max-w-6xl items-center justify-between gap-6 px-5 sm:px-8">
-        <Logo />
+      <div className="mx-auto flex h-14 max-w-6xl items-center justify-between gap-6 px-5 sm:h-[72px] sm:px-8">
+        <Logo markOnlyOnPhones />
         <nav aria-label="Main" className="hidden items-center gap-1 text-[14px] text-muted lg:flex">
           {nav.map((n) => (
             <Link key={n.href} href={n.href} className="px-3.5 py-2 transition hover:text-foreground">
@@ -53,7 +58,7 @@ export function Header() {
           </a>
           <Link
             href="/#early-access"
-            className="flex h-10 items-center gap-2 rounded-[10px] bg-white px-4 text-[14px] font-medium shadow-[0_1px_2px_rgba(0,0,0,0.06),0_6px_18px_-8px_rgba(0,0,0,0.2)] transition hover:shadow-[0_1px_2px_rgba(0,0,0,0.06),0_10px_24px_-8px_rgba(0,0,0,0.28)]"
+            className="flex h-10 items-center gap-2 whitespace-nowrap rounded-[10px] bg-white px-4 text-[14px] font-medium shadow-[0_1px_2px_rgba(0,0,0,0.06),0_6px_18px_-8px_rgba(0,0,0,0.2)] transition hover:shadow-[0_1px_2px_rgba(0,0,0,0.06),0_10px_24px_-8px_rgba(0,0,0,0.28)]"
           >
             {isLive ? "Get the app" : "Get early access"} <span aria-hidden>↗</span>
           </Link>
@@ -79,7 +84,7 @@ export function Footer() {
       </div>
       <p
         aria-hidden
-        className="select-none whitespace-nowrap px-4 text-center font-display text-[19vw] leading-[0.78] tracking-[-0.03em] text-black/[0.06]"
+        className="hidden select-none whitespace-nowrap px-4 pb-5 text-center font-display text-[14vw] font-semibold leading-[1] tracking-[-0.02em] text-black/[0.06] md:block"
       >
         Deeper Tones
       </p>
@@ -90,8 +95,7 @@ export function Footer() {
   );
 }
 
-// Cached so the page stays prerendered (Next 16 disallows bare `new Date()` during prerender).
+// Rendered at build time (the page is prerendered), so the year updates on the next deploy.
 async function CopyrightYear() {
-  "use cache";
   return new Date().getFullYear();
 }

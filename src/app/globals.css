@@ -48,13 +48,7 @@
   --color-caution: var(--caution);
   --font-serif: var(--font-source-serif);
   --font-sans: var(--font-archivo);
-  --font-display: var(--font-instrument);
-}
-
-/* Archivo stretched along its width axis, for the bold caps. */
-@utility font-wide {
-  font-family: var(--font-archivo);
-  font-stretch: 125%;
+  --font-display: var(--font-source-serif);
 }
 
 html {
@@ -72,10 +66,6 @@ body {
 ::selection {
   background: var(--primary);
   color: #fff;
-}
-
-em {
-  font-style: italic;
 }
 
 details > summary {
@@ -129,12 +119,6 @@ details > summary::-webkit-details-marker {
   font-weight: 200;
   line-height: 0.7;
   transform: scaleY(1.3) translateY(-0.05em);
-}
-.scrub .tag {
-  margin-inline: 0.15em;
-}
-.scrub .tag-bracket {
-  font-size: 4.8em;
 }
 
 /* ---------- Landscape: sky, lavender field, clouds ---------- */
@@ -230,20 +214,61 @@ details > summary::-webkit-details-marker {
     transform-origin: 50% 100%;
   }
 }
+/* Phones: the screen starts just under the call to action (about 100svh minus the phone) so its
+   headline and shelf bar clear the clouds; short screens push it down rather than over the copy. */
+@media (max-width: 639px) {
+  .hero-phone {
+    translate: -50% calc(clamp(60px, 960px - 100svh, 330px) * (1 - var(--e)));
+  }
+}
+/* Tablets (below lg): same idea, but tall screens lift the phone up under the call to action instead
+   of leaving it bottom-aligned, so --t can go negative. It then holds there; only a pushed-down
+   (positive) phone rises to the bottom as you scroll. */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .hero-phone {
+    --t: clamp(-340px, 890px - 100svh, 330px);
+    translate: -50% calc(var(--t) * (1 - var(--e)) + min(var(--t), 0px) * var(--e));
+  }
+}
 
-/* ---------- Entrance ---------- */
-.hero-in {
-  animation: rise 1s var(--ease-out) both;
-  animation-delay: var(--d, 0ms);
+/* Short, wide tablets: the copy sits in two side columns, so the phone can rise beside the call to
+   action, and the cloud bank is cut down as on phones so it stays below the shelf bar. */
+@media (min-width: 880px) and (max-width: 1023px) and (orientation: landscape) {
+  .hero-phone {
+    --t: clamp(-340px, 790px - 100svh, 330px);
+  }
+  .hero-mist {
+    height: 14%;
+  }
+  .hero-cloud-mid {
+    bottom: -14%;
+    height: 24%;
+  }
+  .hero-cloud-front {
+    bottom: -24%;
+    height: 26%;
+  }
 }
-.line-mask {
-  overflow: hidden;
-  padding-bottom: 0.12em;
-  margin-bottom: -0.12em;
-}
-.line-in {
-  animation: line-up 1.2s var(--ease-out) both;
-  animation-delay: var(--d, 0ms);
+
+/* ---------- Entrance ----------
+   The line-by-line mask and the staggered rise are for sm+ with motion allowed. On phones and
+   under reduced motion the hero text is simply there from the first paint (a capture or slow
+   device must never catch it half-clipped). */
+@media (min-width: 640px) and (prefers-reduced-motion: no-preference) {
+  .hero-in {
+    animation: rise 1s var(--ease-out) both;
+    animation-delay: var(--d, 0ms);
+  }
+  /* Room below the baseline so Source Serif descenders are never cut by the mask. */
+  .line-mask {
+    overflow: hidden;
+    padding-bottom: 0.2em;
+    margin-bottom: -0.2em;
+  }
+  .line-in {
+    animation: line-up 1.2s var(--ease-out) both;
+    animation-delay: var(--d, 0ms);
+  }
 }
 @keyframes rise {
   from {
@@ -402,25 +427,6 @@ details > summary::-webkit-details-marker {
   translate: 0 32px;
 }
 
-/* Words go from pale to ink as the paragraph scrolls through the viewport. */
-@supports (animation-timeline: view()) {
-  .scrub {
-    view-timeline: --scrub block;
-  }
-  .scrub-word {
-    animation: word-on linear both;
-    animation-timeline: --scrub;
-  }
-  @keyframes word-on {
-    from {
-      color: #cfcfcf;
-    }
-    to {
-      color: var(--foreground);
-    }
-  }
-}
-
 /* ---------- Phone screen details ---------- */
 .scan-laser {
   animation: laser 2.4s ease-in-out infinite alternate;
@@ -504,8 +510,5 @@ details > summary::-webkit-details-marker {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
-  }
-  .scrub-word {
-    animation: none !important;
   }
 }

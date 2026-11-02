@@ -68,7 +68,7 @@ export function HomeContent() {
         <span className="grid h-8 w-8 place-items-center rounded-full bg-card text-[13px] text-muted">⌕</span>
       </div>
       <h3 className="mt-5 text-[23px] font-bold leading-[1.12]">
-        Here&apos;s what your shelf is <span className="font-normal italic text-primary">really</span> doing.
+        Here&apos;s what your shelf is <span className="text-primary">really</span> doing.
       </h3>
       <div className="mt-4 rounded-2xl border border-border bg-card p-3.5">
         <div className="flex items-baseline justify-between text-[11px] text-muted">

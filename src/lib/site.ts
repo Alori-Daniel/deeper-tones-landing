@@ -73,7 +73,7 @@ export const trust = [
   },
   {
     title: "Made for deeper skin",
-    body: "Built around melanin-rich skin from the start, with prices in naira and reminders on WhatsApp.",
+    body: "Built around melanin-rich skin from the start, with prices in naira and reminders on your phone.",
   },
 ];
 
@@ -100,7 +100,7 @@ export const faqs = [
   },
   {
     q: "Which countries is it for?",
-    a: "Nigeria first, with prices in naira and sign-in by WhatsApp or email. More countries will follow.",
+    a: "Nigeria first, with prices in naira and sign-in by email (WhatsApp is coming). More countries will follow.",
   },
 ];
 
