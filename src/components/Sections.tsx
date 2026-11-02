@@ -43,7 +43,7 @@ function Tag({ children, className = "" }: { children: React.ReactNode; classNam
 
 function Display({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   return (
-    <h2 className={`font-display text-[56px] leading-[0.92] tracking-[-0.02em] sm:text-[80px] lg:text-[104px] ${className}`}>
+    <h2 className={`font-display text-[40px] font-semibold leading-[1.08] tracking-[-0.015em] text-balance sm:text-[56px] lg:text-[68px] ${className}`}>
       {children}
     </h2>
   );
@@ -88,8 +88,8 @@ export function Hero() {
         <Landscape />
         <Clouds layer="back" className="hero-cloud-back absolute inset-x-[-10%] bottom-[14%] h-[34%]" />
 
-        <div className="hero-copy relative mx-auto h-full max-w-6xl border-x border-black/[0.07] px-5 pt-28 sm:px-8 lg:pt-32">
-          <h1 className="text-center font-display text-[clamp(52px,8.4vw,132px)] leading-[0.9] tracking-[-0.025em]">
+        <div className="hero-copy relative mx-auto h-full max-w-6xl border-x border-black/[0.07] px-5 pt-24 sm:px-8 sm:pt-28 lg:pt-32">
+          <h1 className="text-center font-display text-[28px] min-[375px]:text-[32px] sm:text-[clamp(36px,5.6vw,84px)] font-semibold leading-[1.08] tracking-[-0.015em]">
             <span className="line-mask block">
               <span className="line-in block" style={d(150)}>
                 Find out what your
@@ -97,7 +97,7 @@ export function Hero() {
             </span>
             <span className="line-mask block">
               <span className="line-in block" style={d(260)}>
-                skincare is <em className="text-primary">really</em> doing.
+                skincare is <span className="text-primary">really</span> doing.
               </span>
             </span>
           </h1>
@@ -132,52 +132,37 @@ export function Hero() {
         </div>
 
         {/* White mist so the phone dissolves into the cloud bank instead of showing through gaps. */}
-        <div aria-hidden className="hero-mist absolute inset-x-0 bottom-0 h-[26%] bg-gradient-to-t from-white via-white/85 to-transparent" />
-        <Clouds layer="mid" className="hero-cloud-mid absolute inset-x-[-10%] bottom-[-6%] h-[32%]" />
-        <Clouds layer="front" className="hero-cloud-front absolute inset-x-[-10%] bottom-[-16%] h-[34%]" />
+        <div aria-hidden className="hero-mist absolute inset-x-0 bottom-0 h-[14%] sm:h-[26%] bg-gradient-to-t from-white via-white/85 to-transparent" />
+        <Clouds layer="mid" className="hero-cloud-mid absolute inset-x-[-10%] bottom-[-14%] h-[24%] sm:bottom-[-6%] sm:h-[32%]" />
+        <Clouds layer="front" className="hero-cloud-front absolute inset-x-[-10%] bottom-[-24%] h-[26%] sm:bottom-[-16%] sm:h-[34%]" />
       </div>
     </section>
   );
 }
 
 // ---------------------------------------------------------------------------------------------
-// Manifesto: expanded caps with bracketed asides, lighting up word by word.
+// Manifesto: one plain statement, with the three promises as chips underneath.
 
-const manifesto: (string | { tag: string })[] = [
-  "We",
-  { tag: "honestly" },
-  "check",
-  "what's",
-  "on",
-  "your",
-  "shelf",
-  { tag: "every label" },
-  "against",
-  "the",
-  "skin",
-  "you",
-  "want",
-  { tag: "no sponsors" },
-];
+const promises = ["Honestly", "Every label", "No sponsors"];
 
 export function Manifesto() {
   return (
-    <section className="relative px-5 py-32 sm:px-8 sm:py-44">
-      <p className="scrub mx-auto max-w-6xl text-center font-wide text-[clamp(34px,6.2vw,92px)] font-extrabold uppercase leading-[0.95] tracking-[-0.035em]">
-        {manifesto.map((w, i) => {
-          const a = 4 + (i / manifesto.length) * 40;
-          const style = { animationRange: `cover ${a}% cover ${a + 8}%` };
-          return typeof w === "string" ? (
-            <span key={i} className="scrub-word" style={style}>
-              {w}{" "}
-            </span>
-          ) : (
-            <span key={i} className="scrub-word" style={style}>
-              <Tag className="align-middle text-[clamp(10px,1vw,14px)]">{w.tag}</Tag>{" "}
-            </span>
-          );
-        })}
-      </p>
+    <section className="relative px-5 py-28 sm:px-8 sm:py-44">
+      <div data-reveal className="mx-auto max-w-4xl text-center">
+        <h2 className="font-display text-[34px] font-semibold leading-[1.1] tracking-[-0.015em] sm:text-[52px] lg:text-[64px] text-balance">
+          We check what&apos;s on your shelf against the skin you want.
+        </h2>
+        <ul className="mt-8 flex flex-wrap justify-center gap-2">
+          {promises.map((t) => (
+            <li
+              key={t}
+              className="rounded-full border border-black/[0.12] bg-white/70 px-3.5 py-1.5 text-[12px] font-medium uppercase tracking-[0.1em]"
+            >
+              {t}
+            </li>
+          ))}
+        </ul>
+      </div>
       <div data-reveal className="mx-auto mt-12 max-w-md text-center">
         <p className="text-[17px] leading-relaxed text-muted">
           Two serums doing the same job. An acid cancelling out your treatment. A &quot;toning&quot; cream thinning your
@@ -209,7 +194,7 @@ export function Zones() {
           <div data-reveal>
             <Tag>Face photos, if you want</Tag>
             <Display className="mt-6">
-              Read zone <em>by zone.</em>
+              Read zone <span className="text-primary">by zone.</span>
             </Display>
           </div>
           <p data-reveal className="max-w-sm text-[15px] leading-relaxed text-muted lg:justify-self-end" style={d(120)}>
@@ -218,27 +203,36 @@ export function Zones() {
           </p>
         </div>
 
-        <ul className="mt-16 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
+        {/* Phones: one row of equal cards you swipe through (the next one peeks); sm+: the grid.
+            The scroller is a focusable region so keyboard users can arrow through it. */}
+        <div
+          role="region"
+          aria-label="Face zones"
+          tabIndex={0}
+          className="-mx-5 mt-12 snap-x snap-mandatory overflow-x-auto px-5 pb-2 outline-offset-[-3px] [scrollbar-width:none] focus-visible:outline-2 focus-visible:outline-primary sm:mx-0 sm:mt-16 sm:overflow-visible sm:px-0 sm:pb-0 [&::-webkit-scrollbar]:hidden"
+        >
+        <ul className="flex gap-3 sm:grid sm:grid-cols-2 sm:gap-4 lg:grid-cols-4">
           {zones.map((z, i) => (
-            <li key={z.name} className={z.lift} data-speed={z.speed}>
+            <li key={z.name} className={`w-[68%] shrink-0 snap-start scroll-ml-5 sm:w-auto sm:shrink ${z.lift}`} data-speed={z.speed}>
               <div data-reveal className="zone-card group relative aspect-[3/4] overflow-hidden rounded-[14px] bg-[#1b1512]" style={d(i * 90)}>
                 <Image
                   src="/onboardimg.png"
                   alt={`${z.name}, close up`}
                   fill
-                  sizes="(min-width: 1024px) 270px, 50vw"
+                  sizes="(min-width: 1024px) 270px, (min-width: 640px) 50vw, 68vw"
                   className="photo-lift object-cover object-top"
                   style={{ transformOrigin: z.origin, scale: z.scale }}
                 />
                 <span className="zone-box" style={{ left: `${z.box[0]}%`, top: `${z.box[1]}%` }} />
               </div>
               <div className="mt-3 flex items-baseline justify-between gap-3 text-[13px]">
-                <span className="whitespace-nowrap font-medium">{z.name}</span>
-                <span className="text-right text-muted">{z.note}</span>
+                <span className="shrink-0 whitespace-nowrap font-medium">{z.name}</span>
+                <span className="min-w-0 text-right text-muted">{z.note}</span>
               </div>
             </li>
           ))}
         </ul>
+        </div>
       </div>
     </section>
   );
@@ -258,14 +252,14 @@ export function ProductCheck() {
   return (
     <section data-pin className="explode relative h-[260vh] border-t border-black/[0.07]">
       <div className="sticky top-0 flex h-[100svh] items-center overflow-hidden">
-        <div aria-hidden className="watermark absolute inset-x-0 top-1/2 -translate-y-1/2 text-center font-display text-[24vw] leading-none">
+        <div aria-hidden className="watermark absolute inset-x-0 top-1/2 hidden -translate-y-1/2 text-center font-display text-[20vw] font-semibold leading-none md:block">
           Your shelf
         </div>
         <div className="relative mx-auto grid w-full max-w-6xl items-center gap-10 px-5 sm:px-8 lg:grid-cols-[1fr_auto_1fr]">
           <div>
             <Tag>Product check</Tag>
             <Display className="mt-6">
-              Every label, <em>read.</em>
+              Every label, <span className="text-primary">read.</span>
             </Display>
             <p className="mt-6 max-w-xs text-[15px] leading-relaxed text-muted">
               Photograph one product or your whole shelf. No label? Describe it, and we&apos;ll flag anything to be careful
@@ -320,15 +314,15 @@ export function HowItWorks() {
       <div className="flex flex-col lg:sticky lg:top-0 lg:h-[100svh] lg:overflow-hidden">
         <div
           aria-hidden
-          className="watermark pointer-events-none absolute inset-x-0 top-[14%] hidden text-center font-display text-[19vw] leading-none lg:block"
+          className="watermark pointer-events-none absolute inset-x-0 top-[14%] hidden text-center font-display text-[16vw] font-semibold leading-none lg:block"
         >
           How it works
         </div>
         <div className="relative mx-auto flex w-full max-w-6xl items-end justify-between gap-6 px-5 pt-24 sm:px-8 lg:pt-28">
           <div>
             <Tag>How it works</Tag>
-            <Display className="mt-6 lg:text-[88px]">
-              Five steps, <em>no account</em> to start.
+            <Display className="mt-6 lg:text-[60px]">
+              Five steps, <span className="text-primary">no account</span> to start.
             </Display>
           </div>
           <div className="hidden w-40 pb-4 lg:block">
@@ -340,19 +334,19 @@ export function HowItWorks() {
 
         <ol
           data-track
-          className="steps-track relative mt-14 flex flex-col gap-24 px-5 pb-24 sm:px-8 lg:mt-auto lg:w-max lg:flex-row lg:gap-0 lg:px-[max(2rem,calc((100vw_-_72rem)/2_+_2rem))] lg:pb-8"
+          className="steps-track relative mt-8 flex flex-col gap-14 px-5 pb-14 sm:mt-14 sm:gap-24 sm:px-8 sm:pb-24 lg:mt-auto lg:w-max lg:flex-row lg:gap-0 lg:px-[max(2rem,calc((100vw_-_72rem)/2_+_2rem))] lg:pb-8"
         >
           {steps.map((s, i) => {
             const Screen = stepScreens[i];
             return (
               <li
                 key={s.title}
-                className="grid items-center gap-10 sm:grid-cols-[minmax(0,1fr)_auto] lg:w-[min(76vw,960px)] lg:pr-24"
+                className="grid items-center gap-6 sm:grid-cols-[minmax(0,1fr)_auto] sm:gap-10 lg:w-[min(76vw,960px)] lg:pr-24"
                 style={{ "--i": i } as React.CSSProperties}
               >
                 <div>
-                  <p className="font-display text-[110px] leading-[0.8] text-primary lg:text-[150px]">0{i + 1}</p>
-                  <h3 className="mt-6 font-display text-[40px] leading-none sm:text-[48px]">{s.title}</h3>
+                  <p className="font-display text-[44px] font-semibold leading-none tracking-[-0.01em] text-primary sm:text-[88px] lg:text-[112px]">0{i + 1}</p>
+                  <h3 className="mt-3 font-display text-[28px] font-semibold leading-[1.1] tracking-[-0.01em] sm:mt-6 sm:text-[38px]">{s.title}</h3>
                   <p className="mt-4 max-w-sm text-[16px] leading-relaxed text-muted">{s.body}</p>
                 </div>
                 <div className="step-phone h-[620px] justify-self-center lg:h-[500px]">
@@ -383,7 +377,7 @@ export function YourResult() {
           <div data-reveal>
             <Tag>Your result</Tag>
             <Display className="mt-6">
-              Sorted, <em>honestly.</em>
+              Sorted, <span className="text-primary">honestly.</span>
             </Display>
             <p className="mt-6 max-w-md text-[16px] leading-relaxed text-muted">
               See how many of your products are working toward your goal and how many are getting in the way, grouped so
@@ -412,7 +406,7 @@ export function YourResult() {
                   <span className={`h-2 w-2 shrink-0 rounded-full ${toneBar[g.tone]}`} />
                   <h3 className={`w-44 shrink-0 font-medium ${toneText[g.tone]}`}>{g.title}</h3>
                   <p className="hidden flex-1 text-[14px] text-muted sm:block">{g.body}</p>
-                  <span className="ml-auto font-display text-3xl tabular-nums" data-count={counts[i]}>
+                  <span className="ml-auto font-display text-2xl font-semibold tabular-nums" data-count={counts[i]}>
                     {counts[i]}
                   </span>
                 </li>
@@ -423,6 +417,23 @@ export function YourResult() {
         <div className="flex justify-center" data-speed="-0.1">
           <ResultScreen tilt={12} />
         </div>
+      </div>
+    </section>
+  );
+}
+
+// One compact nudge right after the result, while the payoff is fresh.
+export function MidCta() {
+  return (
+    <section className="border-t border-black/[0.07]">
+      <div
+        data-reveal
+        className="mx-auto flex max-w-6xl flex-col items-center gap-5 px-5 py-14 text-center sm:flex-row sm:justify-between sm:px-8 sm:py-16 sm:text-left"
+      >
+        <p className="max-w-md font-display text-[24px] font-semibold leading-[1.15] tracking-[-0.01em] sm:text-[30px]">
+          Ready to see what your own shelf is doing?
+        </p>
+        <CardButton href="/#early-access">{isLive ? "Get the app" : "Get early access"}</CardButton>
       </div>
     </section>
   );
@@ -441,7 +452,7 @@ export function StepDown() {
         <div data-reveal>
           <Tag>Step-down, safely</Tag>
           <Display className="mt-6">
-            A process, <em>not a day.</em>
+            A process, <span className="text-primary">not a day.</span>
           </Display>
           <p className="mt-6 max-w-md text-[16px] leading-relaxed text-muted">
             Stopping a strong cream suddenly can make skin flare. If something on your shelf is too strong, your plan
@@ -457,7 +468,7 @@ export function StepDown() {
               key={w.label}
               className="grid grid-cols-[100px_1fr] items-center gap-x-6 gap-y-2 border-b border-black/[0.08] py-6 sm:grid-cols-[110px_1fr_130px]"
             >
-              <span className="font-display text-2xl">{w.label}</span>
+              <span className="font-display text-xl font-semibold leading-tight">{w.label}</span>
               <span className="h-9 rounded-[6px] bg-black/[0.04]">
                 <span
                   className="stepdown-bar block h-full rounded-[6px] bg-primary"
@@ -480,15 +491,15 @@ export function Trust() {
         <Tag>Why you can trust it</Tag>
         <blockquote
           data-reveal
-          className="mx-auto mt-8 max-w-5xl font-display text-[clamp(44px,6.6vw,100px)] leading-[0.95] tracking-[-0.02em]"
+          className="mx-auto mt-8 max-w-5xl font-display text-[clamp(30px,5vw,68px)] font-semibold leading-[1.1] tracking-[-0.015em]"
         >
           No safe product changes your natural colour,{" "}
-          <em className="text-primary">and we won&apos;t suggest anything that tries.</em>
+          <span className="text-primary">and we won&apos;t suggest anything that tries.</span>
         </blockquote>
         <ul className="mt-24 grid gap-px overflow-hidden rounded-[14px] border border-black/[0.08] bg-black/[0.08] text-left sm:grid-cols-2 lg:grid-cols-4">
           {trust.map((t, i) => (
             <li key={t.title} data-reveal className="bg-background p-7" style={d(i * 90)}>
-              <h3 className="font-display text-[28px] leading-tight">{t.title}</h3>
+              <h3 className="font-display text-[24px] font-semibold leading-tight">{t.title}</h3>
               <p className="mt-3 text-[14px] leading-relaxed text-muted">{t.body}</p>
             </li>
           ))}
@@ -505,7 +516,7 @@ export function Faq() {
         <div>
           <Tag>FAQ</Tag>
           <Display className="mt-6">
-            Asked, <em>answered.</em>
+            Asked, <span className="text-primary">answered.</span>
           </Display>
           <p className="mt-6 text-muted">
             Something else?{" "}
@@ -538,10 +549,10 @@ export function FinalCta() {
       <div aria-hidden className="absolute inset-0 bg-[radial-gradient(ellipse_55%_45%_at_50%_50%,rgb(241_241_241/0.92),rgb(241_241_241/0.5)_55%,transparent_80%)]" />
       <div className="relative mx-auto flex min-h-[100svh] max-w-6xl flex-col items-center justify-center border-x border-black/[0.07] px-5 pb-56 pt-28 text-center sm:px-8">
         <Tag>Early access</Tag>
-        <h2 data-reveal className="mt-8 font-display text-[clamp(52px,8vw,124px)] leading-[0.9] tracking-[-0.025em]">
+        <h2 data-reveal className="mt-8 font-display text-[clamp(38px,6.4vw,96px)] font-semibold leading-[1.08] tracking-[-0.015em]">
           Calm skin starts with
-          <br />
-          knowing <em className="text-primary">your shelf.</em>
+          <br className="hidden sm:block" />{" "}
+          knowing <span className="text-primary">your shelf.</span>
         </h2>
         <p data-reveal className="mt-6 max-w-md text-[16px] text-muted" style={d(120)}>
           {isLive
