@@ -1,0 +1,42 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "deeper-tones-landing",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2026-10-01",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  // Served only on the custom domains below; no *.workers.dev URL.
+  "workers_dev": false,
+  "routes": [
+    { "pattern": "deepertones.com", "custom_domain": true },
+    { "pattern": "www.deepertones.com", "custom_domain": true }
+  ],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "services": [
+    {
+      "binding": "WORKER_SELF_REFERENCE",
+      "service": "deeper-tones-landing"
+    }
+  ],
+  "images": {
+    "binding": "IMAGES"
+  },
+  "observability": {
+    "enabled": true
+  },
+  // Secrets (set with `npx wrangler secret put <NAME>`, never committed):
+  //   RESEND_API_KEY     required for the waitlist form
+  //   RESEND_SEGMENT_ID  optional, groups waitlist contacts
+  // A separate preview Worker on workers.dev (no custom domain): `npx opennextjs-cloudflare deploy --env preview`.
+  "env": {
+    "preview": {
+      "name": "deeper-tones-landing-preview",
+      "workers_dev": true,
+      "routes": [],
+      "services": [{ "binding": "WORKER_SELF_REFERENCE", "service": "deeper-tones-landing-preview" }],
+      "images": { "binding": "IMAGES" }
+    }
+  }
+}

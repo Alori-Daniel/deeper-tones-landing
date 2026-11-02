@@ -90,8 +90,7 @@ export function Footer() {
   );
 }
 
-// Cached so the page stays prerendered (Next 16 disallows bare `new Date()` during prerender).
+// Rendered at build time (the page is prerendered), so the year updates on the next deploy.
 async function CopyrightYear() {
-  "use cache";
   return new Date().getFullYear();
 }
