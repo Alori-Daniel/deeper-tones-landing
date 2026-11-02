@@ -1,26 +1,511 @@
 @import "tailwindcss";
 
+/* Brand colours, light editorial page: paper is the app's foreground (#f1f1f1), ink is the app's
+   background (#0f0f0f), purple stays the accent. App screens re-scope to dark (.app-dark). */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f1f1f1;
+  --card: #ffffff;
+  --border: #dddddd;
+  --foreground: #0f0f0f;
+  --muted: #5e5e5e;
+  --subtle: #8c8c8c;
+  --primary: #9d4edd;
+  --primary-tint: #efe4f8;
+  --success: #00a37c;
+  --danger: #e0182f;
+  --caution: #c99200;
+  --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+  interpolate-size: allow-keywords;
+}
+
+/* The app itself is dark-first; phone screens use its real colours and type. */
+.app-dark {
+  --background: #0f0f0f;
+  --card: #1a1a1a;
+  --border: #2a2a2a;
+  --foreground: #f1f1f1;
+  --muted: #afafaf;
+  --subtle: #666666;
+  --primary-tint: #2b1934;
+  --success: #00c896;
+  --danger: #ef233c;
+  --caution: #f5b700;
+  color: var(--foreground);
+  font-family: var(--font-source-serif);
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-card: var(--card);
+  --color-border: var(--border);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-muted: var(--muted);
+  --color-subtle: var(--subtle);
+  --color-primary: var(--primary);
+  --color-primary-tint: var(--primary-tint);
+  --color-success: var(--success);
+  --color-danger: var(--danger);
+  --color-caution: var(--caution);
+  --font-serif: var(--font-source-serif);
+  --font-sans: var(--font-archivo);
+  --font-display: var(--font-instrument);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Archivo stretched along its width axis, for the bold caps. */
+@utility font-wide {
+  font-family: var(--font-archivo);
+  font-stretch: 125%;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+/* Faint wave lines across the paper, as in the references. */
+body {
+  background-color: var(--background);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='26'%3E%3Cpath d='M0 13 C40 3 80 3 120 13 S200 23 240 13' fill='none' stroke='%23000' stroke-opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--foreground);
+}
+
+::selection {
+  background: var(--primary);
+  color: #fff;
+}
+
+em {
+  font-style: italic;
+}
+
+details > summary {
+  list-style: none;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+/* ---------- Header: frosted once scrolled ---------- */
+.site-header {
+  border-bottom: 1px solid transparent;
+}
+@supports (animation-timeline: scroll()) {
+  .site-header {
+    animation: header-solid linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0 120px;
+  }
+}
+@supports not (animation-timeline: scroll()) {
+  .site-header {
+    background: rgb(241 241 241 / 0.9);
+    border-bottom-color: rgb(0 0 0 / 0.06);
+  }
+}
+@keyframes header-solid {
+  to {
+    background: rgb(241 241 241 / 0.78);
+    backdrop-filter: blur(14px);
+    border-bottom-color: rgb(0 0 0 / 0.06);
   }
 }
 
-body {
-  background: var(--background);
+/* ---------- ( BRACKET ) labels ---------- */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55em;
+  font-family: var(--font-archivo);
+  font-size: 12px;
+  font-weight: 500;
+  font-stretch: 100%;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.tag-bracket {
+  font-size: 2.2em;
+  font-weight: 200;
+  line-height: 0.7;
+  transform: scaleY(1.3) translateY(-0.05em);
+}
+.scrub .tag {
+  margin-inline: 0.15em;
+}
+.scrub .tag-bracket {
+  font-size: 4.8em;
+}
+
+/* ---------- Landscape: sky, lavender field, clouds ---------- */
+.sky {
+  background: linear-gradient(
+    to bottom,
+    #f1f1f1 0%,
+    #efedf3 28%,
+    #e7dff1 44%,
+    #dccdee 52%,
+    #d2bfea 60%,
+    #cdb8e8 100%
+  );
+}
+.sun {
+  background: radial-gradient(closest-side, rgb(255 255 255 / 0.95), rgb(255 255 255 / 0.4) 45%, transparent);
+}
+.field-wrap {
+  perspective: 1600px;
+  perspective-origin: 50% 0%;
+  mask-image: linear-gradient(to bottom, transparent 0%, #000 18%);
+}
+/* Thresholded fractal noise stretched into stripes (purple rows over a muted base), laid flat so
+   the rows converge on the horizon; a touch of blur stands in for depth of field. */
+.field {
+  height: 1400px;
+  transform-origin: 50% 0%;
+  transform: rotateX(72deg);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='a' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.07 0.012' numOctaves='3' seed='4' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.56 0 0 0 0 0.4 0 0 0 0 0.8 5 0 0 0 -2'/%3E%3C/filter%3E%3Cfilter id='b' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.3 0.06' numOctaves='2' seed='9' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.86 0 0 0 0 0.8 0 0 0 0 0.96 4 0 0 0 -2.2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' fill='%23a596bf'/%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'/%3E%3Crect width='100%25' height='100%25' filter='url(%23b)'/%3E%3C/svg%3E");
+  background-size: 140px 240px;
+}
+.field-wrap > .field {
+  filter: blur(0.8px);
+}
+.field-haze {
+  background: linear-gradient(to bottom, #dccdee 0%, rgb(220 205 238 / 0.7) 18%, rgb(220 205 238 / 0.15) 55%, transparent 80%);
+}
+
+.clouds {
+  animation: drift 38s ease-in-out infinite alternate;
+}
+.clouds-inner {
+  position: absolute;
+  inset: 0;
+}
+.cloud-blob {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, #fff 0%, #fff 60%, rgb(255 255 255 / 0) 100%);
+}
+.clouds-back .cloud-blob {
+  background: radial-gradient(closest-side, #f6f1fb 0%, rgb(246 241 251 / 0.9) 45%, rgb(246 241 251 / 0) 100%);
+}
+.clouds-back {
+  opacity: 0.85;
+  animation-duration: 60s;
+}
+@keyframes drift {
+  to {
+    transform: translateX(-4%);
+  }
+}
+
+/* ---------- Hero choreography (--p from Motion) ---------- */
+.hero {
+  --e: clamp(0, var(--p, 0) * 1.6, 1);
+}
+.hero-phone {
+  translate: -50% calc(44% - var(--e) * 34%);
+}
+.hero .phone-3d {
+  --rx: calc(18 - var(--e) * 18);
+}
+.hero-cloud-front {
+  translate: 0 calc(var(--p, 0) * 30vh);
+}
+.hero-cloud-mid {
+  translate: 0 calc(var(--p, 0) * 16vh);
+}
+.hero-mist {
+  translate: 0 calc(var(--p, 0) * 30vh);
+}
+.hero-cloud-back {
+  translate: 0 calc(var(--p, 0) * 5vh);
+}
+.hero-copy {
+  translate: 0 calc(var(--p, 0) * -80px);
+  opacity: clamp(0, 1 - (var(--p, 0) - 0.35) * 2.5, 1);
+}
+@media (max-width: 1023px) {
+  .hero-phone .phone-3d {
+    scale: 0.82;
+    transform-origin: 50% 100%;
+  }
+}
+
+/* ---------- Entrance ---------- */
+.hero-in {
+  animation: rise 1s var(--ease-out) both;
+  animation-delay: var(--d, 0ms);
+}
+.line-mask {
+  overflow: hidden;
+  padding-bottom: 0.12em;
+  margin-bottom: -0.12em;
+}
+.line-in {
+  animation: line-up 1.2s var(--ease-out) both;
+  animation-delay: var(--d, 0ms);
+}
+@keyframes rise {
+  from {
+    opacity: 0;
+    translate: 0 18px;
+  }
+}
+@keyframes line-up {
+  from {
+    translate: 0 105%;
+  }
+}
+
+/* The source portrait is shot very dark; lift it so skin reads. */
+.photo-lift {
+  filter: brightness(1.75) contrast(1.06);
+}
+
+/* ---------- Zones ---------- */
+.zone-box {
+  position: absolute;
+  width: 26%;
+  aspect-ratio: 1;
+  translate: -50% -50%;
+  border: 1.5px solid rgb(255 255 255 / 0.92);
+}
+.zone-box::before {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  width: 5px;
+  height: 5px;
+  background: #fff;
+}
+
+/* ---------- Big faded words behind sections ---------- */
+.watermark {
+  color: rgb(0 0 0 / 0.035);
+  white-space: nowrap;
+  user-select: none;
+}
+
+/* ---------- Product check: exploded phone ---------- */
+.explode .phone-3d {
+  --ry: calc(-34 + var(--p, 0) * 44);
+  --rx: calc(10 - var(--p, 0) * 8);
+}
+.chip {
+  --e: clamp(0, (var(--p, 0) - var(--start)) * 4, 1);
+  position: absolute;
+  left: 50%;
+  width: 196px;
+  margin-left: -98px;
+  display: flex;
+  gap: 9px;
+  padding: 11px 13px;
+  border-radius: 12px;
+  background: #fff;
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-archivo);
+  box-shadow:
+    0 1px 2px rgb(0 0 0 / 0.06),
+    0 18px 40px -14px rgb(0 0 0 / 0.3);
+  opacity: var(--e);
+  transform: translate3d(calc(var(--x) * var(--e)), 0, calc(var(--zt) * var(--e)));
+}
+@media (max-width: 1023px) {
+  .explode-stage {
+    scale: 0.78;
+  }
+}
+@media (max-width: 639px) {
+  .explode-stage {
+    scale: 0.6;
+    margin-block: -110px;
+  }
+}
+
+/* ---------- How it works: horizontal track on desktop ---------- */
+@media (min-width: 1024px) {
+  .steps-track {
+    translate: calc(var(--p, 0) * var(--shift, 0px) * -1) 0;
+  }
+  .step-phone {
+    translate: calc((var(--p, 0) * 4 - var(--i)) * -60px) 0;
+  }
+  .steps-progress {
+    width: calc(var(--p, 0) * 100%);
+  }
+}
+
+/* ---------- 3D phones (angles are unitless degrees, set by Motion or the scene) ---------- */
+.phone-3d {
+  perspective: 1400px;
+}
+.phone-3d-body {
+  transform-style: preserve-3d;
+  transform: rotateX(calc(var(--rx, 0) * 1deg)) rotateY(calc(var(--ry, 0) * 1deg));
+  transition: transform 0.25s ease-out;
+}
+/* Titanium band: light slices behind the screen, the last one dark as the back plate. */
+.phone-3d-slice {
+  position: absolute;
+  inset: 0;
+  border-radius: 44px;
+  background: #c3c3c9;
+  transform: translateZ(var(--z));
+}
+.phone-3d-slice:nth-of-type(odd) {
+  background: #b4b4bb;
+}
+.phone-3d-slice:last-of-type {
+  background: #2a2a2e;
+}
+.phone-3d-btn {
+  position: absolute;
+  width: 3px;
+  border-radius: 2px;
+  background: #a9a9b0;
+  transform: translateZ(-5px);
+}
+.phone-3d-glare {
+  position: absolute;
+  inset: 0;
+  border-radius: 44px;
+  pointer-events: none;
+  transform: translateZ(0.5px);
+  background: linear-gradient(105deg, transparent 42%, rgb(255 255 255 / 0.1) 50%, transparent 58%) no-repeat;
+  background-size: 300% 100%;
+  background-position: calc(50% + var(--ry, 0) * 2.5%) 0;
+}
+.phone-3d::after {
+  content: "";
+  position: absolute;
+  left: 14%;
+  right: 14%;
+  bottom: -30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgb(40 20 60 / 0.35);
+  filter: blur(16px);
+  transform: translateX(calc(var(--ry, 0) * -1.2px));
+  z-index: -1;
+}
+
+/* ---------- Scroll reveals (enabled once JS is running) ---------- */
+.motion-ready [data-reveal] {
+  transition:
+    opacity 1s var(--ease-out),
+    translate 1s var(--ease-out);
+  transition-delay: var(--d, 0ms);
+}
+.motion-ready [data-reveal]:not([data-in]) {
+  opacity: 0;
+  translate: 0 32px;
+}
+
+/* Words go from pale to ink as the paragraph scrolls through the viewport. */
+@supports (animation-timeline: view()) {
+  .scrub {
+    view-timeline: --scrub block;
+  }
+  .scrub-word {
+    animation: word-on linear both;
+    animation-timeline: --scrub;
+  }
+  @keyframes word-on {
+    from {
+      color: #cfcfcf;
+    }
+    to {
+      color: var(--foreground);
+    }
+  }
+}
+
+/* ---------- Phone screen details ---------- */
+.scan-laser {
+  animation: laser 2.4s ease-in-out infinite alternate;
+}
+@keyframes laser {
+  from {
+    top: 18%;
+  }
+  to {
+    top: 82%;
+  }
+}
+.face-guide {
+  animation: guide 3s ease-in-out infinite;
+}
+@keyframes guide {
+  50% {
+    border-color: var(--success);
+  }
+}
+.caret {
+  margin-left: 1px;
+  color: var(--primary);
+  animation: blink 1s steps(1) infinite;
+}
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+.slide-knob {
+  animation: knob 3.2s var(--ease-out) infinite;
+}
+@keyframes knob {
+  0%,
+  20% {
+    transform: translateX(0);
+  }
+  60%,
+  80% {
+    transform: translateX(10px);
+  }
+}
+
+/* ---------- Result shelf & step-down bars ---------- */
+.motion-ready .shelf .shelf-seg {
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.8s var(--ease-out) var(--d, 0ms);
+}
+.motion-ready .shelf[data-in] .shelf-seg {
+  transform: none;
+}
+.stepdown-bar {
+  width: var(--w);
+}
+.motion-ready .stepdown:not([data-in]) .stepdown-bar {
+  width: 0;
+}
+.motion-ready .stepdown-bar {
+  transition: width 1.2s var(--ease-out) var(--d, 0ms);
+}
+
+/* ---------- FAQ: animate open/close where supported ---------- */
+.faq::details-content {
+  block-size: 0;
+  overflow: hidden;
+  transition:
+    block-size 0.45s var(--ease-out),
+    content-visibility 0.45s allow-discrete;
+}
+.faq[open]::details-content {
+  block-size: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .scrub-word {
+    animation: none !important;
+  }
 }
