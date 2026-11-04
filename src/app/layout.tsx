@@ -16,6 +16,11 @@ const archivo = Archivo({
   subsets: ["latin"],
 });
 
+// Search-engine verification and analytics are switched on by build-time env vars (see .env.example).
+const googleVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
+const bingVerification = process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION;
+const cfBeaconToken = process.env.NEXT_PUBLIC_CF_BEACON_TOKEN;
+
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
@@ -25,10 +30,8 @@ export const metadata: Metadata = {
   description: site.description,
   keywords: site.keywords,
   applicationName: site.name,
-  alternates: { canonical: "/" },
   openGraph: {
     type: "website",
-    url: "/",
     siteName: site.name,
     title: site.title,
     description: site.description,
@@ -40,6 +43,12 @@ export const metadata: Metadata = {
     description: site.description,
   },
   robots: { index: true, follow: true },
+  ...((googleVerification || bingVerification) && {
+    verification: {
+      ...(googleVerification && { google: googleVerification }),
+      ...(bingVerification && { other: { "msvalidate.01": bingVerification } }),
+    },
+  }),
   // Smart App Banner on iOS Safari once the app is in the App Store.
   ...(site.appStoreUrl && {
     itunes: { appId: site.appStoreUrl.match(/id(\d+)/)?.[1] ?? "" },
@@ -54,7 +63,15 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${sourceSerif.variable} ${archivo.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col font-sans">{children}</body>
+      <body className="min-h-full flex flex-col font-sans">{children}
+        {cfBeaconToken && (
+          <script
+            defer
+            src="https://static.cloudflareinsights.com/beacon.min.js"
+            data-cf-beacon={JSON.stringify({ token: cfBeaconToken })}
+          />
+        )}
+      </body>
     </html>
   );
 }

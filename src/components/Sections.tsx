@@ -50,7 +50,7 @@ function Display({ children, className = "" }: { children: React.ReactNode; clas
 }
 
 // White "card" button from the references: soft shadow, arrow.
-function CardButton({ href, children }: { href: string; children: React.ReactNode }) {
+export function CardButton({ href, children }: { href: string; children: React.ReactNode }) {
   return (
     <a
       href={href}

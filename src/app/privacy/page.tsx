@@ -2,10 +2,23 @@ import type { Metadata } from "next";
 import { LegalPage } from "@/components/LegalPage";
 import { site } from "@/lib/site";
 
+const description =
+  "How Deeper Tones collects, uses and protects your information, including face photos.";
+
 export const metadata: Metadata = {
   title: "Privacy Policy",
-  description: "How Deeper Tones collects, uses and protects your information, including face photos.",
-  alternates: { canonical: "/privacy" },
+  description,
+  alternates: { canonical: "/privacy", languages: { "en-NG": "/privacy", "x-default": "/privacy" } },
+  openGraph: {
+    type: "website",
+    url: "/privacy",
+    siteName: site.name,
+    title: `Privacy Policy | ${site.name}`,
+    description,
+    locale: "en_NG",
+    // Setting openGraph here drops the root image the page would otherwise inherit.
+    images: ["/opengraph-image"],
+  },
 };
 
 // Plain-language draft based on how the app works. Have it reviewed by a lawyer before launch.
