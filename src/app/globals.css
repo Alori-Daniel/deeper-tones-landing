@@ -512,3 +512,126 @@ details > summary::-webkit-details-marker {
     scroll-behavior: auto !important;
   }
 }
+
+/* ---------- Guides: article prose ----------
+   No italics anywhere: emphasis is upright and medium weight. */
+.guide-prose {
+  max-width: 68ch;
+  font-size: 17px;
+  line-height: 1.7;
+  color: #2a2a2a;
+  overflow-wrap: break-word;
+}
+@media (min-width: 640px) {
+  .guide-prose {
+    font-size: 18px;
+  }
+}
+.guide-prose :where(*) {
+  font-style: normal;
+}
+.guide-prose :where(em, i, cite) {
+  font-style: normal;
+  font-weight: 500;
+}
+.guide-prose :where(strong, b) {
+  font-weight: 600;
+  color: var(--foreground);
+}
+.guide-prose :where(p, ul, ol, table, .table-scroll) {
+  margin-top: 1.1em;
+}
+.guide-prose > :first-child {
+  margin-top: 0;
+}
+.guide-prose :where(h2) {
+  margin-top: 2.2em;
+  font-family: var(--font-source-serif);
+  font-size: 1.65em;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--foreground);
+  text-wrap: balance;
+}
+.guide-prose :where(h3) {
+  margin-top: 1.7em;
+  font-family: var(--font-source-serif);
+  font-size: 1.3em;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--foreground);
+}
+.guide-prose :where(h2 + p, h3 + p) {
+  margin-top: 0.7em;
+}
+.guide-prose :where(ul) {
+  list-style: disc;
+  padding-left: 1.4em;
+}
+.guide-prose :where(ol) {
+  list-style: decimal;
+  padding-left: 1.5em;
+}
+.guide-prose :where(li) {
+  margin-top: 0.45em;
+  padding-left: 0.2em;
+}
+.guide-prose :where(li)::marker {
+  color: var(--subtle);
+}
+/* Purple, darkened a little so link text keeps enough contrast on the paper background. */
+.guide-prose :where(a) {
+  color: color-mix(in srgb, var(--primary) 78%, #000);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 1px;
+}
+.guide-prose :where(a:hover) {
+  color: var(--primary);
+}
+.guide-prose :where(a.cite) {
+  margin-left: 0.1em;
+  font-size: 0.8em;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.guide-prose :where(code) {
+  border-radius: 4px;
+  background: rgb(0 0 0 / 0.06);
+  padding: 0.1em 0.35em;
+  font-size: 0.9em;
+}
+.guide-prose :where(blockquote) {
+  margin-top: 1.1em;
+  border-left: 3px solid var(--primary);
+  padding-left: 1em;
+  color: var(--muted);
+}
+.guide-prose :where(.table-scroll) {
+  overflow-x: auto;
+}
+.guide-prose :where(table) {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92em;
+}
+.guide-prose :where(th, td) {
+  border-bottom: 1px solid var(--border);
+  padding: 0.55em 0.75em 0.55em 0;
+  text-align: left;
+  vertical-align: top;
+}
+.guide-prose :where(th) {
+  font-weight: 600;
+  color: var(--foreground);
+}
+.guide-sources {
+  font-size: 0.9em;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+.guide-sources > li:target {
+  background: var(--primary-tint);
+  border-radius: 6px;
+}

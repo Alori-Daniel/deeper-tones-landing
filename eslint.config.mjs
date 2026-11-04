@@ -15,6 +15,8 @@ const eslintConfig = defineConfig([
     // OpenNext / Wrangler build output.
     ".open-next/**",
     ".wrangler/**",
+    // Generated from content/guides/*.md.
+    "src/content/guides.generated.ts",
   ]),
 ]);
 

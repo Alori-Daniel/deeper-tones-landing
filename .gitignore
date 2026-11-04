@@ -46,3 +46,6 @@ next-env.d.ts
 .wrangler
 .dev.vars*
 !.dev.vars.example
+
+# Generated from content/guides/*.md by scripts/build-guides.mjs
+/src/content/guides.generated.ts

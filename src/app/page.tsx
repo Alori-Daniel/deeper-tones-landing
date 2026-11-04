@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Footer, Header } from "@/components/Brand";
 import { Motion } from "@/components/Motion";
 import {
@@ -14,6 +15,20 @@ import {
   Zones,
 } from "@/components/Sections";
 import { faqs, site } from "@/lib/site";
+
+// Nigeria first; UK and US variants come later.
+export const metadata: Metadata = {
+  alternates: { canonical: "/", languages: { "en-NG": "/", "x-default": "/" } },
+  // A page's openGraph replaces the layout's whole object, so the shared fields are repeated here.
+  openGraph: {
+    type: "website",
+    url: "/",
+    siteName: site.name,
+    title: site.title,
+    description: site.description,
+    locale: "en_NG",
+  },
+};
 
 // Structured data: the app, the organisation and the FAQ (for rich results).
 const jsonLd = {

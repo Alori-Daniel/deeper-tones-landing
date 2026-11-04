@@ -3,10 +3,23 @@ import Link from "next/link";
 import { LegalPage } from "@/components/LegalPage";
 import { site } from "@/lib/site";
 
+const description =
+  "The terms for using the Deeper Tones app and website.";
+
 export const metadata: Metadata = {
   title: "Terms",
-  description: "The terms for using the Deeper Tones app and website.",
-  alternates: { canonical: "/terms" },
+  description,
+  alternates: { canonical: "/terms", languages: { "en-NG": "/terms", "x-default": "/terms" } },
+  openGraph: {
+    type: "website",
+    url: "/terms",
+    siteName: site.name,
+    title: `Terms | ${site.name}`,
+    description,
+    locale: "en_NG",
+    // Setting openGraph here drops the root image the page would otherwise inherit.
+    images: ["/opengraph-image"],
+  },
 };
 
 // Plain-language draft based on how the app works. Have it reviewed by a lawyer before launch.

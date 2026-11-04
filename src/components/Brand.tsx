@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { hasGuides } from "@/lib/guides";
 import { isLive, site } from "@/lib/site";
 
 export function LogoMark({ size = 28, className }: { size?: number; className?: string }) {
@@ -34,6 +35,8 @@ const nav = [
   { href: "/#step-down", label: "Step-down" },
   { href: "/#trust", label: "Trust" },
   { href: "/#faq", label: "FAQ" },
+  // Only once the build has at least one guide.
+  ...(hasGuides ? [{ href: "/guides", label: "Guides" }] : []),
 ];
 
 // Transparent over the hero, turns to frosted glass once you scroll (pure CSS, see .site-header).
@@ -77,6 +80,7 @@ export function Footer() {
           <p className="mt-2 text-sm text-muted">Honest skincare checks, made for deeper skin tones.</p>
         </div>
         <nav aria-label="Footer" className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted">
+          {hasGuides && <Link href="/guides" className="hover:text-foreground">Guides</Link>}
           <Link href="/privacy" className="hover:text-foreground">Privacy Policy</Link>
           <Link href="/terms" className="hover:text-foreground">Terms</Link>
           <a href={`mailto:${site.contactEmail}`} className="hover:text-foreground">Contact</a>
