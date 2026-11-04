@@ -9,14 +9,15 @@ const description =
 export const metadata: Metadata = {
   title: "Terms",
   description,
-  alternates: { canonical: "/terms", languages: { "en-NG": "/terms", "x-default": "/terms" } },
+  alternates: { canonical: "/terms", languages: { en: "/terms", "x-default": "/terms" } },
   openGraph: {
     type: "website",
     url: "/terms",
     siteName: site.name,
     title: `Terms | ${site.name}`,
     description,
-    locale: "en_NG",
+    locale: "en_US",
+    alternateLocale: ["en_GB", "en_NG"],
     // Setting openGraph here drops the root image the page would otherwise inherit.
     images: ["/opengraph-image"],
   },
