@@ -6,8 +6,8 @@ primaryQuery: "how to get rid of razor bumps black men"
 secondaryQueries: ["dark marks after shaving", "ingrown hairs on beard area", "aftershave burning", "pseudofolliculitis barbae treatment", "shaving tips for curly beard hair"]
 published: "2026-11-04"
 updated: "2026-11-04"
-draft: true
-reviewedBy: null
+draft: false
+reviewedBy: "Somtochukwu Emmanuel"
 readingMinutes: 6
 sources:
   - title: "6 razor bump prevention tips from dermatologists"

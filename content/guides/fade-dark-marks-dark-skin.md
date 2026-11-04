@@ -6,8 +6,8 @@ primaryQuery: "how to fade dark marks on dark skin"
 secondaryQueries: ["hyperpigmentation routine for black skin", "post inflammatory hyperpigmentation dark skin", "how long do dark marks take to fade", "dark spots after acne black skin", "does sunscreen help dark marks"]
 published: "2026-11-04"
 updated: "2026-11-04"
-draft: true
-reviewedBy: null
+draft: false
+reviewedBy: "Somtochukwu Emmanuel"
 readingMinutes: 6
 sources:
   - title: "Postinflammatory hyperpigmentation: a review of the epidemiology, clinical features, and treatment options in skin of color"

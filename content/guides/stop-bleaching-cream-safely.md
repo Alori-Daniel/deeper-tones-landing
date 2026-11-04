@@ -6,8 +6,8 @@ primaryQuery: "how to stop using bleaching cream"
 secondaryQueries: ["skin darker after stopping bleaching cream", "steroid cream withdrawal face", "rebound after stopping lightening cream", "how long does skin take to recover after bleaching", "stopping skin lightening cream flare"]
 published: "2026-11-04"
 updated: "2026-11-04"
-draft: true
-reviewedBy: null
+draft: false
+reviewedBy: "Somtochukwu Emmanuel"
 readingMinutes: 6
 sources:
   - title: "Mercury in skin lightening products"

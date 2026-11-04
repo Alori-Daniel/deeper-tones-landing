@@ -6,8 +6,8 @@ primaryQuery: "do black people need sunscreen"
 secondaryQueries: ["sunscreen for dark skin no white cast", "best spf for dark skin", "sunscreen in Nigeria", "does sunscreen help dark spots", "mineral vs chemical sunscreen dark skin"]
 published: "2026-11-04"
 updated: "2026-11-04"
-draft: true
-reviewedBy: null
+draft: false
+reviewedBy: "Somtochukwu Emmanuel"
 readingMinutes: 6
 sources:
   - title: "Finding skin cancer in darker skin tones"

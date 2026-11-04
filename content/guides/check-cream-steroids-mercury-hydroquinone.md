@@ -6,8 +6,8 @@ primaryQuery: "how to know if a cream contains steroids"
 secondaryQueries: ["how to know if a cream has mercury", "hydroquinone in cream side effects", "what does clobetasol do to the face", "is my cream bleaching", "NAFDAC banned creams"]
 published: "2026-11-04"
 updated: "2026-11-04"
-draft: true
-reviewedBy: null
+draft: false
+reviewedBy: "Somtochukwu Emmanuel"
 readingMinutes: 6
 sources:
   - title: "Mercury in skin lightening products"
