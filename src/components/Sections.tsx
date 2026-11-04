@@ -119,7 +119,7 @@ export function Hero() {
               <LogoMark size={22} className="ml-auto" />
               <p className="mt-3 text-[15px] leading-snug">
                 Made for melanin-rich skin.
-                <span className="text-muted"> Nigeria first, coming soon to iOS and Android.</span>
+                <span className="text-muted"> Nigeria first, then the UK and US. Join early access wherever you are.</span>
               </p>
             </div>
           </div>

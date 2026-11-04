@@ -6,7 +6,7 @@ export const site = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://deepertones.com",
   title: "Deeper Tones: honest skincare checks for deeper skin tones",
   description:
-    "Deeper Tones checks the skincare products you already use against the skin you want, tells you honestly what's helping and what's in the way, and gives you a simple, safe routine. Coming soon to iOS and Android, Nigeria first.",
+    "Deeper Tones checks the skincare products you already use against the skin you want, tells you honestly what's helping and what's in the way, and gives you a simple, safe routine. Coming soon to iOS and Android: Nigeria first, then the UK and US.",
   // TODO: confirm this inbox exists before launch.
   contactEmail: "hello@deepertones.com",
   // Fill these in when the app is live; the page swaps the waitlist form for store buttons.
@@ -100,7 +100,7 @@ export const faqs = [
   },
   {
     q: "Which countries is it for?",
-    a: "Nigeria first, with prices in naira and sign-in by email (WhatsApp is coming). More countries will follow.",
+    a: "Nigeria first, with prices in naira and sign-in by email (WhatsApp is coming). The UK and US follow, and you can join early access from anywhere.",
   },
 ];
 
