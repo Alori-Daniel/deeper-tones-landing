@@ -73,6 +73,16 @@ faq:
     a: "If you have used it daily for a long time and it may hold a steroid, talk to a pharmacist or doctor first. Stopping suddenly can bring a withdrawal reaction, with redness and burning. If the label shows a mercury name, stop using it and get advice."
   - q: "What can I use instead for an even tone?"
     a: "A plain routine: a gentle cleanser, a moisturiser and daily sunscreen, SPF 30 or higher. Sun makes dark marks deeper. No product changes the colour your skin naturally is, but even tone and calm skin are realistic aims."
+figures:
+  - id: read-the-label
+    kind: diagram
+    alt: "An invented cream jar, front and back. The front says glow cream and fast action. The back shows an ingredient list with hydroquinone, clobetasol propionate and calomel highlighted, then a NAFDAC number, batch number, expiry date and the maker's name and country. A note says: mercury, stop using it; steroid used for a long time, get advice to stop."
+    caption: "Words on the front cannot show what is inside. Read the ingredient list and check the number, batch, maker and dates on the back. This label is invented."
+    credit: "Deeper Tones"
+    license: "Own work"
+    sourceUrl: null
+    licenseUrl: null
+    changes: null
 ---
 
 "Glow" is a marketing word, not an ingredient, so the word alone cannot tell you whether a cream is bleaching. Some creams sold to lighten or even out skin contain hydroquinone, mercury or a strong steroid [9], and the label does not always say so [7][8]. To check, read the ingredient list, look for a registration number and notice the red flags below. If you have used a cream daily for a long time, get advice before you stop [11][12].
@@ -100,6 +110,8 @@ Those studies tested lightening products, not creams sold only as "glow". But th
 1. **Look for an ingredient list.** The FDA says a product with no ingredient list or no label should not be used [2]. In Nigeria, cosmetic labels are meant to show the ingredient list, a batch identifier, the manufacturer's name and country, dates, and a NAFDAC registration number [5].
 2. **Read the names, not the claims.** Mercury can appear as mercury, mercurous chloride, calomel, mercuric, mercurio or Hg [1][2]. Hydroquinone is printed as "hydroquinone". Steroid names include clobetasol propionate and betamethasone [6][11].
 3. **Keep in mind what a label cannot do.** The FDA says some illegal products leave hydroquinone or mercury off the label [1]. A clean list is reassuring, not proof.
+
+{{figure:read-the-label}}
 
 ## Red flags on the jar or the seller
 

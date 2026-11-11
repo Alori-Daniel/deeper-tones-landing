@@ -81,6 +81,25 @@ faq:
     a: "Azelaic acid has been studied in people with darker skin, and a review found it safe in skin of colour. A review of niacinamide found it well tolerated by skin. If you are pregnant or breastfeeding, ask a pharmacist or doctor before starting azelaic acid."
   - q: "How long before my tone looks more even?"
     a: "Give a routine a few months, not days. Dark marks fade slowly. The American Academy of Dermatology says a mark a few shades darker than your skin usually fades within 6 to 12 months once its cause has stopped, and treatment can speed that up. Be wary of any cream that promises quick results."
+figures:
+  - id: label-check
+    kind: diagram
+    alt: "An invented toning cream label with a banner reading Whitens in days above an ingredient list. Mercurous chloride, clobetasol propionate and hydroquinone are highlighted. Notes beside it say mercury also goes by calomel, mercuric, mercurio and Hg, and that steroids and hydroquinone need a prescriber's advice."
+    caption: "What to look for on a label. This label is invented and is not a real product."
+    credit: "Deeper Tones"
+    license: "Own work"
+    sourceUrl: null
+    licenseUrl: null
+    changes: null
+  - id: hydroquinone-case
+    kind: study-photo
+    alt: "Three close-up photos of a dark-skinned face with the eyes not shown, with patches of dark brown to blue-gray pigment on the temple, cheeks and around the nose. A black box added by the authors covers part of one photo."
+    caption: "From a published case report: a 66-year-old woman with dark brown skin (Fitzpatrick type V) whose patches darkened instead of fading during about three years of on-and-off hydroquinone use. The authors suspected exogenous ochronosis, but she declined a biopsy. This is a photo from a study, so it shows one person. Results vary."
+    credit: "Negassi et al. Cureus, 2026"
+    license: "CC BY 4.0"
+    sourceUrl: "https://pmc.ncbi.nlm.nih.gov/articles/PMC13626390/"
+    licenseUrl: "https://creativecommons.org/licenses/by/4.0/"
+    changes: "Converted from WebP to JPEG; not cropped"
 ---
 
 In Nigerian shops, "toning" often means lightening, which is not the same as evening out your skin. Even tone is a real goal and you can reach it safely: fewer dark patches, calmer skin and a clearer look in your own colour. Daily sunscreen, gentle products and one well-studied evening-out ingredient are the safest place to start. Judge them over months, not days.
@@ -128,6 +147,8 @@ Some lightening and "glow" creams contain strong ingredients that do not appear 
 - **Hydroquinone that was not prescribed.** NAFDAC says hydroquinone is prohibited in skincare cosmetics and should only be used under medical supervision [11]. The FDA says lightening products with hydroquinone are not approved for over-the-counter sale [4]. The British Association of Dermatologists says it can only be prescribed by a doctor, and that it can irritate or occasionally darken skin [14]. Long use of strong hydroquinone has been linked to ochronosis, a blue-black or grey-blue discolouration most often reported in people with darker skin [15].
 - **Bleach.** AAD says never to put liquid bleach on skin [6].
 
+{{figure:hydroquinone-case}}
+
 The BAD advises avoiding hydroquinone and retinoid creams in pregnancy [14]. If you already use a cream you suspect contains any of these, read [how to stop bleaching cream safely](/guides/stop-bleaching-cream-safely) first. Stopping a strong steroid cream after long use is best done with a professional's help.
 
 ## A label checklist
@@ -139,6 +160,8 @@ Before you buy or keep a cream:
 - Does it list clobetasol, betamethasone or another steroid, or hydroquinone [4][11][12]? Do not use it without a prescriber's advice.
 - Does it promise to whiten, lighten or work in days? NAFDAC advises being wary of exaggerated claims such as "100% safe" or "no side effects" [11].
 - Does it sting or burn when you put it on? Stop using it [6].
+
+{{figure:label-check}}
 
 A clean label is not proof of safety. The FDA warns that some illegal products do not list hydroquinone or mercury [4]. [Check a cream for steroids, mercury and hydroquinone](/guides/check-cream-steroids-mercury-hydroquinone) goes through the warning signs in more detail.
 

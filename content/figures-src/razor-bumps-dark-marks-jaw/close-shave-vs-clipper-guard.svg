@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1200" height="800" fill="#f1f1f1"/>
+  <rect x="60" y="52" width="10" height="52" rx="5" fill="#9d4edd"/>
+  <text x="90" y="95" font-size="46" font-weight="700" fill="#141414">Why a close shave can trap a curly hair</text>
+  <line x1="600" y1="150" x2="600" y2="740" stroke="#c9c9c9" stroke-width="3"/>
+
+  <!-- LEFT PANEL -->
+  <circle cx="75" cy="190" r="16" fill="#d64545"/>
+  <text x="105" y="202" font-size="38" font-weight="700" fill="#141414">Shaved very close</text>
+  <text x="60" y="262" font-size="30" fill="#141414">The cut tip is sharp and can</text>
+  <text x="60" y="302" font-size="30" fill="#141414">curl back into the skin.</text>
+  <rect x="40" y="540" width="540" height="190" rx="14" fill="#6f4a35"/>
+  <rect x="40" y="540" width="540" height="40" fill="#8a5a3c"/>
+  <ellipse cx="272" cy="540" rx="36" ry="28" fill="#8a5a3c" stroke="#d64545" stroke-width="5" stroke-dasharray="10 7"/>
+  <path d="M100 730 C 105 640,125 590,135 540 C 142 480,210 440,255 485 C 282 512,270 560,252 590" fill="none" stroke="#141414" stroke-width="9" stroke-linecap="round"/>
+  <line x1="470" y1="450" x2="300" y2="495" stroke="#5e5e5e" stroke-width="3"/>
+  <text x="575" y="400" font-size="30" font-weight="700" fill="#141414" text-anchor="end">Sharp tip curls back</text>
+  <text x="575" y="440" font-size="30" font-weight="700" fill="#141414" text-anchor="end">into the skin</text>
+  <text x="385" y="650" font-size="30" fill="#f1f1f1" text-anchor="middle">The skin reacts to it</text>
+  <text x="385" y="690" font-size="30" fill="#f1f1f1" text-anchor="middle">like a splinter: a bump</text>
+
+  <!-- RIGHT PANEL -->
+  <circle cx="635" cy="190" r="16" fill="#2fb37a"/>
+  <text x="665" y="202" font-size="38" font-weight="700" fill="#141414">Clippers with a guard</text>
+  <text x="620" y="262" font-size="30" fill="#141414">Hair is left at least 1 mm, so</text>
+  <text x="620" y="302" font-size="30" fill="#141414">the cut tip is less likely to turn in.</text>
+  <rect x="620" y="540" width="540" height="190" rx="14" fill="#6f4a35"/>
+  <rect x="620" y="540" width="540" height="40" fill="#8a5a3c"/>
+  <path d="M700 730 C 705 640,715 590,720 540 C 722 500,740 470,765 430" fill="none" stroke="#141414" stroke-width="9" stroke-linecap="round"/>
+  <line x1="830" y1="540" x2="830" y2="430" stroke="#7b2cbf" stroke-width="4"/>
+  <line x1="815" y1="540" x2="845" y2="540" stroke="#7b2cbf" stroke-width="4"/>
+  <line x1="815" y1="430" x2="845" y2="430" stroke="#7b2cbf" stroke-width="4"/>
+  <text x="865" y="470" font-size="30" font-weight="700" fill="#7b2cbf">1 mm or more</text>
+  <text x="865" y="510" font-size="30" font-weight="700" fill="#7b2cbf">of hair left</text>
+  <text x="900" y="650" font-size="30" fill="#f1f1f1" text-anchor="middle">The cut tip is more likely</text>
+  <text x="900" y="690" font-size="30" fill="#f1f1f1" text-anchor="middle">to stay out of the skin</text>
+
+  <text x="60" y="772" font-size="28" fill="#5e5e5e">Simple illustration, not to scale. Skin cross-section.</text>
+  <text x="1140" y="772" font-size="28" font-weight="700" fill="#7b2cbf" text-anchor="end">Deeper Tones</text>
+</svg>

@@ -77,9 +77,21 @@ faq:
     a: "NHS medicines guidance says topical retinoids should not be used in pregnancy or when planning a pregnancy, as a precaution, even though very little reaches the bloodstream. Ask a pharmacist or doctor about breastfeeding."
   - q: "Are skin lightening creams a safe way to fade dark marks?"
     a: "Some contain undisclosed steroids or mercury, which can thin and permanently discolour skin or harm health. Stick to ingredients with a label you can read, and ask a professional before using any strong cream."
+figures:
+  - id: "four-steps-in-order"
+    kind: diagram
+    alt: "A numbered list of four steps in order: 1 stop what irritates, 2 treat what causes the marks, 3 sunscreen every day, 4 add one evening-out ingredient and judge it over about 12 weeks."
+    caption: "The four steps in the order this guide follows. Marks fade over months, not days."
+    credit: "Deeper Tones"
+    license: "Own work"
+    sourceUrl: null
+    licenseUrl: null
+    changes: null
 ---
 
 Dark marks on dark skin usually fade, but slowly. A mark a few shades darker than your skin often takes 6 to 12 months once the cause stops, and deeper marks can take years [2]. What helps most, in order: stop what irritates your skin, treat the spots that leave the marks, wear sunscreen every day, then add one gentle evening-out ingredient and give it about 12 weeks [1][2][3].
+
+{{figure:four-steps-in-order}}
 
 ## Why dark skin marks more easily
 

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1200" height="800" fill="#f1f1f1"/>
+  <text x="40" y="72" font-size="42" font-weight="700" fill="#141414">Carrot on the label does not mean gentle</text>
+  <text x="40" y="136" font-size="30" font-weight="700" fill="#141414">Carrot oil, Daucus carota or carotene on the label: 5 of 10 creams</text>
+  <rect x="150" y="160" width="100" height="26" rx="8" fill="#5e5e5e"/>
+  <rect x="130" y="182" width="140" height="112" rx="20" fill="#ffffff" stroke="#141414" stroke-width="3"/>
+  <rect x="144" y="210" width="112" height="56" rx="10" fill="#d64545"/>
+  <rect x="350" y="160" width="100" height="26" rx="8" fill="#5e5e5e"/>
+  <rect x="330" y="182" width="140" height="112" rx="20" fill="#ffffff" stroke="#141414" stroke-width="3"/>
+  <rect x="344" y="210" width="112" height="56" rx="10" fill="#d64545"/>
+  <rect x="550" y="160" width="100" height="26" rx="8" fill="#5e5e5e"/>
+  <rect x="530" y="182" width="140" height="112" rx="20" fill="#ffffff" stroke="#141414" stroke-width="3"/>
+  <rect x="544" y="210" width="112" height="56" rx="10" fill="#d64545"/>
+  <rect x="750" y="160" width="100" height="26" rx="8" fill="#5e5e5e"/>
+  <rect x="730" y="182" width="140" height="112" rx="20" fill="#ffffff" stroke="#141414" stroke-width="3"/>
+  <rect x="744" y="210" width="112" height="56" rx="10" fill="#d64545"/>
+  <rect x="950" y="160" width="100" height="26" rx="8" fill="#5e5e5e"/>
+  <rect x="930" y="182" width="140" height="112" rx="20" fill="#ffffff" stroke="#141414" stroke-width="3"/>
+  <rect x="944" y="210" width="112" height="56" rx="10" fill="#e0a020"/>
+  <text x="40" y="378" font-size="30" font-weight="700" fill="#141414">No carrot on the label: 5 of 10 creams</text>
+  <rect x="150" y="402" width="100" height="26" rx="8" fill="#5e5e5e"/>
+  <rect x="130" y="424" width="140" height="112" rx="20" fill="#ffffff" stroke="#141414" stroke-width="3"/>
+  <rect x="144" y="452" width="112" height="56" rx="10" fill="#e0a020"/>
+  <rect x="350" y="402" width="100" height="26" rx="8" fill="#5e5e5e"/>
+  <rect x="330" y="424" width="140" height="112" rx="20" fill="#ffffff" stroke="#141414" stroke-width="3"/>
+  <rect x="344" y="452" width="112" height="56" rx="10" fill="#e0a020"/>
+  <rect x="550" y="402" width="100" height="26" rx="8" fill="#5e5e5e"/>
+  <rect x="530" y="424" width="140" height="112" rx="20" fill="#ffffff" stroke="#141414" stroke-width="3"/>
+  <rect x="544" y="452" width="112" height="56" rx="10" fill="#e0a020"/>
+  <rect x="750" y="402" width="100" height="26" rx="8" fill="#5e5e5e"/>
+  <rect x="730" y="424" width="140" height="112" rx="20" fill="#ffffff" stroke="#141414" stroke-width="3"/>
+  <rect x="744" y="452" width="112" height="56" rx="10" fill="#e0a020"/>
+  <rect x="950" y="402" width="100" height="26" rx="8" fill="#5e5e5e"/>
+  <rect x="930" y="424" width="140" height="112" rx="20" fill="#ffffff" stroke="#141414" stroke-width="3"/>
+  <rect x="944" y="452" width="112" height="56" rx="10" fill="#e0a020"/>
+  <rect x="40" y="580" width="44" height="34" rx="8" fill="#d64545"/>
+  <text x="102" y="608" font-size="30" fill="#141414">Hydroquinone listed on the label (4 creams)</text>
+  <rect x="40" y="632" width="44" height="34" rx="8" fill="#e0a020"/>
+  <text x="102" y="660" font-size="30" fill="#141414">Hydroquinone not listed on the label (6 creams)</text>
+  <text x="40" y="722" font-size="32" font-weight="700" fill="#141414">Lab tests found hydroquinone, mercury and arsenic in all 10.</text>
+  <text x="40" y="766" font-size="28" fill="#5e5e5e">One study, ten creams, one city (Ilorin, Nigeria).</text>
+</svg>

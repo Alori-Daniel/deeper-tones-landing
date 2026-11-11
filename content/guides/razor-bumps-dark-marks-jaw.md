@@ -50,6 +50,25 @@ sources:
     publisher: "MHRA, GOV.UK Drug Safety Update"
     url: "https://www.gov.uk/drug-safety-update/oral-retinoid-medicines-revised-and-simplified-pregnancy-prevention-educational-materials-for-healthcare-professionals-and-women"
     year: 2019
+figures:
+  - id: close-shave-vs-clipper-guard
+    kind: diagram
+    alt: "Two simple skin cross-sections side by side. Left, shaved very close: a curly hair cut to a sharp tip curls back into deep brown skin and a bump forms where it enters. Right, clippers with a guard: the hair is left at least 1 mm long and its tip is more likely to stay out of the skin."
+    caption: "A very close shave leaves a sharp tip that can curl back into the skin. Leaving at least 1 mm of hair with clippers and a guard helps the tip stay out. Simple illustration, not to scale."
+    credit: "Deeper Tones"
+    license: "Own work"
+    sourceUrl: null
+    licenseUrl: null
+    changes: null
+  - id: pfb-bumps-dakar-study
+    kind: study-photo
+    alt: "Close-up photo of dark brown skin covered in many small raised bumps and pustules, with some darker patches between them, from a study of razor bumps."
+    caption: "Razor bumps (small raised spots and pustules, often called pseudofolliculitis barbae) on dark skin, photographed in a study of police students in Dakar, Senegal. How bumps and marks look varies from person to person, and results vary."
+    credit: "Seck B, Diallo M, Ndiaye MT, Bouidida B, Diatta BA, Ndiaye M, Diop A, Diadie S, Seck NB, Ly F, Niang SO. Médecine Tropicale et Santé Internationale, 2024"
+    license: "CC BY 4.0"
+    sourceUrl: "https://pmc.ncbi.nlm.nih.gov/articles/PMC11292439/"
+    licenseUrl: "https://creativecommons.org/licenses/by/4.0/"
+    changes: null
 faq:
   - q: "How long do razor bumps take to go away?"
     a: "If you stop shaving, they usually settle over about 12 weeks, and they can feel worse for the first few days. If you keep shaving, change how you shave and give it several weeks before judging it."
@@ -71,7 +90,11 @@ This applies to anyone who shaves or waxes curly hair, on the jaw, chin, neck, u
 
 A curly hair does not always grow straight out. After a close shave, the cut tip is sharp and can curl sideways or downwards and push into the skin nearby, or turn back and pierce the wall of its own pocket under the skin. The skin treats the hair like a splinter and reacts with swelling, a red or dark bump, and sometimes pus [3][5].
 
+{{figure:close-shave-vs-clipper-guard}}
+
 The pattern is usually called pseudofolliculitis barbae, or PFB for short. Treat that as a likely name, not a verdict. Other things can look similar, including acne and some skin infections, so if the bumps do not behave the way this guide describes, a professional can tell them apart [3].
+
+{{figure:pfb-bumps-dakar-study}}
 
 ## Why you are left with dark marks
 

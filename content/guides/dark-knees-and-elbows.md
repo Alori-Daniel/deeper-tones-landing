@@ -70,6 +70,16 @@ sources:
     publisher: "World Health Organization"
     url: "https://www.who.int/publications/i/item/WHO-CED-PHE-EPE-19.13"
     year: 2019
+figures:
+  - id: gentle-care-do-avoid
+    kind: diagram
+    alt: "A two-column card. Do: use a fragrance-free cream or ointment after a bath, kneel on a cushion and rest elbows on something soft, wear sunscreen SPF 30 or higher on exposed knees and elbows, and exfoliate lightly if at all, for about 30 seconds, then moisturise. Avoid: hard scrubs and rough tools, lemon or lime juice, bleaching creams that may hold mercury or hydroquinone, and household bleach on skin."
+    caption: "Gentle care for knees and elbows at a glance. Thick, velvety or fast-appearing patches are worth showing to a doctor."
+    credit: "Deeper Tones"
+    license: "Own work"
+    sourceUrl: null
+    licenseUrl: null
+    changes: null
 faq:
   - q: "Why are my knees darker than the rest of my body?"
     a: "Knees and elbows are often darker than nearby skin. They bend, rub and take pressure all day, and skin that is rubbed tends to thicken, which can look darker. On darker skin, irritation can also leave extra pigment. If the patches are velvety or appeared quickly, ask a doctor to look."
@@ -84,6 +94,8 @@ faq:
 ---
 
 Knees, elbows and knuckles are often darker than the rest of the body, and on darker skin this is common. Often it comes down to rubbing, pressure and thicker skin, not to anything you did wrong [1][2]. What helps is gentle: moisturise, cut down friction, wear sunscreen on exposed areas and go easy on exfoliation. No cream changes your natural skin colour, so aim for smoother, calmer, more even skin. These areas may stay a shade deeper than your arms and thighs.
+
+{{figure:gentle-care-do-avoid}}
 
 ## Why knees, elbows and knuckles are darker
 

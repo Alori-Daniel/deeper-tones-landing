@@ -61,9 +61,21 @@ faq:
     a: "NHS medicines guidance says topical retinoids should not be used in pregnancy or when planning a pregnancy, as a precaution, even though very little reaches the bloodstream. If you are pregnant or breastfeeding, ask a pharmacist or doctor what is suitable for acne marks."
   - q: "Will clearing acne marks make my skin lighter?"
     a: "The aim is an even tone in your own colour: fewer dark marks and calmer skin. No routine changes your natural skin colour, and some creams that promise it have been found to contain hidden steroids or mercury. Your colour stays yours. The marks are what fades."
+figures:
+  - id: "do-and-avoid"
+    kind: diagram
+    alt: "A two-column card. Do: calm the acne first, leave spots alone and keep skin clean, sunscreen every day at SPF 30 or higher, one gentle ingredient judged over about 12 weeks. Avoid: picking or squeezing spots, scrubbing, and creams that promise results in 2 days, as some imported creams hide steroids or mercury."
+    caption: "What helps and what to avoid for dark spots after pimples. Marks usually fade over months, not days."
+    credit: "Deeper Tones"
+    license: "Own work"
+    sourceUrl: null
+    licenseUrl: null
+    changes: null
 ---
 
 Dark spots left by pimples usually fade, but over months, not days. What helps most, in order: calm the acne so new marks stop arriving, protect your skin from the sun every day, then add one gentle evening-out ingredient and give it about 12 weeks. A spot a few shades darker than your skin usually takes 6 to 12 months to fade once the cause is stopped [1].
+
+{{figure:do-and-avoid}}
 
 ## Why pimples leave marks on dark skin
 

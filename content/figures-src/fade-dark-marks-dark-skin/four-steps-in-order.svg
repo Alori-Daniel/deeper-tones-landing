@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1200" height="800" fill="#f1f1f1"/>
+  <text x="60" y="92" font-size="46" font-weight="700" fill="#141414">Fading dark marks: four steps, in order</text>
+
+  <g>
+    <rect x="60" y="130" width="1080" height="130" rx="20" fill="#ffffff" stroke="#dcdcdc" stroke-width="2"/>
+    <circle cx="132" cy="195" r="40" fill="#7b2cbf"/>
+    <text x="132" y="210" font-size="46" font-weight="700" fill="#ffffff" text-anchor="middle">1</text>
+    <text x="206" y="188" font-size="38" font-weight="700" fill="#141414">Stop what irritates</text>
+    <text x="206" y="232" font-size="30" fill="#5e5e5e">If it stings or burns, stop that product</text>
+  </g>
+  <g>
+    <rect x="60" y="276" width="1080" height="130" rx="20" fill="#ffffff" stroke="#dcdcdc" stroke-width="2"/>
+    <circle cx="132" cy="341" r="40" fill="#7b2cbf"/>
+    <text x="132" y="356" font-size="46" font-weight="700" fill="#ffffff" text-anchor="middle">2</text>
+    <text x="206" y="334" font-size="38" font-weight="700" fill="#141414">Treat what causes the marks</text>
+    <text x="206" y="378" font-size="30" fill="#5e5e5e">Acne or eczema first, or new marks keep arriving</text>
+  </g>
+  <g>
+    <rect x="60" y="422" width="1080" height="130" rx="20" fill="#ffffff" stroke="#dcdcdc" stroke-width="2"/>
+    <circle cx="132" cy="487" r="40" fill="#7b2cbf"/>
+    <text x="132" y="502" font-size="46" font-weight="700" fill="#ffffff" text-anchor="middle">3</text>
+    <text x="206" y="480" font-size="38" font-weight="700" fill="#141414">Sunscreen every day</text>
+    <text x="206" y="524" font-size="30" fill="#5e5e5e">SPF 30 or higher, broad-spectrum</text>
+  </g>
+  <g>
+    <rect x="60" y="568" width="1080" height="130" rx="20" fill="#ffffff" stroke="#dcdcdc" stroke-width="2"/>
+    <circle cx="132" cy="633" r="40" fill="#7b2cbf"/>
+    <text x="132" y="648" font-size="46" font-weight="700" fill="#ffffff" text-anchor="middle">4</text>
+    <text x="206" y="626" font-size="38" font-weight="700" fill="#141414">Add one evening-out ingredient</text>
+    <text x="206" y="670" font-size="30" fill="#5e5e5e">One at a time. Judge it over about 12 weeks</text>
+  </g>
+
+  <text x="60" y="760" font-size="32" fill="#7b2cbf" font-weight="700">Marks fade over months, not days.</text>
+</svg>

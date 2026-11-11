@@ -65,6 +65,16 @@ faq:
     a: "Stop the cause, wear sunscreen every day, and keep the routine gentle. Add one evening-out ingredient and give it a few months before you judge it. A doctor can offer stronger options if that is not enough. Nothing makes marks vanish in days."
   - q: "Will fading my dark spots change my natural skin colour?"
     a: "No. A good routine aims for an even tone in your own colour, with fewer and fainter marks. It cannot change your baseline skin colour, and products that claim to are the ones to be wary of."
+figures:
+  - id: "mark-depth-timeline"
+    kind: diagram
+    alt: "A cross-section of deep brown skin with a dark brown mark in the top layer and a slate blue-grey mark deeper down. Under them, a note that a mark a few shades darker than your skin usually fades in 6 to 12 months once the cause stops, and a slate blue or grey mark can take years."
+    caption: "Where the colour sits changes how long it takes to fade. Only the marks fade; your skin colour stays your own."
+    credit: "Deeper Tones"
+    license: "Own work"
+    sourceUrl: null
+    licenseUrl: null
+    changes: null
 ---
 
 Dark spots on dark skin fade, but slowly. A spot a few shades darker than your skin usually takes 6 to 12 months once the cause stops, and deeper ones can take years [1]. There is no safe overnight fix. What helps is stopping what caused the spot, daily sunscreen and a gentle routine, which is also what the full guide to [fading dark marks on dark skin](/guides/fade-dark-marks-dark-skin) covers.
@@ -76,6 +86,8 @@ How long a mark lasts depends on where the colour sits.
 - **In the top layer of skin:** a spot that is a few shades darker than your natural colour usually fades within 6 to 12 months [1]. Creams can reach this kind of mark more easily than deeper ones [2].
 - **Deeper in the skin:** these marks often look slate blue or grey, and fading can take years [1].
 - **With treatment:** often quicker, and starting early helps [2]. Most studies still see partial improvement, not a clean slate. One review of 48 studies found partial improvement in 85% of people using topical retinoids (vitamin A creams), and it found no treatment that worked reliably [3].
+
+{{figure:mark-depth-timeline}}
 
 Darker skin tends to form these marks more often and more strongly [2][3]. It is not something you did wrong.
 
