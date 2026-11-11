@@ -3,9 +3,9 @@ title: "How to get rid of razor bumps and dark marks on the jaw"
 description: "Razor bumps and dark marks on the jaw often come from curly hair growing back into the skin. What helps: shaving changes, calm aftershave, gentle ingredients."
 slug: "razor-bumps-dark-marks-jaw"
 primaryQuery: "how to get rid of razor bumps black men"
-secondaryQueries: ["dark marks after shaving", "ingrown hairs on beard area", "aftershave burning", "pseudofolliculitis barbae treatment", "shaving tips for curly beard hair"]
+secondaryQueries: ["dark marks after shaving", "ingrown hairs on beard area", "aftershave burning", "pseudofolliculitis barbae treatment", "shaving tips for curly beard hair", "skincare for black men"]
 published: "2026-11-04"
-updated: "2026-11-04"
+updated: "2026-11-11"
 draft: false
 reviewedBy: "Somtochukwu Emmanuel"
 readingMinutes: 6
@@ -76,6 +76,8 @@ The pattern is usually called pseudofolliculitis barbae, or PFB for short. Treat
 ## Why you are left with dark marks
 
 Each bump is a small injury. Darker skin tends to answer injury by making extra pigment, which leaves a flat brown or dark patch after the bump is gone. This is often called post-inflammatory hyperpigmentation. It is common after razor bumps in darker skin [3][5]. The marks are not dirt, and they usually fade. A mark a few shades darker than your skin usually fades in 6 to 12 months once the cause is removed, and deeper ones can take years [7].
+
+Pimples on the jaw can leave the same kind of mark [7]. If those are part of what you are seeing, read [How to remove dark spots caused by pimples](/guides/dark-spots-from-pimples-dark-skin).
 
 So the order of work is simple: stop new bumps first, then help the old marks fade.
 

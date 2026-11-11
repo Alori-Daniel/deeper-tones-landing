@@ -5,7 +5,7 @@ slug: "check-cream-steroids-mercury-hydroquinone"
 primaryQuery: "how to know if a cream contains steroids"
 secondaryQueries: ["how to know if a cream has mercury", "hydroquinone in cream side effects", "what does clobetasol do to the face", "is my cream bleaching", "NAFDAC banned creams"]
 published: "2026-11-04"
-updated: "2026-11-04"
+updated: "2026-11-11"
 draft: false
 reviewedBy: "Somtochukwu Emmanuel"
 readingMinutes: 6
@@ -123,6 +123,8 @@ Hydroquinone is a skin-lightening chemical. It may be printed simply as "hydroqu
 - A seller on social media, WhatsApp or an online marketplace you cannot check. Trading Standards advises never buying skin-lightening products from unverified sellers or social media accounts [10].
 - Claims that a cream will change your skin tone, such as "whitening" or "fast action".
 - A very low price, pressure to buy quickly, and no batch number or company details, which are signs of a possible counterfeit [9].
+
+Softer words on the front, such as "glow" or "toning", do not tell you what is inside either. Only the ingredient list does, and even that can leave things out [4][6]. These guides look at the words in more detail: [is glow cream bleaching](/guides/is-glow-cream-bleaching) and [toning cream for chocolate skin](/guides/toning-cream-for-chocolate-skin).
 
 ## What each can do with long use
 
