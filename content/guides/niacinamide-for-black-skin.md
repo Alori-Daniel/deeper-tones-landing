@@ -6,8 +6,8 @@ primaryQuery: "niacinamide for black skin"
 secondaryQueries: ["niacinamide for dark spots", "does niacinamide lighten skin", "niacinamide 5% vs 10%", "niacinamide and vitamin c", "how long niacinamide takes"]
 published: "2026-11-11"
 updated: "2026-11-11"
-draft: true
-reviewedBy: null
+draft: false
+reviewedBy: "Somtochukwu Emmanuel"
 readingMinutes: 6
 sources:
   - title: "Mechanistic basis and clinical evidence for the applications of nicotinamide (niacinamide) to control skin aging and pigmentation"

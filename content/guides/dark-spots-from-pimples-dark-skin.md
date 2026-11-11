@@ -6,8 +6,8 @@ primaryQuery: "how to remove dark spots caused by pimples"
 secondaryQueries: ["acne marks on face", "acne dark spots black skin", "post acne marks treatment", "dark spots after pimples in 2 days"]
 published: "2026-11-11"
 updated: "2026-11-11"
-draft: true
-reviewedBy: null
+draft: false
+reviewedBy: "Somtochukwu Emmanuel"
 readingMinutes: 6
 sources:
   - title: "How to fade dark spots in darker skin tones"

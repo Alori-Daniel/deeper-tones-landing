@@ -6,8 +6,8 @@ primaryQuery: "carrot oil for skin whitening"
 secondaryQueries: ["carrot oil for skin", "does carrot oil lighten skin", "does carrot oil darken skin", "carrot oil vs carrot seed oil", "carrot oil cream"]
 published: "2026-11-11"
 updated: "2026-11-11"
-draft: true
-reviewedBy: null
+draft: false
+reviewedBy: "Somtochukwu Emmanuel"
 readingMinutes: 6
 sources:
   - title: "Quality assessment of hydroquinone, mercury, and arsenic in skin-lightening cosmetics marketed in Ilorin, Nigeria"

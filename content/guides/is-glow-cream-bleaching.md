@@ -6,8 +6,8 @@ primaryQuery: "is glow cream bleaching"
 secondaryQueries: ["glow cream skin lightening", "what does toning cream mean", "NAFDAC registration number on cream", "red flags on a skin cream label", "how to check ingredients in a cream"]
 published: "2026-11-11"
 updated: "2026-11-11"
-draft: true
-reviewedBy: null
+draft: false
+reviewedBy: "Somtochukwu Emmanuel"
 readingMinutes: 6
 sources:
   - title: "Skin product safety (Skin Facts: what you need to know about skin lightening products)"

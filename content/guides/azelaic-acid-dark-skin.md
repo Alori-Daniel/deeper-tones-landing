@@ -6,8 +6,8 @@ primaryQuery: "azelaic acid dark skin before and after"
 secondaryQueries: ["azelaic acid for hyperpigmentation", "azelaic acid vs hydroquinone", "azelaic acid 10% vs 20%", "how long azelaic acid takes", "does azelaic acid darken skin"]
 published: "2026-11-11"
 updated: "2026-11-11"
-draft: true
-reviewedBy: null
+draft: false
+reviewedBy: "Somtochukwu Emmanuel"
 readingMinutes: 6
 sources:
   - title: "Azelaic acid 20% cream in the treatment of facial hyperpigmentation in darker-skinned patients"

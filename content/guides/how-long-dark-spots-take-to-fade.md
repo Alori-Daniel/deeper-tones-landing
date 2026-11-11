@@ -6,8 +6,8 @@ primaryQuery: "how long do dark spots take to fade"
 secondaryQueries: ["how long for acne dark spots to fade", "remove dark spots overnight", "how to make dark spots fade faster", "dark spots not fading"]
 published: "2026-11-11"
 updated: "2026-11-11"
-draft: true
-reviewedBy: null
+draft: false
+reviewedBy: "Somtochukwu Emmanuel"
 readingMinutes: 5
 sources:
   - title: "How to fade dark spots"

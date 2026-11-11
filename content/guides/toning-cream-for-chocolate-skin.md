@@ -6,8 +6,8 @@ primaryQuery: "toning cream for chocolate skin"
 secondaryQueries: ["toning cream for dark skin", "what toning cream means in Nigeria", "even skin tone dark skin", "safe brightening for black skin", "ingredients to avoid in toning cream"]
 published: "2026-11-11"
 updated: "2026-11-11"
-draft: true
-reviewedBy: null
+draft: false
+reviewedBy: "Somtochukwu Emmanuel"
 readingMinutes: 6
 sources:
   - title: "Cytotoxic effects of five commonly abused skin toning (bleaching) creams on Allium cepa root tip mitosis"

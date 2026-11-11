@@ -6,8 +6,8 @@ primaryQuery: "dark knees and elbows treatment"
 secondaryQueries: ["why are my knees darker than my body", "dark knees and elbows causes", "dark knuckles", "exfoliating dark knees", "dark knees and elbows cream"]
 published: "2026-11-11"
 updated: "2026-11-11"
-draft: true
-reviewedBy: null
+draft: false
+reviewedBy: "Somtochukwu Emmanuel"
 readingMinutes: 6
 sources:
   - title: "Frictional asymptomatic darkening of the extensor surfaces"
