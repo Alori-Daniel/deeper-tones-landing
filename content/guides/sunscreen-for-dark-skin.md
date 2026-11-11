@@ -89,13 +89,18 @@ sources:
 figures:
   - id: label-what-to-look-for
     kind: diagram
-    alt: "An invented sunscreen label with four parts marked 1 to 4: SPF 30 or higher, broad spectrum (UVA and UVB), water resistant if you sweat or swim, and iron oxides in the ingredient list, which means the sunscreen is tinted."
+    alt: "An invented sunscreen bottle with four lines on its label, each linked to a numbered check: 1, SPF 30 or higher; 2, broad spectrum; 3, water resistant if you sweat or swim; 4, tinted, with iron oxide."
     caption: "The four things to check on a sunscreen label. This label is made up and shows no brand."
     credit: "Deeper Tones"
     license: "Own work"
     sourceUrl: null
     licenseUrl: null
     changes: null
+inShort:
+  - "Yes, darker skin needs sunscreen too. Melanin gives real protection, but not enough to skip it."
+  - "Treatment for dark marks begins with sunscreen: SPF 30 or higher, broad spectrum, tinted with iron oxide to block visible light."
+  - "UK readers: British dermatologists say routine sun protection is rarely necessary for skin cancer alone, with exceptions. Dark marks are a separate reason."
+  - "Sunscreen is not your whole skin-cancer plan. Show a professional any mole or patch that has changed."
 faq:
   - q: "Do Black people need sunscreen?"
     a: "Dermatologists recommend sunscreen for everyone, including people with brown or Black skin. Melanin gives real but partial protection, and sunscreen is also what keeps sun from deepening dark marks."
@@ -109,13 +114,15 @@ faq:
     a: "Either can protect. Mineral ones use zinc oxide or titanium dioxide and suit stinging skin. Without a tint, neither type does much against visible light."
 ---
 
-Yes, darker skin needs sunscreen too. Melanin gives real protection, but not enough to skip it, and treatment for dark marks begins with sunscreen [5]. Marks a few shades darker than your skin usually fade within 6 to 12 months; deeper ones can take longer. Daily sunscreen keeps the sun from undoing that progress [5].
+Dark marks are the main reason for this guide. Marks a few shades darker than your skin usually fade within 6 to 12 months; deeper ones can take longer. Daily sunscreen keeps the sun from undoing that progress [5].
 
 ## What melanin does and doesn't do
 
 Melanin is natural protection. In a 1979 lab comparison of skin samples, about five times as much UV light reached the upper dermis (the layer under the surface) of white skin as of Black skin [2]. Skin cancer is also less common in darker skin [3].
 
-Lower is not none. The AAD says you can get skin cancer with a darker skin tone, and that it is often advanced by the time it is found, which makes it harder to treat. It can appear where the sun rarely reaches, such as palms, soles, fingers, toes and nails [1]. One review adds that in dark-skinned groups, UV light is not an important cause of skin cancer, apart from one type (basal cell carcinoma) [3]. So sunscreen is not your whole skin-cancer plan. Checking your skin matters too.
+> **Safety:** Lower is not none. The AAD says you can get skin cancer with a darker skin tone, and that it is often advanced by the time it is found, which makes it harder to treat. It can appear where the sun rarely reaches, such as palms, soles, fingers, toes and nails [1].
+
+One review adds that in dark-skinned groups, UV light is not an important cause of skin cancer, apart from one type (basal cell carcinoma) [3]. So sunscreen is not your whole skin-cancer plan. Checking your skin matters too.
 
 Dermatologists still recommend sunscreen for everyone [1]. The NHS says that even with brown or Black skin, you should avoid burning and take care in the sun [13].
 
@@ -133,9 +140,11 @@ It is not only UV light. In a study of 20 volunteers with darker skin (types IV 
 
 Ordinary broad-spectrum sunscreens guard against UV but do not fully protect against visible light. To block visible light, a product has to be visible on the skin. That is what a tint does: iron oxides, a pigment, colour the sunscreen and help block visible light [7]. The AAD recommends a tinted sunscreen with iron oxide for dark spots [5].
 
-How strong is the evidence? In one trial, 68 people with melasma (patches of darker skin on sun-exposed areas) were split into two groups; 61 finished. Everyone used the same prescribed fading cream for 8 weeks. The group with a tinted iron oxide sunscreen improved 15% more on a severity score, and 28% more on a skin-colour reading, than the group with a UV-only one [8]. It is a small study of one condition, so treat it as a good sign, not a promise.
+How strong is the evidence? In one trial, 68 people with melasma (patches of darker skin on sun-exposed areas) were split into two groups; 61 finished. Everyone used the same prescribed fading cream for 8 weeks.
 
-One plain line: sunscreen does not change your natural colour, and no routine does. What it does is keep the sun from adding dark marks and uneven patches while your treatment works.
+The group with a tinted iron oxide sunscreen improved 15% more on a severity score, and 28% more on a skin-colour reading, than the group with a UV-only one [8]. It is a small study of one condition, so treat it as a good sign, not a promise.
+
+**Sunscreen does not change your natural colour, and no routine does.** What it does is keep the sun from adding dark marks and uneven patches while your treatment works.
 
 ## How to pick one
 
@@ -148,8 +157,11 @@ Check the label for four things.
 
 {{figure:label-what-to-look-for}}
 
-**Mineral or chemical?** Mineral sunscreens use zinc oxide, titanium dioxide, or both. Chemical ones contain neither. Hybrids mix the two [12]. White cast is the chalky look minerals can leave. Makers shrink these particles to cut the chalk, but the smaller particles do not protect against visible light [7]. So an untinted sunscreen of either type leaves a gap, and a tinted one matched to your tone avoids both problems [7][11]. Test the shade on your jawline in daylight. The best sunscreen is the one you will wear every day.
+**Mineral or chemical?** Mineral sunscreens use zinc oxide, titanium dioxide, or both. Chemical ones contain neither. Hybrids mix the two [12].
 
+White cast is the chalky look minerals can leave. Makers shrink these particles to cut the chalk, but the smaller particles do not protect against visible light [7].
+
+So an untinted sunscreen of either type leaves a gap, and a tinted one matched to your tone avoids both problems [7][11]. Test the shade on your jawline in daylight. The best sunscreen is the one you will wear every day.
 
 **Oily skin and humid heat.** For skin that breaks out or feels greasy, look for "non-comedogenic" or "won't clog pores" [11]. Choose water resistant if sweat is part of your day [11].
 
@@ -173,7 +185,9 @@ Check the label for four things.
 
 ## Pregnancy and breastfeeding
 
-Pregnancy raises the chance of dark patches such as melasma [19]. A 2025 review says sunscreens in pregnancy should ideally be mineral-based, and that tinted ones may help prevent those patches. It calls tinted mineral sunscreens with iron oxides generally safe in pregnancy and breastfeeding [19]. If you are unsure about a product, ask your midwife, doctor or pharmacist.
+Pregnancy raises the chance of dark patches such as melasma [19]. 
+
+> **Safety:** A 2025 review says sunscreens in pregnancy should ideally be mineral-based, and that tinted ones may help prevent those patches. It calls tinted mineral sunscreens with iron oxides generally safe in pregnancy and breastfeeding [19]. If you are unsure about a product, ask your midwife, doctor or pharmacist.
 
 ## When to see a professional
 

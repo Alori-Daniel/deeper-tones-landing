@@ -82,6 +82,11 @@ sources:
     publisher: "Scientific Reports"
     url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC10684544/"
     year: 2023
+inShort:
+  - "No home test shows what is in a cream. Read the label for a short list of names, and ask a pharmacist or doctor if anything worries you."
+  - "A label cannot prove what is inside: some illegal products leave mercury or hydroquinone off the list."
+  - "If a label shows a mercury name, stop using the cream. If you may have used a strong steroid for a long time, get advice before you stop."
+  - "See a pharmacist or doctor if your skin is thin, bruises easily or flares when you stop a cream."
 faq:
   - q: "Can I tell by smell, colour or texture whether a cream has a steroid or mercury in it?"
     a: "Not reliably. Some products leave mercury or hydroquinone off the label, so the jar cannot settle it either way. A pharmacist or doctor can advise, and mercury exposure is confirmed with a urine test."
@@ -96,7 +101,7 @@ faq:
 figures:
   - id: names-to-look-for
     kind: diagram
-    alt: "Three columns of names to look for on a cream label. Mercury: mercury, Hg, mercurous chloride, calomel, mercuric, mercurio, ammoniated mercury, quicksilver, hydrargyri oxydum rubrum. Stop using it. Steroids: clobetasol propionate, betamethasone, hydrocortisone. Many end in sone but clobetasol does not. Used daily for long? Get advice to stop. Hydroquinone: a skin-lightening chemical, treat it as a flag."
+    alt: "A magnifying glass over the small print of a cream's ingredient label. Three names are enlarged and highlighted, each linked to what it is: calomel is mercury, clobetasol is a steroid, and hydroquinone is a lightening agent."
     caption: "Names to look for in the ingredient list. A label can leave things out, so a clean list is not proof."
     credit: "Deeper Tones"
     license: "Own work"
@@ -106,7 +111,7 @@ figures:
   - id: ochronosis-case
     kind: study-photo
     alt: "Close view of the side of a face, from the ear to the upper cheek, on deep brown skin. A wide, mottled patch of darker brown and grey-brown colour covers the temple and cheek. The authors' black box covers the area below the ear."
-    caption: "From a case report: patches the authors describe as brown to blue-grey, on the face of one person with dark brown skin (type V on the Fitzpatrick scale, which runs from I, the palest, to VI, the deepest), after about three years of on-and-off hydroquinone use. The authors raised ochronosis as a concern. One person, from a study. Results vary."
+    caption: "Case report: one person with dark brown skin, after about three years of on-and-off hydroquinone use. Authors describe brown to blue-grey patches and raise ochronosis as a concern. Results vary."
     credit: "Negassi B, Sit C, Verma KK, Vasquez R, Desai S, Friedmann DP, Tarbox M. Cureus, 2026"
     license: "CC BY 4.0"
     sourceUrl: "https://pmc.ncbi.nlm.nih.gov/articles/PMC13626390/"
@@ -114,27 +119,33 @@ figures:
     changes: "Cropped to one panel of the authors' composite Figure 2. The authors' black mask is kept."
 ---
 
-No home test can show what is in a cream, so the answer is to read the label for a short list of names, watch for warning signs, and ask a pharmacist or doctor if anything worries you. This takes a few minutes. If a label shows a mercury name, stop using the cream [3]; if you may have used a strong steroid for a long time, get advice before you stop [11].
+This takes a few minutes. Start with the ingredient list on the back of the jar, then the names to look for and the warning signs below.
 
 ## What a label can and cannot tell you
 
 Cosmetic ingredients are printed under standard international names (often called INCI names), so the same chemical has the same name on most labels. Read the full ingredient list on the back, not the claims on the front.
 
-A label cannot prove what is inside. Some illegal products leave mercury or hydroquinone off the list [4][6]. In one Nigerian study of skin-lightening creams bought in Ilorin, every sample contained hydroquinone, mercury and arsenic, and only three had hydroquinone within the 2% limit [18]. Counterfeits add another gap: Trading Standards in the UK found one fake skin-lightening cream with 1.32% mercury and 8.1% hydroquinone [9].
+No home test can show what is in a cream, and a label cannot prove it either. Some illegal products leave mercury or hydroquinone off the list [4][6]. In one Nigerian study of skin-lightening creams bought in Ilorin, every sample contained hydroquinone, mercury and arsenic, and only three had hydroquinone within the 2% limit [18]. Counterfeits add another gap: Trading Standards in the UK found one fake skin-lightening cream with 1.32% mercury and 8.1% hydroquinone [9].
 
 ## Names to look for
 
 ### Mercury
 
-Mercury can be printed as: mercury, Hg, mercurous chloride, calomel, mercuric, mercurio, ammoniated mercury, quicksilver, or the Latin hydrargyri oxydum rubrum (red mercury oxide) [1][3][6]. Directions to avoid contact with silver, gold or jewellery can also point to mercury [1]. Treat any of these as a reason to stop using the cream [3].
+Mercury can be printed as: mercury, Hg, mercurous chloride, calomel, mercuric, mercurio, ammoniated mercury, quicksilver, or the Latin hydrargyri oxydum rubrum (red mercury oxide) [1][3][6]. Directions to avoid contact with silver, gold or jewellery can also point to mercury [1].
+
+> **Safety:** Treat any of these as a reason to stop using the cream [3].
 
 ### Steroids
 
-Steroid creams (corticosteroids) calm inflammation. The names include clobetasol propionate, betamethasone and hydrocortisone [7][12][13]. Many end in "-sone", but not all do: clobetasol does not, so check a name against a list rather than relying on the ending. Clobetasol is much stronger than other steroid treatments and in the UK is available only with a prescription [12]. NAFDAC lists corticosteroids in body creams as banned [8].
+Steroid creams (corticosteroids) calm inflammation. The names include clobetasol propionate, betamethasone and hydrocortisone [7][12][13]. Many end in "-sone", but not all do: clobetasol does not, so check a name against a list rather than relying on the ending.
+
+Clobetasol is much stronger than other steroid treatments and in the UK is available only with a prescription [12]. NAFDAC lists corticosteroids in body creams as banned [8].
 
 ### Hydroquinone
 
-Hydroquinone is a skin-lightening chemical. It may be printed simply as "hydroquinone". In the US it is not approved for over-the-counter sale, though a health professional can prescribe it [4]. It is banned in skin-lightening cosmetics in the UK [9]. NAFDAC's cosmetics FAQ lists hydroquinone above 2% as banned [8], and a 2023 NAFDAC alert says it is prohibited in skincare cosmetics and should only be used under medical supervision [7]. Because the two NAFDAC statements differ, treat any hydroquinone in a cream bought outside a pharmacy as a flag.
+Hydroquinone is a skin-lightening chemical. It may be printed simply as "hydroquinone". In the US it is not approved for over-the-counter sale, though a health professional can prescribe it [4]. It is banned in skin-lightening cosmetics in the UK [9].
+
+NAFDAC's cosmetics FAQ lists hydroquinone above 2% as banned [8], and a 2023 NAFDAC alert says it is prohibited in skincare cosmetics and should only be used under medical supervision [7]. Because the two NAFDAC statements differ, treat any hydroquinone in a cream bought outside a pharmacy as a flag.
 
 {{figure:names-to-look-for}}
 
@@ -155,6 +166,8 @@ Softer words on the front, such as "glow" or "toning", do not tell you what is i
 
 **Hydroquinone.** The FDA has received reports of rashes, facial swelling and permanent skin discolouration called ochronosis [4]. Ochronosis is painless darkening of the skin, most often reported in Black patients and slow to treat [16].
 
+The photo below is from a case report of one person with skin type V on the Fitzpatrick scale, which runs from I, the palest, to VI, the deepest.
+
 {{figure:ochronosis-case}}
 
 ## What regulators say
@@ -168,12 +181,14 @@ Softer words on the front, such as "glow" or "toning", do not tell you what is i
 ## If you find one of these in your cream
 
 1. **Mercury name on the label:** stop using it. Wash your hands and any skin that touched it. Seal the product in a bag and ask your local waste or health agency how to dispose of it [3].
-2. **Steroid, used daily for a long time:** do not stop suddenly without advice from a pharmacist or doctor, because stopping can bring on a withdrawal reaction [11][12]. Stepping down is best done with their help. This guide does not give a schedule.
+2. **Steroid, used daily for a long time:** get advice before you stop. The safety note below says why.
 3. **Hydroquinone:** the FDA advises against buying over-the-counter skin-lightening products that contain it [4].
 4. **Report it:**
    - **Nigeria:** NAFDAC on 0800-162-3322 or sf.alert@nafdac.gov.ng for suspect products, or pharmacovigilance@nafdac.gov.ng for a reaction [7].
    - **UK:** in England and Wales, the Citizens Advice consumer service on 0808 223 1133, which passes reports to Trading Standards [10]. Scotland and Northern Ireland have their own consumer advice services. Keep the product, packaging, receipt and seller details [9].
    - **US:** FDA MedWatch at 1-800-FDA-1088 [4]. For mercury exposure, a Poison Center is open 24 hours on 1-800-222-1222 [3].
+
+> **Safety:** If you have used a steroid daily for a long time, do not stop suddenly without advice from a pharmacist or doctor, because stopping can bring on a withdrawal reaction [11][12]. Stepping down is best done with their help. This guide does not give a schedule.
 
 ## When to see a professional
 

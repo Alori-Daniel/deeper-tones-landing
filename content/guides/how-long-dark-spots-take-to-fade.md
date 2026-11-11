@@ -54,6 +54,11 @@ sources:
     publisher: "British Association of Dermatologists"
     url: "https://www.bad.org.uk/pils/melasma/"
     year: 2026
+inShort:
+  - "Dark spots usually take 6 to 12 months to fade once the cause stops, if they are a few shades darker than your skin. Deeper ones can take years."
+  - "There is no safe overnight fix. We found no study showing marks clearing in a day or two."
+  - "What helps: stop the cause, wear sunscreen every day and add one gentle ingredient, then wait a few months before you judge it."
+  - "Most studies see partial improvement, not a clean slate. No routine changes your natural skin colour."
 faq:
   - q: "Can dark spots really go in a day or two?"
     a: "No. Spots left by pimples, bites or irritation fade over months, and treatment studies measure change over months, such as 16 weeks. A product that promises results overnight is promising something studies do not show, and some quick-fix creams contain hidden strong ingredients."
@@ -68,7 +73,7 @@ faq:
 figures:
   - id: "mark-depth-timeline"
     kind: diagram
-    alt: "A cross-section of deep brown skin with a dark brown mark in the top layer and a slate blue-grey mark deeper down. Under them, a note that a mark a few shades darker than your skin usually fades in 6 to 12 months once the cause stops, and a slate blue or grey mark can take years."
+    alt: "A cross-section of warm brown skin. Marker 1 is a darker brown mark in the top layer; marker 2 is a slate blue-grey mark deeper down. Below, a timeline: the top-layer mark usually fades in 6 to 12 months, the deeper mark can take years."
     caption: "Where the colour sits changes how long it takes to fade. Only the marks fade; your skin colour stays your own."
     credit: "Deeper Tones"
     license: "Own work"
@@ -77,7 +82,7 @@ figures:
     changes: null
 ---
 
-Dark spots on dark skin fade, but slowly. A spot a few shades darker than your skin usually takes 6 to 12 months once the cause stops, and deeper ones can take years [1]. There is no safe overnight fix. What helps is stopping what caused the spot, daily sunscreen and a gentle routine, which is also what the full guide to [fading dark marks on dark skin](/guides/fade-dark-marks-dark-skin) covers.
+The sections below cover the timeline, whether anything works overnight, what speeds fading and what slows it. For the full routine, see our guide to [fading dark marks on dark skin](/guides/fade-dark-marks-dark-skin).
 
 ## The honest timeline
 
@@ -95,11 +100,13 @@ If you are working toward a date, a realistic aim is no new marks and older mark
 
 Most of these marks follow a pimple, a bite, a scratch, eczema or an irritating product, and are often called post-inflammatory hyperpigmentation, or PIH. That means extra pigment (the substance that gives skin its colour) left behind after skin was inflamed. This is a pattern, not a diagnosis. Acne marks follow the same timeline, and each new pimple can leave another, so the count of new spots matters as much as the old ones [2].
 
-## Why "overnight" is not real
+## Can dark spots fade overnight?
 
 Treatment studies measure change over months, such as one 16-week trial of azelaic acid [5], and reviews report partial improvement [3]. We found no study showing marks clearing in a day or two.
 
-Products that promise it are worth a closer look. In the US, the FDA says there are no approved or legally marketed over-the-counter skin lightening products, and its lab testing has found high mercury levels in some [7]. FDA has also received reports of rashes, facial swelling and a permanent darkening called ochronosis from hydroquinone products [7]. The World Health Organization (WHO) calls these mercury products hazardous, notes that many countries ban them, and says they are still sold online [8]. The American Academy of Dermatology (AAD) warns that some imported products hide steroids or mercury, and that steroids can leave skin thin, fragile or permanently discoloured [1]. AAD also says liquid bleach is harmful on spots [1].
+Products that promise it are worth a closer look. In the US, the FDA says there are no approved or legally marketed over-the-counter skin lightening products, and its lab testing has found high mercury levels in some [7]. FDA has also received reports of rashes, facial swelling and a permanent darkening called ochronosis from hydroquinone products [7]. The World Health Organization (WHO) calls these mercury products hazardous, notes that many countries ban them, and says they are still sold online [8].
+
+> **Safety:** The American Academy of Dermatology (AAD) warns that some imported products hide steroids or mercury, and that steroids can leave skin thin, fragile or permanently discoloured [1]. AAD also says liquid bleach is harmful on spots [1].
 
 To check a cream you already use, see how to [check a cream for steroids, mercury or hydroquinone](/guides/check-cream-steroids-mercury-hydroquinone).
 
@@ -110,7 +117,7 @@ To check a cream you already use, see how to [check a cream for steroids, mercur
 3. **Add one evening-out ingredient, and wait.** These slow how much pigment skin makes. Azelaic acid is a mild acid that slows pigment production, and a small 16-week study of a 15% gel found it helped marks left by acne [5]. Niacinamide (vitamin B3) is well tolerated, with some evidence from trials on uneven pigment in general, not only acne marks [6]. Add one at a time, give it a few months before you judge it, and check the percentage on the label.
 4. **See a professional for more.** A doctor can prescribe stronger treatment than the shelf offers [1][2].
 
-If you are pregnant, planning a pregnancy or breastfeeding, ask a pharmacist or doctor before adding any active ingredient. NHS medicines guidance says topical retinoids are not to be used in pregnancy or when planning one, as a precaution [10].
+> **Safety:** If you are pregnant, planning a pregnancy or breastfeeding, ask a pharmacist or doctor before adding any active ingredient. NHS medicines guidance says topical retinoids are not to be used in pregnancy or when planning one, as a precaution [10].
 
 ## What slows it
 
@@ -127,7 +134,7 @@ First check the lists above: is something still irritating the skin, are new spo
 
 Brown or grey flat patches on the cheeks, forehead, upper lip, nose or chin that came without a spot first can have other causes. One example is melasma, a patch pattern linked to sun and hormones that often returns after treatment stops [11]. A doctor can tell which it is.
 
-One honest line: no routine changes your natural skin colour. The aim is an even tone in your own colour, with fewer and fainter marks.
+**No routine changes your natural skin colour.** The aim is an even tone in your own colour, with fewer and fainter marks.
 
 ## When to see a professional
 

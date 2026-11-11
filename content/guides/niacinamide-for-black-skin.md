@@ -42,6 +42,11 @@ sources:
     publisher: "Australasian Journal of Dermatology"
     url: "https://pubmed.ncbi.nlm.nih.gov/39953770/"
     year: 2025
+inShort:
+  - "Niacinamide is vitamin B3. Over weeks it can make dark marks and uneven tone look a little fainter, and it supports the skin barrier."
+  - "It does not change the colour you were born with, and a higher percentage is not shown to work better."
+  - "Give it about 12 weeks, and wear sunscreen every day."
+  - "For dark marks on dark skin the evidence is limited, so expect modest, steady fading."
 faq:
   - q: "Is niacinamide good for Black skin?"
     a: "It is well tolerated by most people and can support the skin barrier. For dark marks it is a modest add-on, not a fix on its own. Most studies were not done on Black skin, so judge it on your own skin over about 12 weeks, alongside daily sunscreen."
@@ -56,7 +61,7 @@ faq:
 figures:
   - id: strength-card
     kind: diagram
-    alt: "Three cards comparing niacinamide strengths. At 2 percent, a trial found it did not clearly beat plain moisturiser for spots. At 4 to 5 percent, the strengths used in most spot trials, 5 percent reduced spots at 4 and 8 weeks. At 10 percent, the main review has no spot trial, only one skin test with no stinging or flushing."
+    alt: "Three dropper bottles labelled 2%, 4–5% and 10%. Under 2%: not clearly better than moisturiser. Under 4–5%, highlighted: most spot trials. Under 10%: no spot trial in the main review."
     caption: "What the research shows at each strength. A bigger number has not been shown to work better."
     credit: "Deeper Tones"
     license: "Own work"
@@ -65,9 +70,11 @@ figures:
     changes: null
 ---
 
-Niacinamide is a form of vitamin B3 that can support your skin barrier and, over weeks, make dark marks and uneven tone look a little fainter [1]. It does not change the colour you were born with, and a higher percentage is not a better one. Give it about 12 weeks, and wear sunscreen every day.
+This guide covers what niacinamide does, what the studies found, which strength to look for and how long to give it.
 
 ## What niacinamide does
+
+Niacinamide is a form of vitamin B3 [1]. It does three things in skin.
 
 **It supports the skin barrier.** The barrier is the outer layer of your skin that keeps water in and irritants out. In lab and skin tests, niacinamide raised the fats (ceramides) that hold that layer together and reduced water loss in dry skin [2]. In people with eczema, a 2% cream lowered water loss and raised hydration over 4 to 8 weeks [3].
 
@@ -77,7 +84,7 @@ Niacinamide is a form of vitamin B3 that can support your skin barrier and, over
 
 ## What the evidence shows for dark marks on dark skin
 
-Here is the honest picture. Most niacinamide trials were small and ran 4 to 12 weeks. Many enrolled Japanese women with sun-related brown spots or tanning, or people with melasma (dark patches, usually on the face), not Black skin with marks left after pimples or razor bumps [1][4].
+Most niacinamide trials were small and ran 4 to 12 weeks. Many enrolled Japanese women with sun-related brown spots or tanning, or people with melasma (dark patches, usually on the face), not Black skin with marks left after pimples or razor bumps [1][4].
 
 For post-inflammatory hyperpigmentation (PIH), the dark mark left after skin is inflamed, the evidence for any treatment is limited. A 2024 review of 48 studies in skin of colour, where 70% of participants were Black, found no treatment with robust results across the board [5]. A 2026 review describes niacinamide as very well tolerated, but modest when used on its own [6].
 
@@ -89,11 +96,15 @@ So a realistic aim is modest, steady fading, with niacinamide as one part of a r
 
 Many people searching this are hoping for lighter skin, or a fast fix. That wish is understandable, and you deserve a straight answer.
 
-Niacinamide does not change your natural colour. The studies measured dark spots and sun tan. In one early trial in women with facial tanning, skin treated with niacinamide and sunscreen moved back towards its untanned shade after 4 weeks [4]. That is a tan fading, not a new baseline. In another study, the benefit of 5% niacinamide on spots faded over the months after people stopped using it [1]. No routine can change the colour you were born with.
+Niacinamide does not change your natural colour. The studies measured dark spots and sun tan. In one early trial in women with facial tanning, skin treated with niacinamide and sunscreen moved back towards its untanned shade after 4 weeks [4]. That is a tan fading, not a new baseline.
+
+In another study, the benefit of 5% niacinamide on spots faded over the months after people stopped using it [1]. **No routine can change the colour you were born with.**
 
 What it can do is help your tone look more even and your marks look calmer. That is a goal worth having.
 
-Be careful with creams that promise a lighter result. Researchers have found steroids or mercury, not listed on the label, in some imported skin products. The American Academy of Dermatology says long-term use of those steroids can leave skin thin, fragile or permanently discoloured [7]. If you are unsure about a product, read [is a glow cream bleaching?](/guides/is-glow-cream-bleaching) and [how to stop using a bleaching cream safely](/guides/stop-bleaching-cream-safely).
+> **Safety:** Be careful with creams that promise a lighter result. Researchers have found steroids or mercury, not listed on the label, in some imported skin products. The American Academy of Dermatology says long-term use of those steroids can leave skin thin, fragile or permanently discoloured [7].
+
+If you are unsure about a product, read [is a glow cream bleaching?](/guides/is-glow-cream-bleaching) and [how to stop using a bleaching cream safely](/guides/stop-bleaching-cream-safely).
 
 ## Niacinamide 5% or 10%? Why higher isn't shown to be better
 
@@ -109,7 +120,9 @@ A bigger number on the label has not been shown to work better. Niacinamide is d
 
 Niacinamide is not the same as niacin (nicotinic acid). Unlike niacin, it does not cause flushing [1].
 
-Irritation is worth taking seriously because irritating products can themselves cause dark spots [7]. If a product burns or stings, stop using it [7]. Add one new active (an ingredient meant to change your skin, such as niacinamide or vitamin C) at a time, so you can tell which product caused a reaction.
+> **Safety:** Irritation is worth taking seriously because irritating products can themselves cause dark spots [7]. If a product burns or stings, stop using it [7].
+
+Add one new active (an ingredient meant to change your skin, such as niacinamide or vitamin C) at a time, so you can tell which product caused a reaction.
 
 ## Niacinamide and vitamin C
 
@@ -119,7 +132,7 @@ The American Academy of Dermatology lists vitamin C among the over-the-counter i
 
 For marks that follow pimples, you can also read about [azelaic acid for dark skin](/guides/azelaic-acid-dark-skin).
 
-## How long it takes
+## How long does it take?
 
 Trials measured change at 4, 8 and 12 weeks, and most ran about 8 weeks [1]. A fair plan:
 

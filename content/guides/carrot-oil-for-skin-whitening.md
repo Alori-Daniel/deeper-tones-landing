@@ -50,6 +50,11 @@ sources:
     publisher: "World Health Organization"
     url: "https://www.who.int/publications/i/item/WHO-CED-PHE-EPE-19.13"
     year: 2019
+inShort:
+  - "No good evidence says carrot oil lightens skin, and we found no human study showing that it does."
+  - "No routine, natural or otherwise, changes the colour you were born with."
+  - "In one Nigerian study of ten lightening creams, five listed carrot oil, and lab tests found hydroquinone, mercury and arsenic in all ten."
+  - "For an even tone with fewer dark marks, sunscreen and a few well-studied ingredients can help, over months, not weeks."
 faq:
   - q: "Does carrot oil lighten skin?"
     a: "There is no good evidence that it does. We found no human study showing carrot oil or carrot seed oil lightens skin. A cream that really does lighten is more likely to contain something else, such as hydroquinone or mercury, so check the label and ask a pharmacist."
@@ -64,8 +69,8 @@ faq:
 figures:
   - id: label-vs-lab
     kind: diagram
-    alt: "Ten cream jars in two rows of five. In the top row, five creams list carrot oil, Daucus carota or carotene on the label; four of them also list hydroquinone and one does not. In the bottom row, five creams have no carrot on the label and none list hydroquinone. A note says lab tests found hydroquinone, mercury and arsenic in all ten creams."
-    caption: "What a study of ten skin-lightening creams from one Nigerian city found on the labels and in the lab. It is one small study, so it does not show that every carrot cream is unsafe."
+    alt: "Ten cream jars in two rows of five. Top row, carrot listed on the label: four jars are marked as also listing hydroquinone and one is not. Bottom row, no carrot listed: none is marked. Below, three tags: the lab found hydroquinone, mercury and arsenic in all ten."
+    caption: "What a study of ten skin-lightening creams from one Nigerian city found on labels and in the lab. One small study: it does not show every carrot cream is unsafe."
     credit: "Deeper Tones"
     license: "Own work"
     sourceUrl: null
@@ -73,7 +78,7 @@ figures:
     changes: null
 ---
 
-No good evidence says carrot oil lightens skin, and we found no human study showing that it does. The bigger concerns are what else may be in a carrot cream, and how carrot-family plants can make skin react to sun. If your goal is an even tone with fewer dark marks, sunscreen and a few well-studied ingredients can help, over months, not weeks.
+The bigger concerns are what else may be in a carrot cream, and how carrot-family plants can make skin react to sun. This guide takes the lightening question first, then those two concerns, then what does help dark marks.
 
 ## Does carrot oil lighten skin?
 
@@ -85,29 +90,37 @@ It is a fair question. Wanting skin that looks even and clear is reasonable, and
 
 Carrots are rich in beta-carotene, an orange pigment [4]. When too much builds up in the outer layer of skin, it can cause a yellow-orange colour called carotenodermia [3]. In studies it tends to be spread widely and shows most in thick skin such as the palms [3]. Once intake drops, it usually fades over several weeks [4], though some reported cases lasted much longer [3].
 
-Two cautions. This is a tint from a pigment sitting in skin, not a tan and not a healthier colour. And the research is about eating large amounts of beta-carotene, including supplements sold as "natural" tanning aids [4]. We found no study of carrot oil used on the skin, so we cannot say how likely a tint is. If your skin looks yellow-orange, that fits this pattern, but it is only a pattern. If the whites of your eyes look yellow too, that points away from carrots and toward something a doctor should look at [4].
+Two cautions. This is a tint from a pigment sitting in skin, not a tan and not a healthier colour. And the research is about eating large amounts of beta-carotene, including supplements sold as "natural" tanning aids [4]. We found no study of carrot oil used on the skin, so we cannot say how likely a tint is.
+
+If your skin looks yellow-orange, that fits this pattern, but it is only a pattern. If the whites of your eyes look yellow too, that points away from carrots and toward something a doctor should look at [4].
 
 ## Carrot oil, carrot seed oil and carrot extract
 
 These names are used loosely, so it helps to know what each can mean.
 
 - **Carrot seed oil** is an essential oil, a very concentrated plant oil, from the seeds. A major plant compound in it is carotol [7]. It is not the orange pigment.
-- **Carrot oil** on a label can mean different things, because the name is not precise. Check the ingredient list for the Latin name, *Daucus carota*, and for what it was mixed with.
+- **Carrot oil** on a label can mean different things, because the name is not precise. Check the ingredient list for the Latin name, Daucus carota, and for what it was mixed with.
 - **Carrot extract** can also mean many things. In a study of lightening products used in Tanzania, some labels listed carrot oil, and some used vague names such as "whitening complex", "lightening oil" and "brighteners" that do not say what is inside [2].
 
 Because the names vary, a label that says "carrot" tells you little about what is in the jar.
 
 ## Carrot oil cream: what else may be in it
 
-This is the part that matters most for your safety. In a study of ten skin-lightening creams bought in Ilorin, Nigeria, five listed carrot oil, *Daucus carota* or carotene on the label. Four of those five also listed hydroquinone [1]. Hydroquinone is a strong skin-lightening ingredient that both the U.S. Food and Drug Administration (FDA) and the World Health Organization (WHO) flag as a concern [9][10]. Lab tests found hydroquinone, mercury and arsenic in all ten creams, and six did not mention hydroquinone on the label [1].
+This is the part that matters most for your safety. In a study of ten skin-lightening creams bought in Ilorin, Nigeria, five listed carrot oil, Daucus carota or carotene on the label. Four of those five also listed hydroquinone [1].
+
+Hydroquinone is a strong skin-lightening ingredient that both the U.S. Food and Drug Administration (FDA) and the World Health Organization (WHO) flag as a concern [9][10]. Lab tests found hydroquinone, mercury and arsenic in all ten creams, and six did not mention hydroquinone on the label [1].
 
 {{figure:label-vs-lab}}
 
 The study is small, one city and ten products, so it does not show that every carrot cream is unsafe. It does show that "carrot" on a label does not mean gentle.
 
-The FDA advises people not to use skin-lightening products sold without a prescription, because of high levels of mercury or hydroquinone, and says none of these products is approved or legally sold in the US [9]. It reports that mercury can cause serious and potentially permanent harm, including kidney damage. It also reports rashes, facial swelling and discoloration that may be permanent with hydroquinone [9]. Children and pregnant people face higher risks [9]. WHO calls mercury-containing lightening products hazardous and notes that many countries ban them but they are still sold [10].
+The FDA advises people not to use skin-lightening products sold without a prescription, because of high levels of mercury or hydroquinone, and says none of these products is approved or legally sold in the US [9]. It reports that mercury can cause serious and potentially permanent harm, including kidney damage. It also reports rashes, facial swelling and discoloration that may be permanent with hydroquinone [9].
 
-If a cream promises to whiten or lighten, treat it as a lightening cream whatever oil is named on the front. [Check your cream for steroids, mercury and hydroquinone](/guides/check-cream-steroids-mercury-hydroquinone) explains what to look for. If you already use one and want to stop, [how to stop a bleaching cream safely](/guides/stop-bleaching-cream-safely) covers it. Stopping a strong steroid cream used for a long time is best done with a professional's help.
+Children and pregnant people face higher risks [9]. WHO calls mercury-containing lightening products hazardous and notes that many countries ban them but they are still sold [10].
+
+If a cream promises to whiten or lighten, treat it as a lightening cream whatever oil is named on the front. [Check your cream for steroids, mercury and hydroquinone](/guides/check-cream-steroids-mercury-hydroquinone) explains what to look for. If you already use one and want to stop, [how to stop a bleaching cream safely](/guides/stop-bleaching-cream-safely) covers it.
+
+> **Safety:** Stopping a strong steroid cream used for a long time is best done with a professional's help.
 
 ## Sun sensitivity and irritation
 
@@ -123,7 +136,11 @@ On irritation, the American Academy of Dermatology (AAD) is simple: if a product
 
 The AAD says effective treatment for dark spots starts with sunscreen: SPF 30 or higher, broad-spectrum (covers UVA and UVB rays), and for darker skin a tinted formula with iron oxide, which blocks visible light that can darken marks [8]. See [sunscreen for dark skin](/guides/sunscreen-for-dark-skin) for how to choose and apply it.
 
-After that, a gentle routine and one ingredient at a time. The AAD lists azelaic acid, glycolic acid, kojic acid, retinoids (vitamin A creams) and vitamin C as ingredients that can fade existing spots [8]. Some of them can also slow how much pigment (melanin) skin makes [8]. If you are pregnant, breastfeeding or planning a pregnancy, ask a pharmacist or doctor before starting any of them. Spots a few shades darker than your skin usually fade in about 6 to 12 months, and deeper ones can take years [8]. [How to fade dark marks on dark skin](/guides/fade-dark-marks-dark-skin) has the step-by-step version, with strengths and pregnancy cautions.
+After that, a gentle routine and one ingredient at a time. The AAD lists azelaic acid, glycolic acid, kojic acid, retinoids (vitamin A creams) and vitamin C as ingredients that can fade existing spots [8]. Some of them can also slow how much pigment (melanin) skin makes [8].
+
+> **Safety:** If you are pregnant, breastfeeding or planning a pregnancy, ask a pharmacist or doctor before starting any of them.
+
+Spots a few shades darker than your skin usually fade in about 6 to 12 months, and deeper ones can take years [8]. [How to fade dark marks on dark skin](/guides/fade-dark-marks-dark-skin) has the step-by-step version, with strengths and pregnancy cautions.
 
 The AAD also warns that researchers have found steroids or mercury in some imported skin products without them being listed on the label [8]. A quick fix that sounds too good is worth a second look.
 
