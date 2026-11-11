@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { guidePath, type Guide } from "@/lib/guides";
+import { guidePath, guideThumb, shortDate, type Guide } from "@/lib/guides";
 
 export function DraftBanner() {
   return (
@@ -12,32 +12,137 @@ export function DraftBanner() {
   );
 }
 
-export function GuideMeta({ guide }: { guide: Guide }) {
+const initials = (name: string) =>
+  name
+    .split(/\s+/)
+    .filter(Boolean)
+    .map((w) => w[0])
+    .filter((_, i, a) => i === 0 || i === a.length - 1)
+    .join("")
+    .toUpperCase();
+
+// "Reviewed by ..." with the date, reading time and source count (replaces the old single grey meta line).
+export function ReviewerCard({ guide }: { guide: Guide }) {
   return (
-    <p className="mt-4 text-sm text-subtle">
-      Updated <time dateTime={guide.updated}>{guide.updatedLabel}</time> · {guide.readingMinutes} min read
-      {guide.reviewedBy && <> · Reviewed by {guide.reviewedBy}</>}
-    </p>
+    <div className="reviewer-card">
+      <span className="reviewer-disc" aria-hidden>
+        {guide.reviewedBy ? initials(guide.reviewedBy) : "–"}
+      </span>
+      <div>
+        <p className="reviewer-name">
+          {guide.reviewedBy ? (
+            <>
+              Reviewed by {guide.reviewedBy}
+              {guide.reviewerRole && <span className="reviewer-role">, {guide.reviewerRole}</span>}
+            </>
+          ) : (
+            "Not yet reviewed"
+          )}
+        </p>
+        <p className="reviewer-meta">
+          <span>
+            Updated <time dateTime={guide.updated}>{guide.updatedLabel}</time>
+          </span>
+          {" · "}
+          <span>{guide.readingMinutes} min read</span>
+          {" · "}
+          <span>
+            {guide.sourceCount} {guide.sourceCount === 1 ? "source" : "sources"}
+          </span>
+        </p>
+      </div>
+    </div>
   );
 }
 
-// Card used in the index and in "Related guides".
-export function GuideCard({ guide }: { guide: Guide }) {
+// The answer first: 3 or 4 plain lines, no links or citations (the body carries those).
+export function InShort({ items }: { items: string[] }) {
+  if (items.length === 0) return null;
+  return (
+    <section className="in-short" aria-label="In short">
+      <p className="ui-label">In short</p>
+      <ul>
+        {items.map((t) => (
+          <li key={t}>{t}</li>
+        ))}
+      </ul>
+    </section>
+  );
+}
+
+export type TocItem = { id: string; text: string };
+
+// Phone and tablet contents: a closed <details> right after "In short".
+export function TocDetails({ items }: { items: TocItem[] }) {
+  return (
+    <details className="toc-mobile">
+      <summary className="chevron">
+        On this page <span className="toc-count">· {items.length} sections</span>
+      </summary>
+      <nav aria-label="On this page">
+        <ol>
+          {items.map((i) => (
+            <li key={i.id}>
+              <a href={`#${i.id}`}>{i.text}</a>
+            </li>
+          ))}
+        </ol>
+      </nav>
+    </details>
+  );
+}
+
+// Card used in the /guides index (variant "index": a row on phones; `featured` spans the grid row from 768 px up) and in
+// "Related guides". The thumbnail is the first diagram without its own title, so a card never shows two headlines.
+export function GuideCard({
+  guide,
+  variant = "related",
+  as: Heading = "h3",
+  eager = false,
+  featured = false,
+}: {
+  guide: Guide;
+  variant?: "index" | "related";
+  as?: "h2" | "h3";
+  eager?: boolean;
+  featured?: boolean;
+}) {
+  const thumb = guideThumb(guide);
   return (
     <Link
       href={guidePath(guide.slug)}
-      className="group flex h-full flex-col rounded-[14px] bg-white p-5 shadow-[0_1px_2px_rgba(0,0,0,0.06),0_8px_24px_-12px_rgba(0,0,0,0.18)] transition hover:shadow-[0_1px_2px_rgba(0,0,0,0.06),0_14px_30px_-12px_rgba(0,0,0,0.28)] sm:p-6"
+      className="g-card group"
+      data-variant={variant}
+      data-featured={featured ? "true" : undefined}
     >
-      {guide.draft && (
-        <span className="mb-2 w-fit rounded-full bg-caution/15 px-2.5 py-0.5 text-xs font-medium">Draft</span>
+      {thumb && (
+        <div className="g-thumb">
+          {/* Static WebP built from content/figures-src at build time. */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={thumb.src}
+            width={thumb.width}
+            height={thumb.height}
+            alt=""
+            loading={eager ? "eager" : "lazy"}
+            decoding="async"
+          />
+        </div>
       )}
-      <h3 className="font-display text-[22px] font-semibold leading-[1.2] tracking-[-0.01em] text-balance group-hover:text-primary">
-        {guide.title}
-      </h3>
-      <p className="mt-2 flex-1 text-[15px] leading-relaxed text-muted">{guide.description}</p>
-      <p className="mt-4 text-sm text-subtle">
-        Updated {guide.updatedLabel} · {guide.readingMinutes} min read
-      </p>
+      <div className="g-body">
+        {guide.draft && <span className="g-draft">Draft</span>}
+        <Heading className="g-title">{guide.title}</Heading>
+        {variant === "index" && <p className="g-desc">{guide.description}</p>}
+        <p className="g-meta">
+          <span>{guide.readingMinutes} min read</span>
+          {variant === "index" && (
+            <>
+              {" · "}
+              <span>Updated {shortDate(guide.updated)}</span>
+            </>
+          )}
+        </p>
+      </div>
     </Link>
   );
 }

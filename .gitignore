@@ -52,3 +52,10 @@ next-env.d.ts
 
 # Generated from content/figures-src/ by scripts/build-guides.mjs (WebP figures served as static assets)
 /public/guides/
+
+# Quality loop: evidence, screenshots and third-party reference images stay local (specs in quality/*.md are committed)
+/quality/baseline/
+/quality/review/
+/quality/inspiration/
+/quality/samples/
+/quality/art-round2/
