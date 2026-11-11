@@ -68,7 +68,17 @@ export default async function GuidePage({ params }: Props) {
         datePublished: guide.published,
         dateModified: guide.updated,
         inLanguage: "en",
-        image: { "@type": "ImageObject", url: `${url}/opengraph-image`, ...guideImageSize },
+        image: [
+          { "@type": "ImageObject", url: `${url}/opengraph-image`, ...guideImageSize },
+          ...guide.figures.map((f) => ({
+            "@type": "ImageObject",
+            url: `${site.url}${f.src}`,
+            width: f.width,
+            height: f.height,
+            caption: f.caption,
+            ...(f.kind === "study-photo" && { creditText: f.credit, license: f.licenseUrl }),
+          })),
+        ],
         author: organization,
         publisher: organization,
         mainEntityOfPage: { "@type": "WebPage", "@id": url },
