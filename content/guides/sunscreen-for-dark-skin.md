@@ -5,7 +5,7 @@ slug: "sunscreen-for-dark-skin"
 primaryQuery: "do black people need sunscreen"
 secondaryQueries: ["sunscreen for dark skin no white cast", "best spf for dark skin", "sunscreen in Nigeria", "does sunscreen help dark spots", "mineral vs chemical sunscreen dark skin"]
 published: "2026-11-04"
-updated: "2026-11-04"
+updated: "2026-11-11"
 draft: false
 reviewedBy: "Somtochukwu Emmanuel"
 readingMinutes: 6
@@ -89,10 +89,10 @@ sources:
 faq:
   - q: "Do Black people need sunscreen?"
     a: "Dermatologists recommend sunscreen for everyone, including people with brown or Black skin. Melanin gives real but partial protection, and sunscreen is also what keeps sun from deepening dark marks."
-  - q: "What SPF is best for dark skin?"
-    a: "SPF 30 or higher, labelled broad spectrum, and water resistant if you sweat a lot. A higher number adds only a little: SPF 15 filters about 93% of UVB and SPF 30 about 97%."
-  - q: "How do I avoid a white cast on dark skin?"
-    a: "The AAD suggests a tinted sunscreen that matches your skin tone, still SPF 30+ and broad spectrum. Tints made with iron oxides also help against visible light."
+  - q: "Is there a sunscreen for dark skin with no white cast?"
+    a: "Yes. A tinted sunscreen matched to your skin tone avoids the chalky look, and the AAD suggests one that is SPF 30 or higher and broad spectrum. White cast is what mineral sunscreens can leave. Makers shrink the particles to cut it, but smaller particles do not protect against visible light, while tints made with iron oxides do. Test the shade on your jawline in daylight."
+  - q: "What SPF is best for dark skin in Nigeria's heat?"
+    a: "SPF 30 or higher, broad spectrum, and water resistant if you sweat through the day. SPF 30 blocks about 97% of UVB rays, and higher numbers add only a little. The WHO says UV is stronger closer to the equator, and Nigeria is close to it. If your skin gets greasy or breaks out in humid heat, look for a label that says non-comedogenic (won't clog pores). Reapply about every two hours outdoors and after sweating. Clouds do not stop most UV: up to 80% can pass through."
   - q: "Does sunscreen help dark spots fade?"
     a: "It is the first step. The AAD says treatment for dark spots begins with sunscreen. Spots a few shades darker than your skin usually fade within 6 to 12 months; deeper ones can take longer."
   - q: "Is mineral or chemical sunscreen better for dark skin?"
@@ -131,7 +131,7 @@ One plain line: sunscreen does not change your natural colour, and no routine do
 
 Check the label for four things.
 
-- **SPF 30 or higher.** The AAD recommends it [12]. The NHS asks for SPF 30 plus at least four stars, the UK rating for UVA protection [13].
+- **SPF 30 or higher.** The AAD recommends it [12]. SPF 30 blocks about 97% of UVB rays, and higher numbers add only a little [10]. The NHS asks for SPF 30 plus at least four stars, the UK rating for UVA protection [13].
 - **Broad spectrum.** Protection from both UVA (the rays that age skin) and UVB (the burning rays) [12].
 - **Water resistant** if you sweat or swim. It holds for 40 or 80 minutes in water [12].
 - **Tinted, with iron oxide in the ingredient list.** It is listed under inactive ingredients [5].

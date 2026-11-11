@@ -5,7 +5,7 @@ slug: "fade-dark-marks-dark-skin"
 primaryQuery: "how to fade dark marks on dark skin"
 secondaryQueries: ["hyperpigmentation routine for black skin", "post inflammatory hyperpigmentation dark skin", "how long do dark marks take to fade", "dark spots after acne black skin", "does sunscreen help dark marks"]
 published: "2026-11-04"
-updated: "2026-11-04"
+updated: "2026-11-11"
 draft: false
 reviewedBy: "Somtochukwu Emmanuel"
 readingMinutes: 6
@@ -108,6 +108,8 @@ Most treatment studies check results after 3 to 6 months [3]. The usual outcome 
 
 If you are working toward a date, such as graduation or a wedding, a realistic aim is no new marks, calmer skin and older marks visibly fainter. Fully gone takes longer. The goal is an even tone in your own colour. No routine changes your natural skin colour.
 
+For more on timing, see [how long dark spots take to fade](/guides/how-long-dark-spots-take-to-fade).
+
 ## Step 1: stop what irritates
 
 If you can remove the cause, many spots clear on their own [2]. Irritation can both start marks and deepen the ones you have [1][3]. If something stings or burns, stop that product. The American Academy of Dermatology (AAD) suggests switching to gentler products labelled fragrance-free or for sensitive skin [2].
@@ -123,6 +125,8 @@ Peels and lasers need care on darker skin. They can leave new marks, so choose a
 For marks that follow acne or eczema, AAD says the skin condition must be treated first [2]. Otherwise new marks keep arriving.
 
 For acne, the NHS lists salicylic acid and benzoyl peroxide as over-the-counter options and suggests asking a pharmacist. Prescription retinoid creams are the next step, through a GP or dermatologist [12]. If the cause is a medicine, ask the person who prescribed it before stopping it. Do not stop it on your own [2].
+
+For marks left by pimples, see [how to remove dark spots caused by pimples](/guides/dark-spots-from-pimples-dark-skin).
 
 ## Step 3: sunscreen every day
 
