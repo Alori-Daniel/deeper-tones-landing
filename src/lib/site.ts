@@ -16,7 +16,13 @@ export const site = {
     "skincare app",
     "skincare for dark skin",
     "melanin-rich skin",
+    "skincare for black skin",
+    "skincare for black women",
+    "skin of colour",
+    "skin of color",
+    "hyperpigmentation on black skin",
     "skincare Nigeria",
+    "black skincare UK",
     "product checker",
     "skincare routine app",
     "dark marks",
@@ -73,7 +79,7 @@ export const trust = [
   },
   {
     title: "Made for deeper skin",
-    body: "Built around melanin-rich skin from the start, with prices in naira and reminders on your phone.",
+    body: "Built around melanin-rich skin from the start, with local prices in naira, pounds and dollars, and reminders on your phone.",
   },
 ];
 
@@ -100,7 +106,7 @@ export const faqs = [
   },
   {
     q: "Which countries is it for?",
-    a: "Nigeria first, with prices in naira and sign-in by email (WhatsApp is coming). The UK and US follow, and you can join early access from anywhere.",
+    a: "Nigeria, the UK and the US, with local prices in naira, pounds and dollars. Nigeria opens first, then the UK and US; you can join early access from anywhere. Sign-in is by email (WhatsApp is coming).",
   },
 ];
 

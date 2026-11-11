@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: guide.title,
     description: guide.description,
-    alternates: { canonical: path, languages: { "en-NG": path, "x-default": path } },
+    alternates: { canonical: path, languages: { en: path, "x-default": path } },
     // Drafts only exist in preview builds (GUIDES_SHOW_DRAFTS=1); keep them out of search.
     ...(guide.draft && { robots: { index: false, follow: false } }),
     openGraph: {
@@ -33,7 +33,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       siteName: site.name,
       title: guide.title,
       description: guide.description,
-      locale: "en_NG",
+      locale: "en_US",
+    alternateLocale: ["en_GB", "en_NG"],
       publishedTime: guide.published,
       modifiedTime: guide.updated,
     },

@@ -14,7 +14,7 @@ const hasDrafts = allGuides.some((g) => g.draft);
 export const metadata: Metadata = {
   title: "Guides",
   description,
-  alternates: { canonical: "/guides", languages: { "en-NG": "/guides", "x-default": "/guides" } },
+  alternates: { canonical: "/guides", languages: { en: "/guides", "x-default": "/guides" } },
   ...(hasDrafts && { robots: { index: false, follow: false } }),
   openGraph: {
     type: "website",
@@ -24,7 +24,8 @@ export const metadata: Metadata = {
     siteName: site.name,
     title: `Guides | ${site.name}`,
     description,
-    locale: "en_NG",
+    locale: "en_US",
+    alternateLocale: ["en_GB", "en_NG"],
   },
   twitter: { card: "summary_large_image", title: `Guides | ${site.name}`, description },
 };

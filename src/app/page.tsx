@@ -16,9 +16,9 @@ import {
 } from "@/components/Sections";
 import { faqs, site } from "@/lib/site";
 
-// Nigeria first; UK and US variants come later.
+// One English site for Nigeria, the UK and the US (no regional copies to split ranking).
 export const metadata: Metadata = {
-  alternates: { canonical: "/", languages: { "en-NG": "/", "x-default": "/" } },
+  alternates: { canonical: "/", languages: { en: "/", "x-default": "/" } },
   // A page's openGraph replaces the layout's whole object, so the shared fields are repeated here.
   openGraph: {
     type: "website",
@@ -26,7 +26,8 @@ export const metadata: Metadata = {
     siteName: site.name,
     title: site.title,
     description: site.description,
-    locale: "en_NG",
+    locale: "en_US",
+    alternateLocale: ["en_GB", "en_NG"],
   },
 };
 
@@ -41,6 +42,7 @@ const jsonLd = {
       url: site.url,
       logo: `${site.url}/icon.png`,
       email: site.contactEmail,
+      areaServed: ["NG", "GB", "US"],
     },
     {
       "@type": "MobileApplication",
@@ -49,7 +51,7 @@ const jsonLd = {
       operatingSystem: "iOS, Android",
       applicationCategory: "HealthApplication",
       publisher: { "@id": `${site.url}/#organization` },
-      countriesSupported: "NG",
+      countriesSupported: "NG, GB, US",
     },
     {
       "@type": "FAQPage",
