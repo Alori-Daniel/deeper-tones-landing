@@ -95,7 +95,7 @@ What it can do is help your tone look more even and your marks look calmer. That
 
 Be careful with creams that promise a lighter result. Researchers have found steroids or mercury, not listed on the label, in some imported skin products. The American Academy of Dermatology says long-term use of those steroids can leave skin thin, fragile or permanently discoloured [7]. If you are unsure about a product, read [is a glow cream bleaching?](/guides/is-glow-cream-bleaching) and [how to stop using a bleaching cream safely](/guides/stop-bleaching-cream-safely).
 
-## Niacinamide 5% or 10%? Why higher is not better
+## Niacinamide 5% or 10%? Why higher isn't shown to be better
 
 Strength is the first thing people compare, so here is what the research shows:
 

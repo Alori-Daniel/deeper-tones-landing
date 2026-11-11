@@ -91,15 +91,6 @@ figures:
     sourceUrl: null
     licenseUrl: null
     changes: null
-  - id: hydroquinone-case
-    kind: study-photo
-    alt: "Three close-up photos of a dark-skinned face with the eyes not shown, with patches of dark brown to blue-gray pigment on the temple, cheeks and around the nose. A black box added by the authors covers part of one photo."
-    caption: "From a published case report: a 66-year-old woman with dark brown skin (Fitzpatrick type V) whose patches darkened instead of fading during about three years of on-and-off hydroquinone use. The authors suspected exogenous ochronosis, but she declined a biopsy. This is a photo from a study, so it shows one person. Results vary."
-    credit: "Negassi et al. Cureus, 2026"
-    license: "CC BY 4.0"
-    sourceUrl: "https://pmc.ncbi.nlm.nih.gov/articles/PMC13626390/"
-    licenseUrl: "https://creativecommons.org/licenses/by/4.0/"
-    changes: "Converted from WebP to JPEG; not cropped"
 ---
 
 In Nigerian shops, "toning" often means lightening, which is not the same as evening out your skin. Even tone is a real goal and you can reach it safely: fewer dark patches, calmer skin and a clearer look in your own colour. Daily sunscreen, gentle products and one well-studied evening-out ingredient are the safest place to start. Judge them over months, not days.
@@ -147,7 +138,6 @@ Some lightening and "glow" creams contain strong ingredients that do not appear 
 - **Hydroquinone that was not prescribed.** NAFDAC says hydroquinone is prohibited in skincare cosmetics and should only be used under medical supervision [11]. The FDA says lightening products with hydroquinone are not approved for over-the-counter sale [4]. The British Association of Dermatologists says it can only be prescribed by a doctor, and that it can irritate or occasionally darken skin [14]. Long use of strong hydroquinone has been linked to ochronosis, a blue-black or grey-blue discolouration most often reported in people with darker skin [15].
 - **Bleach.** AAD says never to put liquid bleach on skin [6].
 
-{{figure:hydroquinone-case}}
 
 The BAD advises avoiding hydroquinone and retinoid creams in pregnancy [14]. If you already use a cream you suspect contains any of these, read [how to stop bleaching cream safely](/guides/stop-bleaching-cream-safely) first. Stopping a strong steroid cream after long use is best done with a professional's help.
 

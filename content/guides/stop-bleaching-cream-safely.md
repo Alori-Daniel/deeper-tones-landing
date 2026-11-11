@@ -82,7 +82,7 @@ figures:
   - id: ochronosis-case
     kind: study-photo
     alt: "Close view of the side of a face, from the ear to the upper cheek, on deep brown skin. A wide, mottled patch of darker brown and grey-brown colour covers the temple and cheek. The authors' black box covers the area below the ear."
-    caption: "From a case report: patches the authors describe as brown to blue-grey, on the face of one person with Fitzpatrick type V skin, after about three years of on-and-off hydroquinone use. The authors raised ochronosis as a concern. One person, from a study. Results vary."
+    caption: "From a case report: patches the authors describe as brown to blue-grey, on the face of one person with dark brown skin (type V on the Fitzpatrick scale, which runs from I, the palest, to VI, the deepest), after about three years of on-and-off hydroquinone use. The authors raised ochronosis as a concern. One person, from a study. Results vary."
     credit: "Negassi B, Sit C, Verma KK, Vasquez R, Desai S, Friedmann DP, Tarbox M. Cureus, 2026"
     license: "CC BY 4.0"
     sourceUrl: "https://pmc.ncbi.nlm.nih.gov/articles/PMC13626390/"
