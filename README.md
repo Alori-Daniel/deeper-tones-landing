@@ -51,4 +51,8 @@ A guide can carry up to 3 figures. List them in the frontmatter under `figures` 
 
 The same script converts each source to `public/guides/<slug>/<id>.webp` (max 1600 px wide, quality 80, SVG rendered at 2x; skipped when the output is newer than the source). That folder is generated and gitignored; `prebuild` creates it before `next build` copies `public/` into the static assets, and files for guides that are not in the build are removed. Figures are listed as `image` in the guide's Article JSON-LD.
 
+### Telling search engines about changes (IndexNow)
+
+After a **production** deploy (never a preview), run `node scripts/indexnow.mjs`. It reads the live sitemap and sends the pages whose `<lastmod>` is today or yesterday to IndexNow, which Bing (and through it ChatGPT and Copilot search), Yandex, Seznam and Naver use to recrawl within minutes. Use `--since 2026-11-01` for an older date, `--all` for every page, and `--dry-run` to see the list without sending. The key file `public/<key>.txt` is public on purpose: it proves we own the host. Google does not use IndexNow; it reads the sitemap in Search Console.
+
 Optional build-time env vars (see `.env.example`): `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION`, `NEXT_PUBLIC_BING_SITE_VERIFICATION`, `NEXT_PUBLIC_CF_BEACON_TOKEN`, `GUIDES_SHOW_DRAFTS`.
