@@ -27,6 +27,14 @@ export type GuideFigure = {
   sourceUrl: string | null;
   licenseUrl: string | null;
   changes: string | null;
+  /** `srcset` value naming only the WebP widths the build produced. */
+  srcSet: string;
+  /** `sizes` value matching the layout column (see quality/READING_SPEC.md 4.7). */
+  sizes: string;
+  /** Diagrams only: the 800 px WebP without its title band (<id>-thumb.webp), for index and related cards. */
+  thumb: string | null;
+  thumbWidth: number;
+  thumbHeight: number;
 };
 
 export type Guide = {
@@ -43,6 +51,11 @@ export type Guide = {
   updatedLabel: string;
   draft: boolean;
   reviewedBy: string | null;
+  /** Shown next to the reviewer's name when set; never invented. */
+  reviewerRole: string | null;
+  /** 3 or 4 plain lines, the answer first; empty until the content step adds them. */
+  inShort: string[];
+  sourceCount: number;
   readingMinutes: number;
   sources: GuideSource[];
   faq: GuideFaq[];

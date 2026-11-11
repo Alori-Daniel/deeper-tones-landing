@@ -1,35 +1,107 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" font-family="Helvetica, Arial, sans-serif">
-  <rect width="1200" height="800" fill="#f1f1f1"/>
-  <text x="60" y="92" font-size="46" font-weight="700" fill="#141414">Fading dark marks: four steps, in order</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" width="1600" height="1200">
+  <title>Four steps, in order</title>
+  <defs>
+    <linearGradient id="epi" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#B98058"/><stop offset="1" stop-color="#A46B46"/></linearGradient>
+    <linearGradient id="derm" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EBCBB8"/><stop offset="1" stop-color="#F4E2D7"/></linearGradient>
+    <linearGradient id="air" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FAF7FC"/><stop offset="1" stop-color="#F1EAF8"/></linearGradient>
+    <linearGradient id="obj" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#D9CFE5"/><stop offset="0.35" stop-color="#E9E2F1"/><stop offset="1" stop-color="#CFC3DE"/></linearGradient>
+    <linearGradient id="body" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#F3EFF7"/><stop offset="0.3" stop-color="#FFFFFF"/><stop offset="1" stop-color="#ECE6F2"/></linearGradient>
+    <radialGradient id="sun" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#E4D3F3"/><stop offset="1" stop-color="#EFE4F8"/></radialGradient>
+    <filter id="soft" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="10"/></filter>
+    <filter id="lift" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="14" stdDeviation="20" flood-color="#2B1640" flood-opacity="0.09"/></filter>
+    <filter id="liftsm" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#2B1640" flood-opacity="0.10"/></filter>
+    <clipPath id="disc"><circle cx="0" cy="0" r="150"/></clipPath>
+  </defs>
+  <rect width="1600" height="1200" fill="#FFFFFF"/>
+  <text x="96" y="150" font-family="Source Serif 4" font-weight="600" font-size="88" fill="#141414" letter-spacing="-1">Four steps, in order</text>
 
-  <g>
-    <rect x="60" y="130" width="1080" height="130" rx="20" fill="#ffffff" stroke="#dcdcdc" stroke-width="2"/>
-    <circle cx="132" cy="195" r="40" fill="#7b2cbf"/>
-    <text x="132" y="210" font-size="46" font-weight="700" fill="#ffffff" text-anchor="middle">1</text>
-    <text x="206" y="188" font-size="38" font-weight="700" fill="#141414">Stop what irritates</text>
-    <text x="206" y="232" font-size="30" fill="#5e5e5e">If it stings or burns, stop that product</text>
-  </g>
-  <g>
-    <rect x="60" y="276" width="1080" height="130" rx="20" fill="#ffffff" stroke="#dcdcdc" stroke-width="2"/>
-    <circle cx="132" cy="341" r="40" fill="#7b2cbf"/>
-    <text x="132" y="356" font-size="46" font-weight="700" fill="#ffffff" text-anchor="middle">2</text>
-    <text x="206" y="334" font-size="38" font-weight="700" fill="#141414">Treat what causes the marks</text>
-    <text x="206" y="378" font-size="30" fill="#5e5e5e">Acne or eczema first, or new marks keep arriving</text>
-  </g>
-  <g>
-    <rect x="60" y="422" width="1080" height="130" rx="20" fill="#ffffff" stroke="#dcdcdc" stroke-width="2"/>
-    <circle cx="132" cy="487" r="40" fill="#7b2cbf"/>
-    <text x="132" y="502" font-size="46" font-weight="700" fill="#ffffff" text-anchor="middle">3</text>
-    <text x="206" y="480" font-size="38" font-weight="700" fill="#141414">Sunscreen every day</text>
-    <text x="206" y="524" font-size="30" fill="#5e5e5e">SPF 30 or higher, broad-spectrum</text>
-  </g>
-  <g>
-    <rect x="60" y="568" width="1080" height="130" rx="20" fill="#ffffff" stroke="#dcdcdc" stroke-width="2"/>
-    <circle cx="132" cy="633" r="40" fill="#7b2cbf"/>
-    <text x="132" y="648" font-size="46" font-weight="700" fill="#ffffff" text-anchor="middle">4</text>
-    <text x="206" y="626" font-size="38" font-weight="700" fill="#141414">Add one evening-out ingredient</text>
-    <text x="206" y="670" font-size="30" fill="#5e5e5e">One at a time. Judge it over about 12 weeks</text>
+  <!-- the path that joins the steps -->
+  <path d="M266 548 H 1286" stroke="#F1EAF8" stroke-width="14" stroke-linecap="round"/>
+
+  <!-- four lifted discs, one small drawing each -->
+  <g filter="url(#lift)">
+    <circle cx="266" cy="548" r="150" fill="url(#air)"/>
+    <circle cx="606" cy="548" r="150" fill="url(#air)"/>
+    <circle cx="946" cy="548" r="150" fill="url(#air)"/>
+    <circle cx="1286" cy="548" r="150" fill="url(#air)"/>
   </g>
 
-  <text x="60" y="760" font-size="32" fill="#7b2cbf" font-weight="700">Marks fade over months, not days.</text>
+  <!-- 1. Stop what irritates: a product set aside -->
+  <g transform="translate(266 548)">
+    <g transform="translate(0 16) rotate(-18)">
+      <g filter="url(#liftsm)">
+        <path d="M -112 -40 L 70 -40 C 86 -40, 92 -30, 92 -20 L 92 20 C 92 30, 86 40, 70 40 L -112 40 L -120 30 L -120 -30 Z" fill="url(#body)"/>
+        <rect x="88" y="-26" width="44" height="52" rx="12" fill="url(#obj)"/>
+      </g>
+      <rect x="-128" y="-42" width="16" height="84" rx="6" fill="#D9CFE5"/>
+      <rect x="-80" y="-10" width="120" height="20" rx="10" fill="#ECE8F0"/>
+    </g>
+    <circle cx="72" cy="-80" r="32" fill="#5E5E5E"/>
+    <path d="M60 -92 l 24 24 M84 -92 l -24 24" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round"/>
+  </g>
+  <!-- 2. Treat the cause: a spot on the skin, with a dab of treatment -->
+  <g transform="translate(606 548)">
+    <g clip-path="url(#disc)">
+      <rect x="-150" y="80" width="300" height="80" fill="url(#derm)"/>
+      <path d="M-150 28 L -52 28 C -32 28, -24 -12, 0 -12 C 24 -12, 32 28, 52 28 L 150 28 L 150 92 L -150 92 Z" fill="url(#epi)"/>
+      <path d="M-150 28 L -52 28 C -32 28, -24 -12, 0 -12 C 24 -12, 32 28, 52 28 L 150 28" fill="none" stroke="#CF9A72" stroke-width="5"/>
+      <path d="M-150 92 L 150 92" stroke="#94603F" stroke-width="3" opacity="0.55"/>
+      <ellipse cx="0" cy="28" rx="40" ry="24" fill="#6E3A22" opacity="0.6" filter="url(#soft)"/>
+    </g>
+    <g filter="url(#liftsm)">
+      <path d="M0 -108 C 16 -84, 32 -68, 32 -50 C 32 -32, 18 -20, 0 -20 C -18 -20, -32 -32, -32 -50 C -32 -68, -16 -84, 0 -108 Z" fill="#FFFFFF"/>
+    </g>
+    <path d="M-14 -46 C -14 -58, -8 -68, -2 -74" fill="none" stroke="#EFE4F8" stroke-width="6" stroke-linecap="round"/>
+  </g>
+  <!-- 3. Sunscreen every day: a bottle and the sun -->
+  <g transform="translate(946 548)">
+    <g transform="translate(78 -56)">
+      <g stroke="#D9CFE5" stroke-width="10" stroke-linecap="round">
+        <path d="M0 -66 V -50"/><path d="M0 50 V 66"/><path d="M-66 0 H -50"/><path d="M50 0 H 66"/>
+        <path d="M-46 -46 l 11 11"/><path d="M35 35 l 11 11"/><path d="M46 -46 l -11 11"/><path d="M-35 35 l -11 11"/>
+      </g>
+      <circle cx="0" cy="0" r="34" fill="url(#sun)"/>
+    </g>
+    <g transform="translate(-44 16)">
+      <g filter="url(#liftsm)">
+        <rect x="-32" y="-104" width="64" height="30" rx="10" fill="url(#obj)"/>
+        <path d="M -46 104 V -16 Q -46 -50, -26 -60 H 26 Q 46 -50, 46 -16 V 104 Q 46 116, 34 116 H -34 Q -46 116, -46 104 Z" fill="url(#body)"/>
+      </g>
+      <rect x="-34" y="4" width="68" height="72" rx="14" fill="#F1EAF8"/>
+      <rect x="-22" y="30" width="44" height="14" rx="7" fill="#D9CFE5"/>
+    </g>
+  </g>
+  <!-- 4. One gentle ingredient: a dropper bottle and one drop (the accent) -->
+  <g transform="translate(1286 548)">
+    <g transform="translate(-14 0)">
+      <g filter="url(#liftsm)">
+        <rect x="-52" y="0" width="104" height="128" rx="28" fill="url(#body)"/>
+        <rect x="-30" y="-32" width="60" height="40" rx="8" fill="url(#obj)"/>
+        <rect x="-20" y="-100" width="40" height="76" rx="20" fill="#CFC3DE"/>
+      </g>
+      <rect x="-38" y="40" width="76" height="56" rx="14" fill="#F1EAF8"/>
+    </g>
+    <path d="M78 -40 C 88 -24, 96 -12, 96 -2 C 96 10, 88 18, 78 18 C 68 18, 60 10, 60 -2 C 60 -12, 68 -24, 78 -40 Z" fill="#9D4EDD"/>
+  </g>
+
+  <!-- pins -->
+  <g font-family="Archivo" font-weight="600" font-size="48" text-anchor="middle" fill="#FFFFFF">
+    <circle cx="160" cy="442" r="36" fill="#7B2CBF"/><text x="160" y="459">1</text>
+    <circle cx="500" cy="442" r="36" fill="#7B2CBF"/><text x="500" y="459">2</text>
+    <circle cx="840" cy="442" r="36" fill="#7B2CBF"/><text x="840" y="459">3</text>
+    <circle cx="1180" cy="442" r="36" fill="#7B2CBF"/><text x="1180" y="459">4</text>
+  </g>
+
+  <!-- labels -->
+  <g font-family="Archivo" font-weight="600" font-size="58" fill="#141414" text-anchor="middle">
+    <text x="266" y="804">Stop what</text>
+    <text x="266" y="872">irritates</text>
+    <text x="606" y="804">Treat the</text>
+    <text x="606" y="872">cause</text>
+    <text x="946" y="804">Sunscreen</text>
+    <text x="946" y="872">every day</text>
+    <text x="1286" y="804">One gentle</text>
+    <text x="1286" y="872">ingredient</text>
+  </g>
+  <text x="1286" y="948" font-family="Archivo" font-weight="400" font-size="56" fill="#7B2CBF" text-anchor="middle">about 12 weeks</text>
 </svg>

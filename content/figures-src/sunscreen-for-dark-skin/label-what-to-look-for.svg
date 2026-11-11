@@ -1,38 +1,42 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" font-family="Helvetica, Arial, sans-serif">
-<rect width="1200" height="800" fill="#f1f1f1"/>
-<text x="600" y="78" font-size="44" font-weight="700" text-anchor="middle" fill="#141414">What to look for on a sunscreen label</text>
-<!-- invented, unbranded label -->
-<rect x="60" y="130" width="500" height="570" rx="28" fill="#ffffff" stroke="#d9d9d9" stroke-width="3"/>
-<rect x="60" y="130" width="500" height="84" rx="28" fill="#7b2cbf"/>
-<rect x="60" y="180" width="500" height="34" fill="#7b2cbf"/>
-<text x="310" y="184" font-size="30" font-weight="700" text-anchor="middle" fill="#ffffff">DAILY TINTED SUNSCREEN</text>
-<rect x="90" y="236" width="440" height="96" rx="14" fill="#9d4edd" fill-opacity="0.18"/>
-<text x="310" y="306" font-size="62" font-weight="700" text-anchor="middle" fill="#141414">SPF 30+</text>
-<rect x="90" y="352" width="440" height="56" rx="14" fill="#9d4edd" fill-opacity="0.18"/>
-<text x="310" y="392" font-size="30" font-weight="700" text-anchor="middle" fill="#141414">BROAD SPECTRUM</text>
-<rect x="90" y="436" width="440" height="56" rx="14" fill="#9d4edd" fill-opacity="0.18"/>
-<text x="310" y="476" font-size="30" font-weight="700" text-anchor="middle" fill="#141414">WATER RESISTANT</text>
-<line x1="90" y1="528" x2="530" y2="528" stroke="#d9d9d9" stroke-width="3"/>
-<text x="90" y="576" font-size="28" fill="#5e5e5e">Inactive ingredients:</text>
-<rect x="90" y="598" width="440" height="56" rx="14" fill="#9d4edd" fill-opacity="0.18"/>
-<text x="310" y="638" font-size="30" font-weight="700" text-anchor="middle" fill="#141414">... iron oxides ...</text>
-<g stroke="#7b2cbf" stroke-width="4" fill="none" stroke-linecap="round">
-<path d="M530 284 L632 284"/><path d="M530 380 L632 380"/><path d="M530 464 L632 464"/><path d="M530 626 L632 626"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" width="1600" height="1200">
+  <title>Four checks on a sunscreen label</title>
+  <defs>
+    <linearGradient id="epi" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#B98058"/><stop offset="1" stop-color="#A46B46"/></linearGradient>
+    <linearGradient id="derm" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EBCBB8"/><stop offset="1" stop-color="#F4E2D7"/></linearGradient>
+    <linearGradient id="air" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FAF7FC"/><stop offset="1" stop-color="#F1EAF8"/></linearGradient>
+    <linearGradient id="obj" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#D9CFE5"/><stop offset="0.35" stop-color="#E9E2F1"/><stop offset="1" stop-color="#CFC3DE"/></linearGradient>
+    <linearGradient id="body" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#F3EFF7"/><stop offset="0.3" stop-color="#FFFFFF"/><stop offset="1" stop-color="#ECE6F2"/></linearGradient>
+    <filter id="soft" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="14"/></filter>
+    <filter id="lift" x="-10%" y="-20%" width="120%" height="150%"><feDropShadow dx="0" dy="14" stdDeviation="20" flood-color="#2B1640" flood-opacity="0.09"/></filter>
+    <filter id="liftsm" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#2B1640" flood-opacity="0.10"/></filter>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#EFE4F8"/><stop offset="1" stop-color="#EFE4F8" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="1600" height="1200" fill="#FFFFFF"/>
+  <text x="96" y="150" font-family="Source Serif 4" font-weight="600" font-size="88" fill="#141414" letter-spacing="-1">Four checks on a sunscreen label</text>
+<circle cx="376" cy="700" r="380" fill="url(#glow)"/><g filter="url(#lift)">
+    <path d="M 136 1040 V 440 Q 136 350 186 322 L 216 300 H 536 L 566 322 Q 616 350 616 440 V 1040 Z" fill="url(#body)"/>
+    <rect x="206" y="236" width="340" height="70" rx="16" fill="url(#obj)"/>
+    <rect x="136" y="1030" width="480" height="96" rx="30" fill="url(#obj)"/></g><g stroke="#FFFFFF" stroke-width="5" opacity="0.6"><path d="M256 250 V 292"/><path d="M296 250 V 292"/><path d="M336 250 V 292"/><path d="M376 250 V 292"/><path d="M416 250 V 292"/><path d="M456 250 V 292"/><path d="M496 250 V 292"/></g><rect x="168" y="392" width="416" height="608" rx="32" fill="#F1EAF8"/><rect x="216" y="459" width="300" height="22" rx="11" fill="#D9CFE5"/>
+<rect x="216" y="609" width="250" height="22" rx="11" fill="#D9CFE5"/>
+<rect x="216" y="759" width="190" height="22" rx="11" fill="#D9CFE5"/>
+<rect x="216" y="909" width="230" height="22" rx="11" fill="#9D4EDD"/>
+<g stroke="#7B2CBF" stroke-width="5" stroke-linecap="round">
+<path d="M544 470 H 796"/>
+<path d="M494 620 H 796"/>
+<path d="M434 770 H 796"/>
+<path d="M474 920 H 796"/>
 </g>
-<g fill="#7b2cbf">
-<circle cx="672" cy="284" r="34"/><circle cx="672" cy="380" r="34"/><circle cx="672" cy="464" r="34"/><circle cx="672" cy="626" r="34"/>
-</g>
-<g font-size="36" font-weight="700" text-anchor="middle" fill="#ffffff">
-<text x="672" y="297">1</text><text x="672" y="393">2</text><text x="672" y="477">3</text><text x="672" y="639">4</text>
-</g>
-<g font-size="32" fill="#141414">
-<text x="728" y="294" font-weight="700">SPF 30 or higher</text>
-<text x="728" y="378" font-weight="700">Broad spectrum</text>
-<text x="728" y="414" font-size="28" fill="#5e5e5e">UVA and UVB</text>
-<text x="728" y="462" font-weight="700">Water resistant</text>
-<text x="728" y="498" font-size="28" fill="#5e5e5e">if you sweat or swim</text>
-<text x="728" y="624" font-weight="700">Tinted, with iron oxides</text>
-<text x="728" y="660" font-size="28" fill="#5e5e5e">in the ingredient list</text>
-</g>
-<text x="600" y="758" font-size="30" text-anchor="middle" fill="#141414">Test the shade on your jawline, in daylight.</text>
+<circle cx="832" cy="470" r="36" fill="#7B2CBF"/>
+<text x="832" y="487" font-family="Archivo" font-weight="600" font-size="48" text-anchor="middle" fill="#FFFFFF">1</text>
+<text x="896" y="490" font-family="Archivo" font-weight="600" font-size="58" fill="#141414">SPF 30 or higher</text>
+<circle cx="832" cy="620" r="36" fill="#7B2CBF"/>
+<text x="832" y="637" font-family="Archivo" font-weight="600" font-size="48" text-anchor="middle" fill="#FFFFFF">2</text>
+<text x="896" y="640" font-family="Archivo" font-weight="600" font-size="58" fill="#141414">Broad spectrum</text>
+<circle cx="832" cy="770" r="36" fill="#7B2CBF"/>
+<text x="832" y="787" font-family="Archivo" font-weight="600" font-size="48" text-anchor="middle" fill="#FFFFFF">3</text>
+<text x="896" y="768" font-family="Archivo" font-weight="600" font-size="58" fill="#141414">Water resistant</text>
+<text x="896" y="832" font-family="Archivo" font-weight="400" font-size="56" fill="#5E5E5E">if you sweat or swim</text>
+<circle cx="832" cy="920" r="36" fill="#7B2CBF"/>
+<text x="832" y="937" font-family="Archivo" font-weight="600" font-size="48" text-anchor="middle" fill="#FFFFFF">4</text>
+<text x="896" y="940" font-family="Archivo" font-weight="600" font-size="58" fill="#141414">Tinted, with iron oxide</text>
 </svg>
