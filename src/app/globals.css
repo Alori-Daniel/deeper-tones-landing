@@ -53,11 +53,13 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 5rem;
+  scroll-padding-top: 96px;
 }
 
 /* Faint wave lines across the paper, as in the references. */
 body {
+  /* No italics anywhere: fonts load upright only, so a stray <em> cannot be synthesised into a slanted face either. */
+  font-synthesis: none;
   background-color: var(--background);
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='26'%3E%3Cpath d='M0 13 C40 3 80 3 120 13 S200 23 240 13' fill='none' stroke='%23000' stroke-opacity='0.04'/%3E%3C/svg%3E");
   color: var(--foreground);
@@ -513,82 +515,464 @@ details > summary::-webkit-details-marker {
   }
 }
 
-/* ---------- Guides: article prose ----------
-   No italics anywhere: emphasis is upright and medium weight. */
-.guide-prose {
-  max-width: 68ch;
-  font-size: 17px;
-  line-height: 1.7;
-  color: #2a2a2a;
-  overflow-wrap: break-word;
+/* ---------- Guides (quality/READING_SPEC.md) ----------
+   Calm, spacious, one accent. Source Serif 4 for headings, Archivo for text, no italics. */
+:root {
+  --g-ink: #141414;
+  --g-body: #2a2a2a;
+  --g-muted: #5e5e5e;
+  --g-accent: #9d4edd; /* fills, dots, rules: never text */
+  --g-accent-text: #7b2cbf; /* links and labels */
+  --g-tint: #efe4f8;
+  --g-tint-safety: #f5eefb;
+  --g-hairline: rgb(20 20 20 / 0.08);
+  --g-lift: 0 1px 2px rgb(20 20 20 / 0.04), 0 12px 32px -16px rgb(43 22 64 / 0.18);
+  --g-lift-hover: 0 1px 2px rgb(20 20 20 / 0.05), 0 18px 40px -16px rgb(43 22 64 / 0.28);
+  --g-card-text: 35rem; /* 560px: about 68 characters of Archivo at 19px */
 }
-@media (min-width: 640px) {
-  .guide-prose {
-    font-size: 18px;
+
+.guide-page *,
+.guide-page *::before,
+.guide-page *::after {
+  font-style: normal;
+}
+
+/* Reading progress: a 3px bar over the header, scroll-driven, no JavaScript. */
+.reading-progress {
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: var(--g-accent);
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+  z-index: 60;
+  pointer-events: none;
+}
+@supports (animation-timeline: scroll()) {
+  .reading-progress {
+    animation: reading-progress linear both;
+    animation-timeline: scroll(root);
   }
 }
-.guide-prose :where(*) {
-  font-style: normal;
+@supports not (animation-timeline: scroll()) {
+  .reading-progress {
+    display: none;
+  }
+}
+@keyframes reading-progress {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* ----- Page frame: one column; at 1180+ a sticky contents rail and a 736px article ----- */
+.guide-main {
+  width: 100%;
+  max-width: 768px;
+  margin-inline: auto;
+  flex: 1;
+  padding: 112px 20px 64px;
+}
+@media (min-width: 768px) {
+  .guide-main {
+    padding: 136px 40px 96px;
+  }
+}
+@media (min-width: 1180px) {
+  .guide-main {
+    max-width: none;
+    display: grid;
+    grid-template-columns: 232px 736px;
+    column-gap: 72px;
+    justify-content: center;
+    padding-inline: 24px;
+  }
+}
+.guide-col {
+  min-width: 0;
+}
+
+/* ----- Breadcrumb, title, reviewer ----- */
+.guide-head {
+  max-width: calc(var(--g-card-text) + 48px);
+  margin-inline: auto;
+}
+.guide-breadcrumb {
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--g-muted);
+}
+.guide-breadcrumb ol {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  min-width: 0;
+}
+.guide-breadcrumb a {
+  text-decoration: none;
+}
+.guide-breadcrumb a:hover {
+  color: var(--g-ink);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+.guide-breadcrumb li {
+  flex: none;
+}
+/* The current title is cut to one line with an ellipsis (the H1 right below carries it in full). */
+.guide-breadcrumb li[aria-current] {
+  flex: 0 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.guide-title {
+  margin-top: 20px;
+  font-family: var(--font-source-serif);
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+  color: var(--g-ink);
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+}
+@media (min-width: 768px) {
+  .guide-title {
+    font-size: 46px;
+    line-height: 1.08;
+  }
+}
+@media (min-width: 1180px) {
+  .guide-title {
+    font-size: 52px;
+    line-height: 1.06;
+  }
+}
+.reviewer-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 20px;
+  padding: 16px 20px;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: var(--g-lift);
+}
+.reviewer-disc {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--g-tint);
+  color: var(--g-accent-text);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.reviewer-name {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--g-ink);
+}
+.reviewer-role {
+  font-weight: 400;
+  color: var(--g-muted);
+}
+.reviewer-meta {
+  margin-top: 2px;
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--g-muted);
+}
+.reviewer-meta > span {
+  white-space: nowrap;
+}
+
+/* ----- Labels ----- */
+.ui-label {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: 0.02em;
+  color: var(--g-accent-text);
+}
+
+/* ----- In short ----- */
+.in-short {
+  max-width: calc(var(--g-card-text) + 48px);
+  margin: 24px auto 0;
+  padding: 24px;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: var(--g-lift);
+}
+@media (min-width: 768px) {
+  .in-short {
+    padding-block: 28px;
+  }
+}
+.in-short ul {
+  margin-top: 14px;
+}
+.in-short li {
+  position: relative;
+  padding-left: 22px;
+  font-size: 18px;
+  line-height: 1.62;
+  color: var(--g-body);
+}
+.in-short li + li {
+  margin-top: 12px;
+}
+.in-short li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: calc((1lh - 8px) / 2);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--g-accent);
+}
+.in-short li:first-child {
+  font-weight: 500;
+  color: var(--g-ink);
+}
+@media (min-width: 768px) {
+  .in-short li {
+    font-size: 19px;
+  }
+}
+
+/* ----- Contents ----- */
+.toc-label {
+  padding-left: 16px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: 0.02em;
+  color: var(--g-accent-text);
+}
+.toc-rail {
+  display: none;
+}
+@media (min-width: 1180px) {
+  .toc-rail {
+    display: block;
+    position: sticky;
+    top: 112px;
+    align-self: start;
+    max-height: calc(100vh - 144px);
+    overflow-y: auto;
+    padding-top: 6px;
+  }
+  .toc-mobile {
+    display: none;
+  }
+}
+.toc-rail ul {
+  margin-top: 16px;
+}
+.toc-rail li + li {
+  margin-top: 10px;
+}
+.toc-rail a {
+  display: block;
+  padding-left: 14px;
+  border-left: 2px solid transparent;
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--g-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.toc-rail a:hover {
+  color: var(--g-ink);
+}
+.toc-rail a[aria-current="true"] {
+  border-left-color: var(--g-accent);
+  font-weight: 500;
+  color: var(--g-ink);
+}
+.toc-mobile {
+  max-width: calc(var(--g-card-text) + 48px);
+  margin: 16px auto 0;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: var(--g-lift);
+}
+.toc-mobile summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 0 20px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--g-ink);
+}
+.toc-mobile summary .toc-count {
+  font-weight: 400;
+  color: var(--g-muted);
+}
+.toc-mobile ol {
+  padding: 4px 20px 20px;
+}
+.toc-mobile li + li {
+  margin-top: 12px;
+}
+.toc-mobile li a {
+  display: block;
+  font-size: 16px;
+  line-height: 1.4;
+  color: var(--g-muted);
+  text-decoration: none;
+}
+.toc-mobile li a:hover {
+  color: var(--g-accent-text);
+}
+/* Chevron shared by the contents and FAQ summaries. */
+.chevron::after {
+  content: "";
+  flex: none;
+  margin-left: auto;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid var(--g-muted);
+  border-bottom: 2px solid var(--g-muted);
+  transform: rotate(45deg) translate(-2px, -2px);
+  transition: transform 0.25s var(--ease-out);
+}
+details[open] > .chevron::after {
+  transform: rotate(-135deg) translate(-2px, -2px);
+}
+.toc-mobile summary:focus-visible,
+.guide-faq summary:focus-visible,
+.guide-page a:focus-visible {
+  outline: 2px solid var(--g-accent-text);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* ----- Body prose ----- */
+.guide-prose {
+  margin-top: 40px;
+  font-size: 18px;
+  line-height: 1.65;
+  color: var(--g-body);
+  overflow-wrap: break-word;
+}
+@media (min-width: 768px) {
+  .guide-prose {
+    font-size: 19px;
+    line-height: 1.7;
+  }
 }
 .guide-prose :where(em, i, cite) {
-  font-style: normal;
   font-weight: 500;
 }
 .guide-prose :where(strong, b) {
   font-weight: 600;
-  color: var(--foreground);
+  color: var(--g-ink);
 }
-.guide-prose :where(p, ul, ol, table, .table-scroll) {
+.guide-prose :where(p, ul, ol, h2, h3, .table-scroll) {
+  max-width: var(--g-card-text);
+  margin-inline: auto;
+}
+.guide-prose :where(p, ul, ol, .table-scroll) {
   margin-top: 1.1em;
 }
 .guide-prose > :first-child {
   margin-top: 0;
 }
-.guide-prose :where(h2) {
-  margin-top: 2.2em;
+.guide-prose :where(h2),
+.guide-section-title {
+  margin-top: 56px;
   font-family: var(--font-source-serif);
-  font-size: 1.65em;
+  font-size: 27px;
   font-weight: 600;
-  line-height: 1.15;
+  line-height: 1.2;
   letter-spacing: -0.01em;
-  color: var(--foreground);
+  color: var(--g-ink);
   text-wrap: balance;
+  overflow-wrap: anywhere;
 }
 .guide-prose :where(h3) {
-  margin-top: 1.7em;
+  margin-top: 32px;
   font-family: var(--font-source-serif);
-  font-size: 1.3em;
+  font-size: 21px;
   font-weight: 600;
-  line-height: 1.25;
-  color: var(--foreground);
+  line-height: 1.3;
+  color: var(--g-ink);
 }
-.guide-prose :where(h2 + p, h3 + p) {
-  margin-top: 0.7em;
+@media (min-width: 768px) {
+  .guide-prose :where(h2),
+  .guide-section-title {
+    margin-top: 64px;
+    font-size: 31px;
+    line-height: 1.18;
+  }
+  .guide-prose :where(h3) {
+    font-size: 22px;
+  }
+}
+@media (min-width: 1180px) {
+  .guide-prose :where(h2),
+  .guide-section-title {
+    margin-top: 72px;
+    font-size: 32px;
+    line-height: 1.16;
+  }
+  .guide-prose :where(h3) {
+    font-size: 23px;
+  }
+}
+.guide-prose :where(h2 + p, h3 + p, h2 + ul, h3 + ul, h2 + ol, h3 + ol) {
+  margin-top: 12px;
+}
+.guide-prose :where(ul, ol) {
+  padding-left: 1.4em;
 }
 .guide-prose :where(ul) {
-  list-style: disc;
-  padding-left: 1.4em;
+  list-style: none;
+}
+.guide-prose :where(ul > li) {
+  position: relative;
+}
+.guide-prose :where(ul > li)::before {
+  content: "";
+  position: absolute;
+  left: -1.1em;
+  top: calc((1lh - 6px) / 2);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--g-accent);
 }
 .guide-prose :where(ol) {
   list-style: decimal;
-  padding-left: 1.5em;
+}
+.guide-prose :where(ol > li)::marker {
+  color: var(--g-muted);
+  font-variant-numeric: tabular-nums;
 }
 .guide-prose :where(li) {
   margin-top: 0.45em;
-  padding-left: 0.2em;
 }
-.guide-prose :where(li)::marker {
-  color: var(--subtle);
-}
-/* Purple, darkened a little so link text keeps enough contrast on the paper background. */
 .guide-prose :where(a) {
-  color: color-mix(in srgb, var(--primary) 78%, #000);
+  color: var(--g-accent-text);
   text-decoration: underline;
-  text-underline-offset: 0.18em;
   text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
 }
 .guide-prose :where(a:hover) {
-  color: var(--primary);
+  text-decoration-thickness: 2px;
 }
 .guide-prose :where(a.cite) {
   margin-left: 0.1em;
@@ -598,15 +982,9 @@ details > summary::-webkit-details-marker {
 }
 .guide-prose :where(code) {
   border-radius: 4px;
-  background: rgb(0 0 0 / 0.06);
+  background: rgb(20 20 20 / 0.06);
   padding: 0.1em 0.35em;
   font-size: 0.9em;
-}
-.guide-prose :where(blockquote) {
-  margin-top: 1.1em;
-  border-left: 3px solid var(--primary);
-  padding-left: 1em;
-  color: var(--muted);
 }
 .guide-prose :where(.table-scroll) {
   overflow-x: auto;
@@ -617,44 +995,522 @@ details > summary::-webkit-details-marker {
   font-size: 0.92em;
 }
 .guide-prose :where(th, td) {
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--g-hairline);
   padding: 0.55em 0.75em 0.55em 0;
   text-align: left;
   vertical-align: top;
 }
 .guide-prose :where(th) {
   font-weight: 600;
-  color: var(--foreground);
+  color: var(--g-ink);
 }
-/* Figures: full prose width, rounded, calm muted caption. */
+
+/* ----- Figures: the image is the white plate; a study photo sits in a 4:3 plate ----- */
 .guide-prose :where(figure.guide-figure) {
-  margin: 1.8em 0;
+  margin: 40px 0 32px;
 }
-.guide-prose :where(figure.guide-figure img) {
+@media (min-width: 768px) {
+  .guide-prose :where(figure.guide-figure) {
+    margin: 48px 0 40px;
+  }
+}
+.guide-figure img {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 14px;
-  background: rgb(0 0 0 / 0.04);
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: var(--g-lift);
 }
-.guide-prose :where(figure.guide-figure figcaption) {
-  margin-top: 0.7em;
-  font-size: 0.82em;
+.guide-figure figcaption {
+  max-width: var(--g-card-text);
+  margin: 12px auto 0;
+  font-size: 15px;
   line-height: 1.5;
-  color: var(--muted);
+  color: var(--g-muted);
 }
-.guide-prose :where(figure.guide-figure .guide-figure-credit) {
+.guide-figure .guide-figure-credit {
   display: block;
-  margin-top: 0.3em;
-  font-size: 0.92em;
-  color: var(--subtle);
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--g-muted);
+}
+.guide-figure .guide-figure-credit a {
+  color: var(--g-accent-text);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+.guide-figure-plate {
+  aspect-ratio: 4 / 3;
+  display: grid;
+  place-items: center;
+  padding: 12px;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: var(--g-lift);
+  container-type: size;
+}
+.guide-figure-plate img {
+  width: min(100%, var(--photo-max));
+  /* Never taller than the plate either: the ratio stays, nothing is cropped or stretched. */
+  width: min(100%, var(--photo-max), calc(100cqh * var(--photo-ratio)));
+  height: auto;
+  border-radius: 12px;
+  box-shadow: none;
+}
+@media (min-width: 768px) {
+  .guide-figure img,
+  .guide-figure-plate {
+    border-radius: 20px;
+  }
+  .guide-figure-plate {
+    padding: 16px;
+  }
+  .guide-figure-plate img {
+    border-radius: 12px;
+  }
+}
+
+/* ----- Callouts ----- */
+.guide-prose :where(.callout, .callout-pro) {
+  max-width: calc(var(--g-card-text) + 48px);
+  margin-inline: auto;
+}
+.callout {
+  margin-block: 32px;
+  padding: 20px 24px;
+  border-radius: 16px;
+}
+.callout-safety {
+  background: var(--g-tint-safety);
+}
+.callout-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: 0.02em;
+  color: var(--g-accent-text);
+}
+.callout-icon {
+  display: inline-flex;
+  flex: none;
+}
+.guide-prose .callout-body {
+  margin-top: 10px;
+  font-size: 18px;
+  line-height: 1.62;
+  color: var(--g-ink);
+}
+.guide-prose .callout-body p {
+  max-width: none;
+  margin: 0.6em 0 0;
+}
+.guide-prose .callout-body p:first-child {
+  margin-top: 0;
+}
+.callout-pro {
+  margin-top: 56px;
+  padding: 24px 20px;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: var(--g-lift);
+}
+@media (min-width: 768px) {
+  .callout-pro {
+    margin-top: 64px;
+    padding: 28px 24px 32px;
+  }
+}
+.guide-prose .callout-pro h2 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 0;
+  max-width: none;
+}
+.guide-prose .callout-pro h2::before {
+  content: "";
+  flex: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--g-tint)
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M8 2.5v11M2.5 8h11' stroke='%237b2cbf' stroke-width='2.2' stroke-linecap='round' fill='none'/%3E%3C/svg%3E")
+    center / 16px 16px no-repeat;
+}
+.guide-prose .callout-pro :where(p, ul, ol) {
+  max-width: none;
+}
+.guide-prose .callout-pro > p:last-child {
+  color: var(--g-muted);
+}
+
+/* ----- Questions people ask ----- */
+.guide-faq-section {
+  margin-top: 56px;
+}
+@media (min-width: 768px) {
+  .guide-faq-section {
+    margin-top: 64px;
+  }
+}
+@media (min-width: 1180px) {
+  .guide-faq-section {
+    margin-top: 72px;
+  }
+}
+.guide-faq-section .guide-section-title,
+.guide-sources-section .guide-section-title {
+  margin-top: 0;
+  max-width: var(--g-card-text);
+  margin-inline: auto;
+}
+.guide-faq {
+  max-width: calc(var(--g-card-text) + 48px);
+  margin: 20px auto 0;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: var(--g-lift);
+  overflow: hidden;
+}
+.guide-faq details + details {
+  border-top: 1px solid var(--g-hairline);
+}
+.guide-faq summary {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 56px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.guide-faq summary h3 {
+  font-family: var(--font-source-serif);
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--g-ink);
+}
+.guide-faq .guide-faq-answer {
+  padding: 0 20px 20px;
+  font-size: 18px;
+  line-height: 1.65;
+  color: var(--g-body);
+}
+@media (min-width: 768px) {
+  .guide-faq summary,
+  .guide-faq .guide-faq-answer {
+    padding-inline: 24px;
+  }
+}
+
+/* ----- Sources: readable but quiet, always open so [n] links land ----- */
+.guide-sources-section {
+  margin-top: 56px;
+}
+@media (min-width: 768px) {
+  .guide-sources-section {
+    margin-top: 64px;
+  }
+}
+@media (min-width: 1180px) {
+  .guide-sources-section {
+    margin-top: 72px;
+  }
 }
 .guide-sources {
-  font-size: 0.9em;
+  max-width: var(--g-card-text);
+  margin: 20px auto 0;
+  padding-left: 2em;
+  list-style: decimal;
+  font-size: 15px;
   line-height: 1.55;
+  color: var(--g-muted);
   overflow-wrap: anywhere;
 }
-.guide-sources > li:target {
-  background: var(--primary-tint);
+.guide-sources > li {
+  padding: 2px 6px 2px 4px;
   border-radius: 6px;
+}
+.guide-sources > li + li {
+  margin-top: 14px;
+}
+.guide-sources > li::marker {
+  color: var(--g-muted);
+  font-variant-numeric: tabular-nums;
+}
+.guide-sources a {
+  color: var(--g-accent-text);
+  text-decoration: none;
+}
+.guide-sources a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+.guide-sources > li:target {
+  animation: source-flash 2s ease-out;
+}
+@keyframes source-flash {
+  from {
+    background: var(--g-tint);
+  }
+  to {
+    background: transparent;
+  }
+}
+
+/* ----- Call to action, related guides, footer note ----- */
+.guide-cta {
+  margin-top: 64px;
+  padding: 28px 24px;
+  border-radius: 20px;
+  background: var(--g-ink);
+  color: var(--background);
+}
+@media (min-width: 768px) {
+  .guide-cta {
+    margin-top: 80px;
+    padding: 36px;
+  }
+}
+.guide-related {
+  margin-top: 64px;
+}
+@media (min-width: 768px) {
+  .guide-related {
+    margin-top: 80px;
+  }
+}
+.related-grid {
+  display: grid;
+  gap: 16px;
+  margin-top: 20px;
+}
+@media (min-width: 768px) {
+  .related-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .related-grid > :nth-child(3) {
+    grid-column: 1 / -1;
+    flex-direction: row;
+  }
+  .related-grid > :nth-child(3) .g-thumb {
+    width: 40%;
+    flex: none;
+  }
+  .related-grid > :nth-child(3) .g-body {
+    justify-content: center;
+    padding: 28px;
+  }
+}
+.guide-footnote {
+  max-width: var(--g-card-text);
+  margin: 48px auto 0;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--g-muted);
+}
+
+/* ----- Guide cards (index and related) ----- */
+.g-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: var(--g-lift);
+  transition: box-shadow 0.25s var(--ease-out), transform 0.25s var(--ease-out);
+}
+.g-card:hover {
+  box-shadow: var(--g-lift-hover);
+  transform: translateY(-2px);
+}
+/* 3:2 (800 x 530), the diagram minus its title band (scripts/build-guides.mjs buildThumb). */
+.g-thumb {
+  position: relative;
+  aspect-ratio: 3 / 2;
+  background: #fff;
+  overflow: hidden;
+}
+.g-thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.g-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px;
+}
+.g-title {
+  font-family: var(--font-source-serif);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.005em;
+  color: var(--g-ink);
+  text-wrap: balance;
+  transition: color 0.2s;
+}
+.g-card:hover .g-title {
+  color: var(--g-accent-text);
+}
+.g-desc {
+  display: none;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--g-muted);
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.g-meta {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--g-muted);
+}
+.g-meta > span {
+  white-space: nowrap;
+}
+.g-draft {
+  width: fit-content;
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: var(--g-tint);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--g-accent-text);
+}
+/* Index on a phone: a row, text left and a small thumbnail right. */
+@media (max-width: 767px) {
+  .g-card[data-variant="index"] {
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+  }
+  .g-card[data-variant="index"] .g-thumb {
+    flex: none;
+    width: 112px;
+    border-radius: 12px;
+    box-shadow: inset 0 0 0 1px rgba(20, 20, 20, 0.06);
+  }
+  .g-card[data-variant="index"] .g-body {
+    min-width: 0;
+    padding: 0;
+  }
+  .g-card[data-variant="index"] .g-title {
+    font-size: 19px;
+  }
+}
+@media (min-width: 768px) {
+  .g-card[data-variant="index"] .g-title {
+    font-size: 21px;
+  }
+  .g-card[data-variant="index"] .g-desc {
+    display: -webkit-box;
+  }
+  .g-card[data-variant="index"] .g-meta {
+    margin-top: auto;
+    padding-top: 4px;
+  }
+  /* The featured card spans the whole row: thumbnail left, text right. */
+  .g-card[data-featured] {
+    grid-column: 1 / -1;
+    flex-direction: row;
+  }
+  .g-card[data-featured] .g-thumb {
+    flex: none;
+    width: 50%;
+  }
+  .g-card[data-featured] .g-body {
+    justify-content: center;
+    gap: 12px;
+    padding: 32px;
+  }
+  .g-card[data-featured] .g-title {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+  .g-card[data-featured] .g-desc {
+    font-size: 17px;
+    line-height: 1.55;
+    -webkit-line-clamp: 4;
+  }
+  .g-card[data-featured] .g-meta {
+    margin-top: 8px;
+    padding-top: 0;
+  }
+}
+
+/* ----- /guides index ----- */
+.guides-index {
+  width: 100%;
+  max-width: 768px;
+  margin-inline: auto;
+  flex: 1;
+  padding: 112px 20px 64px;
+}
+@media (min-width: 768px) {
+  .guides-index {
+    padding: 136px 40px 96px;
+  }
+}
+@media (min-width: 1180px) {
+  .guides-index {
+    max-width: 1120px;
+  }
+}
+.guides-index h1 {
+  font-family: var(--font-source-serif);
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+  color: var(--g-ink);
+}
+@media (min-width: 768px) {
+  .guides-index h1 {
+    font-size: 46px;
+    line-height: 1.08;
+  }
+}
+@media (min-width: 1180px) {
+  .guides-index h1 {
+    font-size: 52px;
+    line-height: 1.06;
+  }
+}
+.guides-index .guides-intro {
+  max-width: var(--g-card-text);
+  margin-top: 16px;
+  font-size: 19px;
+  line-height: 1.6;
+  color: var(--g-muted);
+}
+.guides-grid {
+  display: grid;
+  gap: 12px;
+  margin-top: 48px;
+}
+@media (min-width: 768px) {
+  .guides-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+@media (min-width: 1180px) {
+  .guides-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

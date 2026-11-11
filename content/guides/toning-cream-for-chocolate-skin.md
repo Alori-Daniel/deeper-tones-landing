@@ -70,6 +70,11 @@ sources:
     publisher: "International Journal of Dermatology"
     url: "https://pubmed.ncbi.nlm.nih.gov/34486734/"
     year: 2022
+inShort:
+  - "A toning cream may be a lightener under a softer name, which is not the same as evening out your skin."
+  - "Even tone is a real goal you can reach safely: fewer dark patches, calmer skin and a clearer look in your own colour."
+  - "Start with daily sunscreen, gentle products and one well-studied evening-out ingredient. Judge them over months, not days."
+  - "Read the ingredient list for steroids, mercury and hydroquinone, which are the ones to avoid."
 faq:
   - q: "Is toning cream the same as bleaching cream in Nigeria?"
     a: "Often, yes. Research from Nigeria and Ghana uses \"skin toning\" and skin lightening for the same kind of cream, so a product sold as toning, glow or brightening may be a lightener. A name on the jar cannot tell you what is inside. Check the ingredient list instead."
@@ -84,7 +89,7 @@ faq:
 figures:
   - id: label-check
     kind: diagram
-    alt: "An invented toning cream label with a banner reading Whitens in days above an ingredient list. Mercurous chloride, clobetasol propionate and hydroquinone are highlighted. Notes beside it say mercury also goes by calomel, mercuric, mercurio and Hg, and that steroids and hydroquinone need a prescriber's advice."
+    alt: "An invented pump bottle labelled TONING, Whitens, beside a label with three ingredient names. Mercurous chloride is marked as mercury: put it down. Clobetasol propionate is marked as a steroid: get advice. Hydroquinone is marked as a lightener: get advice."
     caption: "What to look for on a label. This label is invented and is not a real product."
     credit: "Deeper Tones"
     license: "Own work"
@@ -93,7 +98,7 @@ figures:
     changes: null
 ---
 
-In Nigerian shops, "toning" often means lightening, which is not the same as evening out your skin. Even tone is a real goal and you can reach it safely: fewer dark patches, calmer skin and a clearer look in your own colour. Daily sunscreen, gentle products and one well-studied evening-out ingredient are the safest place to start. Judge them over months, not days.
+This guide covers what "toning" usually means, what you can honestly change, the ingredients that help and the ones to avoid, and a label checklist.
 
 ## What "toning" usually means on a label
 
@@ -107,7 +112,7 @@ Many people who search for a toning cream for chocolate skin want the same thing
 
 A lot of uneven tone on brown and dark skin is post-inflammatory hyperpigmentation: dark marks left after skin was inflamed or hurt. This pattern happens more often and more strongly in darker skin [5]. Common causes are pimples, bites, cuts or a product that irritated the skin. Once the cause stops, the marks usually fade with time and the right care [6].
 
-One plain line, because it matters: no safe product or routine changes the colour you were born with. What a good routine can do is make your own colour look clearer, more even and more alive.
+**No safe product or routine changes the colour you were born with.** What a good routine can do is make your own colour look clearer, more even and more alive.
 
 ## Ingredients that help even out tone
 
@@ -127,19 +132,24 @@ Azelaic acid slows tyrosinase, the enzyme skin uses to make pigment. In a small 
 
 ### Gentle exfoliation
 
-Exfoliating means helping skin shed dull surface cells. The AAD lists glycolic acid, a mild acid, among ingredients sold without a prescription that can fade dark spots [6]. In small studies, light clinic peels with glycolic or salicylic acid had a good safety record in skin of colour [10]. Start slowly, because irritation can itself leave marks or worsen the ones you have [5]. Deeper peels reach the pigment-making layer and carry a higher risk of scarring and new marks in darker skin, so those need a clinician experienced with darker skin [10]. Gritty scrubs are not the same thing.
+Exfoliating means helping skin shed dull surface cells. The AAD lists glycolic acid, a mild acid, among ingredients sold without a prescription that can fade dark spots [6]. In small studies, light clinic peels with glycolic or salicylic acid had a good safety record in skin of colour [10].
+
+Start slowly, because irritation can itself leave marks or worsen the ones you have [5]. Deeper peels reach the pigment-making layer and carry a higher risk of scarring and new marks in darker skin, so those need a clinician experienced with darker skin [10]. Gritty scrubs are not the same thing.
 
 ## Ingredients to avoid
 
-Some lightening and "glow" creams contain strong ingredients that do not appear on the label. These are the ones to know.
+These four are the ones to know.
 
 - **Steroids.** AAD says steroids in imported skin products can cause pimples and rashes, and long use can thin the skin or discolour it permanently [6]. NAFDAC, Nigeria's regulator, has warned about betamethasone, a potent steroid, found in a skin cream [11]. The NHS describes clobetasol as much stronger than other steroid treatments and warns that facial skin thins easily with it [12].
 - **Mercury.** NAFDAC calls mercury toxic and prohibited as a cosmetic ingredient [11]. The World Health Organization (WHO) says mercury-containing lightening products are hazardous and banned in many countries [13].
 - **Hydroquinone that was not prescribed.** NAFDAC says hydroquinone is prohibited in skincare cosmetics and should only be used under medical supervision [11]. The FDA says lightening products with hydroquinone are not approved for over-the-counter sale [4]. The British Association of Dermatologists says it can only be prescribed by a doctor, and that it can irritate or occasionally darken skin [14]. Long use of strong hydroquinone has been linked to ochronosis, a blue-black or grey-blue discolouration most often reported in people with darker skin [15].
 - **Bleach.** AAD says never to put liquid bleach on skin [6].
 
+> **Safety:** Some lightening and "glow" creams contain strong ingredients that do not appear on the label.
 
-The BAD advises avoiding hydroquinone and retinoid creams in pregnancy [14]. If you already use a cream you suspect contains any of these, read [how to stop bleaching cream safely](/guides/stop-bleaching-cream-safely) first. Stopping a strong steroid cream after long use is best done with a professional's help.
+If you already use a cream you suspect contains any of these, read [how to stop bleaching cream safely](/guides/stop-bleaching-cream-safely) first.
+
+> **Safety:** The BAD advises avoiding hydroquinone and retinoid creams in pregnancy [14]. Stopping a strong steroid cream after long use is best done with a professional's help.
 
 ## A label checklist
 
@@ -157,7 +167,9 @@ A clean label is not proof of safety. The FDA warns that some illegal products d
 
 ## What to expect
 
-Marks fade slowly, so give a routine a few months before you decide. The azelaic acid study above ran for 16 weeks [8]. The AAD says a mark a few shades darker than your skin usually fades within 6 to 12 months once its cause has stopped, and treatment can speed this up [6]. Aim for fewer new marks, calmer skin and older marks that look fainter. NAFDAC advises being wary of products that promise quick and miraculous results [11].
+Marks fade slowly, so give a routine a few months before you decide. The azelaic acid study above ran for 16 weeks [8]. The AAD says a mark a few shades darker than your skin usually fades within 6 to 12 months once its cause has stopped, and treatment can speed this up [6].
+
+Aim for fewer new marks, calmer skin and older marks that look fainter. NAFDAC advises being wary of products that promise quick and miraculous results [11].
 
 ## When to see a professional
 

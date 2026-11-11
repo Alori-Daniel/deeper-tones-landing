@@ -1,40 +1,92 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" font-family="Helvetica, Arial, sans-serif">
-  <rect width="1200" height="800" fill="#f1f1f1"/>
-  <rect x="60" y="52" width="10" height="52" rx="5" fill="#9d4edd"/>
-  <text x="90" y="95" font-size="46" font-weight="700" fill="#141414">Why a close shave can trap a curly hair</text>
-  <line x1="600" y1="150" x2="600" y2="740" stroke="#c9c9c9" stroke-width="3"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" width="1600" height="1200">
+  <title>Close shaves can trap curly hair</title>
+  <defs>
+    <linearGradient id="epi" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#B98058"/>
+      <stop offset="1" stop-color="#A46B46"/>
+    </linearGradient>
+    <linearGradient id="derm" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#EBCBB8"/>
+      <stop offset="1" stop-color="#F4E2D7"/>
+    </linearGradient>
+    <linearGradient id="air" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FAF7FC"/>
+      <stop offset="1" stop-color="#F1EAF8"/>
+    </linearGradient>
+    <filter id="soft" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+    <filter id="lift" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="14" stdDeviation="20" flood-color="#2B1640" flood-opacity="0.09"/>
+    </filter>
+    <clipPath id="cardL"><rect x="96" y="420" width="680" height="700" rx="40"/></clipPath>
+    <clipPath id="cardR"><rect x="824" y="420" width="680" height="700" rx="40"/></clipPath>
+  </defs>
 
-  <!-- LEFT PANEL -->
-  <circle cx="75" cy="190" r="16" fill="#d64545"/>
-  <text x="105" y="202" font-size="38" font-weight="700" fill="#141414">Shaved very close</text>
-  <text x="60" y="262" font-size="30" fill="#141414">The cut tip is sharp and can</text>
-  <text x="60" y="302" font-size="30" fill="#141414">curl back into the skin.</text>
-  <rect x="40" y="540" width="540" height="190" rx="14" fill="#6f4a35"/>
-  <rect x="40" y="540" width="540" height="40" fill="#8a5a3c"/>
-  <ellipse cx="272" cy="540" rx="36" ry="28" fill="#8a5a3c" stroke="#d64545" stroke-width="5" stroke-dasharray="10 7"/>
-  <path d="M100 730 C 105 640,125 590,135 540 C 142 480,210 440,255 485 C 282 512,270 560,252 590" fill="none" stroke="#141414" stroke-width="9" stroke-linecap="round"/>
-  <line x1="470" y1="450" x2="300" y2="495" stroke="#5e5e5e" stroke-width="3"/>
-  <text x="575" y="400" font-size="30" font-weight="700" fill="#141414" text-anchor="end">Sharp tip curls back</text>
-  <text x="575" y="440" font-size="30" font-weight="700" fill="#141414" text-anchor="end">into the skin</text>
-  <text x="385" y="650" font-size="30" fill="#f1f1f1" text-anchor="middle">The skin reacts to it</text>
-  <text x="385" y="690" font-size="30" fill="#f1f1f1" text-anchor="middle">like a splinter: a bump</text>
+  <rect width="1600" height="1200" fill="#FFFFFF"/>
 
-  <!-- RIGHT PANEL -->
-  <circle cx="635" cy="190" r="16" fill="#2fb37a"/>
-  <text x="665" y="202" font-size="38" font-weight="700" fill="#141414">Clippers with a guard</text>
-  <text x="620" y="262" font-size="30" fill="#141414">Hair is left at least 1 mm, so</text>
-  <text x="620" y="302" font-size="30" fill="#141414">the cut tip is less likely to turn in.</text>
-  <rect x="620" y="540" width="540" height="190" rx="14" fill="#6f4a35"/>
-  <rect x="620" y="540" width="540" height="40" fill="#8a5a3c"/>
-  <path d="M700 730 C 705 640,715 590,720 540 C 722 500,740 470,765 430" fill="none" stroke="#141414" stroke-width="9" stroke-linecap="round"/>
-  <line x1="830" y1="540" x2="830" y2="430" stroke="#7b2cbf" stroke-width="4"/>
-  <line x1="815" y1="540" x2="845" y2="540" stroke="#7b2cbf" stroke-width="4"/>
-  <line x1="815" y1="430" x2="845" y2="430" stroke="#7b2cbf" stroke-width="4"/>
-  <text x="865" y="470" font-size="30" font-weight="700" fill="#7b2cbf">1 mm or more</text>
-  <text x="865" y="510" font-size="30" font-weight="700" fill="#7b2cbf">of hair left</text>
-  <text x="900" y="650" font-size="30" fill="#f1f1f1" text-anchor="middle">The cut tip is more likely</text>
-  <text x="900" y="690" font-size="30" fill="#f1f1f1" text-anchor="middle">to stay out of the skin</text>
+  <text x="96" y="150" font-family="Source Serif 4" font-weight="600" font-size="88" fill="#141414" letter-spacing="-1">Close shaves can trap curly hair</text>
 
-  <text x="60" y="772" font-size="28" fill="#5e5e5e">Simple illustration, not to scale. Skin cross-section.</text>
-  <text x="1140" y="772" font-size="28" font-weight="700" fill="#7b2cbf" text-anchor="end">Deeper Tones</text>
+  <!-- ===== Left: shaved very close (avoid) ===== -->
+  <g font-family="Archivo">
+    <circle cx="126" cy="272" r="30" fill="#5E5E5E"/>
+    <path d="M114 260 l 24 24 M138 260 l -24 24" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round"/>
+    <text x="176" y="292" font-size="58" font-weight="600" fill="#141414">Shaved very close</text>
+    <text x="96" y="370" font-size="56" font-weight="400" fill="#5E5E5E">Tip curls back in</text>
+  </g>
+
+  <g filter="url(#lift)"><rect x="96" y="420" width="680" height="700" rx="40" fill="url(#air)"/></g>
+  <g clip-path="url(#cardL)">
+    <!-- dermis -->
+    <rect x="96" y="840" width="680" height="300" fill="url(#derm)"/>
+    <!-- follicle sheath -->
+    <path d="M300 1080 C 312 980, 336 890, 368 790" fill="none" stroke="#E2B9A0" stroke-width="44" stroke-linecap="round"/>
+    <!-- epidermis with a raised bump where the tip goes back in -->
+    <path d="M96 760 L 500 760 C 530 760, 540 712, 590 712 C 640 712, 650 760, 680 760 L 776 760 L 776 852 C 600 846, 400 858, 96 848 Z" fill="url(#epi)"/>
+    <path d="M96 760 L 500 760 C 530 760, 540 712, 590 712 C 640 712, 650 760, 680 760 L 776 760" fill="none" stroke="#CF9A72" stroke-width="6"/>
+    <!-- the skin reacts around the tip: a soft darker area, same hue -->
+    <ellipse cx="590" cy="770" rx="74" ry="40" fill="#6E3A22" opacity="0.75" filter="url(#soft)"/>
+    <!-- hair: in the follicle, out of the skin, and back in with a sharp tip -->
+    <path d="M302 1070 C 314 970, 342 870, 378 762 C 400 690, 450 640, 512 640 C 572 640, 600 690, 592 744" fill="none" stroke="#2E1C12" stroke-width="11" stroke-linecap="round"/>
+    <path d="M592 744 L 586 790" fill="none" stroke="#2E1C12" stroke-width="9" stroke-linecap="round" opacity="0.55"/>
+    <path d="M588 788 L 584 806" fill="none" stroke="#2E1C12" stroke-width="5" stroke-linecap="round" opacity="0.55"/>
+  </g>
+
+  <!-- ===== Right: clippers with a guard (do) ===== -->
+  <g font-family="Archivo">
+    <circle cx="854" cy="272" r="30" fill="#7B2CBF"/>
+    <path d="M840 272 l 10 10 l 19 -20" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="904" y="292" font-size="58" font-weight="600" fill="#141414">Clippers with a guard</text>
+    <text x="824" y="370" font-size="56" font-weight="400" fill="#5E5E5E">Tip more likely stays out</text>
+  </g>
+
+  <g filter="url(#lift)"><rect x="824" y="420" width="680" height="700" rx="40" fill="url(#air)"/></g>
+  <g clip-path="url(#cardR)">
+    <rect x="824" y="840" width="680" height="300" fill="url(#derm)"/>
+    <path d="M1028 1080 C 1040 980, 1064 890, 1096 790" fill="none" stroke="#E2B9A0" stroke-width="44" stroke-linecap="round"/>
+    <path d="M824 760 L 1504 760 L 1504 852 C 1328 846, 1128 858, 824 848 Z" fill="url(#epi)"/>
+    <path d="M824 760 L 1504 760" fill="none" stroke="#CF9A72" stroke-width="6"/>
+    <!-- hair left long enough, blunt cut end, curving away from the skin -->
+    <path d="M1030 1070 C 1042 970, 1070 870, 1106 762 C 1118 714, 1146 676, 1176 648" fill="none" stroke="#2E1C12" stroke-width="11" stroke-linecap="butt"/>
+  </g>
+  <!-- clipper head with its guard: the comb holds the blade off the skin -->
+  <defs>
+    <linearGradient id="clip" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#E4DCEC"/>
+      <stop offset="1" stop-color="#CFC3DD"/>
+    </linearGradient>
+  </defs>
+  <g filter="url(#lift)">
+    <rect x="930" y="520" width="290" height="64" rx="24" fill="url(#clip)"/>
+  </g>
+  <g fill="#D6CCE2">
+    <rect x="944" y="572" width="16" height="62" rx="8"/><rect x="980" y="572" width="16" height="62" rx="8"/><rect x="1016" y="572" width="16" height="62" rx="8"/><rect x="1052" y="572" width="16" height="62" rx="8"/><rect x="1088" y="572" width="16" height="62" rx="8"/><rect x="1124" y="572" width="16" height="62" rx="8"/><rect x="1160" y="572" width="16" height="62" rx="8"/><rect x="1196" y="572" width="16" height="62" rx="8"/>
+  </g>
+  <!-- length marker: at least 1 mm of hair left -->
+  <g stroke="#7B2CBF" stroke-width="5" stroke-linecap="round">
+    <path d="M1236 644 V 756"/>
+    <path d="M1220 644 H 1252"/>
+    <path d="M1220 756 H 1252"/>
+  </g>
+  <text x="1276" y="718" font-family="Archivo" font-size="58" font-weight="600" fill="#7B2CBF">1 mm+</text>
 </svg>

@@ -14,6 +14,7 @@ const sourceSerif = Source_Serif_4({
 const archivo = Archivo({
   variable: "--font-archivo",
   subsets: ["latin"],
+  style: "normal",
 });
 
 // Search-engine verification and analytics are switched on by build-time env vars (see .env.example).

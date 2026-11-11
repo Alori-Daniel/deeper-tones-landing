@@ -62,6 +62,11 @@ sources:
     publisher: "American Academy of Dermatology"
     url: "https://www.aad.org/public/everyday-care/skin-care-secrets/routine/fade-dark-spots"
     year: 2026
+inShort:
+  - "On a jar, glow is not an ingredient and cannot tell you whether a cream is bleaching."
+  - "Some creams sold to lighten or even out skin contain hydroquinone, mercury or a strong steroid, and the label does not always say so."
+  - "To check, read the ingredient list, look for a registration number and watch for the red flags below."
+  - "If you have used a cream daily for a long time, get advice before you stop."
 faq:
   - q: "Is glow cream the same as bleaching cream?"
     a: "Not always, but the word cannot tell you. \"Glow\" is a marketing word, not an ingredient. Some creams sold to lighten or even out skin have been found to contain hydroquinone, mercury or a strong steroid, so the ingredient list matters more than the front of the jar."
@@ -76,8 +81,8 @@ faq:
 figures:
   - id: read-the-label
     kind: diagram
-    alt: "An invented cream jar, front and back. The front says glow cream and fast action. The back shows an ingredient list with hydroquinone, clobetasol propionate and calomel highlighted, then a NAFDAC number, batch number, expiry date and the maker's name and country. A note says: mercury, stop using it; steroid used for a long time, get advice to stop."
-    caption: "Words on the front cannot show what is inside. Read the ingredient list and check the number, batch, maker and dates on the back. This label is invented."
+    alt: "An invented cream jar labelled GLOW, fast action, beside its back label. In the ingredient list, hydroquinone is marked as a lightening agent, clobetasol propionate as a steroid and calomel as mercury. Below, a checklist: NAFDAC number, batch and expiry, maker and country."
+    caption: "The front of a jar cannot show what is inside. Read the back: ingredients, NAFDAC number, batch, expiry, maker. A mercury name means stop using it. This label is invented."
     credit: "Deeper Tones"
     license: "Own work"
     sourceUrl: null
@@ -85,11 +90,13 @@ figures:
     changes: null
 ---
 
-"Glow" is a marketing word, not an ingredient, so the word alone cannot tell you whether a cream is bleaching. Some creams sold to lighten or even out skin contain hydroquinone, mercury or a strong steroid [9], and the label does not always say so [7][8]. To check, read the ingredient list, look for a registration number and notice the red flags below. If you have used a cream daily for a long time, get advice before you stop [11][12].
+Two jars with the same word on the front can hold very different things. The sections below explain what the word means, how to read the back of the jar and what to do if a cream may contain a steroid or mercury.
 
-## What "glow" and "toning" on a jar mean
+## What do "glow" and "toning" on a jar mean?
 
-Skin lightening products are described with many words. The US Food and Drug Administration (FDA) says companies may call them bleaching, fading, evening, brightening or whitening products [1]. "Glow" and "toning" are not on that list, and neither is the name of an ingredient. The word cannot show what is inside. Two jars with the same word on the front can hold very different things.
+Skin lightening products are described with many words. The US Food and Drug Administration (FDA) says companies may call them bleaching, fading, evening, brightening or whitening products [1]. "Glow" and "toning" are not on that list, and neither is the name of an ingredient.
+
+The word cannot show what is inside.
 
 If you picked up a glow cream hoping for lighter skin, that is a common wish, and wanting it is nothing to feel bad about. The honest answer has two parts. A safe routine can help with even tone, fewer dark marks and calmer skin. No routine can change the colour your skin naturally is, and a product that promises to is the one to doubt.
 
@@ -101,7 +108,9 @@ Some can. Researchers name three active ingredients in lightening cosmetics: hyd
 - **Mercury:** a toxic metal. The WHO says mercury-containing lightening products are hazardous to health and banned in many countries, yet some are still sold [3]. Poisoning can cause tremors, memory problems and numbness or tingling [2].
 - **Corticosteroid (steroid):** a medicine that calms inflammation. Strong ones can thin skin [11], and they have been used in Nigeria as a lightening agent [10].
 
-Two studies show how this looks in practice. Researchers bought 98 creams and 93 soaps in West African city markets and small shops in Canada. Between 68% and 84% of the creams broke at least one regulatory guideline, and the amounts on labels often did not match what was measured [8]. In Ilorin, Nigeria, all ten lightening products tested contained hydroquinone, seven above Nigeria's 2% limit, and six did not list it. All ten also held small amounts of mercury that no label mentioned [7].
+Two studies show how this looks in practice. Researchers bought 98 creams and 93 soaps in West African city markets and small shops in Canada. Between 68% and 84% of the creams broke at least one regulatory guideline, and the amounts on labels often did not match what was measured [8].
+
+In Ilorin, Nigeria, all ten lightening products tested contained hydroquinone, seven above Nigeria's 2% limit, and six did not list it. All ten also held small amounts of mercury that no label mentioned [7].
 
 Those studies tested lightening products, not creams sold only as "glow". But they show that a label is not a guarantee. If a cream visibly lightens your skin, something in it is doing that, and the three above are the main active ingredients researchers find in lightening cosmetics [9].
 
@@ -124,22 +133,25 @@ Those studies tested lightening products, not creams sold only as "glow". But th
 
 NAFDAC is Nigeria's food and drug regulator. Its rules say a cosmetic label must carry a NAFDAC registration number, and that mercury, corticosteroids in body creams and hydroquinone above 2% are banned [5]. A separate NAFDAC alert calls hydroquinone prohibited in skincare cosmetics [6]. Treat any hydroquinone in a cream as a flag.
 
-A number on the jar is a starting point. Six of the ten Ilorin products were NAFDAC-registered, yet all ten contained hydroquinone, most of them above the legal limit, and none listed the small amounts of mercury found [7]. NAFDAC's website has a Registered Products section, and you can ask about a number on its enquiry line, 0700-1-623322 [5]. If a product has no number, treat it as unchecked. We cover the full set of names to look for in [how to know if a cream contains steroids or mercury](/guides/check-cream-steroids-mercury-hydroquinone).
+A number on the jar is a starting point. Six of the ten Ilorin products were NAFDAC-registered, yet all ten contained hydroquinone, most of them above the legal limit, and none listed the small amounts of mercury found [7].
+
+NAFDAC's website has a Registered Products section, and you can ask about a number on its enquiry line, 0700-1-623322 [5]. If a product has no number, treat it as unchecked. We cover the full set of names to look for in [how to know if a cream contains steroids or mercury](/guides/check-cream-steroids-mercury-hydroquinone).
 
 ## If it may contain a steroid
 
 The NHS says clobetasol, a strong steroid, is much stronger than other steroid treatments and is available only with a prescription. It warns that facial skin thins easily with it, so it is used on the face only briefly and under a doctor's direction [11]. In a clinic in Enugu, Nigeria, people who had used steroids for lightening often found that stopping caused a severe, sore skin reaction [10]. The UK medicines regulator (MHRA) says withdrawal reactions can appear days to weeks after stopping long-term use, with burning and spreading redness [12].
 
-So the advice has two sides:
+> **Safety:** Get advice before you stop after long daily use. Stopping suddenly can cause a withdrawal reaction [11]. A pharmacist or doctor can plan how to come off it with you. If your skin gets worse after stopping, do not go back to the old cream without advice [11][12].
 
-- **Get advice before you stop after long daily use.** Stopping suddenly can cause a withdrawal reaction [11]. A pharmacist or doctor can plan how to come off it with you.
-- **If your skin gets worse after stopping, do not go back to the old cream without advice** [11][12]. Our guide to [stopping a bleaching cream safely](/guides/stop-bleaching-cream-safely) explains what the flare is and how to keep your routine plain.
+Our guide to [stopping a bleaching cream safely](/guides/stop-bleaching-cream-safely) explains what the flare is and how to keep your routine plain.
 
-If the label shows a mercury name, stop using it. Wash your hands and any skin it touched, and seal the jar in a bag [2]. People who are pregnant, breastfed babies and young children are especially vulnerable to mercury [2].
+> **Safety:** If the label shows a mercury name, stop using it. Wash your hands and any skin it touched, and seal the jar in a bag [2]. People who are pregnant, breastfed babies and young children are especially vulnerable to mercury [2].
 
 ## What to use instead
 
-Even tone starts with sun protection. The American Academy of Dermatology (AAD) says treatment for dark spots begins with sunscreen, and suggests a tinted formula with iron oxide (a pigment that also blocks visible light, which can cause dark spots), SPF 30 or higher and broad-spectrum protection (it guards against both main types of UV rays) [13]. It also says never to put liquid bleach on skin [13]. For dark marks, see [how to fade dark marks on dark skin](/guides/fade-dark-marks-dark-skin). If "toning" is what you were after, see [toning creams for chocolate skin](/guides/toning-cream-for-chocolate-skin).
+Even tone starts with sun protection. The American Academy of Dermatology (AAD) says treatment for dark spots begins with sunscreen, and suggests a tinted formula with iron oxide (a pigment that also blocks visible light, which can cause dark spots), SPF 30 or higher and broad-spectrum protection (it guards against both main types of UV rays) [13]. It also says never to put liquid bleach on skin [13].
+
+For dark marks, see [how to fade dark marks on dark skin](/guides/fade-dark-marks-dark-skin). If "toning" is what you were after, see [toning creams for chocolate skin](/guides/toning-cream-for-chocolate-skin).
 
 ## When to see a professional
 

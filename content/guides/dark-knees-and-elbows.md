@@ -73,13 +73,18 @@ sources:
 figures:
   - id: gentle-care-do-avoid
     kind: diagram
-    alt: "A two-column card. Do: use a fragrance-free cream or ointment after a bath, kneel on a cushion and rest elbows on something soft, wear sunscreen SPF 30 or higher on exposed knees and elbows, and exfoliate lightly if at all, for about 30 seconds, then moisturise. Avoid: hard scrubs and rough tools, lemon or lime juice, bleaching creams that may hold mercury or hydroquinone, and household bleach on skin."
-    caption: "Gentle care for knees and elbows at a glance. Thick, velvety or fast-appearing patches are worth showing to a doctor."
+    alt: "Two panels of the same person kneeling, drawn in profile in warm brown skin. Left, marked with a cross: kneeling on the floor adds friction. Right, marked with a tick: kneeling on a cushion means less friction."
+    caption: "Kneeling on a cushion cuts down friction and pressure on the knees. Thick, velvety or fast-appearing patches are worth showing to a doctor."
     credit: "Deeper Tones"
     license: "Own work"
     sourceUrl: null
     licenseUrl: null
     changes: null
+inShort:
+  - "Dark knees and elbows are common on darker skin. Gentle care helps: moisturise, cut friction, wear sunscreen and go easy on exfoliation."
+  - "Often it comes down to rubbing, pressure and thicker skin, not anything you did wrong. No cream changes your natural skin colour."
+  - "These areas may stay a shade deeper than your arms and thighs, so aim for smoother, calmer, more even skin."
+  - "See a doctor if a dark patch feels thick and velvety, or if velvety patches appear quickly."
 faq:
   - q: "Why are my knees darker than the rest of my body?"
     a: "Knees and elbows are often darker than nearby skin. They bend, rub and take pressure all day, and skin that is rubbed tends to thicken, which can look darker. On darker skin, irritation can also leave extra pigment. If the patches are velvety or appeared quickly, ask a doctor to look."
@@ -93,13 +98,13 @@ faq:
     a: "No. Lemon and lime juice contain compounds that react with sunlight and can cause burn-like marks that heal darker. It is safer to leave them in the kitchen."
 ---
 
-Knees, elbows and knuckles are often darker than the rest of the body, and on darker skin this is common. Often it comes down to rubbing, pressure and thicker skin, not to anything you did wrong [1][2]. What helps is gentle: moisturise, cut down friction, wear sunscreen on exposed areas and go easy on exfoliation. No cream changes your natural skin colour, so aim for smoother, calmer, more even skin. These areas may stay a shade deeper than your arms and thighs.
+Knees, elbows and knuckles are often darker than the rest of the body. This guide covers why, when it is worth getting checked, the gentle care that helps and what to avoid.
 
 {{figure:gentle-care-do-avoid}}
 
-## Why knees, elbows and knuckles are darker
+## Why are knees, elbows and knuckles darker?
 
-Two things usually happen together.
+Often it comes down to rubbing, pressure and thicker skin, not to anything you did wrong [1][2]. Two things usually happen together.
 
 **The skin thickens where it is rubbed and pressed.** Dermatologists describe a pattern called frictional asymptomatic darkening of the extensor surfaces, which means painless brown darkening over the outside of the elbows and knees. Friction and family history both seem to play a part [1]. Biopsies of these patches typically show thickened skin [1]. Kneeling, leaning on your elbows at a desk and rough clothing can all add friction.
 
@@ -109,17 +114,21 @@ It is also common as a baseline. In one small study of 53 Korean women, elbows m
 
 Knuckles have been studied less. One pattern is worth knowing about, and it is next.
 
-## When it is worth getting checked
+## When is it worth getting checked?
 
 Sometimes dark skin in these places is a different pattern. A brown or black patch that feels thicker than the skin around it, and velvety to the touch, may be what doctors call acanthosis nigricans. We cannot tell from words alone whether this is what you have, but the pattern is worth knowing.
 
 Look for it on the back of the neck and in the armpits first. It can also appear in the groin, on the elbows and knees, and on the knuckles. It usually develops slowly over months or years, and it can itch [4]. A velvety, thickened version that mainly affects the knuckles is also described in the medical literature [5].
 
-Doctors take it seriously because it can go along with how the body handles insulin, a hormone that controls blood sugar. Higher insulin levels, prediabetes and diabetes are common links [6][7]. Some medicines, such as birth control pills, steroid tablets and niacin, can also be involved, as can hormone conditions such as polycystic ovary syndrome (PCOS) and thyroid problems [6]. Body weight is a common factor too, and that is a medical clue, not a judgement [6]. The pattern is more common in people of African, Caribbean, Native American and Hispanic descent, but anyone can get it [6].
+Doctors take it seriously because it can go along with how the body handles insulin, a hormone that controls blood sugar. Higher insulin levels, prediabetes and diabetes are common links [6][7]. Some medicines, such as birth control pills, steroid tablets and niacin, can also be involved, as can hormone conditions such as polycystic ovary syndrome (PCOS) and thyroid problems [6].
+
+Body weight is a common factor too, and that is a medical clue, not a judgement [6]. The pattern is more common in people of African, Caribbean, Native American and Hispanic descent, but anyone can get it [6].
 
 If you notice it, see a doctor or dermatologist. A doctor may suggest simple checks such as blood sugar, cholesterol and blood pressure [7]. If velvety patches appear suddenly or develop quickly, go promptly, since fast-appearing patches can be a sign of an underlying condition [4][6]. Hard scrubbing will not remove it [8].
 
 ## Gentle care that helps
+
+What helps is gentle. No cream changes your natural skin colour, so aim for smoother, calmer, more even skin. These areas may stay a shade deeper than your arms and thighs.
 
 ### Moisturise
 
@@ -148,7 +157,11 @@ Retinoids (vitamin A creams) and benzoyl peroxide can make skin more sensitive, 
 
 ### What to look for in a "dark knees and elbows" cream
 
-Look for a plain, fragrance-free moisturiser first. Dermatologists have reported using creams with urea or lactic acid together with avoiding friction for this pattern [1]. Urea and lactic acid are ingredients that soften thick, rough skin. If you are pregnant or breastfeeding, check any new active ingredient with a pharmacist or doctor first. If a cream stings or makes the skin red, stop using it. For marks that are not just thickness, our guide to [fading dark marks on dark skin](/guides/fade-dark-marks-dark-skin) covers ingredients and honest timelines.
+Look for a plain, fragrance-free moisturiser first. Dermatologists have reported using creams with urea or lactic acid together with avoiding friction for this pattern [1]. Urea and lactic acid are ingredients that soften thick, rough skin.
+
+> **Safety:** If you are pregnant or breastfeeding, check any new active ingredient with a pharmacist or doctor first.
+
+If a cream stings or makes the skin red, stop using it. For marks that are not just thickness, our guide to [fading dark marks on dark skin](/guides/fade-dark-marks-dark-skin) covers ingredients and honest timelines.
 
 ## What to avoid
 
@@ -156,9 +169,13 @@ Look for a plain, fragrance-free moisturiser first. Dermatologists have reported
 
 **Lemon and lime juice.** Both contain compounds called furocoumarins that react with sunlight and can cause burn-like skin damage, including blisters, and then dark marks [12].
 
-**Bleaching and "strong whitening" creams.** These carry real risks. The FDA says no over-the-counter skin lightening product is FDA-approved, and some contain mercury, which can be absorbed into the bloodstream and harm the kidneys and nerves, with higher risk for pregnant people and children [13]. Some contain hydroquinone, a lightening ingredient, linked to rashes, facial swelling and permanent skin discolouration [13]. NAFDAC calls mercury prohibited in cosmetics. It says hydroquinone is prohibited in skincare cosmetics and should only be used under medical supervision. It also warns about products promising quick, miraculous results [14]. The WHO says mercury lightening products are hazardous and banned in many countries, yet some are still sold [15].
+**Bleaching and "strong whitening" creams.** These carry real risks. The FDA says no over-the-counter skin lightening product is FDA-approved, and some contain mercury, which can be absorbed into the bloodstream and harm the kidneys and nerves, with higher risk for pregnant people and children [13]. Some contain hydroquinone, a lightening ingredient, linked to rashes, facial swelling and permanent skin discolouration [13].
+
+NAFDAC calls mercury prohibited in cosmetics. It says hydroquinone is prohibited in skincare cosmetics and should only be used under medical supervision. It also warns about products promising quick, miraculous results [14]. The WHO says mercury lightening products are hazardous and banned in many countries, yet some are still sold [15].
 
 Dark knees and elbows are not worth that risk. The AAD says never to put household bleach on skin [10]. To check what is in a cream you already have, read [how to check a cream for steroids, mercury and hydroquinone](/guides/check-cream-steroids-mercury-hydroquinone).
+
+> **Safety:** If you have used a strong lightening or steroid cream for a long time, stopping is best done with a professional's help. Our guide to [stopping a bleaching cream safely](/guides/stop-bleaching-cream-safely) explains why.
 
 ## When to see a professional
 
@@ -173,5 +190,3 @@ See a doctor, pharmacist or dermatologist if:
 - your skin has become thin or bruises easily after using a strong cream
 - the darkening is not improving after a few months of gentle care
 - you are pregnant or breastfeeding and want to use anything beyond a moisturiser and sunscreen
-
-If you have used a strong lightening or steroid cream for a long time, stopping is best done with a professional's help. Our guide to [stopping a bleaching cream safely](/guides/stop-bleaching-cream-safely) explains why.

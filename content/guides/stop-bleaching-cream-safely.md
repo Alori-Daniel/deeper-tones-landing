@@ -58,6 +58,11 @@ sources:
     publisher: "Journal of Clinical and Aesthetic Dermatology"
     url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC2921758/"
     year: 2010
+inShort:
+  - "You can stop a lightening cream. After long daily use, ask a doctor or pharmacist to help you, because stopping suddenly can cause a flare."
+  - "The first few weeks can be rough, with redness, stinging or peeling. Recovery is measured in months, not days."
+  - "A flare after stopping is a known pattern. It does not have to mean your skin needs the cream."
+  - "Keep your routine plain: a gentle cleanser, a plain moisturiser and sunscreen every morning."
 faq:
   - q: "Why did my skin flare up when I stopped my lightening cream?"
     a: "If the cream held a strong steroid, this is often the rebound that can follow stopping: redness, burning or stinging, itching and peeling. It does not have to mean your skin needs the cream. Talk to a doctor before you start it again."
@@ -72,7 +77,7 @@ faq:
 figures:
   - id: what-to-expect
     kind: diagram
-    alt: "A three-step timeline. Days to weeks: a flare may start, with burning, stinging, redness and peeling. Weeks to months: the skin settles slowly. Months to years: dark marks fade, more slowly than redness. Three circles of brown skin show one dark mark fading while the skin tone stays the same."
+    alt: "Three cards under the heading recovery takes months, not days. 1, days to weeks: a flare may start. 2, weeks to months: skin settles slowly. 3, months to years: marks fade slowly. Beside each, a strip of warm brown skin with a dark mark that is darkest in the first card and fainter in each one after."
     caption: "What to expect after stopping. There is no fixed timeline, and a flare does not happen for everyone."
     credit: "Deeper Tones"
     license: "Own work"
@@ -82,7 +87,7 @@ figures:
   - id: ochronosis-case
     kind: study-photo
     alt: "Close view of the side of a face, from the ear to the upper cheek, on deep brown skin. A wide, mottled patch of darker brown and grey-brown colour covers the temple and cheek. The authors' black box covers the area below the ear."
-    caption: "From a case report: patches the authors describe as brown to blue-grey, on the face of one person with dark brown skin (type V on the Fitzpatrick scale, which runs from I, the palest, to VI, the deepest), after about three years of on-and-off hydroquinone use. The authors raised ochronosis as a concern. One person, from a study. Results vary."
+    caption: "Case report: one person with dark brown skin, after about three years of on-and-off hydroquinone use. Authors describe brown to blue-grey patches and raise ochronosis as a concern. Results vary."
     credit: "Negassi B, Sit C, Verma KK, Vasquez R, Desai S, Friedmann DP, Tarbox M. Cureus, 2026"
     license: "CC BY 4.0"
     sourceUrl: "https://pmc.ncbi.nlm.nih.gov/articles/PMC13626390/"
@@ -90,7 +95,9 @@ figures:
     changes: "Cropped to one panel of the authors' composite Figure 2. The authors' black mask is kept."
 ---
 
-You can stop a lightening cream. If you used a strong one daily for a long time, it is best to stop with a doctor's or pharmacist's help, because stopping suddenly can cause a flare [5]. The first few weeks can be rough, with redness, stinging or peeling, and recovery is measured in months rather than days [3][4]. If your skin flared before and you went back to the cream, that may have been your skin reacting to stopping. It does not have to mean your skin needs the cream.
+This guide explains why a flare can happen, why skin can look darker afterwards, and how to keep your routine plain while it settles.
+
+> **Safety:** After long daily use of a strong lightening cream, a sudden stop can cause a flare, so it is best to stop with a doctor's or pharmacist's help [5].
 
 ## Why stopping can cause a flare
 
@@ -100,7 +107,9 @@ When skin has had a strong steroid for a long time and it is stopped, a rebound 
 
 A study of people at a dermatology clinic in south-east Nigeria who used steroids to lighten their skin found the same pattern. Stopping usually brought a sore, inflamed skin reaction that patients found very unpleasant [7]. If that happened to you, it is a known pattern. It is not a failing on your part.
 
-Putting the cream back on calms the skin again, so going back can feel like the answer. The NHS says not to restart without talking to a doctor [5].
+If your skin flared before and you went back to the cream, that may have been your skin reacting to stopping. It does not have to mean your skin needs the cream.
+
+> **Safety:** Putting the cream back on calms the skin again, so going back can feel like the answer. The NHS says not to restart without talking to a doctor [5].
 
 You cannot tell what is in a jar from its label [9]. It is safest to treat any lightening cream of unknown content as one that may contain a steroid.
 
@@ -111,6 +120,8 @@ If your skin looks darker in the weeks after stopping, there are a few possible 
 - **Redness you cannot easily see.** Redness is harder to see on brown and black skin [3][5]. Go by how your skin feels too: burning, stinging or soreness.
 - **Marks left by inflammation.** Dark marks often follow irritated skin, and they are more common and more intense in darker skin. Marks in the top layer of skin can take months to years to fade without treatment [12].
 - **Blue-grey patches from hydroquinone.** Hydroquinone is a lightening chemical. Long use has been linked to ochronosis, a blue-black or grey-blue, lace-like discolouration on the face, most often reported in people with darker skin [10]. The FDA says it may be permanent [2], and it is hard to treat [11]. If you see this pattern, a dermatologist should look at it.
+
+The photo below is from a case report of one person with skin type V on the Fitzpatrick scale, which runs from I, the palest, to VI, the deepest.
 
 {{figure:ochronosis-case}}
 
@@ -134,6 +145,8 @@ That is all. Anything that irritates can worsen dark marks [12].
 
 ### What to expect
 
+Recovery is measured in months rather than days [3][4].
+
 - **Days to weeks:** a flare may start. Burning more than itching, and redness that covers a whole area rather than coming in patches, are signs doctors look for [3].
 - **Weeks to months:** the skin settles slowly. There is no fixed timeline, and the MHRA review describes symptoms lasting many months in some people [4].
 - **Dark marks:** these fade more slowly than redness, over months to years [12].
@@ -145,7 +158,6 @@ That is all. Anything that irritates can worsen dark marks [12].
 - **Do not switch to another lightening product.** The FDA advises against over-the-counter skin lightening products, and none are approved for sale in the US [2]. Creams without mercury can still contain hydroquinone [1].
 - **Do not scrub or peel.** Irritation can worsen dark marks [12], and steroid-thinned skin is delicate [5].
 - **Do not pile on actives.** Actives are ingredients that change the skin, like acids, retinoids and strong vitamin C. On sore skin they can irritate and worsen dark marks [12].
-- **Do not restart the old cream on a bad night** without talking to a doctor [5].
 
 ## What a routine can and cannot do
 

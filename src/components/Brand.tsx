@@ -92,7 +92,7 @@ export function Footer() {
       >
         Deeper Tones
       </p>
-      <p className="relative border-t border-black/[0.07] px-4 py-5 text-center text-xs text-subtle">
+      <p className="relative border-t border-black/[0.07] px-4 py-5 text-center text-sm text-muted">
         © <CopyrightYear /> {site.name}. Not medical advice. If you&apos;re worried about your skin, see a professional.
       </p>
     </footer>

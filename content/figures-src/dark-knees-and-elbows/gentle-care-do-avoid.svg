@@ -1,38 +1,104 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" font-family="Helvetica, Arial, sans-serif">
-  <rect width="1200" height="800" fill="#f1f1f1"/>
-  <rect x="50" y="42" width="10" height="52" rx="5" fill="#9d4edd"/>
-  <text x="80" y="85" font-size="46" font-weight="700" fill="#141414">Dark knees and elbows: do and avoid</text>
-  <rect x="50" y="130" width="545" height="600" rx="22" fill="#ffffff" stroke="#d6d6d6" stroke-width="3"/>
-  <rect x="605" y="130" width="545" height="600" rx="22" fill="#ffffff" stroke="#d6d6d6" stroke-width="3"/>
-  <rect x="50" y="130" width="545" height="14" rx="7" fill="#2fb37a"/>
-  <rect x="605" y="130" width="545" height="14" rx="7" fill="#d64545"/>
-  <text x="85" y="205" font-size="42" font-weight="700" fill="#141414">Do</text>
-  <text x="640" y="205" font-size="42" font-weight="700" fill="#141414">Avoid</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" width="1600" height="1200">
+  <title>Cut down friction on knees</title>
+  <defs>
+    <linearGradient id="skin" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#B98058"/>
+      <stop offset="1" stop-color="#A46B46"/>
+    </linearGradient>
+    <linearGradient id="air" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FAF7FC"/>
+      <stop offset="1" stop-color="#F1EAF8"/>
+    </linearGradient>
+    <linearGradient id="cloth" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#CFC3DE"/>
+      <stop offset="1" stop-color="#D9CFE5"/>
+    </linearGradient>
+    <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#D9CFE5"/>
+      <stop offset="1" stop-color="#CFC3DE"/>
+    </linearGradient>
+    <linearGradient id="cushion" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F6F2FA"/>
+      <stop offset="1" stop-color="#E9E2F1"/>
+    </linearGradient>
+    <filter id="lift" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="14" stdDeviation="20" flood-color="#2B1640" flood-opacity="0.09"/>
+    </filter>
+    <filter id="liftsm" x="-20%" y="-60%" width="140%" height="260%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#2B1640" flood-opacity="0.10"/>
+    </filter>
+    <clipPath id="cardL"><rect x="96" y="420" width="680" height="700" rx="40"/></clipPath>
+    <clipPath id="cardR"><rect x="824" y="420" width="680" height="700" rx="40"/></clipPath>
+    <!-- a kneeling leg in profile, facing left: thigh upright, shin along the ground, toes tucked.
+         Drawn once with its knee touching y = 0, placed on the floor (left) and on the cushion (right). -->
+    <g id="leg">
+      <!-- a kneeling person in profile, facing left (Humaaans-style reduction: no face, hair as one shape).
+           Origin = where the knee meets the ground. -->
+      <!-- far arm, slightly deeper (shade) -->
+      <path d="M 60 -452 C 76 -396, 80 -344, 66 -282" fill="none" stroke="#8A5636" stroke-width="34" stroke-linecap="round"/>
+      <!-- leg: thigh upright, shin along the ground, foot behind -->
+      <path d="M -14 -60
+               C -22 -40, -18 -8, 12 0
+               L 318 0
+               C 338 0, 342 -22, 324 -30
+               C 292 -38, 252 -40, 228 -46
+               C 216 -62, 196 -66, 184 -54
+               C 150 -58, 110 -62, 84 -76
+               C 70 -84, 66 -92, 66 -104
+               L 72 -250
+               L -18 -250
+               L -18 -92
+               C -18 -78, -16 -68, -14 -60 Z" fill="url(#skin)"/>
+      <path d="M -12 -84 C -16 -60, -14 -30, 6 -12" fill="none" stroke="#CF9A72" stroke-width="6" stroke-linecap="round"/>
+      <!-- neck and head -->
+      <rect x="18" y="-516" width="36" height="60" rx="16" fill="#A46B46"/>
+      <g transform="translate(30 -548) scale(0.9) translate(-30 548)"><ellipse cx="30" cy="-560" rx="50" ry="58" fill="url(#skin)"/>
+      <path d="M -14 -588 C -4 -630, 76 -636, 90 -582 C 98 -548, 92 -522, 76 -510 C 70 -540, 48 -566, 10 -574 C -2 -576, -12 -580, -14 -588 Z" fill="#2E1C12"/></g>
+      <!-- shorts and top -->
+      <path d="M -26 -300 L 82 -300 C 98 -276, 98 -228, 84 -196 C 50 -190, 10 -190, -24 -194 Z" fill="url(#cloth)"/>
+      <path d="M -20 -286 C -30 -350, -28 -430, -6 -466 C 14 -490, 72 -492, 86 -470 C 100 -436, 100 -350, 88 -286 Z" fill="#E9E2F1"/>
+      <!-- near arm with a short sleeve, hand resting by the hip -->
+      <path d="M 40 -446 C 50 -392, 52 -338, 34 -276" fill="none" stroke="#B98058" stroke-width="36" stroke-linecap="round"/>
+      <path d="M 40 -456 L 46 -404" fill="none" stroke="#E9E2F1" stroke-width="50" stroke-linecap="round"/>
+    </g>
+  </defs>
 
-  <g fill="#2fb37a">
-    <circle cx="90" cy="285" r="17"/><circle cx="90" cy="405" r="17"/><circle cx="90" cy="525" r="17"/><circle cx="90" cy="645" r="17"/>
-  </g>
-  <g fill="none" stroke="#ffffff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M82 285 l6 6 l11 -12"/><path d="M82 405 l6 6 l11 -12"/><path d="M82 525 l6 6 l11 -12"/><path d="M82 645 l6 6 l11 -12"/>
-  </g>
-  <g font-size="30" fill="#141414">
-    <text x="125" y="280">Fragrance-free cream or</text><text x="125" y="320">ointment after a bath</text>
-    <text x="125" y="400">Kneel on a cushion, rest</text><text x="125" y="440">elbows on something soft</text>
-    <text x="125" y="520">Sunscreen SPF 30 or higher</text><text x="125" y="560">on exposed knees, elbows</text>
-    <text x="125" y="640">Exfoliate lightly, if at all:</text><text x="125" y="680">30 seconds, then moisturise</text>
+  <rect width="1600" height="1200" fill="#FFFFFF"/>
+
+  <text x="96" y="150" font-family="Source Serif 4" font-weight="600" font-size="88" fill="#141414" letter-spacing="-1">Cut down friction on knees</text>
+
+  <!-- ===== Left: kneeling on the floor (avoid) ===== -->
+  <g font-family="Archivo">
+    <circle cx="126" cy="272" r="30" fill="#5E5E5E"/>
+    <path d="M114 260 l 24 24 M138 260 l -24 24" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round"/>
+    <text x="176" y="292" font-size="58" font-weight="600" fill="#141414">Kneeling on the floor</text>
+    <text x="96" y="370" font-size="56" font-weight="400" fill="#5E5E5E">Adds friction</text>
   </g>
 
-  <g fill="#d64545">
-    <circle cx="645" cy="285" r="17"/><circle cx="645" cy="405" r="17"/><circle cx="645" cy="525" r="17"/><circle cx="645" cy="645" r="17"/>
+  <g filter="url(#lift)"><rect x="96" y="420" width="680" height="700" rx="40" fill="url(#air)"/></g>
+  <g clip-path="url(#cardL)">
+    <!-- hard floor -->
+    <rect x="96" y="1056" width="680" height="80" fill="url(#floor)"/>
+    <path d="M96 1056 H 776" stroke="#CFC3DE" stroke-width="4"/>
+    <g transform="translate(304 1056) scale(0.9)"><use href="#leg"/></g>
   </g>
-  <g fill="none" stroke="#ffffff" stroke-width="4.5" stroke-linecap="round">
-    <path d="M637 277 l16 16 M653 277 l-16 16"/><path d="M637 397 l16 16 M653 397 l-16 16"/><path d="M637 517 l16 16 M653 517 l-16 16"/><path d="M637 637 l16 16 M653 637 l-16 16"/>
+
+  <!-- ===== Right: kneel on a cushion (do) ===== -->
+  <g font-family="Archivo">
+    <circle cx="854" cy="272" r="30" fill="#7B2CBF"/>
+    <path d="M840 272 l 10 10 l 19 -20" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="904" y="292" font-size="58" font-weight="600" fill="#141414">Kneel on a cushion</text>
+    <text x="824" y="370" font-size="56" font-weight="400" fill="#5E5E5E">Less friction</text>
   </g>
-  <g font-size="30" fill="#141414">
-    <text x="680" y="280">Hard scrubs, rough tools:</text><text x="680" y="320">rubbing adds to darkening</text>
-    <text x="680" y="400">Lemon or lime juice: it can</text><text x="680" y="440">burn in sun, then heal dark</text>
-    <text x="680" y="520">Bleaching creams: some</text><text x="680" y="560">hold mercury or hydroquinone</text>
-    <text x="680" y="640">Household bleach: never</text><text x="680" y="680">put it on skin</text>
+
+  <g filter="url(#lift)"><rect x="824" y="420" width="680" height="700" rx="40" fill="url(#air)"/></g>
+  <g clip-path="url(#cardR)">
+    <rect x="824" y="1056" width="680" height="80" fill="url(#floor)"/>
+    <path d="M824 1056 H 1504" stroke="#CFC3DE" stroke-width="4"/>
+    <!-- the cushion: the one thing that changes -->
+    <g filter="url(#liftsm)">
+      <rect x="958" y="994" width="372" height="64" rx="32" fill="url(#cushion)"/>
+    </g>
+    <g transform="translate(1032 1002) scale(0.9)"><use href="#leg"/></g>
   </g>
-  <text x="600" y="775" font-size="28" fill="#5e5e5e" text-anchor="middle">Thick, velvety or fast-appearing patches: ask a doctor.</text>
 </svg>

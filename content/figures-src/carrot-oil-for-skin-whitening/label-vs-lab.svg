@@ -1,42 +1,45 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" font-family="Helvetica, Arial, sans-serif">
-  <rect width="1200" height="800" fill="#f1f1f1"/>
-  <text x="40" y="72" font-size="42" font-weight="700" fill="#141414">Carrot on the label does not mean gentle</text>
-  <text x="40" y="136" font-size="30" font-weight="700" fill="#141414">Carrot oil, Daucus carota or carotene on the label: 5 of 10 creams</text>
-  <rect x="150" y="160" width="100" height="26" rx="8" fill="#5e5e5e"/>
-  <rect x="130" y="182" width="140" height="112" rx="20" fill="#ffffff" stroke="#141414" stroke-width="3"/>
-  <rect x="144" y="210" width="112" height="56" rx="10" fill="#d64545"/>
-  <rect x="350" y="160" width="100" height="26" rx="8" fill="#5e5e5e"/>
-  <rect x="330" y="182" width="140" height="112" rx="20" fill="#ffffff" stroke="#141414" stroke-width="3"/>
-  <rect x="344" y="210" width="112" height="56" rx="10" fill="#d64545"/>
-  <rect x="550" y="160" width="100" height="26" rx="8" fill="#5e5e5e"/>
-  <rect x="530" y="182" width="140" height="112" rx="20" fill="#ffffff" stroke="#141414" stroke-width="3"/>
-  <rect x="544" y="210" width="112" height="56" rx="10" fill="#d64545"/>
-  <rect x="750" y="160" width="100" height="26" rx="8" fill="#5e5e5e"/>
-  <rect x="730" y="182" width="140" height="112" rx="20" fill="#ffffff" stroke="#141414" stroke-width="3"/>
-  <rect x="744" y="210" width="112" height="56" rx="10" fill="#d64545"/>
-  <rect x="950" y="160" width="100" height="26" rx="8" fill="#5e5e5e"/>
-  <rect x="930" y="182" width="140" height="112" rx="20" fill="#ffffff" stroke="#141414" stroke-width="3"/>
-  <rect x="944" y="210" width="112" height="56" rx="10" fill="#e0a020"/>
-  <text x="40" y="378" font-size="30" font-weight="700" fill="#141414">No carrot on the label: 5 of 10 creams</text>
-  <rect x="150" y="402" width="100" height="26" rx="8" fill="#5e5e5e"/>
-  <rect x="130" y="424" width="140" height="112" rx="20" fill="#ffffff" stroke="#141414" stroke-width="3"/>
-  <rect x="144" y="452" width="112" height="56" rx="10" fill="#e0a020"/>
-  <rect x="350" y="402" width="100" height="26" rx="8" fill="#5e5e5e"/>
-  <rect x="330" y="424" width="140" height="112" rx="20" fill="#ffffff" stroke="#141414" stroke-width="3"/>
-  <rect x="344" y="452" width="112" height="56" rx="10" fill="#e0a020"/>
-  <rect x="550" y="402" width="100" height="26" rx="8" fill="#5e5e5e"/>
-  <rect x="530" y="424" width="140" height="112" rx="20" fill="#ffffff" stroke="#141414" stroke-width="3"/>
-  <rect x="544" y="452" width="112" height="56" rx="10" fill="#e0a020"/>
-  <rect x="750" y="402" width="100" height="26" rx="8" fill="#5e5e5e"/>
-  <rect x="730" y="424" width="140" height="112" rx="20" fill="#ffffff" stroke="#141414" stroke-width="3"/>
-  <rect x="744" y="452" width="112" height="56" rx="10" fill="#e0a020"/>
-  <rect x="950" y="402" width="100" height="26" rx="8" fill="#5e5e5e"/>
-  <rect x="930" y="424" width="140" height="112" rx="20" fill="#ffffff" stroke="#141414" stroke-width="3"/>
-  <rect x="944" y="452" width="112" height="56" rx="10" fill="#e0a020"/>
-  <rect x="40" y="580" width="44" height="34" rx="8" fill="#d64545"/>
-  <text x="102" y="608" font-size="30" fill="#141414">Hydroquinone listed on the label (4 creams)</text>
-  <rect x="40" y="632" width="44" height="34" rx="8" fill="#e0a020"/>
-  <text x="102" y="660" font-size="30" fill="#141414">Hydroquinone not listed on the label (6 creams)</text>
-  <text x="40" y="722" font-size="32" font-weight="700" fill="#141414">Lab tests found hydroquinone, mercury and arsenic in all 10.</text>
-  <text x="40" y="766" font-size="28" fill="#5e5e5e">One study, ten creams, one city (Ilorin, Nigeria).</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" width="1600" height="1200">
+  <title>Carrot does not mean gentle</title>
+  <defs>
+    <linearGradient id="epi" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#B98058"/><stop offset="1" stop-color="#A46B46"/></linearGradient>
+    <linearGradient id="derm" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EBCBB8"/><stop offset="1" stop-color="#F4E2D7"/></linearGradient>
+    <linearGradient id="air" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FAF7FC"/><stop offset="1" stop-color="#F1EAF8"/></linearGradient>
+    <linearGradient id="obj" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#D9CFE5"/><stop offset="0.35" stop-color="#E9E2F1"/><stop offset="1" stop-color="#CFC3DE"/></linearGradient>
+    <linearGradient id="body" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#F3EFF7"/><stop offset="0.3" stop-color="#FFFFFF"/><stop offset="1" stop-color="#ECE6F2"/></linearGradient>
+    <filter id="soft" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="14"/></filter>
+    <filter id="lift" x="-10%" y="-20%" width="120%" height="150%"><feDropShadow dx="0" dy="14" stdDeviation="20" flood-color="#2B1640" flood-opacity="0.09"/></filter>
+    <filter id="liftsm" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#2B1640" flood-opacity="0.10"/></filter>
+  </defs>
+  <rect width="1600" height="1200" fill="#FFFFFF"/>
+  <text x="96" y="150" font-family="Source Serif 4" font-weight="600" font-size="88" fill="#141414" letter-spacing="-1">Carrot does not mean gentle</text>
+<g filter="url(#lift)"><rect x="96" y="232" width="1408" height="636" rx="40" fill="#FFFFFF"/></g><rect x="96" y="232" width="1408" height="636" rx="40" fill="none" stroke="#ECE8F0" stroke-width="2"/><text x="144" y="388" font-family="Archivo" font-weight="600" font-size="58" fill="#141414">Carrot listed</text>
+    <g filter="url(#liftsm)"><rect x="857" y="296" width="97" height="30" rx="11" fill="url(#obj)"/><rect x="848" y="319" width="115" height="115" rx="34" fill="url(#body)"/></g>
+    <rect x="864" y="344" width="83" height="64" rx="16" fill="#F1EAF8"/>
+    <rect x="878" y="368" width="55" height="16" rx="8" fill="#9D4EDD"/>
+    <g filter="url(#liftsm)"><rect x="985" y="296" width="97" height="30" rx="11" fill="url(#obj)"/><rect x="976" y="319" width="115" height="115" rx="34" fill="url(#body)"/></g>
+    <rect x="992" y="344" width="83" height="64" rx="16" fill="#F1EAF8"/>
+    <rect x="1006" y="368" width="55" height="16" rx="8" fill="#9D4EDD"/>
+    <g filter="url(#liftsm)"><rect x="1113" y="296" width="97" height="30" rx="11" fill="url(#obj)"/><rect x="1104" y="319" width="115" height="115" rx="34" fill="url(#body)"/></g>
+    <rect x="1120" y="344" width="83" height="64" rx="16" fill="#F1EAF8"/>
+    <rect x="1134" y="368" width="55" height="16" rx="8" fill="#9D4EDD"/>
+    <g filter="url(#liftsm)"><rect x="1241" y="296" width="97" height="30" rx="11" fill="url(#obj)"/><rect x="1232" y="319" width="115" height="115" rx="34" fill="url(#body)"/></g>
+    <rect x="1248" y="344" width="83" height="64" rx="16" fill="#F1EAF8"/>
+    <rect x="1262" y="368" width="55" height="16" rx="8" fill="#9D4EDD"/>
+    <g filter="url(#liftsm)"><rect x="1369" y="296" width="97" height="30" rx="11" fill="url(#obj)"/><rect x="1360" y="319" width="115" height="115" rx="34" fill="url(#body)"/></g>
+    <rect x="1376" y="344" width="83" height="64" rx="16" fill="#F1EAF8"/>
+    <rect x="1390" y="368" width="55" height="16" rx="8" fill="#D9CFE5"/><text x="144" y="632" font-family="Archivo" font-weight="600" font-size="58" fill="#141414">No carrot listed</text>
+    <g filter="url(#liftsm)"><rect x="857" y="540" width="97" height="30" rx="11" fill="url(#obj)"/><rect x="848" y="563" width="115" height="115" rx="34" fill="url(#body)"/></g>
+    <rect x="864" y="588" width="83" height="64" rx="16" fill="#F1EAF8"/>
+    <rect x="878" y="612" width="55" height="16" rx="8" fill="#D9CFE5"/>
+    <g filter="url(#liftsm)"><rect x="985" y="540" width="97" height="30" rx="11" fill="url(#obj)"/><rect x="976" y="563" width="115" height="115" rx="34" fill="url(#body)"/></g>
+    <rect x="992" y="588" width="83" height="64" rx="16" fill="#F1EAF8"/>
+    <rect x="1006" y="612" width="55" height="16" rx="8" fill="#D9CFE5"/>
+    <g filter="url(#liftsm)"><rect x="1113" y="540" width="97" height="30" rx="11" fill="url(#obj)"/><rect x="1104" y="563" width="115" height="115" rx="34" fill="url(#body)"/></g>
+    <rect x="1120" y="588" width="83" height="64" rx="16" fill="#F1EAF8"/>
+    <rect x="1134" y="612" width="55" height="16" rx="8" fill="#D9CFE5"/>
+    <g filter="url(#liftsm)"><rect x="1241" y="540" width="97" height="30" rx="11" fill="url(#obj)"/><rect x="1232" y="563" width="115" height="115" rx="34" fill="url(#body)"/></g>
+    <rect x="1248" y="588" width="83" height="64" rx="16" fill="#F1EAF8"/>
+    <rect x="1262" y="612" width="55" height="16" rx="8" fill="#D9CFE5"/>
+    <g filter="url(#liftsm)"><rect x="1369" y="540" width="97" height="30" rx="11" fill="url(#obj)"/><rect x="1360" y="563" width="115" height="115" rx="34" fill="url(#body)"/></g>
+    <rect x="1376" y="588" width="83" height="64" rx="16" fill="#F1EAF8"/>
+    <rect x="1390" y="612" width="55" height="16" rx="8" fill="#D9CFE5"/><path d="M144 494 H 1456" stroke="#ECE8F0" stroke-width="3"/><rect x="144" y="760" width="56" height="16" rx="8" fill="#9D4EDD"/><text x="224" y="778" font-family="Archivo" font-weight="400" font-size="56" fill="#5E5E5E">Hydroquinone listed</text><text x="96" y="966" font-family="Archivo" font-weight="600" font-size="58" fill="#141414">Lab found in all 10:</text><rect x="96" y="1000" width="428" height="80" rx="20" fill="#EFE4F8"/><text x="120" y="1060" font-family="Archivo" font-weight="600" font-size="58" fill="#141414">Hydroquinone</text><rect x="548" y="1000" width="262" height="80" rx="20" fill="#EFE4F8"/><text x="572" y="1060" font-family="Archivo" font-weight="600" font-size="58" fill="#141414">Mercury</text><rect x="834" y="1000" width="262" height="80" rx="20" fill="#EFE4F8"/><text x="858" y="1060" font-family="Archivo" font-weight="600" font-size="58" fill="#141414">Arsenic</text></svg>

@@ -53,13 +53,18 @@ sources:
 figures:
   - id: fading-timeline
     kind: diagram
-    alt: "Three squares of deep brown skin in a row, each with the same dark marks. The marks are darkest at the start, fainter at week 12, and fainter still at about 6 months, but still visible. The skin colour stays the same in all three."
+    alt: "Three squares of warm brown skin in a row, each showing the same dark mark. The mark is darkest at the start, fainter at week 12 and fainter still at about 6 months, but still visible. The skin tone is the same in all three."
     caption: "Marks fade slowly and only partly: week 12 is the first fair check, and about six months gives the real picture. Your own skin tone does not change."
     credit: "Deeper Tones"
     license: "Own work"
     sourceUrl: null
     licenseUrl: null
     changes: null
+inShort:
+  - "Azelaic acid can fade dark marks and patches on darker skin, but slowly and only partly: expect fainter, not gone."
+  - "Plan on 12 weeks for a first fair check and about six months for the real picture."
+  - "A 2026 review puts typical improvement with 20% azelaic acid at roughly 25 to 50%, over about 12 to 16 weeks."
+  - "It does not change the colour you were born with. Itching, burning or stinging are the common side effects."
 faq:
   - q: "How long does azelaic acid take to work on dark marks?"
     a: "Studies on darker skin ran for 16 to 24 weeks, and reviews describe results at about 12 to 16 weeks. Treat 12 weeks as the first fair check. A clear change usually takes several months, and the usual result is fainter marks, not gone."
@@ -73,7 +78,7 @@ faq:
     a: "Ask a doctor or pharmacist first. US labels say very little is absorbed through the skin, but also that there are no good studies in pregnant women, so it should be used only if clearly needed. For breastfeeding, the cream label says little is likely to reach milk but still advises caution."
 ---
 
-Azelaic acid can fade dark marks and patches on darker skin, but slowly and only partly. In the main 24-week trial on darker skin, the gain over a plain cream was clear by the end [1]. Plan on 12 weeks for a first fair check and about six months for the real picture. It does not change the colour you were born with.
+In the main 24-week trial on darker skin, the gain over a plain cream was clear by the end [1]. Below: what the studies show, a realistic before and after, strengths, side effects and how it compares with hydroquinone, an ingredient that reduces pigment production.
 
 ## What azelaic acid is
 
@@ -91,7 +96,7 @@ Most of the strongest trials looked at melasma, a patchy brown discolouration of
 
 ## What a realistic before and after looks like
 
-Expect fainter, not gone. A 2026 review puts typical overall improvement with 20% azelaic acid at roughly 25 to 50%, over about 12 to 16 weeks [6].
+Expect fainter, not gone. Plan on 12 weeks for a first fair check and about six months for the real picture. A 2026 review puts typical overall improvement with 20% azelaic acid at roughly 25 to 50%, over about 12 to 16 weeks [6].
 
 In practice, expect marks a little closer to your own tone, not a clean slate. The effect is mostly on overactive pigment cells, so the skin around the marks is not expected to change [7]. Rare colour loss is covered below. New marks keep arriving if the cause, such as picking or an irritating product, continues.
 
@@ -113,7 +118,7 @@ For marks after pimples, our guides on [fading dark marks on dark skin](/guides/
 
 Itching, burning and stinging are the common ones, most often at the start. In the 24-week trial, burning was slightly higher than with the plain base at weeks 4 and 12, and stinging at week 4 [1]. The US acne cream label lists itching, burning, stinging and tingling in about 1 to 5% of people, mild and usually settling with continued use [8]. The rosacea gel label reports burning, stinging or tingling in 29% of trial participants, usually in the first few weeks [9].
 
-If it keeps stinging, the label says to cut back or pause until it settles, and to stop and see a doctor if irritation persists [8]. Keep it away from eyes and mouth [8][9]. A rare allergy can cause facial swelling or trouble breathing, and that needs urgent care [9].
+> **Safety:** If it keeps stinging, the label says to cut back or pause until it settles, and to stop and see a doctor if irritation persists [8]. Keep it away from eyes and mouth [8][9]. A rare allergy can cause facial swelling or trouble breathing, and that needs urgent care [9].
 
 In darker skin, irritation from any product can itself leave a mark [6]. A product that burns every day is working against you.
 
@@ -123,7 +128,7 @@ We found no source saying azelaic acid darkens normal skin. The myth may come fr
 
 The warning on azelaic acid labels runs the other way. The US labels note isolated reports of hypopigmentation (patches losing colour), and rare reports of vitiligo (a condition where patches of skin lose their colour) and small pale spots [8][9]. The labels also say it has not been well studied in people with dark complexions, and ask them to watch for colour changes and report any to a doctor [8][9].
 
-## Azelaic acid or hydroquinone
+## Azelaic acid or hydroquinone?
 
 Hydroquinone is an ingredient that reduces pigment production. In the UK it is prescribed, in courses of a few weeks, because it can irritate and over-lighten skin [10].
 
@@ -135,7 +140,9 @@ If you want a fast fix, a professional can discuss options with you. Be wary of 
 
 ## Pregnancy and breastfeeding
 
-Ask a doctor or pharmacist before using it. The US rosacea gel label says azelaic acid is minimally absorbed through skin, and that maternal use is not expected to expose the fetus. It also reports that very high oral doses in animals caused harm to embryos alongside toxicity to the mother, with no malformations [9]. The acne cream label says there are no adequate studies in pregnant women and it should be used only if clearly needed [8].
+> **Safety:** Ask a doctor or pharmacist before using it.
+
+The US rosacea gel label says azelaic acid is minimally absorbed through skin, and that maternal use is not expected to expose the fetus. It also reports that very high oral doses in animals caused harm to embryos alongside toxicity to the mother, with no malformations [9]. The acne cream label says there are no adequate studies in pregnant women and it should be used only if clearly needed [8].
 
 For breastfeeding, the cream label says so little is absorbed that milk levels are unlikely to change, but it still advises caution [8]. By comparison, the British Association of Dermatologists says hydroquinone should be avoided in pregnancy [10].
 

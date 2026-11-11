@@ -1,45 +1,55 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" font-family="Helvetica, Arial, sans-serif">
-  <rect width="1200" height="800" fill="#f1f1f1"/>
-  <text x="60" y="78" font-size="44" font-weight="700" fill="#141414">What to expect after you stop</text>
-  <text x="60" y="125" font-size="30" fill="#5e5e5e">There is no fixed timeline. Everyone is different.</text>
-
-  <!-- cards -->
-  <rect x="60" y="160" width="1080" height="160" rx="24" fill="#ffffff"/>
-  <rect x="60" y="340" width="1080" height="160" rx="24" fill="#ffffff"/>
-  <rect x="60" y="520" width="1080" height="160" rx="24" fill="#ffffff"/>
-
-  <!-- timeline spine, drawn over the cards and under the dots -->
-  <line x1="95" y1="240" x2="95" y2="600" stroke="#9d4edd" stroke-width="4" stroke-opacity="0.5"/>
-
-  <!-- Row 1 -->
-  <circle cx="95" cy="240" r="20" fill="#e0a020"/>
-  <text x="150" y="214" font-size="38" font-weight="700" fill="#141414">Days to weeks</text>
-  <text x="150" y="260" font-size="30" fill="#5e5e5e">A flare may start.</text>
-  <text x="150" y="296" font-size="30" fill="#5e5e5e">Burning, stinging, redness, peeling.</text>
-
-  <!-- Row 2 -->
-  <circle cx="95" cy="420" r="20" fill="#9d4edd"/>
-  <text x="150" y="394" font-size="38" font-weight="700" fill="#141414">Weeks to months</text>
-  <text x="150" y="440" font-size="30" fill="#5e5e5e">The skin settles slowly.</text>
-  <text x="150" y="476" font-size="30" fill="#5e5e5e">Some people take many months.</text>
-
-  <!-- Row 3 -->
-  <circle cx="95" cy="600" r="20" fill="#7b2cbf"/>
-  <text x="150" y="574" font-size="38" font-weight="700" fill="#141414">Months to years</text>
-  <text x="150" y="620" font-size="30" fill="#5e5e5e">Dark marks fade, more</text>
-  <text x="150" y="656" font-size="30" fill="#5e5e5e">slowly than redness.</text>
-
-  <!-- fading marks on the same skin tone -->
-  <g>
-    <text x="900" y="568" font-size="28" text-anchor="middle" fill="#5e5e5e">Marks fade. Skin tone stays.</text>
-    <circle cx="760" cy="626" r="34" fill="#8a5a3c"/>
-    <circle cx="760" cy="626" r="15" fill="#3b2418" opacity="0.95"/>
-    <circle cx="900" cy="626" r="34" fill="#8a5a3c"/>
-    <circle cx="900" cy="626" r="15" fill="#3b2418" opacity="0.55"/>
-    <circle cx="1040" cy="626" r="34" fill="#8a5a3c"/>
-    <circle cx="1040" cy="626" r="15" fill="#3b2418" opacity="0.2"/>
-    <path d="M814 626 H846 M954 626 H986" stroke="#5e5e5e" stroke-width="5" stroke-linecap="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" width="1600" height="1200">
+  <title>Recovery takes months, not days</title>
+  <defs>
+    <linearGradient id="epi" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#B98058"/><stop offset="1" stop-color="#A46B46"/></linearGradient>
+    <linearGradient id="derm" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EBCBB8"/><stop offset="1" stop-color="#F4E2D7"/></linearGradient>
+    <linearGradient id="air" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FAF7FC"/><stop offset="1" stop-color="#F1EAF8"/></linearGradient>
+    <linearGradient id="air2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#FFFFFF"/></linearGradient>
+    <filter id="soft" x="-80%" y="-200%" width="260%" height="500%"><feGaussianBlur stdDeviation="14"/></filter>
+    <filter id="lift" x="-10%" y="-20%" width="120%" height="150%"><feDropShadow dx="0" dy="14" stdDeviation="20" flood-color="#2B1640" flood-opacity="0.09"/></filter>
+    <clipPath id="tile1"><rect x="800" y="264" width="664" height="168" rx="28"/></clipPath>
+    <clipPath id="epi1"><path d="M800 348 Q 800 320 828 320 L 1436 320 Q 1464 320 1464 348 L 1464 392 C 1300 386, 1060 398, 800 390 Z"/></clipPath>
+    <clipPath id="tile2"><rect x="800" y="544" width="664" height="168" rx="28"/></clipPath>
+    <clipPath id="epi2"><path d="M800 628 Q 800 600 828 600 L 1436 600 Q 1464 600 1464 628 L 1464 672 C 1300 666, 1060 678, 800 670 Z"/></clipPath>
+    <clipPath id="tile3"><rect x="800" y="824" width="664" height="168" rx="28"/></clipPath>
+    <clipPath id="epi3"><path d="M800 908 Q 800 880 828 880 L 1436 880 Q 1464 880 1464 908 L 1464 952 C 1300 946, 1060 958, 800 950 Z"/></clipPath>
+  </defs>
+  <rect width="1600" height="1200" fill="#FFFFFF"/>
+  <text x="96" y="150" font-family="Source Serif 4" font-weight="600" font-size="88" fill="#141414" letter-spacing="-1">Recovery takes months, not days</text>
+  <g filter="url(#lift)"><rect x="96" y="232" width="1408" height="232" rx="40" fill="url(#air)"/></g>
+  <circle cx="168" cy="348" r="36" fill="#7B2CBF"/>
+  <text x="168" y="365" font-family="Archivo" font-weight="600" font-size="48" text-anchor="middle" fill="#FFFFFF">1</text>
+  <text x="232" y="340" font-family="Archivo" font-weight="600" font-size="58" fill="#141414">Days to weeks</text>
+  <text x="232" y="406" font-family="Archivo" font-weight="400" font-size="56" fill="#5E5E5E">A flare may start</text>
+  <g clip-path="url(#tile1)">
+    
+    <rect x="800" y="384" width="664" height="60" fill="url(#derm)"/>
+    <path d="M800 348 Q 800 320 828 320 L 1436 320 Q 1464 320 1464 348 L 1464 392 C 1300 386, 1060 398, 800 390 Z" fill="url(#epi)"/>
+    <path d="M828 321 L 1436 321" stroke="#CF9A72" stroke-width="6" fill="none"/>
+    <g clip-path="url(#epi1)"><ellipse cx="1132" cy="356" rx="230" ry="34" fill="#6E3A22" opacity="0.85" filter="url(#soft)"/></g>
   </g>
-
-  <text x="60" y="745" font-size="30" fill="#141414">Not settling, or very sore? See a doctor or pharmacist.</text>
+  <g filter="url(#lift)"><rect x="96" y="512" width="1408" height="232" rx="40" fill="url(#air)"/></g>
+  <circle cx="168" cy="628" r="36" fill="#7B2CBF"/>
+  <text x="168" y="645" font-family="Archivo" font-weight="600" font-size="48" text-anchor="middle" fill="#FFFFFF">2</text>
+  <text x="232" y="620" font-family="Archivo" font-weight="600" font-size="58" fill="#141414">Weeks to months</text>
+  <text x="232" y="686" font-family="Archivo" font-weight="400" font-size="56" fill="#5E5E5E">Skin settles slowly</text>
+  <g clip-path="url(#tile2)">
+    
+    <rect x="800" y="664" width="664" height="60" fill="url(#derm)"/>
+    <path d="M800 628 Q 800 600 828 600 L 1436 600 Q 1464 600 1464 628 L 1464 672 C 1300 666, 1060 678, 800 670 Z" fill="url(#epi)"/>
+    <path d="M828 601 L 1436 601" stroke="#CF9A72" stroke-width="6" fill="none"/>
+    <g clip-path="url(#epi2)"><ellipse cx="1132" cy="636" rx="160" ry="26" fill="#6E3A22" opacity="0.5" filter="url(#soft)"/></g>
+  </g>
+  <g filter="url(#lift)"><rect x="96" y="792" width="1408" height="232" rx="40" fill="url(#air)"/></g>
+  <circle cx="168" cy="908" r="36" fill="#7B2CBF"/>
+  <text x="168" y="925" font-family="Archivo" font-weight="600" font-size="48" text-anchor="middle" fill="#FFFFFF">3</text>
+  <text x="232" y="900" font-family="Archivo" font-weight="600" font-size="58" fill="#141414">Months to years</text>
+  <text x="232" y="966" font-family="Archivo" font-weight="400" font-size="56" fill="#5E5E5E">Marks fade slowly</text>
+  <g clip-path="url(#tile3)">
+    
+    <rect x="800" y="944" width="664" height="60" fill="url(#derm)"/>
+    <path d="M800 908 Q 800 880 828 880 L 1436 880 Q 1464 880 1464 908 L 1464 952 C 1300 946, 1060 958, 800 950 Z" fill="url(#epi)"/>
+    <path d="M828 881 L 1436 881" stroke="#CF9A72" stroke-width="6" fill="none"/>
+    <g clip-path="url(#epi3)"><ellipse cx="1132" cy="916" rx="96" ry="20" fill="#6E3A22" opacity="0.26" filter="url(#soft)"/></g>
+  </g>
 </svg>

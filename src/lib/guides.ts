@@ -37,3 +37,17 @@ export function relatedGuides(guide: Guide, limit = 3) {
 }
 
 export const guidePath = (slug: string) => `/guides/${slug}`;
+
+const SHORT_MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+// "2026-11-11" -> "11 Nov 2026" (index cards).
+export function shortDate(iso: string) {
+  const [y, m, d] = iso.split("-").map(Number);
+  return `${d} ${SHORT_MONTHS[m - 1]} ${y}`;
+}
+
+// The thumbnail for cards: the first diagram's title-less thumbnail, else none (a study photo is never re-cropped).
+export function guideThumb(guide: Guide) {
+  const fig = guide.figures.find((f) => f.kind === "diagram" && f.thumb);
+  return fig?.thumb ? { src: fig.thumb, width: fig.thumbWidth, height: fig.thumbHeight } : null;
+}

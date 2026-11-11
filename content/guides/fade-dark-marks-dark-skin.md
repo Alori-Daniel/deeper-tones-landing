@@ -66,6 +66,11 @@ sources:
     publisher: "British Association of Dermatologists"
     url: "https://www.bad.org.uk/pils/melasma/"
     year: 2026
+inShort:
+  - "Dark marks on dark skin usually fade, but slowly: 6 to 12 months once the cause stops, and deeper marks can take years."
+  - "Expect fainter marks, not a clean slate: the usual outcome in studies is partial improvement."
+  - "What helps, in order: stop what irritates, treat the spots, wear sunscreen daily, then add one gentle ingredient for about 12 weeks."
+  - "See a professional if marks are no better after about 12 weeks, or you have spreading redness, pus, fever or severe burning."
 faq:
   - q: "How long do dark marks take to fade?"
     a: "A mark a few shades darker than your skin usually fades within 6 to 12 months once the cause is stopped. Deeper, greyer or much darker marks can take years. Treatment can speed this up, and daily sunscreen helps prevent new marks and further darkening."
@@ -80,7 +85,7 @@ faq:
 figures:
   - id: "four-steps-in-order"
     kind: diagram
-    alt: "A numbered list of four steps in order: 1 stop what irritates, 2 treat what causes the marks, 3 sunscreen every day, 4 add one evening-out ingredient and judge it over about 12 weeks."
+    alt: "Four numbered drawings in a row. 1, stop what irritates: a product tube with a cross. 2, treat the cause: a drop above a spot on the skin. 3, sunscreen every day: a bottle and the sun. 4, one gentle ingredient: a dropper bottle and a drop, with about 12 weeks beneath."
     caption: "The four steps in the order this guide follows. Marks fade over months, not days."
     credit: "Deeper Tones"
     license: "Own work"
@@ -89,11 +94,11 @@ figures:
     changes: null
 ---
 
-Dark marks on dark skin usually fade, but slowly. A mark a few shades darker than your skin often takes 6 to 12 months once the cause stops, and deeper marks can take years [2]. What helps most, in order: stop what irritates your skin, treat the spots that leave the marks, wear sunscreen every day, then add one gentle evening-out ingredient and give it about 12 weeks [1][2][3].
+This guide takes the steps one at a time, then the ingredients to choose from, and why bleaching creams are not the answer.
 
 {{figure:four-steps-in-order}}
 
-## Why dark skin marks more easily
+## Why does dark skin mark more easily?
 
 After a pimple, a scratch, a bite, eczema or an irritating product, skin can leave a flat tan, brown or grey mark where it was inflamed [3]. The pattern is usually called post-inflammatory hyperpigmentation, or PIH. "Post-inflammatory" means after the skin was inflamed. "Hyperpigmentation" means extra pigment, the substance that gives skin its colour.
 
@@ -110,7 +115,7 @@ Common starting points include:
 
 One detail worth knowing: redness is harder to see on brown and black skin, and spots may look brown or purple instead [12]. Skin can be inflamed before it looks red.
 
-## How long it really takes
+## How long does it take?
 
 - **A few shades darker than your skin:** usually 6 to 12 months once the cause stops [2].
 - **Slate blue-grey or much darker brown:** can take years [2].
@@ -118,7 +123,7 @@ One detail worth knowing: redness is harder to see on brown and black skin, and 
 
 Most treatment studies check results after 3 to 6 months [3]. The usual outcome is partial improvement, not full clearing. One review of 48 studies found partial improvement in 85% of people using topical retinoids, and concluded that no treatment showed robust results across the board [5].
 
-If you are working toward a date, such as graduation or a wedding, a realistic aim is no new marks, calmer skin and older marks visibly fainter. Fully gone takes longer. The goal is an even tone in your own colour. No routine changes your natural skin colour.
+If you are working toward a date, such as graduation or a wedding, a realistic aim is no new marks, calmer skin and older marks visibly fainter. Fully gone takes longer. The goal is an even tone in your own colour. **No routine changes your natural skin colour.**
 
 For more on timing, see [how long dark spots take to fade](/guides/how-long-dark-spots-take-to-fade).
 
@@ -164,7 +169,11 @@ An acid that slows the enzyme (tyrosinase) skin uses to make pigment [3]. Studie
 
 Vitamin A relatives: adapalene, tretinoin, tazarotene and retinol [2]. Gels at 0.1% (tretinoin or adapalene) partly cleared post-acne marks over 12 weeks, and nightly tretinoin 0.1% over six months gave good-to-excellent improvement in half of the African American patients studied [3]. A review concludes they are safe and beneficial in skin of colour [6].
 
-Cautions: early irritation can briefly darken marks. Using a moisturiser alongside usually helps [3]. Do not use topical retinoids in pregnancy or when planning a pregnancy; this is a precaution, as very little reaches the bloodstream [10]. The NHS lists tretinoin and adapalene as prescription retinoids for acne [12], and rules differ by country.
+Early irritation can briefly darken marks. Using a moisturiser alongside usually helps [3].
+
+> **Safety:** Do not use topical retinoids in pregnancy or when planning a pregnancy. This is a precaution, as very little reaches the bloodstream [10].
+
+The NHS lists tretinoin and adapalene as prescription retinoids for acne [12], and rules differ by country.
 
 ### Niacinamide (vitamin B3)
 
@@ -172,15 +181,17 @@ A gentle vitamin that reduces how much pigment moves into skin cells [3]. In stu
 
 ### Vitamin C (ascorbic acid)
 
-It helps reduce pigment already in the skin. Studies used stabilised forms at 10% to 20% [3]. One 15% serum gave mild-to-moderate improvement over 12 weeks [3]. AAD also lists it [2]. Evidence is modest, so use it as an add-on.
+It helps reduce pigment already in the skin. Studies used stabilised forms at 10% to 20%, and one 15% serum gave mild-to-moderate improvement over 12 weeks [3]. AAD also lists it [2]. Evidence is modest, so use it as an add-on.
 
 ## Why "bleaching" creams are not the answer
 
-Unregulated skin-lightening products can inflame skin and raise the risk of marks [3]. Some imported products contain steroids or mercury that are not on the label. Steroids can cause pimples, rashes, and thin, fragile or permanently discoloured skin [2]. Mercury-containing lightening products are hazardous and banned in many countries [13]. AAD says never to put household bleach on skin [2].
+Unregulated skin-lightening products can inflame skin and raise the risk of marks [3]. Some imported products contain steroids or mercury that are not on the label. Steroids can cause pimples, rashes, and thin, fragile or permanently discoloured skin [2].
+
+Mercury-containing lightening products are hazardous and banned in many countries [13]. AAD says never to put household bleach on skin [2].
 
 Hydroquinone is an ingredient doctors prescribe in short courses. The British Association of Dermatologists says to use it for a few weeks at a time because it can irritate and over-lighten [14], and unsupervised use beyond four to six months has been linked to a bluish-black darkening called ochronosis [3].
 
-If you have used a strong steroid cream for a long time, stopping is best done with a doctor's or pharmacist's help.
+> **Safety:** If you have used a strong steroid cream for a long time, stopping is best done with a doctor's or pharmacist's help.
 
 ## When to see a professional
 

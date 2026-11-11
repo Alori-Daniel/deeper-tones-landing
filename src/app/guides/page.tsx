@@ -11,6 +11,10 @@ const description =
 // A preview build with drafts in it stays out of search.
 const hasDrafts = allGuides.some((g) => g.draft);
 
+// The newest guide spans the full row (a quiet "featured" card) when that leaves no card alone in the last row of the
+// 2-column (768) and 3-column (1280) grids: that holds for 7, 13, 19 ... guides.
+const featureNewest = allGuides.length > 1 && (allGuides.length - 1) % 6 === 0;
+
 export const metadata: Metadata = {
   title: "Guides",
   description,
@@ -71,13 +75,13 @@ export default function GuidesIndex() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
       />
       <Header />
-      <main className="mx-auto w-full max-w-4xl flex-1 px-5 pb-16 pt-28 sm:px-6 sm:pt-32">
+      <main className="guide-page guides-index">
         {hasDrafts && <DraftBanner />}
-        <h1 className="font-display text-[38px] font-semibold leading-[1.1] tracking-[-0.015em] sm:text-[52px]">Guides</h1>
-        <p className="mt-3 max-w-[56ch] text-lg leading-relaxed text-muted">{description}</p>
-        <div className="mt-10 grid gap-4 sm:grid-cols-2">
-          {allGuides.map((g) => (
-            <GuideCard key={g.slug} guide={g} />
+        <h1>Guides</h1>
+        <p className="guides-intro">{description}</p>
+        <div className="guides-grid">
+          {allGuides.map((g, i) => (
+            <GuideCard key={g.slug} guide={g} variant="index" as="h2" eager={i < 3} featured={featureNewest && i === 0} />
           ))}
         </div>
       </main>

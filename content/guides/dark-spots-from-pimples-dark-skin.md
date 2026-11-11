@@ -50,6 +50,11 @@ sources:
     publisher: "UK Medicines Information, NHS"
     url: "https://www.medicinesresources.nhs.uk/en/Medicines-Awareness/Safety-Alerts/Safety-alerts/Updated-measures-for-pregnancy-prevention-during-retinoid-use/"
     year: 2018
+inShort:
+  - "Dark spots left by pimples usually fade, but over months, not days: a spot a few shades darker than your skin takes 6 to 12 months once the cause stops."
+  - "What helps most, in order: calm the acne, wear sunscreen every day, then add one gentle ingredient for about 12 weeks."
+  - "Do not pick or squeeze spots. It can cause scars and adds inflammation, which leaves marks."
+  - "No routine changes your natural skin colour. The aim is fainter marks and an even tone in your own colour."
 faq:
   - q: "Can dark spots from pimples go away in 2 days?"
     a: "No. Spots left by pimples fade over months. A spot a few shades darker than your skin usually takes 6 to 12 months once new pimples stop, and studies of treatments check results after 12 to 16 weeks. Anything promising two days is promising more than the research shows."
@@ -64,8 +69,8 @@ faq:
 figures:
   - id: "do-and-avoid"
     kind: diagram
-    alt: "A two-column card. Do: calm the acne first, leave spots alone and keep skin clean, sunscreen every day at SPF 30 or higher, one gentle ingredient judged over about 12 weeks. Avoid: picking or squeezing spots, scrubbing, and creams that promise results in 2 days, as some imported creams hide steroids or mercury."
-    caption: "What helps and what to avoid for dark spots after pimples. Marks usually fade over months, not days."
+    alt: "Two skin cross-sections, each with a raised pimple. Left, marked with a cross and labelled picking or squeezing: two fingertips pinch it and a wider darker area spreads around it, showing more inflammation. Right, marked with a tick and labelled keep it clean: the pimple is left to settle."
+    caption: "Picking or squeezing a spot adds inflammation, and marks follow inflammation. Leave it, keep the skin clean and let it settle. Simple illustration, not to scale."
     credit: "Deeper Tones"
     license: "Own work"
     sourceUrl: null
@@ -73,17 +78,17 @@ figures:
     changes: null
 ---
 
-Dark spots left by pimples usually fade, but over months, not days. What helps most, in order: calm the acne so new marks stop arriving, protect your skin from the sun every day, then add one gentle evening-out ingredient and give it about 12 weeks. A spot a few shades darker than your skin usually takes 6 to 12 months to fade once the cause is stopped [1].
+This guide goes step by step, then answers two questions many people ask: can spots clear in two days, and what if you hoped for lighter skin?
 
 {{figure:do-and-avoid}}
 
-## Why pimples leave marks on dark skin
+## Why do pimples leave marks on dark skin?
 
 When a pimple is inflamed (swollen, sore, hot), skin can leave behind a flat tan, brown or grey mark where it healed. The pattern is usually called post-inflammatory hyperpigmentation, or PIH. "Hyperpigmentation" means extra pigment, the substance that gives skin its colour. This is a pattern, not a diagnosis: a flat mark that stays after a spot has gone often fits it, and a doctor or pharmacist can confirm.
 
 It is common. In one US study of 239 African American people with acne, about 65% developed these marks [2]. A review of treatment studies notes that darker skin tones are more prone to PIH and that it can be hard to treat [5].
 
-How deep the pigment sits matters. Tan to dark-brown marks sit near the surface and may take months to years to resolve without treatment. Blue-grey marks sit deeper and may be permanent or fade over a very long time [2].
+How deep the pigment sits matters. A spot a few shades darker than your skin usually takes 6 to 12 months to fade once the cause is stopped [1]. Tan to dark-brown marks sit near the surface and may take months to years to resolve without treatment. Blue-grey marks sit deeper and may be permanent or fade over a very long time [2].
 
 ## Step 1: calm the pimples first
 
@@ -124,11 +129,11 @@ Once pimples are calmer and sunscreen is a habit, you can add one ingredient. Ev
 
 For most people, results are partial. A review of 48 studies found partial improvement in 85% of people using topical retinoids, and concluded that no treatment worked strongly and reliably for everyone [5].
 
-If you use a retinoid, note that NHS medicines guidance advises against topical retinoids in pregnancy or when planning a pregnancy, as a precaution [10]. Ask a pharmacist or doctor if you are pregnant or breastfeeding.
+> **Safety:** If you use a retinoid, note that NHS medicines guidance advises against topical retinoids in pregnancy or when planning a pregnancy, as a precaution [10]. Ask a pharmacist or doctor if you are pregnant or breastfeeding.
 
 For the full routine, including other ingredients and the order to use them, read [how to fade dark marks on dark skin](/guides/fade-dark-marks-dark-skin).
 
-## The "gone in 2 days" promise
+## Can dark spots clear in 2 days?
 
 If you have a date, such as graduation, it makes sense to look for something fast. But there is no honest two-day fix. The research on treatments measures change over 12 to 16 weeks [6][9], and the typical result is partial [5]. AAD says some imported skin products have been found to contain undisclosed steroids or mercury [1], so be cautious of any cream that promises overnight results.
 
@@ -136,7 +141,11 @@ A realistic aim before a deadline is no new marks, calmer skin and older marks v
 
 ## If you hoped for lighter skin
 
-Many people searching this want skin that looks lighter, and that wish is understandable. Here is the kind and plain answer. Your natural skin colour is yours, and no routine changes it. What a good routine can do is fade the marks, calm the skin and give you an even tone in your own colour. That is a result you can reach safely. Skin-lightening creams are a risk, because some imported products have been found to contain steroids or mercury that are not on the label [1].
+Many people searching this want skin that looks lighter, and that wish is understandable. Your natural skin colour is yours, and no routine changes it.
+
+What a good routine can do is fade the marks, calm the skin and give you an even tone in your own colour. That is a result you can reach safely.
+
+> **Safety:** Skin-lightening creams are a risk, because some imported products have been found to contain steroids or mercury that are not on the label [1].
 
 ## When to see a professional
 
