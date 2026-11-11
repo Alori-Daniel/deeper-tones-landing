@@ -2,15 +2,29 @@
 // Runs from predev / prebuild / prelint / pretypecheck, never at request time (the Worker has no fs).
 // Format and rules: content/guides/README or the "Guides" section of README.md.
 
-import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, statSync, writeFileSync } from "node:fs";
 import { basename, dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { Marked } from "marked";
+import sharp from "sharp";
 import { parse as parseYaml } from "yaml";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const guidesDir = join(root, "content/guides");
 const outFile = join(root, "src/content/guides.generated.ts");
+const figuresSrcDir = join(root, "content/figures-src");
+const figuresOutDir = join(root, "public/guides");
+const thisScript = fileURLToPath(import.meta.url);
+
+const FIGURE_ID = /^[a-z0-9]+(-[a-z0-9]+)*$/;
+const FIGURE_KINDS = ["diagram", "study-photo"];
+const FIGURE_LICENSES = ["Own work", "CC BY 4.0", "CC BY 3.0", "CC BY 2.0", "CC0 1.0"];
+const FIGURE_EXTS = ["svg", "png", "jpg", "jpeg"];
+const MAX_FIGURES = 3;
+const FIGURE_MAX_WIDTH = 1600;
+const FIGURE_QUALITY = 80;
+// Public URLs of every webp written this run; anything else under public/guides is stale and removed.
+const keptFigureFiles = new Set();
 
 const showDrafts = process.env.GUIDES_SHOW_DRAFTS === "1";
 const MONTHS = [
@@ -42,6 +56,119 @@ function formatDate(iso) {
 function splitFrontmatter(raw) {
   const m = /^---\r?\n([\s\S]*?)\r?\n---[ \t]*(?:\r?\n|$)([\s\S]*)$/.exec(raw);
   return m ? { yaml: m[1], body: m[2] } : null;
+}
+
+// Validates the optional `figures` list and returns the normalised entries (empty when there are none).
+function validateFigures(fm, slug, fail) {
+  if (fm.figures === undefined || fm.figures === null) return [];
+  if (!Array.isArray(fm.figures)) {
+    fail(`"figures" must be a list`);
+    return Object.assign([], { invalid: true });
+  }
+  if (fm.figures.length > MAX_FIGURES) fail(`"figures" has ${fm.figures.length} entries; the limit is ${MAX_FIGURES} per guide`);
+  const out = [];
+  const seen = new Set();
+  out.invalid = false;
+  fm.figures.forEach((f, i) => {
+    const at = `figures[${i}]${f && typeof f.id === "string" ? ` (${f.id})` : ""}`;
+    if (!f || typeof f !== "object") {
+      out.invalid = true;
+      return fail(`${at} must be an object`);
+    }
+    let ok = true;
+    const bad = (msg) => {
+      ok = false;
+      out.invalid = true;
+      fail(`${at}: ${msg}`);
+    };
+    if (!isNonEmpty(f.id) || !FIGURE_ID.test(f.id)) bad(`"id" must be lowercase letters, digits and hyphens (like "label-steroid-names")`);
+    else if (seen.has(f.id)) bad(`"id" is used twice in this guide`);
+    else seen.add(f.id);
+    if (!FIGURE_KINDS.includes(f.kind)) bad(`"kind" must be one of: ${FIGURE_KINDS.join(", ")}`);
+    for (const key of ["alt", "caption", "credit"]) if (!isNonEmpty(f[key])) bad(`"${key}" is required (a non-empty string)`);
+    if (!FIGURE_LICENSES.includes(f.license)) bad(`"license" must be one of: ${FIGURE_LICENSES.map((l) => `"${l}"`).join(", ")}`);
+    if (f.kind === "diagram" && FIGURE_LICENSES.includes(f.license) && f.license !== "Own work") bad(`a diagram must have license "Own work"`);
+    if (f.kind === "study-photo") {
+      if (f.license === "Own work") bad(`a study photo cannot be "Own work"; use the licence the article states`);
+      for (const key of ["sourceUrl", "licenseUrl"]) {
+        if (!isNonEmpty(f[key]) || !/^https:\/\//i.test(f[key]) || !isHttpUrl(f[key])) bad(`a study photo needs "${key}" as an https link`);
+      }
+    }
+    if (f.changes !== undefined && f.changes !== null && !isNonEmpty(f.changes)) bad(`"changes" must be null or a short sentence`);
+    if (!ok) return;
+
+    const srcs = FIGURE_EXTS.map((ext) => join(figuresSrcDir, slug, `${f.id}.${ext}`)).filter(existsSync);
+    if (srcs.length === 0) return bad(`no source file; add content/figures-src/${slug}/${f.id}.(${FIGURE_EXTS.join("|")})`);
+    if (srcs.length > 1) return bad(`more than one source file for this id in content/figures-src/${slug}/; keep one`);
+    out.push({
+      id: f.id,
+      kind: f.kind,
+      alt: f.alt.trim(),
+      caption: f.caption.trim(),
+      credit: f.credit.trim(),
+      license: f.license,
+      sourceUrl: f.kind === "study-photo" ? f.sourceUrl : null,
+      licenseUrl: f.kind === "study-photo" ? f.licenseUrl : null,
+      changes: isNonEmpty(f.changes) ? f.changes.trim() : null,
+      srcFile: srcs[0],
+    });
+  });
+  return out;
+}
+
+// Source image -> public/guides/<slug>/<id>.webp (max 1600 px wide; SVG rendered at 2x). Returns the size.
+// Skipped when the output is already newer than both the source and this script.
+async function buildFigureImage(slug, fig, write) {
+  const outPath = join(figuresOutDir, slug, `${fig.id}.webp`);
+  if (!write) return { width: 1, height: 1 };
+  keptFigureFiles.add(outPath);
+  const isFresh = existsSync(outPath) && statSync(outPath).mtimeMs > Math.max(statSync(fig.srcFile).mtimeMs, statSync(thisScript).mtimeMs);
+  if (isFresh) {
+    const { width, height } = await sharp(outPath).metadata();
+    if (width && height) return { width, height };
+  }
+  mkdirSync(dirname(outPath), { recursive: true });
+  const isSvg = fig.srcFile.endsWith(".svg");
+  const info = await sharp(fig.srcFile, isSvg ? { density: 144 } : {})
+    .rotate()
+    .resize({ width: FIGURE_MAX_WIDTH, withoutEnlargement: true })
+    .webp({ quality: FIGURE_QUALITY })
+    .toFile(outPath);
+  return { width: info.width, height: info.height };
+}
+
+// Removes webp files (and empty folders) under public/guides that this run did not produce.
+function pruneFigureOutput() {
+  if (!existsSync(figuresOutDir)) return;
+  const walk = (dir) => {
+    for (const entry of readdirSync(dir, { withFileTypes: true })) {
+      const p = join(dir, entry.name);
+      if (entry.isDirectory()) {
+        walk(p);
+        if (readdirSync(p).length === 0) rmSync(p, { recursive: true });
+      } else if (!keptFigureFiles.has(p)) {
+        rmSync(p);
+      }
+    }
+  };
+  walk(figuresOutDir);
+}
+
+function figureHtml(slug, fig) {
+  const src = `/guides/${slug}/${fig.id}.webp`;
+  let credit = "";
+  if (fig.kind === "study-photo") {
+    const parts = [
+      `Credit: <a href="${escapeHtml(fig.sourceUrl)}" target="_blank" rel="noopener">${escapeHtml(fig.credit)}</a>`,
+      `Licence: <a href="${escapeHtml(fig.licenseUrl)}" target="_blank" rel="noopener">${escapeHtml(fig.license)}</a>`,
+    ];
+    if (fig.changes) parts.push(`Changes: ${escapeHtml(fig.changes)}`);
+    credit = `<span class="guide-figure-credit">${parts.join(" · ")}</span>`;
+  }
+  return (
+    `<figure class="guide-figure"><img src="${src}" alt="${escapeHtml(fig.alt)}" width="${fig.width}" height="${fig.height}" loading="lazy" decoding="async">` +
+    `<figcaption>${escapeHtml(fig.caption)}${credit}</figcaption></figure>\n`
+  );
 }
 
 function validate(fm, slugFromFile, fail) {
@@ -86,7 +213,9 @@ function validate(fm, slugFromFile, fail) {
 
 // Markdown -> HTML. Raw HTML in the source is escaped, images are rejected, links are limited to safe
 // schemes, `[n]` becomes a link to the numbered source, and `##` headings get ids for the contents list.
-function renderMarkdown(body, fail) {
+function renderMarkdown(body, slug, figures, fail, figuresValid) {
+  const figureById = new Map(figures.map((f) => [f.id, f]));
+  const placed = new Map();
   const headings = [];
   const usedIds = new Set();
   const cited = new Set();
@@ -102,6 +231,25 @@ function renderMarkdown(body, fail) {
   const marked = new Marked({
     gfm: true,
     extensions: [
+      {
+        // A line holding only {{figure:<id>}} places that figure from the frontmatter.
+        name: "figure",
+        level: "block",
+        start: (src) => src.search(/^\{\{figure:/m),
+        tokenizer(src) {
+          const m = /^\{\{figure:([^}\n]*)\}\}[ \t]*(?:\n|$)/.exec(src);
+          return m ? { type: "figure", raw: m[0], id: m[1].trim() } : undefined;
+        },
+        renderer(token) {
+          const fig = figureById.get(token.id);
+          if (!fig) {
+            if (figuresValid) fail(`"{{figure:${token.id}}}" has no matching entry in "figures"`);
+            return "";
+          }
+          placed.set(token.id, (placed.get(token.id) ?? 0) + 1);
+          return figureHtml(slug, fig);
+        },
+      },
       {
         name: "cite",
         level: "inline",
@@ -154,10 +302,16 @@ function renderMarkdown(body, fail) {
   });
 
   const html = marked.parse(body, { async: false });
+  if (html.includes("{{figure:")) fail(`a "{{figure:<id>}}" marker must sit alone on its own line, with a blank line before and after`);
+  for (const f of figuresValid ? figures : []) {
+    const n = placed.get(f.id) ?? 0;
+    if (n === 0) fail(`figure "${f.id}" is in "figures" but never placed; add a line {{figure:${f.id}}} to the body`);
+    if (n > 1) fail(`figure "${f.id}" is placed ${n} times; each figure goes in exactly once`);
+  }
   return { html, headings, cited };
 }
 
-function loadGuides() {
+async function loadGuides() {
   if (!existsSync(guidesDir)) return [];
   const files = readdirSync(guidesDir)
     .filter((f) => f.endsWith(".md"))
@@ -187,7 +341,11 @@ function loadGuides() {
     }
 
     validate(fm, slug, fail);
-    const { html, headings, cited } = renderMarkdown(parts.body, fail);
+    const figures = validateFigures(fm, slug, fail);
+    // Images are only built for guides that go into this build (drafts are skipped unless previewing them).
+    const included = showDrafts || (fm.draft !== true && !file.startsWith("_"));
+    for (const fig of figures) Object.assign(fig, await buildFigureImage(slug, fig, included && !errors.length));
+    const { html, headings, cited } = renderMarkdown(parts.body, slug, figures, fail, !figures.invalid);
 
     const sourceCount = Array.isArray(fm.sources) ? fm.sources.length : 0;
     for (const n of [...cited].sort((a, b) => a - b)) {
@@ -199,9 +357,7 @@ function loadGuides() {
     const words = parts.body.split(/\s+/).filter(Boolean).length;
     if (words < 700 || words > 1700) warnings.push(`content/guides/${file}: body is ${words} words (aim for 900 to 1,400)`);
 
-    if (fm.draft === true || file.startsWith("_")) {
-      if (!showDrafts) continue;
-    }
+    if (!included) continue;
     if (errors.some((e) => e.startsWith(`content/guides/${file}:`))) continue;
 
     guides.push({
@@ -219,6 +375,20 @@ function loadGuides() {
       readingMinutes: fm.readingMinutes,
       sources: fm.sources.map(({ title, publisher, url, year }) => ({ title, publisher, url, year })),
       faq: fm.faq.map(({ q, a }) => ({ q, a })),
+      figures: figures.map((fig) => ({
+        id: fig.id,
+        kind: fig.kind,
+        src: `/guides/${slug}/${fig.id}.webp`,
+        width: fig.width,
+        height: fig.height,
+        alt: fig.alt,
+        caption: fig.caption,
+        credit: fig.credit,
+        license: fig.license,
+        sourceUrl: fig.sourceUrl,
+        licenseUrl: fig.licenseUrl,
+        changes: fig.changes,
+      })),
       headings,
       html,
     });
@@ -227,7 +397,7 @@ function loadGuides() {
   return guides.sort((a, b) => b.updated.localeCompare(a.updated) || b.published.localeCompare(a.published) || a.slug.localeCompare(b.slug));
 }
 
-const guides = loadGuides();
+const guides = await loadGuides();
 
 for (const w of warnings) console.warn(`[guides] warning: ${w}`);
 if (errors.length > 0) {
@@ -236,6 +406,8 @@ if (errors.length > 0) {
   console.error("");
   process.exit(1);
 }
+
+pruneFigureOutput();
 
 mkdirSync(dirname(outFile), { recursive: true });
 writeFileSync(

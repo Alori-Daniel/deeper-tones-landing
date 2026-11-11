@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1200" height="800" fill="#f1f1f1"/>
+  <text x="60" y="90" font-size="46" font-weight="700" fill="#141414">Dark spots after pimples</text>
+
+  <!-- Do column -->
+  <rect x="60" y="130" width="530" height="560" rx="24" fill="#ffffff" stroke="#dcdcdc" stroke-width="2"/>
+  <rect x="60" y="130" width="530" height="84" rx="24" fill="#2fb37a"/>
+  <rect x="60" y="180" width="530" height="34" fill="#2fb37a"/>
+  <text x="96" y="187" font-size="42" font-weight="700" fill="#ffffff">Do</text>
+
+  <g fill="none" stroke="#2fb37a" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M98 270 l14 14 l28 -30"/>
+    <path d="M98 366 l14 14 l28 -30"/>
+    <path d="M98 496 l14 14 l28 -30"/>
+    <path d="M98 620 l14 14 l28 -30"/>
+  </g>
+  <g font-size="32" fill="#141414">
+    <text x="166" y="276">Calm the acne first</text>
+    <text x="166" y="372">Leave spots alone,</text>
+    <text x="166" y="414">keep skin clean</text>
+    <text x="166" y="502">Sunscreen every day,</text>
+    <text x="166" y="544">SPF 30 or higher</text>
+    <text x="166" y="626">One gentle ingredient</text>
+    <text x="166" y="668" font-size="30" fill="#5e5e5e">Judge it over about 12 weeks</text>
+  </g>
+
+  <!-- Avoid column -->
+  <rect x="610" y="130" width="530" height="560" rx="24" fill="#ffffff" stroke="#dcdcdc" stroke-width="2"/>
+  <rect x="610" y="130" width="530" height="84" rx="24" fill="#d64545"/>
+  <rect x="610" y="180" width="530" height="34" fill="#d64545"/>
+  <text x="646" y="187" font-size="42" font-weight="700" fill="#ffffff">Avoid</text>
+
+  <g fill="none" stroke="#d64545" stroke-width="8" stroke-linecap="round">
+    <path d="M650 244 l28 28 m0 -28 l-28 28"/>
+    <path d="M650 374 l28 28 m0 -28 l-28 28"/>
+    <path d="M650 504 l28 28 m0 -28 l-28 28"/>
+  </g>
+  <g font-size="32" fill="#141414">
+    <text x="716" y="268">Picking or</text>
+    <text x="716" y="310">squeezing spots</text>
+    <text x="716" y="398">Scrubbing</text>
+    <text x="716" y="440" font-size="30" fill="#5e5e5e">It irritates skin</text>
+    <text x="716" y="528">Creams that promise</text>
+    <text x="716" y="570">results in 2 days</text>
+    <text x="716" y="612" font-size="30" fill="#5e5e5e">Some imported creams</text>
+    <text x="716" y="650" font-size="30" fill="#5e5e5e">hide steroids or mercury</text>
+  </g>
+
+  <text x="60" y="752" font-size="32" font-weight="700" fill="#7b2cbf">Marks usually fade over months, not days.</text>
+</svg>

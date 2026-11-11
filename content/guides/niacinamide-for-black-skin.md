@@ -53,6 +53,16 @@ faq:
     a: "Yes, they can be used together. A recent review says niacinamide can work better alongside vitamin C. If your skin stings, stop the product that stings, or use one in the morning and the other in the evening."
   - q: "How long does niacinamide take to work?"
     a: "Studies measured change at 4, 8 and 12 weeks, so give it about 12 weeks before you judge it. The marks themselves often take 6 to 12 months to fade once the cause stops, and deeper ones can take years. Any gain can fade if you stop."
+figures:
+  - id: strength-card
+    kind: diagram
+    alt: "Three cards comparing niacinamide strengths. At 2 percent, a trial found it did not clearly beat plain moisturiser for spots. At 4 to 5 percent, the strengths used in most spot trials, 5 percent reduced spots at 4 and 8 weeks. At 10 percent, the main review has no spot trial, only one skin test with no stinging or flushing."
+    caption: "What the research shows at each strength. A bigger number has not been shown to work better."
+    credit: "Deeper Tones"
+    license: "Own work"
+    sourceUrl: null
+    licenseUrl: null
+    changes: null
 ---
 
 Niacinamide is a form of vitamin B3 that can support your skin barrier and, over weeks, make dark marks and uneven tone look a little fainter [1]. It does not change the colour you were born with, and a higher percentage is not a better one. Give it about 12 weeks, and wear sunscreen every day.
@@ -85,13 +95,15 @@ What it can do is help your tone look more even and your marks look calmer. That
 
 Be careful with creams that promise a lighter result. Researchers have found steroids or mercury, not listed on the label, in some imported skin products. The American Academy of Dermatology says long-term use of those steroids can leave skin thin, fragile or permanently discoloured [7]. If you are unsure about a product, read [is a glow cream bleaching?](/guides/is-glow-cream-bleaching) and [how to stop using a bleaching cream safely](/guides/stop-bleaching-cream-safely).
 
-## Niacinamide 5% or 10%? Why higher is not better
+## Niacinamide 5% or 10%? Why higher isn't shown to be better
 
 Strength is the first thing people compare, so here is what the research shows:
 
 - **2%:** in a trial comparing strengths, it did not clearly reduce spots more than plain moisturiser [1]. It has been used to support the barrier in eczema-prone skin [3].
 - **4 to 5%:** the strengths used in most spot trials [6]. The 5% strength reduced spots at 4 and 8 weeks [1].
 - **10%:** the main review includes no trial of 10% on spots. Its one 10% result was a skin test that found no stinging or flushing [1].
+
+{{figure:strength-card}}
 
 A bigger number on the label has not been shown to work better. Niacinamide is described as well tolerated at the usual strengths below 5%, but reactions vary from person to person [1]. If you are choosing, look for roughly 4 to 5% on the label.
 

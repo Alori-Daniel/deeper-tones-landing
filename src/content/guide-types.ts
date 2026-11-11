@@ -12,6 +12,23 @@ export type GuideFaq = { q: string; a: string };
 
 export type GuideHeading = { id: string; text: string };
 
+export type GuideFigure = {
+  id: string;
+  kind: "diagram" | "study-photo";
+  /** Public path of the generated WebP (public/guides/<slug>/<id>.webp). */
+  src: string;
+  width: number;
+  height: number;
+  alt: string;
+  caption: string;
+  credit: string;
+  license: string;
+  /** Study photos only: the article the figure comes from, and the licence page. */
+  sourceUrl: string | null;
+  licenseUrl: string | null;
+  changes: string | null;
+};
+
 export type Guide = {
   slug: string;
   title: string;
@@ -29,6 +46,8 @@ export type Guide = {
   readingMinutes: number;
   sources: GuideSource[];
   faq: GuideFaq[];
+  /** Figures placed in the body (already rendered into `html`); listed in the Article JSON-LD. */
+  figures: GuideFigure[];
   /** The `##` headings, for the table of contents. */
   headings: GuideHeading[];
   /** Sanitised HTML from the Markdown body (raw HTML in the source is escaped, never passed through). */

@@ -45,4 +45,10 @@ Guides live in `content/guides/<slug>.md`: YAML frontmatter (title, description,
 - **Drafts:** a guide with `draft: true` is left out of the build. With `GUIDES_SHOW_DRAFTS=1` set at build time (for preview deploys, or `GUIDES_SHOW_DRAFTS=1 npm run dev` locally) drafts are included with a "Draft, not yet reviewed" banner and `noindex`, and stay out of the sitemap.
 - **Go live:** after a human has reviewed a guide, set `draft: false` (and `reviewedBy` if a named professional reviewed it) and deploy. The "Guides" nav link, the `/guides` index and the sitemap entries only appear once a build has at least one guide.
 
+### Figures
+
+A guide can carry up to 3 figures. List them in the frontmatter under `figures` (`id`, `kind` `diagram|study-photo`, `alt`, `caption`, `credit`, `license`, and for study photos `sourceUrl`, `licenseUrl` and optionally `changes`), put the source file at `content/figures-src/<slug>/<id>.(svg|png|jpg|jpeg)`, and place each one in the body on a line of its own: `{{figure:<id>}}`. Diagrams are `Own work`; study photos need an open licence (`CC BY 4.0`/`3.0`/`2.0` or `CC0 1.0`) and a link to the article and the licence. The build fails if a figure is missing its source, is never placed, is placed twice, or a marker has no matching entry.
+
+The same script converts each source to `public/guides/<slug>/<id>.webp` (max 1600 px wide, quality 80, SVG rendered at 2x; skipped when the output is newer than the source). That folder is generated and gitignored; `prebuild` creates it before `next build` copies `public/` into the static assets, and files for guides that are not in the build are removed. Figures are listed as `image` in the guide's Article JSON-LD.
+
 Optional build-time env vars (see `.env.example`): `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION`, `NEXT_PUBLIC_BING_SITE_VERIFICATION`, `NEXT_PUBLIC_CF_BEACON_TOKEN`, `GUIDES_SHOW_DRAFTS`.

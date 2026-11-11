@@ -93,6 +93,25 @@ faq:
     a: "It depends on where you are. In the US, hydroquinone skin lighteners are not approved for over-the-counter sale. In the UK it is banned in skin-lightening cosmetics. In Nigeria, NAFDAC lists hydroquinone above 2% as banned and has also called it prohibited in skincare cosmetics."
   - q: "Where do I report a cream I think is illegal?"
     a: "In Nigeria, NAFDAC (0800-162-3322 or sf.alert@nafdac.gov.ng). In England and Wales, Trading Standards through the Citizens Advice consumer service (0808 223 1133). In the US, FDA MedWatch (1-800-FDA-1088)."
+figures:
+  - id: names-to-look-for
+    kind: diagram
+    alt: "Three columns of names to look for on a cream label. Mercury: mercury, Hg, mercurous chloride, calomel, mercuric, mercurio, ammoniated mercury, quicksilver, hydrargyri oxydum rubrum. Stop using it. Steroids: clobetasol propionate, betamethasone, hydrocortisone. Many end in sone but clobetasol does not. Used daily for long? Get advice to stop. Hydroquinone: a skin-lightening chemical, treat it as a flag."
+    caption: "Names to look for in the ingredient list. A label can leave things out, so a clean list is not proof."
+    credit: "Deeper Tones"
+    license: "Own work"
+    sourceUrl: null
+    licenseUrl: null
+    changes: null
+  - id: ochronosis-case
+    kind: study-photo
+    alt: "Close view of the side of a face, from the ear to the upper cheek, on deep brown skin. A wide, mottled patch of darker brown and grey-brown colour covers the temple and cheek. The authors' black box covers the area below the ear."
+    caption: "From a case report: patches the authors describe as brown to blue-grey, on the face of one person with dark brown skin (type V on the Fitzpatrick scale, which runs from I, the palest, to VI, the deepest), after about three years of on-and-off hydroquinone use. The authors raised ochronosis as a concern. One person, from a study. Results vary."
+    credit: "Negassi B, Sit C, Verma KK, Vasquez R, Desai S, Friedmann DP, Tarbox M. Cureus, 2026"
+    license: "CC BY 4.0"
+    sourceUrl: "https://pmc.ncbi.nlm.nih.gov/articles/PMC13626390/"
+    licenseUrl: "https://creativecommons.org/licenses/by/4.0/"
+    changes: "Cropped to one panel of the authors' composite Figure 2. The authors' black mask is kept."
 ---
 
 No home test can show what is in a cream, so the answer is to read the label for a short list of names, watch for warning signs, and ask a pharmacist or doctor if anything worries you. This takes a few minutes. If a label shows a mercury name, stop using the cream [3]; if you may have used a strong steroid for a long time, get advice before you stop [11].
@@ -117,6 +136,8 @@ Steroid creams (corticosteroids) calm inflammation. The names include clobetasol
 
 Hydroquinone is a skin-lightening chemical. It may be printed simply as "hydroquinone". In the US it is not approved for over-the-counter sale, though a health professional can prescribe it [4]. It is banned in skin-lightening cosmetics in the UK [9]. NAFDAC's cosmetics FAQ lists hydroquinone above 2% as banned [8], and a 2023 NAFDAC alert says it is prohibited in skincare cosmetics and should only be used under medical supervision [7]. Because the two NAFDAC statements differ, treat any hydroquinone in a cream bought outside a pharmacy as a flag.
 
+{{figure:names-to-look-for}}
+
 ## Warning signs when the label does not help
 
 - No label, a handmade or stuck-on label, or a label only in a language you cannot read [3][4][6].
@@ -133,6 +154,8 @@ Softer words on the front, such as "glow" or "toning", do not tell you what is i
 **Steroids.** Facial skin thins easily with clobetasol, which is why the NHS says that even on prescription it should be used on the face for no more than 5 days [12]. Long use raises the risk of serious hormone effects: adrenal problems (the body makes too little of its own steroid hormone) and Cushing's syndrome (weight gain and a puffy face) [12]. In lightening creams, hot and humid weather and use over large body areas raise how much is absorbed, and one review describes more skin infections and hormone effects [14]. After long daily use, redness and burning can appear days or weeks after stopping, most often on the face [11][12][15].
 
 **Hydroquinone.** The FDA has received reports of rashes, facial swelling and permanent skin discolouration called ochronosis [4]. Ochronosis is painless darkening of the skin, most often reported in Black patients and slow to treat [16].
+
+{{figure:ochronosis-case}}
 
 ## What regulators say
 

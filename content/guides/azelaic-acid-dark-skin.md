@@ -50,6 +50,16 @@ sources:
     publisher: "British Association of Dermatologists"
     url: "https://www.bad.org.uk/pils/melasma/"
     year: 2024
+figures:
+  - id: fading-timeline
+    kind: diagram
+    alt: "Three squares of deep brown skin in a row, each with the same dark marks. The marks are darkest at the start, fainter at week 12, and fainter still at about 6 months, but still visible. The skin colour stays the same in all three."
+    caption: "Marks fade slowly and only partly: week 12 is the first fair check, and about six months gives the real picture. Your own skin tone does not change."
+    credit: "Deeper Tones"
+    license: "Own work"
+    sourceUrl: null
+    licenseUrl: null
+    changes: null
 faq:
   - q: "How long does azelaic acid take to work on dark marks?"
     a: "Studies on darker skin ran for 16 to 24 weeks, and reviews describe results at about 12 to 16 weeks. Treat 12 weeks as the first fair check. A clear change usually takes several months, and the usual result is fainter marks, not gone."
@@ -84,6 +94,8 @@ Most of the strongest trials looked at melasma, a patchy brown discolouration of
 Expect fainter, not gone. A 2026 review puts typical overall improvement with 20% azelaic acid at roughly 25 to 50%, over about 12 to 16 weeks [6].
 
 In practice, expect marks a little closer to your own tone, not a clean slate. The effect is mostly on overactive pigment cells, so the skin around the marks is not expected to change [7]. Rare colour loss is covered below. New marks keep arriving if the cause, such as picking or an irritating product, continues.
+
+{{figure:fading-timeline}}
 
 Before-and-after photos online are rarely taken in the same light or over the same weeks. Take your own, in the same spot by the same window, every four weeks.
 

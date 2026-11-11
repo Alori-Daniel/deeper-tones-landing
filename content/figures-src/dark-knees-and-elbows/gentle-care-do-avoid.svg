@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1200" height="800" fill="#f1f1f1"/>
+  <rect x="50" y="42" width="10" height="52" rx="5" fill="#9d4edd"/>
+  <text x="80" y="85" font-size="46" font-weight="700" fill="#141414">Dark knees and elbows: do and avoid</text>
+  <rect x="50" y="130" width="545" height="600" rx="22" fill="#ffffff" stroke="#d6d6d6" stroke-width="3"/>
+  <rect x="605" y="130" width="545" height="600" rx="22" fill="#ffffff" stroke="#d6d6d6" stroke-width="3"/>
+  <rect x="50" y="130" width="545" height="14" rx="7" fill="#2fb37a"/>
+  <rect x="605" y="130" width="545" height="14" rx="7" fill="#d64545"/>
+  <text x="85" y="205" font-size="42" font-weight="700" fill="#141414">Do</text>
+  <text x="640" y="205" font-size="42" font-weight="700" fill="#141414">Avoid</text>
+
+  <g fill="#2fb37a">
+    <circle cx="90" cy="285" r="17"/><circle cx="90" cy="405" r="17"/><circle cx="90" cy="525" r="17"/><circle cx="90" cy="645" r="17"/>
+  </g>
+  <g fill="none" stroke="#ffffff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M82 285 l6 6 l11 -12"/><path d="M82 405 l6 6 l11 -12"/><path d="M82 525 l6 6 l11 -12"/><path d="M82 645 l6 6 l11 -12"/>
+  </g>
+  <g font-size="30" fill="#141414">
+    <text x="125" y="280">Fragrance-free cream or</text><text x="125" y="320">ointment after a bath</text>
+    <text x="125" y="400">Kneel on a cushion, rest</text><text x="125" y="440">elbows on something soft</text>
+    <text x="125" y="520">Sunscreen SPF 30 or higher</text><text x="125" y="560">on exposed knees, elbows</text>
+    <text x="125" y="640">Exfoliate lightly, if at all:</text><text x="125" y="680">30 seconds, then moisturise</text>
+  </g>
+
+  <g fill="#d64545">
+    <circle cx="645" cy="285" r="17"/><circle cx="645" cy="405" r="17"/><circle cx="645" cy="525" r="17"/><circle cx="645" cy="645" r="17"/>
+  </g>
+  <g fill="none" stroke="#ffffff" stroke-width="4.5" stroke-linecap="round">
+    <path d="M637 277 l16 16 M653 277 l-16 16"/><path d="M637 397 l16 16 M653 397 l-16 16"/><path d="M637 517 l16 16 M653 517 l-16 16"/><path d="M637 637 l16 16 M653 637 l-16 16"/>
+  </g>
+  <g font-size="30" fill="#141414">
+    <text x="680" y="280">Hard scrubs, rough tools:</text><text x="680" y="320">rubbing adds to darkening</text>
+    <text x="680" y="400">Lemon or lime juice: it can</text><text x="680" y="440">burn in sun, then heal dark</text>
+    <text x="680" y="520">Bleaching creams: some</text><text x="680" y="560">hold mercury or hydroquinone</text>
+    <text x="680" y="640">Household bleach: never</text><text x="680" y="680">put it on skin</text>
+  </g>
+  <text x="600" y="775" font-size="28" fill="#5e5e5e" text-anchor="middle">Thick, velvety or fast-appearing patches: ask a doctor.</text>
+</svg>

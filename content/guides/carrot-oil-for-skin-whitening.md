@@ -61,6 +61,16 @@ faq:
     a: "We cannot say that any carrot oil cream is safe or unsafe. Some creams that list carrot oil have been found to contain hydroquinone, mercury or arsenic. If a cream is sold for fair or whitening skin, treat it as a lightening cream and check it before you keep using it."
   - q: "Can carrot oil replace sunscreen?"
     a: "No. A systematic review of homemade natural sunscreens, which can include carrot seed oil, found they give little to no sun protection. Sunscreen is the first step for dark marks on any skin tone."
+figures:
+  - id: label-vs-lab
+    kind: diagram
+    alt: "Ten cream jars in two rows of five. In the top row, five creams list carrot oil, Daucus carota or carotene on the label; four of them also list hydroquinone and one does not. In the bottom row, five creams have no carrot on the label and none list hydroquinone. A note says lab tests found hydroquinone, mercury and arsenic in all ten creams."
+    caption: "What a study of ten skin-lightening creams from one Nigerian city found on the labels and in the lab. It is one small study, so it does not show that every carrot cream is unsafe."
+    credit: "Deeper Tones"
+    license: "Own work"
+    sourceUrl: null
+    licenseUrl: null
+    changes: null
 ---
 
 No good evidence says carrot oil lightens skin, and we found no human study showing that it does. The bigger concerns are what else may be in a carrot cream, and how carrot-family plants can make skin react to sun. If your goal is an even tone with fewer dark marks, sunscreen and a few well-studied ingredients can help, over months, not weeks.
@@ -90,6 +100,8 @@ Because the names vary, a label that says "carrot" tells you little about what i
 ## Carrot oil cream: what else may be in it
 
 This is the part that matters most for your safety. In a study of ten skin-lightening creams bought in Ilorin, Nigeria, five listed carrot oil, *Daucus carota* or carotene on the label. Four of those five also listed hydroquinone [1]. Hydroquinone is a strong skin-lightening ingredient that both the U.S. Food and Drug Administration (FDA) and the World Health Organization (WHO) flag as a concern [9][10]. Lab tests found hydroquinone, mercury and arsenic in all ten creams, and six did not mention hydroquinone on the label [1].
+
+{{figure:label-vs-lab}}
 
 The study is small, one city and ten products, so it does not show that every carrot cream is unsafe. It does show that "carrot" on a label does not mean gentle.
 

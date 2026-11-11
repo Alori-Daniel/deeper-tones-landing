@@ -86,6 +86,16 @@ sources:
     publisher: "Frontiers in Medicine"
     url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC11984416/"
     year: 2025
+figures:
+  - id: label-what-to-look-for
+    kind: diagram
+    alt: "An invented sunscreen label with four parts marked 1 to 4: SPF 30 or higher, broad spectrum (UVA and UVB), water resistant if you sweat or swim, and iron oxides in the ingredient list, which means the sunscreen is tinted."
+    caption: "The four things to check on a sunscreen label. This label is made up and shows no brand."
+    credit: "Deeper Tones"
+    license: "Own work"
+    sourceUrl: null
+    licenseUrl: null
+    changes: null
 faq:
   - q: "Do Black people need sunscreen?"
     a: "Dermatologists recommend sunscreen for everyone, including people with brown or Black skin. Melanin gives real but partial protection, and sunscreen is also what keeps sun from deepening dark marks."
@@ -136,7 +146,10 @@ Check the label for four things.
 - **Water resistant** if you sweat or swim. It holds for 40 or 80 minutes in water [12].
 - **Tinted, with iron oxide in the ingredient list.** It is listed under inactive ingredients [5].
 
+{{figure:label-what-to-look-for}}
+
 **Mineral or chemical?** Mineral sunscreens use zinc oxide, titanium dioxide, or both. Chemical ones contain neither. Hybrids mix the two [12]. White cast is the chalky look minerals can leave. Makers shrink these particles to cut the chalk, but the smaller particles do not protect against visible light [7]. So an untinted sunscreen of either type leaves a gap, and a tinted one matched to your tone avoids both problems [7][11]. Test the shade on your jawline in daylight. The best sunscreen is the one you will wear every day.
+
 
 **Oily skin and humid heat.** For skin that breaks out or feels greasy, look for "non-comedogenic" or "won't clog pores" [11]. Choose water resistant if sweat is part of your day [11].
 

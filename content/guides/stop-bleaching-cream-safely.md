@@ -69,6 +69,25 @@ faq:
     a: "It is best not to. The FDA advises against over-the-counter skin lightening products, and labels often do not match what is inside. A plain routine with sunscreen is the safer replacement."
   - q: "Is it safe to stop on my own?"
     a: "Withdrawal reactions are mostly seen after long, daily use of a strong steroid. If that was you, your face is thin or sore, or the cream may have held mercury, stop with a doctor's or pharmacist's help."
+figures:
+  - id: what-to-expect
+    kind: diagram
+    alt: "A three-step timeline. Days to weeks: a flare may start, with burning, stinging, redness and peeling. Weeks to months: the skin settles slowly. Months to years: dark marks fade, more slowly than redness. Three circles of brown skin show one dark mark fading while the skin tone stays the same."
+    caption: "What to expect after stopping. There is no fixed timeline, and a flare does not happen for everyone."
+    credit: "Deeper Tones"
+    license: "Own work"
+    sourceUrl: null
+    licenseUrl: null
+    changes: null
+  - id: ochronosis-case
+    kind: study-photo
+    alt: "Close view of the side of a face, from the ear to the upper cheek, on deep brown skin. A wide, mottled patch of darker brown and grey-brown colour covers the temple and cheek. The authors' black box covers the area below the ear."
+    caption: "From a case report: patches the authors describe as brown to blue-grey, on the face of one person with dark brown skin (type V on the Fitzpatrick scale, which runs from I, the palest, to VI, the deepest), after about three years of on-and-off hydroquinone use. The authors raised ochronosis as a concern. One person, from a study. Results vary."
+    credit: "Negassi B, Sit C, Verma KK, Vasquez R, Desai S, Friedmann DP, Tarbox M. Cureus, 2026"
+    license: "CC BY 4.0"
+    sourceUrl: "https://pmc.ncbi.nlm.nih.gov/articles/PMC13626390/"
+    licenseUrl: "https://creativecommons.org/licenses/by/4.0/"
+    changes: "Cropped to one panel of the authors' composite Figure 2. The authors' black mask is kept."
 ---
 
 You can stop a lightening cream. If you used a strong one daily for a long time, it is best to stop with a doctor's or pharmacist's help, because stopping suddenly can cause a flare [5]. The first few weeks can be rough, with redness, stinging or peeling, and recovery is measured in months rather than days [3][4]. If your skin flared before and you went back to the cream, that may have been your skin reacting to stopping. It does not have to mean your skin needs the cream.
@@ -93,6 +112,8 @@ If your skin looks darker in the weeks after stopping, there are a few possible 
 - **Marks left by inflammation.** Dark marks often follow irritated skin, and they are more common and more intense in darker skin. Marks in the top layer of skin can take months to years to fade without treatment [12].
 - **Blue-grey patches from hydroquinone.** Hydroquinone is a lightening chemical. Long use has been linked to ochronosis, a blue-black or grey-blue, lace-like discolouration on the face, most often reported in people with darker skin [10]. The FDA says it may be permanent [2], and it is hard to treat [11]. If you see this pattern, a dermatologist should look at it.
 
+{{figure:ochronosis-case}}
+
 ## Why stopping is still worth it
 
 Long use of a strong steroid on the face can thin the skin [5]. Steroid from creams can also be absorbed into the body. It can affect the adrenal glands, which make the body's own steroid hormones [5][8].
@@ -116,6 +137,8 @@ That is all. Anything that irritates can worsen dark marks [12].
 - **Days to weeks:** a flare may start. Burning more than itching, and redness that covers a whole area rather than coming in patches, are signs doctors look for [3].
 - **Weeks to months:** the skin settles slowly. There is no fixed timeline, and the MHRA review describes symptoms lasting many months in some people [4].
 - **Dark marks:** these fade more slowly than redness, over months to years [12].
+
+{{figure:what-to-expect}}
 
 ## What not to do
 

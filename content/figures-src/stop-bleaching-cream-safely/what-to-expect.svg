@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1200" height="800" fill="#f1f1f1"/>
+  <text x="60" y="78" font-size="44" font-weight="700" fill="#141414">What to expect after you stop</text>
+  <text x="60" y="125" font-size="30" fill="#5e5e5e">There is no fixed timeline. Everyone is different.</text>
+
+  <!-- cards -->
+  <rect x="60" y="160" width="1080" height="160" rx="24" fill="#ffffff"/>
+  <rect x="60" y="340" width="1080" height="160" rx="24" fill="#ffffff"/>
+  <rect x="60" y="520" width="1080" height="160" rx="24" fill="#ffffff"/>
+
+  <!-- timeline spine, drawn over the cards and under the dots -->
+  <line x1="95" y1="240" x2="95" y2="600" stroke="#9d4edd" stroke-width="4" stroke-opacity="0.5"/>
+
+  <!-- Row 1 -->
+  <circle cx="95" cy="240" r="20" fill="#e0a020"/>
+  <text x="150" y="214" font-size="38" font-weight="700" fill="#141414">Days to weeks</text>
+  <text x="150" y="260" font-size="30" fill="#5e5e5e">A flare may start.</text>
+  <text x="150" y="296" font-size="30" fill="#5e5e5e">Burning, stinging, redness, peeling.</text>
+
+  <!-- Row 2 -->
+  <circle cx="95" cy="420" r="20" fill="#9d4edd"/>
+  <text x="150" y="394" font-size="38" font-weight="700" fill="#141414">Weeks to months</text>
+  <text x="150" y="440" font-size="30" fill="#5e5e5e">The skin settles slowly.</text>
+  <text x="150" y="476" font-size="30" fill="#5e5e5e">Some people take many months.</text>
+
+  <!-- Row 3 -->
+  <circle cx="95" cy="600" r="20" fill="#7b2cbf"/>
+  <text x="150" y="574" font-size="38" font-weight="700" fill="#141414">Months to years</text>
+  <text x="150" y="620" font-size="30" fill="#5e5e5e">Dark marks fade, more</text>
+  <text x="150" y="656" font-size="30" fill="#5e5e5e">slowly than redness.</text>
+
+  <!-- fading marks on the same skin tone -->
+  <g>
+    <text x="900" y="568" font-size="28" text-anchor="middle" fill="#5e5e5e">Marks fade. Skin tone stays.</text>
+    <circle cx="760" cy="626" r="34" fill="#8a5a3c"/>
+    <circle cx="760" cy="626" r="15" fill="#3b2418" opacity="0.95"/>
+    <circle cx="900" cy="626" r="34" fill="#8a5a3c"/>
+    <circle cx="900" cy="626" r="15" fill="#3b2418" opacity="0.55"/>
+    <circle cx="1040" cy="626" r="34" fill="#8a5a3c"/>
+    <circle cx="1040" cy="626" r="15" fill="#3b2418" opacity="0.2"/>
+    <path d="M814 626 H846 M954 626 H986" stroke="#5e5e5e" stroke-width="5" stroke-linecap="round"/>
+  </g>
+
+  <text x="60" y="745" font-size="30" fill="#141414">Not settling, or very sore? See a doctor or pharmacist.</text>
+</svg>

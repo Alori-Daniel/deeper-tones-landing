@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1200" height="800" fill="#f1f1f1"/>
+  <text x="40" y="66" font-size="44" font-weight="700" fill="#141414">Names to look for on a label</text>
+
+  <!-- Mercury -->
+  <rect x="40" y="100" width="360" height="610" rx="24" fill="#ffffff"/>
+  <path d="M64 100 H376 a24 24 0 0 1 24 24 V160 H40 V124 a24 24 0 0 1 24 -24 Z" fill="#d64545"/>
+  <text x="220" y="143" font-size="36" font-weight="700" text-anchor="middle" fill="#ffffff">Mercury</text>
+  <g font-size="28" fill="#141414">
+    <text x="64" y="212">mercury</text>
+    <text x="64" y="250">Hg</text>
+    <text x="64" y="288">mercurous chloride</text>
+    <text x="64" y="326">calomel</text>
+    <text x="64" y="364">mercuric</text>
+    <text x="64" y="402">mercurio</text>
+    <text x="64" y="440">ammoniated mercury</text>
+    <text x="64" y="478">quicksilver</text>
+    <text x="64" y="516">hydrargyri oxydum</text>
+    <text x="64" y="554">rubrum</text>
+  </g>
+  <line x1="64" y1="590" x2="376" y2="590" stroke="#5e5e5e" stroke-width="2"/>
+  <text x="64" y="636" font-size="30" font-weight="700" fill="#d64545">Stop using it.</text>
+
+  <!-- Steroids -->
+  <rect x="420" y="100" width="360" height="610" rx="24" fill="#ffffff"/>
+  <path d="M444 100 H756 a24 24 0 0 1 24 24 V160 H420 V124 a24 24 0 0 1 24 -24 Z" fill="#e0a020"/>
+  <text x="600" y="143" font-size="36" font-weight="700" text-anchor="middle" fill="#141414">Steroids</text>
+  <g font-size="28" fill="#141414">
+    <text x="444" y="212">clobetasol propionate</text>
+    <text x="444" y="250">betamethasone</text>
+    <text x="444" y="288">hydrocortisone</text>
+  </g>
+  <g font-size="28" fill="#5e5e5e">
+    <text x="444" y="372">Many end in "-sone".</text>
+    <text x="444" y="410">Clobetasol does not.</text>
+    <text x="444" y="448">Check the name against</text>
+    <text x="444" y="486">a list.</text>
+  </g>
+  <line x1="444" y1="590" x2="756" y2="590" stroke="#5e5e5e" stroke-width="2"/>
+  <text x="444" y="636" font-size="30" font-weight="700" fill="#141414">Used daily for long?</text>
+  <text x="444" y="674" font-size="30" font-weight="700" fill="#141414">Get advice to stop.</text>
+
+  <!-- Hydroquinone -->
+  <rect x="800" y="100" width="360" height="610" rx="24" fill="#ffffff"/>
+  <path d="M824 100 H1136 a24 24 0 0 1 24 24 V160 H800 V124 a24 24 0 0 1 24 -24 Z" fill="#7b2cbf"/>
+  <text x="980" y="143" font-size="34" font-weight="700" text-anchor="middle" fill="#ffffff">Hydroquinone</text>
+  <g font-size="28" fill="#141414">
+    <text x="824" y="212">hydroquinone</text>
+  </g>
+  <g font-size="28" fill="#5e5e5e">
+    <text x="824" y="296">A skin-lightening</text>
+    <text x="824" y="334">chemical. It may be</text>
+    <text x="824" y="372">printed simply as</text>
+    <text x="824" y="410">"hydroquinone".</text>
+  </g>
+  <line x1="824" y1="590" x2="1136" y2="590" stroke="#5e5e5e" stroke-width="2"/>
+  <text x="824" y="636" font-size="30" font-weight="700" fill="#141414">Treat it as a flag.</text>
+
+  <text x="40" y="758" font-size="30" fill="#141414">A label can leave things out. Read the full list on the back.</text>
+</svg>
