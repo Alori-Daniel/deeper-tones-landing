@@ -71,7 +71,7 @@ Two GitHub Actions workflows, in `.github/workflows/`:
   - If the smoke check passes, it sends the changed pages to IndexNow.
   - If the smoke check fails, it rolls back to the version that was live before (`wrangler rollback`), skips IndexNow and goes red.
   - You can also run it by hand: Actions → Deploy production → Run workflow. It deploys only from main.
-  - The Cloudflare secrets go only to the steps that call wrangler, never to `npm ci` or the build.
+  - The Cloudflare token goes only to the steps that call wrangler, never to `npm ci` or the build.
   - Not covered: if the deploy step publishes and then errors, or the job times out, there is no automatic rollback. Run `npx wrangler rollback` by hand.
 
 ### One-time setup
@@ -83,9 +83,9 @@ Until these exist, the Preview and Deploy jobs go red at their first step. The c
    - Zone resources: Specific zone → `deepertones.com`.
    - Copy the token once; it is not shown again.
 2. **Find the account ID:** Workers & Pages → Overview, in the right-hand column. Or run `npx wrangler whoami`.
-3. **Add both as repository secrets** (a repo admin): GitHub → Settings → Secrets and variables → Actions → New repository secret.
-   - `CLOUDFLARE_API_TOKEN`
-   - `CLOUDFLARE_ACCOUNT_ID`
+3. **Add them to the repository** (Settings → Secrets and variables → Actions):
+   - the token as a **secret** named `CLOUDFLARE_API_TOKEN`;
+   - the account ID as a **variable** named `CLOUDFLARE_ACCOUNT_ID`. It is not a credential: it appears in every dashboard URL and grants nothing alone.
 4. **Check it:** Actions → Deploy production → Run workflow. A green run means the token works. A deploy error mentioning permissions means the token needs one more permission; add it, then re-run.
 
 Preview URLs are switched on for the preview Worker (`preview_urls` in `wrangler.jsonc`). Manual deploys still work: `GUIDES_REQUIRE_INSHORT=1 npx opennextjs-cloudflare build && npx opennextjs-cloudflare deploy` (add `--env preview` to the deploy for the preview Worker), then `node scripts/indexnow.mjs` after a production deploy.
