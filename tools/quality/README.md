@@ -4,7 +4,7 @@
 npm run quality -- --out <dir>
 ```
 
-Runs every automated line of `quality/ACCEPTANCE.md` (sections A, B2, B4, B5, C1 to C4) for every live guide, `/guides`, `/`,
+Runs every automated line of `quality/ACCEPTANCE.md` (sections A, B2, B4, B5, C1 to C4) and `quality/ACCEPTANCE-HUBS.md` (H1 to H6) for every live guide, `/guides`, `/`,
 `/privacy` and `/terms`, writes `<dir>/checks.json` and prints a summary table. Exit code 0 = every line PASS or WARN, 1 = at least one
 FAIL, 2 = the run itself broke (for example the build failed). Takes 3.5 to 9 minutes depending on machine load (typically 4 to 5: freeze 20 s to 1 m 15 s, lint and typecheck 30 to 45 s, build 30 s to 1 m 50 s, 77 page loads 2 to 3.5 min, Lighthouse 30 to 60 s). Needs network for `next/font/google`
 during the build and for the first `npm install`.
@@ -61,7 +61,7 @@ during the build and for the first `npm install`.
 | C4.lighthouse-performance, C4.lighthouse-accessibility | Lighthouse 13, mobile, on two guides | 90, 95 |
 | C4.lazy-below-fold, C4.first-image-not-oversized | below-the-fold figures `loading=lazy`; first image at most 1.5x the pixels needed at 375 @2x | |
 
-C1, C2 and C3 run on the live guides and `/guides` (C1 no-italics and overflow on `/`, `/privacy`, `/terms` too).
+C1, C2 and C3 run on the live guides, `/guides` and the hub pages (C1 no-italics and overflow on `/`, `/privacy`, `/terms` too).
 Selectors are generic (`main`, `h1`, `p`, `figure img`, `figcaption`) so a redesign does not break the checker. Lines B2 to B5
 that are about the picture itself (B1, B3, B6, B7, B8) and C5, C6, D are judged by the verifier; this tool only supplies the
 evidence.
@@ -134,6 +134,34 @@ section not last, 3 Safety callouts, `[9]` with 3 sources, a never-cited source,
 each writing warning, a dead internal link, source 404, a redirect to a 404, an unreachable host) and only the matching
 line may fail. 403, 429 and 500 sources must give WARN, and a 404 next to a 403 must still FAIL. Links and sources are served by
 a local server, so the self-test needs no network.
+
+## Topic hubs (H1 to H6)
+
+The automated part of `quality/ACCEPTANCE-HUBS.md`. Hub lines are site-wide like A4: they run on every built guide whatever
+`--only` or `--limit` select (a guide page not already fetched is fetched). They run right after the A2/A3/A4 lines, from
+`checks/hubs.mjs` (pure functions over HTML and data; `hubChecks` is the thin network wrapper). The compiled hubs come from
+`src/content/hubs.generated.ts` in the frozen copy (`loadCompiledHubs` in `lib/pages.mjs`); when the build does not write it,
+H1 FAILs with "no hubs module", H2 to H5 FAIL with "no hub data" and H6 still runs. A hub **has a page** when 3 or more of its
+guides are published (`draft: false`); drafts shown in a preview build never count toward the 3. Hub pages that must exist
+join the page list (kind `hub`), so C1 to C3, the A3 overflow line and Lighthouse (C4) run on them like on `/guides`.
+
+| id | what it measures | threshold |
+| --- | --- | --- |
+| H1.hub-map | the compiled hubs: slug kebab-case and unique, `name`, `title` 60 or fewer, `description` 70 to 160, `intro` 200 or fewer, `guides` non-empty; every built guide has a `hub` that exists, that lists it, and is in exactly one hub list; every guide file is in a hub and every listed slug has a file. Reports each hub's published and visible counts | all |
+| H2.index-sections | `/guides`: the H1 "Guides" and an intro, then one `<section>` per hub with a visible guide, in `hubs.yaml` order; `h2` with the hub name and `id` = slug (linked to the hub page only when the hub has one); the hub intro; the hub's visible guides as cards in `hubs.yaml` order, titles `h3`; each visible guide on exactly one card, in its own hub's section; no featured card; only the first section's first row (3) of thumbnails may be eager, the first one must be; JSON-LD `ItemList` has every guide in the order shown | exact |
+| H3.hub-pages | per hub with a page: `/guides/topics/<slug>` is 200 with `<title>` = hub title + " \| Deeper Tones", the hub description, canonical `https://deepertones.com/guides/topics/<slug>`, one `h1` = hub name, the intro, the visible guides as `h2` cards in order and nothing else, JSON-LD `CollectionPage` + `ItemList` + `BreadcrumbList`, `robots noindex` exactly when the build shows drafts, and (production build only) in `/sitemap.xml` with `lastmod` = newest `updated` among its published guides. Per hub without a page, and for `/guides/topics`: 404 and not in the sitemap | exact |
+| H4.breadcrumbs | every guide page and hub page: the visible `nav[aria-label="Breadcrumb"]` and the JSON-LD `BreadcrumbList` both equal the spec's trail (Home, Guides, hub name when the hub has a page, then the guide title; hub page: Home, Guides, hub name), same names, URLs and order. Relative and absolute URLs are the same; the last item may be text only | exact |
+| H5.related-same-hub | the "Related guides" list (`section.guide-related`) shows min(3, other guides) guides, never the guide itself, and starts with min(3, visible hub siblings) guides of the same hub | exact |
+| H6.internal-links | every `href` beginning `/guides` (or `https://deepertones.com/guides`) on every page the run fetched, fragment ignored, answers 200 (redirects not followed); every broken one is listed | 200 |
+
+Self-test (`SELFTEST.H*`, `selftest/hubs-selftest.mjs`): a synthetic site (four hubs: one with a page, one with 2 guides, one
+with 2 published plus a draft, one with a single guide) must PASS every line in a production build and in a drafts build;
+each rule is then broken one way at a time (no hubs module, a guide in no hub or two hubs, a title or description one over or
+under the bound, sections out of order, a card in the wrong section or twice, a featured card, an `h2` card on the index,
+a wrong canonical, title or description, a missing or surplus `noindex`, a hub missing from or stale in the sitemap, a hub
+below 3 published guides that has a page, `/guides/topics` answering 200, a breadcrumb that differs between nav and JSON-LD
+in name, order or URL, a related list led by another hub's guide, a broken or fragment-only `/guides` link) and the line
+must FAIL, naming the fault. H6 is served by a local server.
 
 ## Fixtures
 

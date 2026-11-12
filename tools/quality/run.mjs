@@ -9,10 +9,11 @@ import { chromium } from "playwright";
 import { Checks, fmtMs, launchChromium, run } from "./lib/util.mjs";
 import { freeze } from "./lib/freeze.mjs";
 import { startPreview, stopPreview } from "./lib/server.mjs";
-import { loadCompiledGuides, pageList } from "./lib/pages.mjs";
+import { loadCompiledGuides, loadCompiledHubs, pageList } from "./lib/pages.mjs";
 import { loadFixtures, studyPhotosFromHead, writeFixtures } from "./lib/fixtures.mjs";
 import { newPageIn, loadLikeAReader, measure, captureChunks, saveStitched, contrastScan, evalPlainText } from "./lib/browser.mjs";
 import { contractChecks } from "./checks/contract.mjs";
+import { hubChecks } from "./checks/hubs.mjs";
 import { loaderCheck, mutationCheck, sourceFamilyChecks, widthChecks } from "./checks/figures-static.mjs";
 import { clsLine, contrastLine, figureServedLines, frameLines, lazyAndFirstImageLines, layoutLines, platformFontLines, typographyLines } from "./checks/page-lines.mjs";
 import { lighthouseChecks } from "./checks/lighthouse.mjs";
@@ -164,7 +165,10 @@ try {
   if (!existsSync(join(frozen, ".open-next/worker.js"))) throw new Error("no .open-next build in the frozen copy");
 
   const guides = loadCompiledGuides(frozen);
-  const pages = pageList(guides);
+  // Hub pages that must exist (3+ published guides) join the page list; a missing hubs module (H1 FAILs on it) means none.
+  let compiledHubs = null;
+  try { compiledHubs = loadCompiledHubs(frozen); } catch { /* H1 reports an unreadable module */ }
+  const pages = pageList(guides, compiledHubs);
   // --only keeps the per-guide lines to the named guides (site-wide lines still run); --limit then takes the first n of those.
   const selected = args.only ? guides.filter((g) => args.only.includes(g.slug)) : guides;
   const useGuides = args.limit ? selected.slice(0, args.limit) : selected;
@@ -181,6 +185,9 @@ try {
   const htmlStore = new Map();
   const info = await contractChecks(checks, { base, frozen, guides: useGuides, allGuides: guides, fixtures, htmlStore });
   if (args.updateFixtures) writeFixtures(repoRoot, { canonicals: info.canonicals });
+  // H1 to H6 (quality/ACCEPTANCE-HUBS.md) are site-wide like A4: every built guide, whatever --only / --limit select.
+  stage("H1-H6: hubs, /guides sections, hub pages, breadcrumbs, related guides, internal links");
+  await hubChecks(checks, { base, frozen, guides, htmlStore });
   stage("B2/B4 static checks on the figure sources and WebP files");
   loaderCheck(checks, frozen);
   sourceFamilyChecks(checks, frozen, useGuides);
@@ -212,7 +219,7 @@ try {
         figsAll[vw].push(...m.figures);
         return;
       }
-      const isReading = p.kind === "guide" || p.kind === "index";
+      const isReading = p.kind === "guide" || p.kind === "index" || p.kind === "hub";
       const m = await measure(page, { withFonts: isReading && vw === 1280 });
       if (isReading) {
         typographyLines(add, p.path, vw, m.typo, { measureLine: p.kind === "guide" });
@@ -250,9 +257,9 @@ try {
 
   // ---------- Lighthouse ----------
   if (!args.skipLighthouse) {
-    stage("Lighthouse (mobile) on two guides");
+    stage("Lighthouse (mobile) on two guides and the hub pages");
     const slugs = args.only ? useGuides.slice(0, 2).map((g) => g.slug) : ["check-cream-steroids-mercury-hydroquinone", "sunscreen-for-dark-skin"].filter((s) => guides.some((g) => g.slug === s));
-    await lighthouseChecks(checks, { base, slugs: slugs.length ? slugs : guides.slice(0, 2).map((g) => g.slug), outDir, runs: args.lighthouseRuns });
+    await lighthouseChecks(checks, { base, slugs: slugs.length ? slugs : guides.slice(0, 2).map((g) => g.slug), extraPaths: pages.filter((p) => p.kind === "hub").map((p) => p.path), outDir, runs: args.lighthouseRuns });
   }
 
   // ---------- evidence ----------

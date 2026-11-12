@@ -3,6 +3,7 @@
 import { createServer } from "node:http";
 import { Checks } from "../lib/util.mjs";
 import { runWaveSelfTest } from "./wave-selftest.mjs";
+import { runHubsSelfTest } from "./hubs-selftest.mjs";
 import { newPageIn, loadLikeAReader, measure, contrastScan, contrastRatio } from "../lib/browser.mjs";
 import { analyzeSvgFonts, mutateFamilies } from "../lib/svgfonts.mjs";
 import { clsLine, contrastLine, figureServedLines, frameLines, layoutLines, lazyAndFirstImageLines, normFamily, platformFontLines, typographyLines } from "../checks/page-lines.mjs";
@@ -127,4 +128,6 @@ export async function runSelfTest(browser, checks) {
   unit("C4.oversized-first-image-fails", grab((a) => lazyAndFirstImageLines(a, "/g", 375, 2, [img({})], img({}))).find((l) => l.id === "C4.first-image-not-oversized").status === "FAIL");
   // wave lines WA1 to WA4 (quality/ACCEPTANCE-WAVE.md section W-A): see wave-selftest.mjs
   await runWaveSelfTest(checks);
+  // hub lines H1 to H6 (quality/ACCEPTANCE-HUBS.md): see hubs-selftest.mjs
+  await runHubsSelfTest(checks);
 }

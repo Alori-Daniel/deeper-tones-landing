@@ -1,0 +1,53 @@
+# The four topic hubs on /guides (docs: quality/ACCEPTANCE-HUBS.md).
+#
+# Every guide in content/guides/ (draft or not) is listed in exactly one hub; the build fails otherwise.
+# Order matters: hubs appear on /guides in this order, and guides inside a hub in the order listed (the hub's lead
+# guide first). A hub gets its own page at /guides/topics/<slug> only when it has 3 or more published guides;
+# until then it is a section on /guides only.
+#
+# title: the <title> and og:title of the hub page (60 characters or fewer, before " | Deeper Tones").
+# description: meta description of the hub page (70 to 160 characters).
+# intro: one or two plain sentences under the hub heading. No health claims: it says what the guides cover.
+
+- slug: stopping-harmful-creams
+  name: Stopping harmful creams
+  title: "Bleaching and Toning Creams: Check, Stop, Recover"
+  description: "Guides on checking what is in a cream, what glow and toning labels can hide, and stopping a bleaching cream without harming your skin."
+  intro: "How to check what is in a cream, what labels like glow and toning can hide, and how to stop a bleaching cream safely."
+  guides:
+    - stop-bleaching-cream-safely
+    - check-cream-steroids-mercury-hydroquinone
+    - is-glow-cream-bleaching
+    - toning-cream-for-chocolate-skin
+    - carrot-oil-for-skin-whitening
+
+- slug: dark-marks-and-even-tone
+  name: Dark marks and even tone
+  title: "Dark Marks and Uneven Tone on Dark Skin: Guides"
+  description: "Guides on why dark marks and patches form on deeper skin, how long they take to fade, and what generally helps."
+  intro: "Why dark marks and patches form on deeper skin, how long they take to fade, and what generally helps."
+  guides:
+    - fade-dark-marks-dark-skin
+    - how-long-dark-spots-take-to-fade
+    - dark-spots-from-pimples-dark-skin
+    - melasma-on-dark-skin
+    - dark-knees-and-elbows
+
+- slug: routines-and-ingredients
+  name: Routines and ingredients
+  title: "Skincare Ingredients and Routines for Dark Skin"
+  description: "Guides on what common skincare ingredients do on deeper skin, choosing a sunscreen, and caring for skin through the seasons."
+  intro: "What common ingredients do on deeper skin, how to pick a sunscreen, and caring for your skin through the seasons."
+  guides:
+    - sunscreen-for-dark-skin
+    - azelaic-acid-dark-skin
+    - niacinamide-for-black-skin
+    - harmattan-skincare
+
+- slug: men-and-shaving
+  name: Men and shaving
+  title: "Shaving and Skincare for Black Men: Guides"
+  description: "Guides on razor bumps and the dark marks shaving can leave on deeper skin, and how to shave with less irritation."
+  intro: "Razor bumps and the dark marks shaving can leave."
+  guides:
+    - razor-bumps-dark-marks-jaw
