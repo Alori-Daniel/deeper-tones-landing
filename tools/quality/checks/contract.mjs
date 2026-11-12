@@ -28,7 +28,9 @@ const imgUrlsInFigures = (html) => {
   return [...urls];
 };
 
-export async function contractChecks(checks, { base, frozen, guides, fixtures, htmlStore }) {
+// guides: the guides this run measures (all of them, or the --only / --limit subset); allGuides: every built guide, for
+// the site-wide A4 lines (study-photo snapshot, prerendered image routes) so a subset run does not fail them for a reason of its own.
+export async function contractChecks(checks, { base, frozen, guides, allGuides = guides, fixtures, htmlStore }) {
   // ----- A2: guide URL, OG image, every figure image (incl. every srcset candidate) -----
   for (const g of guides) {
     const path = `/guides/${g.slug}`;
@@ -99,7 +101,7 @@ export async function contractChecks(checks, { base, frozen, guides, fixtures, h
   const reachesOnlyImageRoutes = (f) => isImageRoute(f) || importersOf(f).some(isImageRoute);
   const badFs = fsFiles.filter((f) => !reachesOnlyImageRoutes(f)).map((f) => relative(frozen, f));
   const notPrerendered = [];
-  for (const g of guides) for (const n of ["opengraph-image", "twitter-image"]) if (!existsSync(join(frozen, ".next/server/app/guides", g.slug, `${n}.body`))) notPrerendered.push(`${g.slug}/${n}`);
+  for (const g of allGuides) for (const n of ["opengraph-image", "twitter-image"]) if (!existsSync(join(frozen, ".next/server/app/guides", g.slug, `${n}.body`))) notPrerendered.push(`${g.slug}/${n}`);
   checks.add({
     id: "A4.no-request-fs", target: "src/** and the build",
     measured: badFs.length || notPrerendered.length ? [...badFs.map((f) => `${f} reads files outside a metadata image route`), ...notPrerendered.map((n) => `${n} is not prerendered`)].join("; ") : `fs only in ${fsFiles.length} build-time image files, all image routes prerendered`,
@@ -114,7 +116,7 @@ export async function contractChecks(checks, { base, frozen, guides, fixtures, h
 
   // study-photo credits and licences: compiled data and the rendered HTML must match the snapshot
   const photos = [];
-  for (const g of guides) for (const f of g.figures) if (f.kind === "study-photo") photos.push({ slug: g.slug, id: f.id, credit: f.credit, license: f.license, sourceUrl: f.sourceUrl, licenseUrl: f.licenseUrl, changes: f.changes });
+  for (const g of allGuides) for (const f of g.figures) if (f.kind === "study-photo") photos.push({ slug: g.slug, id: f.id, credit: f.credit, license: f.license, sourceUrl: f.sourceUrl, licenseUrl: f.licenseUrl, changes: f.changes });
   const key = (p) => `${p.slug}/${p.id}`;
   const snap = fixtures.studyPhotos;
   if (snap) {
@@ -131,7 +133,9 @@ export async function contractChecks(checks, { base, frozen, guides, fixtures, h
     checks.add({ id: "A4.study-photo-credits", target: "compiled data", measured: `${photos.length} entries, no fixture`, threshold: "fixtures/study-photo-credits.json", pass: false, details: ["run with --update-fixtures on the pristine tree first"] });
   }
   const renderMiss = [];
-  for (const p of photos) {
+  const isSubset = guides.length < allGuides.length;
+  const shown = photos.filter((p) => guides.some((g) => g.slug === p.slug));
+  for (const p of shown) {
     const html = htmlStore.get(`/guides/${p.slug}`) || "";
     const text = htmlText(html);
     if (!html.includes(`href="${p.licenseUrl}"`)) renderMiss.push(`${key(p)}: licence link missing`);
@@ -140,7 +144,7 @@ export async function contractChecks(checks, { base, frozen, guides, fixtures, h
     if (!text.includes(p.license)) renderMiss.push(`${key(p)}: licence name missing`);
     if (p.changes && !text.includes(p.changes)) renderMiss.push(`${key(p)}: changes line missing`);
   }
-  checks.add({ id: "A4.study-photo-credits-rendered", target: "guide pages", measured: renderMiss.length ? `${renderMiss.length} missing` : `${photos.length} photo entries show credit, licence and changes`, threshold: "credit, licence link, changes shown", pass: renderMiss.length === 0 && photos.length > 0, details: renderMiss });
+  checks.add({ id: "A4.study-photo-credits-rendered", target: "guide pages", measured: renderMiss.length ? `${renderMiss.length} missing` : `${shown.length} photo entries show credit, licence and changes`, threshold: "credit, licence link, changes shown", pass: renderMiss.length === 0 && (shown.length > 0 || isSubset), details: renderMiss });
 
   return { canonicals: canon, guideCanonicals: guidesCanon, studyPhotos: photos };
 }

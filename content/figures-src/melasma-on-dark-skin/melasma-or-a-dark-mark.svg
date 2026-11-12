@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" width="1600" height="1200">
+  <title>Melasma or a mark from a spot?</title>
+  <defs>
+    <!-- House style tokens: see quality/ART_DIRECTION.md -->
+    <linearGradient id="epi" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#B98058"/>
+      <stop offset="1" stop-color="#A46B46"/>
+    </linearGradient>
+    <linearGradient id="derm" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#EBCBB8"/>
+      <stop offset="1" stop-color="#F4E2D7"/>
+    </linearGradient>
+    <linearGradient id="air" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FAF7FC"/>
+      <stop offset="1" stop-color="#F1EAF8"/>
+    </linearGradient>
+    <filter id="soft" x="-80%" y="-120%" width="260%" height="340%">
+      <feGaussianBlur stdDeviation="16"/>
+    </filter>
+    <filter id="lift" x="-10%" y="-20%" width="120%" height="150%">
+      <feDropShadow dx="0" dy="14" stdDeviation="20" flood-color="#2B1640" flood-opacity="0.09"/>
+    </filter>
+    <clipPath id="cardL"><rect x="96" y="420" width="680" height="700" rx="40"/></clipPath>
+    <clipPath id="cardR"><rect x="824" y="420" width="680" height="700" rx="40"/></clipPath>
+    <clipPath id="topL"><path d="M96 640 L 776 640 L 776 820 C 600 812, 380 830, 96 816 Z"/></clipPath>
+    <clipPath id="topR"><path d="M824 640 L 1504 640 L 1504 820 C 1328 812, 1108 830, 824 816 Z"/></clipPath>
+    <!-- one skin slab, drawn once and placed in both panels: same tone, same depth, same hair -->
+    <g id="slab">
+      <rect x="0" y="800" width="680" height="340" fill="url(#derm)"/>
+      <g fill="none" stroke="#D7AE97" stroke-width="4" stroke-linecap="round" opacity="0.6">
+        <path d="M60 940 C 150 920, 240 956, 330 934"/>
+        <path d="M120 1060 C 210 1040, 300 1074, 390 1052"/>
+        <path d="M600 1000 C 630 990, 650 1004, 670 996"/>
+      </g>
+      <!-- hair pocket and hair, for recognition -->
+      <path d="M540 1080 C 546 1000, 552 900, 560 760" fill="none" stroke="#E2B9A0" stroke-width="44" stroke-linecap="round"/>
+      <!-- top layer: one constant warm brown, flat surface -->
+      <path d="M0 640 L 680 640 L 680 820 C 504 812, 284 830, 0 816 Z" fill="url(#epi)"/>
+      <path d="M0 816 C 284 830, 504 812, 680 820" fill="none" stroke="#94603F" stroke-width="5" opacity="0.55"/>
+      <path d="M0 640 L 680 640" fill="none" stroke="#CF9A72" stroke-width="6"/>
+    </g>
+    <path id="hair" d="M542 1066 C 548 980, 556 860, 566 700 C 574 616, 600 566, 640 528" fill="none" stroke="#2E1C12" stroke-width="10" stroke-linecap="round"/>
+  </defs>
+
+  <rect width="1600" height="1200" fill="#FFFFFF"/>
+
+  <text x="96" y="150" font-family="Source Serif 4" font-weight="600" font-size="88" fill="#141414" letter-spacing="-1">Melasma or a mark from a spot?</text>
+
+  <!-- ===== Left: melasma ===== -->
+  <g font-family="Archivo">
+    <text x="96" y="292" font-size="58" font-weight="600" fill="#141414">Melasma</text>
+    <text x="96" y="370" font-size="56" font-weight="400" fill="#5E5E5E">Flat patches</text>
+  </g>
+  <g filter="url(#lift)"><rect x="96" y="420" width="680" height="700" rx="40" fill="url(#air)"/></g>
+  <g clip-path="url(#cardL)">
+    <use href="#slab" x="96" y="0"/>
+    <!-- a broad, flat patch in the top layer: many shades of the same hue, uneven edge -->
+    <g clip-path="url(#topL)">
+      <g filter="url(#soft)">
+        <ellipse cx="160" cy="716" rx="64" ry="34" fill="#6A3B22" opacity="0.7"/>
+        <ellipse cx="262" cy="740" rx="104" ry="52" fill="#6A3B22" opacity="0.82"/>
+        <ellipse cx="392" cy="720" rx="120" ry="58" fill="#6A3B22" opacity="0.86"/>
+        <ellipse cx="520" cy="748" rx="96" ry="48" fill="#6A3B22" opacity="0.78"/>
+        <ellipse cx="626" cy="724" rx="52" ry="30" fill="#6A3B22" opacity="0.62"/>
+        <ellipse cx="300" cy="752" rx="70" ry="30" fill="#5E331D" opacity="0.55"/>
+        <ellipse cx="452" cy="716" rx="64" ry="28" fill="#5E331D" opacity="0.5"/>
+      </g>
+    </g>
+    <use href="#hair" x="96" y="0"/>
+  </g>
+
+  <!-- ===== Right: a dark mark where a spot was ===== -->
+  <g font-family="Archivo">
+    <text x="824" y="292" font-size="58" font-weight="600" fill="#141414">Mark after a pimple</text>
+    <text x="824" y="370" font-size="56" font-weight="400" fill="#5E5E5E">Where the spot was</text>
+  </g>
+  <g filter="url(#lift)"><rect x="824" y="420" width="680" height="700" rx="40" fill="url(#air)"/></g>
+  <g clip-path="url(#cardR)">
+    <use href="#slab" x="824" y="0"/>
+    <!-- one small mark, the same shape as the spot that was there -->
+    <g clip-path="url(#topR)">
+      <g filter="url(#soft)">
+        <ellipse cx="1124" cy="724" rx="72" ry="46" fill="#6A3B22" opacity="0.88"/>
+        <ellipse cx="1118" cy="718" rx="40" ry="26" fill="#5E331D" opacity="0.6"/>
+      </g>
+    </g>
+    <use href="#hair" x="824" y="0"/>
+  </g>
+  <!-- the pimple that was there: a dashed outline above the same place -->
+  <path d="M1020 640 C 1056 640, 1064 552, 1124 552 C 1184 552, 1192 640, 1228 640" fill="none" stroke="#7B2CBF" stroke-width="8" stroke-linecap="round" stroke-dasharray="1 19"/>
+</svg>
