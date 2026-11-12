@@ -18,7 +18,8 @@ during the build and for the first `npm install`.
    `SELFTEST.*` line in `checks.json`. If one is FAIL the checker itself is broken: fix that before trusting anything else.
    `npm run quality -- --self-test` runs only this.
 2. **Frozen copy.** `rsync` of the worktree to a temp dir (without `node_modules`, `.next`, `.open-next`, `.git`, `quality/`,
-   `tools/quality/`), `node_modules` cloned into it with `cp -Rc` (APFS clone, about 15 s, no disk used). A symlink does not
+   `tools/quality/`), `node_modules` cloned into it: on macOS with `cp -Rc` (an APFS clone, about 15 s, no disk used), on Linux (CI) with
+   `cp -a --reflink=auto`. A symlink does not
    work: Turbopack refuses it ("Could not find the Next.js package"); `QUALITY_NODE_MODULES_MODE=symlink` forces it anyway.
    Everything below runs there, so edits made while a run is going cannot change its result.
 3. **A1:** `npm run lint`, `npm run typecheck`, `npx opennextjs-cloudflare build` (and an "N guides built" line, N = guides marked `draft: false`), logs in
@@ -81,6 +82,8 @@ evidence.
 ## Options
 
 `--self-test` (only the self-test), `--skip-self-test`, `--skip-lighthouse`, `--skip-mutation`, `--skip-a1`,
+`--lighthouse-runs <n>` (1 to 5, default 1: a page under 90 performance is measured again up to n times and the best
+score counts; CI uses 3 because shared runners are noisy; accessibility is always judged on the first run),
 `--limit <n>` (first n guides, for quick iteration), `--reuse-frozen <dir>` (reuse an existing frozen copy and its build, do
 not delete it), `--keep` (keep the frozen copy), `--concurrency <n>`, `--update-fixtures`, and the two wave flags below.
 
@@ -118,7 +121,8 @@ npm run quality -- --include-drafts --only melasma-on-dark-skin,harmattan-skinca
 | WA4.internal-links | every Markdown link to a path on this site (body and FAQ answers; `https://deepertones.com/...` counts) answers 200 on the preview, redirects not followed | 200 |
 | WA4.source-urls | every source URL, fetched with GET and a browser-like User-Agent, redirects followed (a 301 to a dead page fails), one retry on a network error or 5xx, each URL once per run | 2xx or 3xx |
 
-`WA4.source-urls` treats a final 403 or 429 as **WARN**, not FAIL: the site may be blocking robots. A WARN line has
+`WA4.source-urls` treats a final 403, 429 or 5xx as **WARN**, not FAIL: the site may be blocking robots (often the case
+from CI servers) or briefly down. A page that is gone (404, 410) or a host that does not answer is still a FAIL. A WARN line has
 `status: "WARN"` in `checks.json`, never changes the exit code, and the URLs are listed in `details` (and in the printed
 summary) so a person can open them in a browser. WA2 and WA3 are computed from the `.md` file in the frozen copy, before the
 build, so they are recorded even when the build fails. WA5 is simply the B2 to B5 and C1 to C4 lines above, run on the
@@ -127,8 +131,8 @@ selected guides with drafts shown.
 Self-test (`SELFTEST.WA*`): a synthetic good guide passes every wave line; each rule is broken one way at a time (title 61
 characters, description 139 and 161, a reviewer filled in, 2 and 5 `inShort` items, 500 and 1,600 words, the professional
 section not last, 3 Safety callouts, `[9]` with 3 sources, a never-cited source, lint, typecheck and build exit codes,
-each writing warning, a dead internal link, source 404, 500, a redirect to a 404, an unreachable host) and only the matching
-line may fail. 403 and 429 sources must give WARN, and a 404 next to a 403 must still FAIL. Links and sources are served by
+each writing warning, a dead internal link, source 404, a redirect to a 404, an unreachable host) and only the matching
+line may fail. 403, 429 and 500 sources must give WARN, and a 404 next to a 403 must still FAIL. Links and sources are served by
 a local server, so the self-test needs no network.
 
 ## Fixtures

@@ -197,7 +197,9 @@ export function makeUrlChecker({ timeoutMs = 25_000, retryDelayMs = 1500, fetchI
   return (url) => { if (!cache.has(url)) cache.set(url, probe(url)); return cache.get(url); };
 }
 
-export const classifyStatus = (s) => (s >= 200 && s < 400 ? "ok" : s === 403 || s === 429 ? "warn" : "fail");
+// 403/429 usually mean the site blocks robots, and 5xx a site that is briefly down: WARN, open it in a browser.
+// A page that is gone (404, 410, other 4xx) or no answer at all (status 0: DNS, refused, timeout) is a FAIL.
+export const classifyStatus = (s) => (s >= 200 && s < 400 ? "ok" : s === 403 || s === 429 || (s >= 500 && s < 600) ? "warn" : "fail");
 
 async function pool(items, n, fn) {
   const q = [...items];
@@ -222,7 +224,7 @@ export async function waLinkLines(add, { slug, raw, base, checkUrl, internalStat
     measured: paths.length ? `${paths.length - badLinks.length}/${paths.length} answer 200` : "no internal links in the body",
     threshold: "every internal link answers 200 on the preview", pass: badLinks.length === 0, details: badLinks.sort(),
   });
-  // source URLs: 2xx or 3xx; 403 and 429 are WARN (the site may be blocking robots; open the URL in a browser)
+  // source URLs: 2xx or 3xx; 403, 429 and 5xx are WARN (the site may be blocking robots or briefly down; open the URL in a browser)
   const urls = (Array.isArray(parsed.fm.sources) ? parsed.fm.sources : []).map((s) => s?.url).filter(isStr);
   const bad = [], warn = [];
   await pool([...new Set(urls)], 5, async (u) => {
@@ -234,8 +236,8 @@ export async function waLinkLines(add, { slug, raw, base, checkUrl, internalStat
   const nOk = urls.length - bad.length - warn.length;
   add({
     id: "WA4.source-urls", target,
-    measured: `${nOk}/${urls.length} load${warn.length ? `, ${warn.length} WARN (403/429)` : ""}${bad.length ? `, ${bad.length} FAIL` : ""}`,
-    threshold: "every source URL answers 2xx or 3xx (403/429 are WARN: open the URL in a browser)",
+    measured: `${nOk}/${urls.length} load${warn.length ? `, ${warn.length} WARN (403/429/5xx)` : ""}${bad.length ? `, ${bad.length} FAIL` : ""}`,
+    threshold: "every source URL answers 2xx or 3xx (403/429/5xx are WARN: open the URL in a browser)",
     pass: urls.length > 0 && bad.length === 0, warn: warn.length > 0,
     details: [...bad.sort().map((t) => `FAIL ${t}`), ...warn.sort().map((t) => `WARN ${t}`)],
   });
