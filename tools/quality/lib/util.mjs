@@ -7,19 +7,20 @@ import { join } from "node:path";
 
 export const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-// One result line: { id, section, target, measured, threshold, status: PASS|FAIL, details? }.
+// One result line: { id, section, target, measured, threshold, status: PASS|WARN|FAIL, details? }.
+// WARN is a pass that needs a human look (for example a source site that answers 403 to robots); it never fails a run.
 export class Checks {
   constructor() {
     this.lines = [];
   }
-  add({ id, target, measured, threshold, pass, details }) {
+  add({ id, target, measured, threshold, pass, warn, details }) {
     const line = {
       id,
       section: id.split(".")[0],
       target,
       measured: measured === undefined ? null : measured,
       threshold,
-      status: pass ? "PASS" : "FAIL",
+      status: !pass ? "FAIL" : warn ? "WARN" : "PASS",
     };
     if (details !== undefined && details !== null && !(Array.isArray(details) && details.length === 0)) line.details = details;
     this.lines.push(line);
@@ -30,6 +31,9 @@ export class Checks {
   }
   get failed() {
     return this.lines.filter((l) => l.status === "FAIL");
+  }
+  get warned() {
+    return this.lines.filter((l) => l.status === "WARN");
   }
 }
 

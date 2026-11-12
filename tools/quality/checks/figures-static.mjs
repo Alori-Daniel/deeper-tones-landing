@@ -62,7 +62,8 @@ export function sourceFamilyChecks(checks, frozen, guides) {
 
 // B2 mutation: build the figures again with every font-family renamed to a font that does not exist, using the
 // repo's own pipeline. If the WebP files come out the same, the renderer is not using the declared fonts at all.
-export async function mutationCheck(checks, frozen, guides) {
+// env: the same draft switches the real build used (--include-drafts), so draft guides' figures exist in the mutated build too.
+export async function mutationCheck(checks, frozen, guides, env = {}) {
   const dir = mkdtempSync(join(tmpdir(), "dt-quality-mut-"));
   try {
     const ex = ["node_modules", ".next", ".open-next", ".wrangler", ".git", "public/guides", "src/content/guides.generated.ts"].flatMap((e) => ["--exclude", e]);
@@ -71,7 +72,7 @@ export async function mutationCheck(checks, frozen, guides) {
     symlinkSync(join(frozen, "node_modules"), join(dir, "node_modules"), "dir");
     const svgs = walk(join(dir, "content/figures-src")).filter((f) => f.endsWith(".svg"));
     for (const f of svgs) writeFileSync(f, mutateFamilies(readFileSync(f, "utf8")));
-    const b = await run("node", ["scripts/build-guides.mjs"], { cwd: dir });
+    const b = await run("node", ["scripts/build-guides.mjs"], { cwd: dir, env });
     if (b.code !== 0) {
       checks.add({ id: "B2.renderer-resolves-fonts", target: "figure pipeline", measured: "mutated build failed", threshold: "pipeline runs", pass: false, details: b.out.slice(-600) });
       return;

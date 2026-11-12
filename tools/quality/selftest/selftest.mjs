@@ -2,6 +2,7 @@
 // matching checks FAIL; a "good" page must make them PASS. Each SELFTEST line is PASS when the check behaves.
 import { createServer } from "node:http";
 import { Checks } from "../lib/util.mjs";
+import { runWaveSelfTest } from "./wave-selftest.mjs";
 import { newPageIn, loadLikeAReader, measure, contrastScan, contrastRatio } from "../lib/browser.mjs";
 import { analyzeSvgFonts, mutateFamilies } from "../lib/svgfonts.mjs";
 import { clsLine, contrastLine, figureServedLines, frameLines, layoutLines, lazyAndFirstImageLines, normFamily, platformFontLines, typographyLines } from "../checks/page-lines.mjs";
@@ -124,4 +125,6 @@ export async function runSelfTest(browser, checks) {
   unit("B4.fitting-file-passes", served({ naturalWidth: 800 }).find((l) => l.id === "B4.served-size").status === "PASS");
   unit("C4.eager-below-fold-fails", grab((a) => lazyAndFirstImageLines(a, "/g", 375, 2, [img({ loading: null })], null)).find((l) => l.id === "C4.lazy-below-fold").status === "FAIL");
   unit("C4.oversized-first-image-fails", grab((a) => lazyAndFirstImageLines(a, "/g", 375, 2, [img({})], img({}))).find((l) => l.id === "C4.first-image-not-oversized").status === "FAIL");
+  // wave lines WA1 to WA4 (quality/ACCEPTANCE-WAVE.md section W-A): see wave-selftest.mjs
+  await runWaveSelfTest(checks);
 }
