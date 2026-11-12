@@ -121,8 +121,10 @@ try {
   let stepOut = "";
   let buildFailed = false;
   const guideFiles = existsSync(join(frozen, "content/guides")) ? readdirSync(join(frozen, "content/guides")).filter((f) => f.endsWith(".md")) : [];
-  // The live set is 13 guides. With drafts shown, the build holds every file in content/guides (13 live + the drafts).
-  const expectedGuides = args.includeDrafts ? guideFiles.length : 13;
+  // The live set is every guide marked `draft: false` (scratch files starting with "_" never build without drafts).
+  // With drafts shown, the build holds every file in content/guides (live + drafts).
+  const liveGuides = guideFiles.filter((f) => !f.startsWith("_") && /^draft:\s*false\s*$/m.test(readFileSync(join(frozen, "content/guides", f), "utf8")));
+  const expectedGuides = args.includeDrafts ? guideFiles.length : liveGuides.length;
   const waveSlugs = args.includeDrafts ? selectWaveSlugs(join(frozen, "content/guides"), args.only) : [];
   if (!args.reuse) {
     const steps = [["lint", ["npm", "run", "lint"]], ["typecheck", ["npm", "run", "typecheck"]], ["build", ["npx", "opennextjs-cloudflare", "build"]]];

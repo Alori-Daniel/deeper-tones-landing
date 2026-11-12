@@ -6,8 +6,8 @@ primaryQuery: "harmattan skincare"
 secondaryQueries: ["how to take care of skin during harmattan", "ashy skin", "dry cracked lips harmattan", "best moisturiser for harmattan", "eczema in dry season", "dry skin in cold weather"]
 published: "2026-11-12"
 updated: "2026-11-12"
-draft: true
-reviewedBy: null
+draft: false
+reviewedBy: "Somtochukwu Emmanuel"
 reviewerRole: null
 readingMinutes: 6
 sources:

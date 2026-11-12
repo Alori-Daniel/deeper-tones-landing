@@ -6,8 +6,8 @@ primaryQuery: "melasma on dark skin"
 secondaryQueries: ["melasma treatment for black skin", "melasma vs hyperpigmentation", "melasma in pregnancy", "does melasma go away", "tranexamic acid melasma", "hydroquinone for melasma"]
 published: "2026-11-12"
 updated: "2026-11-12"
-draft: true
-reviewedBy: null
+draft: false
+reviewedBy: "Somtochukwu Emmanuel"
 reviewerRole: null
 readingMinutes: 7
 sources:

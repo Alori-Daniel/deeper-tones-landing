@@ -4,7 +4,7 @@
 npm run quality -- --out <dir>
 ```
 
-Runs every automated line of `quality/ACCEPTANCE.md` (sections A, B2, B4, B5, C1 to C4) for the 13 guides, `/guides`, `/`,
+Runs every automated line of `quality/ACCEPTANCE.md` (sections A, B2, B4, B5, C1 to C4) for every live guide, `/guides`, `/`,
 `/privacy` and `/terms`, writes `<dir>/checks.json` and prints a summary table. Exit code 0 = every line PASS or WARN, 1 = at least one
 FAIL, 2 = the run itself broke (for example the build failed). Takes 3.5 to 9 minutes depending on machine load (typically 4 to 5: freeze 20 s to 1 m 15 s, lint and typecheck 30 to 45 s, build 30 s to 1 m 50 s, 77 page loads 2 to 3.5 min, Lighthouse 30 to 60 s). Needs network for `next/font/google`
 during the build and for the first `npm install`.
@@ -21,7 +21,7 @@ during the build and for the first `npm install`.
    `tools/quality/`), `node_modules` cloned into it with `cp -Rc` (APFS clone, about 15 s, no disk used). A symlink does not
    work: Turbopack refuses it ("Could not find the Next.js package"); `QUALITY_NODE_MODULES_MODE=symlink` forces it anyway.
    Everything below runs there, so edits made while a run is going cannot change its result.
-3. **A1:** `npm run lint`, `npm run typecheck`, `npx opennextjs-cloudflare build` (and the literal `13 guides built` line), logs in
+3. **A1:** `npm run lint`, `npm run typecheck`, `npx opennextjs-cloudflare build` (and an "N guides built" line, N = guides marked `draft: false`), logs in
    `<dir>/logs/`.
 4. **Preview:** `opennextjs-cloudflare preview` on a free port with its own inspector port, torn down (whole process group)
    at the end, also on Ctrl-C or a crash.
@@ -35,7 +35,7 @@ during the build and for the first `npm install`.
 
 | id | what it measures | threshold |
 | --- | --- | --- |
-| A1.lint, A1.typecheck, A1.build, A1.guides-built | exit codes; "N guides built" | 0; 13 |
+| A1.lint, A1.typecheck, A1.build, A1.guides-built | exit codes; "N guides built" | 0; live guide count |
 | A2.guide-url, A2.og-image, A2.figure-images | status of each guide, its OG image, every figure and every srcset candidate | 200 and an image type |
 | A3.status, A3.canonical, A3.no-overflow | `/`, `/privacy`, `/terms`: status, canonical equals `fixtures/canonicals.json`, no horizontal overflow at 3 widths | |
 | A4.cache-components-off, A4.no-use-cache | `next.config.ts`, grep of `src/` | |
@@ -60,7 +60,7 @@ during the build and for the first `npm install`.
 | C4.lighthouse-performance, C4.lighthouse-accessibility | Lighthouse 13, mobile, on two guides | 90, 95 |
 | C4.lazy-below-fold, C4.first-image-not-oversized | below-the-fold figures `loading=lazy`; first image at most 1.5x the pixels needed at 375 @2x | |
 
-C1, C2 and C3 run on the 13 guides and `/guides` (C1 no-italics and overflow on `/`, `/privacy`, `/terms` too).
+C1, C2 and C3 run on the live guides and `/guides` (C1 no-italics and overflow on `/`, `/privacy`, `/terms` too).
 Selectors are generic (`main`, `h1`, `p`, `figure img`, `figcaption`) so a redesign does not break the checker. Lines B2 to B5
 that are about the picture itself (B1, B3, B6, B7, B8) and C5, C6, D are judged by the verifier; this tool only supplies the
 evidence.
