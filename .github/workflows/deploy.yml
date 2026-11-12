@@ -1,0 +1,112 @@
+# Every merge to main deploys deepertones.com, so main and what the site serves never drift apart.
+#
+# Build (no drafts) → deploy → smoke check the live site → tell search engines (IndexNow).
+# If the smoke check fails, the Worker is rolled back to the version that was live before this run, IndexNow is
+# skipped, and the run goes red.
+#
+# Needs the CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID secrets (README → CI and deploys). Until they exist the run
+# goes red at the first step; that is expected, not a broken workflow.
+name: Deploy production
+
+on:
+  # A merged pull request is a push to main.
+  push:
+    branches: [main]
+  # To redeploy main by hand (Actions → Deploy production → Run workflow).
+  workflow_dispatch:
+
+# One deploy at a time. A run that has started always finishes (including its rollback); if several merges land
+# while it runs, only the newest waits, and the older queued ones are dropped.
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  deploy:
+    name: Deploy deepertones.com
+    # "Run workflow" lets you pick any branch; only main may ever reach production.
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    environment:
+      name: production
+      url: https://deepertones.com
+    # Checkout is the only thing the run's own token is used for; deploying authenticates to Cloudflare instead.
+    permissions:
+      contents: read
+    # The Cloudflare secrets are given only to the steps that call wrangler (not to npm ci or the build), so a
+    # dependency's install script never sees them. Wrangler reads them from the environment; neither is ever printed.
+    steps:
+      - name: Check the Cloudflare secrets exist
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ] || [ -z "$CLOUDFLARE_ACCOUNT_ID" ]; then
+            echo "::error::CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID are not set. See README → CI and deploys."
+            exit 1
+          fi
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+
+      # This is the first step that talks to Cloudflare, so a credential problem shows up here.
+      - id: live
+        name: Remember the version that is live now (for rollback)
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          npx wrangler deployments status --json > live.json
+          version=$(node -e 'const d=JSON.parse(require("fs").readFileSync("live.json","utf8")); const v=[...(d.versions??[])].sort((a,b)=>b.percentage-a.percentage)[0]; process.stdout.write(v?.version_id ?? "")')
+          if [ -z "$version" ]; then echo "::error::could not read the live version"; exit 1; fi
+          echo "Live before this deploy: $version"
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+
+      # public/build.txt carries this commit, so the smoke check can tell the new version from the old one.
+      - name: Build (no drafts)
+        env:
+          GUIDES_REQUIRE_INSHORT: "1"
+          SHA: ${{ github.sha }}
+        run: |
+          echo "$SHA" > public/build.txt
+          npx opennextjs-cloudflare build
+
+      - id: deploy
+        name: Deploy the Worker
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: npx opennextjs-cloudflare deploy
+
+      - id: smoke
+        name: Smoke check deepertones.com
+        env:
+          SHA: ${{ github.sha }}
+        run: node scripts/smoke.mjs https://deepertones.com --expect-build "$SHA"
+
+      # Not covered: a deploy step that publishes and then exits non-zero, or a job that times out, skips this step.
+      # Then roll back by hand: npx wrangler rollback (it lists the recent versions).
+      - name: Roll back to the previous version
+        if: failure() && steps.deploy.outcome == 'success'
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          PREVIOUS: ${{ steps.live.outputs.version }}
+          SHA: ${{ github.sha }}
+        run: |
+          npx wrangler rollback "$PREVIOUS" -y -m "Smoke check failed after deploying ${SHA:0:7}"
+          echo "::error::The smoke check failed, so deepertones.com was rolled back to $PREVIOUS. Fix main and merge again."
+          node scripts/smoke.mjs https://deepertones.com
+
+      # Bing (and through it ChatGPT and Copilot search), Yandex, Seznam and Naver recrawl the pages whose sitemap
+      # <lastmod> is today or yesterday. A failure here does not undo the deploy; re-run with `node scripts/indexnow.mjs`.
+      - name: Tell search engines (IndexNow)
+        run: node scripts/indexnow.mjs

@@ -152,14 +152,13 @@ export async function runWaveSelfTest(checks) {
     // ---------- WA4
     breaks("internal-link-404", await runAll({ body: makeBody({ link: "/guides/missing-guide" }) }), "WA4.internal-links");
     breaks("source-404", await runAll({ fm: goodFm({ sources: [...goodFm().sources.slice(0, 2), { title: "Gone", publisher: "WHO", url: "SRC/gone", year: 2020 }] }) }), "WA4.source-urls");
-    breaks("source-500", await runAll({ fm: goodFm({ sources: [...goodFm().sources.slice(0, 2), { title: "Broken", publisher: "WHO", url: "SRC/boom", year: 2020 }] }) }), "WA4.source-urls");
     breaks("source-redirects-to-404", await runAll({ fm: goodFm({ sources: [...goodFm().sources.slice(0, 2), { title: "Moved", publisher: "WHO", url: "SRC/redirect-dead", year: 2020 }] }) }), "WA4.source-urls");
     {
       const lines = await runAll({ fm: goodFm({ sources: [...goodFm().sources.slice(0, 2), { title: "Down", publisher: "WHO", url: "http://127.0.0.1:1/x", year: 2020 }] }) });
       breaks("source-unreachable", lines, "WA4.source-urls");
     }
     unit("WA4.source-301-to-200-passes", one(await runAll(), "WA4.source-urls")?.status === "PASS", "SRC/redirect (301 to a 200 page) is in the good guide's sources");
-    for (const [name, path] of [["403", "forbidden"], ["429", "ratelimit"]]) {
+    for (const [name, path] of [["403", "forbidden"], ["429", "ratelimit"], ["500", "boom"]]) {
       const lines = await runAll({ fm: goodFm({ sources: [...goodFm().sources.slice(0, 2), { title: "Blocks robots", publisher: "Journal", url: `SRC/${path}`, year: 2020 }] }) });
       const l = one(lines, "WA4.source-urls");
       unit(`WA4.source-${name}-is-warn-not-fail.lists-the-url`, l?.status === "WARN" && (l.details ?? []).some((d) => d.startsWith("WARN") && d.includes(`/src/${path}`)) && lines.every((x) => x.status !== "FAIL"), `${l?.status}; ${(l?.details ?? []).join(" | ")}`);
@@ -170,7 +169,7 @@ export async function runWaveSelfTest(checks) {
       const l = one(lines, "WA4.source-urls");
       unit("WA4.fail-wins-over-warn", l?.status === "FAIL" && l.details.some((d) => d.startsWith("FAIL")) && l.details.some((d) => d.startsWith("WARN")), `${l?.status}; ${(l?.details ?? []).join(" | ")}`);
     }
-    unit("WA4.classify-status", ["200:ok", "204:ok", "301:ok", "399:ok", "403:warn", "429:warn", "404:fail", "410:fail", "500:fail", "0:fail", "401:fail"].every((p) => { const [s, w] = p.split(":"); return classifyStatus(+s) === w; }));
+    unit("WA4.classify-status", ["200:ok", "204:ok", "301:ok", "399:ok", "403:warn", "429:warn", "404:fail", "410:fail", "500:warn", "503:warn", "0:fail", "401:fail"].every((p) => { const [s, w] = p.split(":"); return classifyStatus(+s) === w; }));
     {
       const lines = await runAll({ sourceBase: deadBase });
       const l = one(lines, "WA4.source-urls");
