@@ -30,10 +30,13 @@
   //   RESEND_API_KEY     required for the waitlist form
   //   RESEND_SEGMENT_ID  optional, groups waitlist contacts
   // A separate preview Worker on workers.dev (no custom domain): `npx opennextjs-cloudflare deploy --env preview`.
+  // CI uploads one version per pull request with `--preview-alias pr-<n>`, served at
+  // https://pr-<n>-deeper-tones-landing-preview.<subdomain>.workers.dev; preview_urls turns those URLs on.
   "env": {
     "preview": {
       "name": "deeper-tones-landing-preview",
       "workers_dev": true,
+      "preview_urls": true,
       "routes": [],
       "services": [{ "binding": "WORKER_SELF_REFERENCE", "service": "deeper-tones-landing-preview" }],
       "images": { "binding": "IMAGES" }

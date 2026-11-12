@@ -18,7 +18,8 @@ export async function freeze(repoRoot) {
   const r = await run("rsync", args, { cwd: repoRoot });
   if (r.code !== 0) throw new Error(`rsync failed: ${r.out}`);
   // node_modules: Turbopack refuses a symlink that points outside the project root ("Could not find the Next.js
-  // package"), so the default is an APFS clone (copy-on-write, near-instant, no extra disk). QUALITY_NODE_MODULES_MODE=symlink
+  // package"), so the default is a copy: an APFS clone on macOS (copy-on-write, near-instant, no extra disk), a reflink
+  // copy where the Linux disk allows it. QUALITY_NODE_MODULES_MODE=symlink
   // keeps the old behaviour for bundlers that accept it.
   if ((process.env.QUALITY_NODE_MODULES_MODE ?? "clone") === "symlink") linkModules(repoRoot, dir, "symlink");
   else await cloneModules(repoRoot, dir);
@@ -36,6 +37,8 @@ export function linkModules(repoRoot, dir, mode) {
 export async function cloneModules(repoRoot, dir) {
   const link = join(dir, "node_modules");
   await run("rm", ["-rf", link]);
-  const r = await run("cp", ["-Rc", join(repoRoot, "node_modules"), link]);
-  if (r.code !== 0) throw new Error(`cp -Rc node_modules failed: ${r.out}`);
+  // macOS: -c makes an APFS clone. Linux (CI): GNU cp reads -c differently, so copy with reflinks where the disk allows.
+  const flags = process.platform === "darwin" ? ["-Rc"] : ["-a", "--reflink=auto"];
+  const r = await run("cp", [...flags, join(repoRoot, "node_modules"), link]);
+  if (r.code !== 0) throw new Error(`cp ${flags.join(" ")} node_modules failed: ${r.out}`);
 }

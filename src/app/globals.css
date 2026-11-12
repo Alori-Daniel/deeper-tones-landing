@@ -528,7 +528,7 @@ details > summary::-webkit-details-marker {
   --g-hairline: rgb(20 20 20 / 0.08);
   --g-lift: 0 1px 2px rgb(20 20 20 / 0.04), 0 12px 32px -16px rgb(43 22 64 / 0.18);
   --g-lift-hover: 0 1px 2px rgb(20 20 20 / 0.05), 0 18px 40px -16px rgb(43 22 64 / 0.28);
-  --g-card-text: 35rem; /* 560px: about 68 characters of Archivo at 19px */
+  --g-card-text: 36rem; /* 576px: 63 to 66 characters per line of Archivo at 19px across the guides (rule: 60 to 75). At 35rem one guide sat at 60 on macOS and 59 on Linux, so it was raised for headroom. */
 }
 
 .guide-page *,

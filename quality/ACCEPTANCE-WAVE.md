@@ -31,8 +31,8 @@ Nothing reaches the owner until an independent verifier has checked every line b
   - every `[n]` points to a listed source, and every source is cited at least once.
 - **WA4: links:**
   - every internal link points to a guide that exists (200 on the preview);
-  - every source URL loads (2xx or 3xx; 403 from a site that blocks robots counts only if the verifier opened it in a
-    browser).
+  - every source URL loads (2xx or 3xx). A 403, 429 or 5xx (a site that blocks robots or is briefly down) is a WARN,
+    and it counts only if the verifier opened it in a browser.
 - **WA5: same bar as the live guides.** The new pages pass the `ACCEPTANCE.md` B2–B5 and C1–C4 automated lines on the
   preview, with drafts shown.
 

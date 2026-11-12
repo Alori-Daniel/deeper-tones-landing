@@ -23,7 +23,7 @@ import { makeUrlChecker, selectWaveSlugs, waBuildLines, waBuiltLine, waLinkLines
 const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), "../..");
 
 function parseArgs(argv) {
-  const a = { out: null, skipSelftest: false, selftestOnly: false, skipLighthouse: false, skipA1: false, reuse: null, keep: false, updateFixtures: false, limit: 0, concurrency: 4, skipMutation: false, includeDrafts: false, only: null };
+  const a = { out: null, skipSelftest: false, selftestOnly: false, skipLighthouse: false, skipA1: false, reuse: null, keep: false, updateFixtures: false, limit: 0, concurrency: 4, skipMutation: false, includeDrafts: false, only: null, lighthouseRuns: 1 };
   for (let i = 0; i < argv.length; i++) {
     const k = argv[i];
     if (k === "--out") a.out = argv[++i];
@@ -38,12 +38,16 @@ function parseArgs(argv) {
     else if (k === "--limit") a.limit = +argv[++i];
     else if (k === "--concurrency") a.concurrency = +argv[++i];
     else if (k === "--include-drafts") a.includeDrafts = true;
+    else if (k === "--lighthouse-runs") {
+      a.lighthouseRuns = +argv[++i];
+      if (!Number.isInteger(a.lighthouseRuns) || a.lighthouseRuns < 1 || a.lighthouseRuns > 5) { console.error("--lighthouse-runs needs a whole number from 1 to 5"); process.exit(2); }
+    }
     else if (k === "--only") {
       const v = argv[++i];
       a.only = (v ?? "").split(",").map((x) => x.trim()).filter(Boolean);
       if (!a.only.length || !a.only.every((x) => /^[a-z0-9]+(-[a-z0-9]+)*$/.test(x))) { console.error("--only needs guide slugs separated by commas, for example --only melasma-on-dark-skin,harmattan-skincare"); process.exit(2); }
     }
-    else if (k === "--help" || k === "-h") { console.log("usage: npm run quality -- --out <dir> [--self-test] [--include-drafts] [--only <slug,slug>] [--skip-lighthouse] [--update-fixtures] [--keep] [--reuse-frozen <dir>] [--limit n]"); process.exit(0); }
+    else if (k === "--help" || k === "-h") { console.log("usage: npm run quality -- --out <dir> [--self-test] [--include-drafts] [--only <slug,slug>] [--skip-lighthouse] [--lighthouse-runs n] [--update-fixtures] [--keep] [--reuse-frozen <dir>] [--limit n]"); process.exit(0); }
     else { console.error(`unknown option ${k}`); process.exit(2); }
   }
   return a;
@@ -248,7 +252,7 @@ try {
   if (!args.skipLighthouse) {
     stage("Lighthouse (mobile) on two guides");
     const slugs = args.only ? useGuides.slice(0, 2).map((g) => g.slug) : ["check-cream-steroids-mercury-hydroquinone", "sunscreen-for-dark-skin"].filter((s) => guides.some((g) => g.slug === s));
-    await lighthouseChecks(checks, { base, slugs: slugs.length ? slugs : guides.slice(0, 2).map((g) => g.slug), outDir });
+    await lighthouseChecks(checks, { base, slugs: slugs.length ? slugs : guides.slice(0, 2).map((g) => g.slug), outDir, runs: args.lighthouseRuns });
   }
 
   // ---------- evidence ----------
