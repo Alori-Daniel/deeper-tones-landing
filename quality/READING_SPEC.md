@@ -99,7 +99,7 @@ It uses `transform` only, so it causes no layout shift.
 ### 4.2 Breadcrumb
 `Home › Guides › <title>`, with the guide's hub between Guides and the title (linked to its page) only when that hub has
 a page (`quality/ACCEPTANCE-HUBS.md` H4); the visible trail and the BreadcrumbList JSON-LD name the same items. 15 px,
-`#5E5E5E`, current item truncated to one line on 375 with an ellipsis.
+`#5E5E5E`, current item truncated to one line with an ellipsis; when the trail before it is long (a hub name on a phone) it wraps to its own line and keeps at least 120 px (H4.breadcrumb-title).
 
 ### 4.3 H1, then the reviewer card
 Directly under the H1 (margin-top 20), a compact white card (radius 20, lift shadow, padding 16/20), one row on 768+,

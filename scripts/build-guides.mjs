@@ -604,6 +604,7 @@ function loadHubs() {
     if (!isNonEmpty(h.intro)) bad(`"intro" is missing`);
     else if (h.intro.length > 200) bad(`"intro" is ${h.intro.length} characters (200 at most)`);
     if (!Array.isArray(h.guides) || h.guides.length === 0) return bad(`"guides" must be a non-empty list of guide slugs`);
+    if (new Set(h.guides).size !== h.guides.length) bad(`lists the same guide twice`);
     for (const s of h.guides) {
       if (!fileSlugs.includes(s)) bad(`lists "${s}", which has no file in content/guides/`);
       listedIn.set(s, [...(listedIn.get(s) ?? []), h.slug]);
@@ -611,7 +612,9 @@ function loadHubs() {
     hubs.push({ slug: h.slug, name: h.name, title: h.title, description: h.description, intro: h.intro, guides: h.guides });
   });
   for (const s of fileSlugs) {
-    const where = listedIn.get(s) ?? [];
+    // /guides/topics/<hub> is the hub pages' route, so no guide may be called "topics".
+    if (s === "topics") fail(`content/guides/topics.md: "topics" is reserved for the hub pages (/guides/topics/<hub>); rename the guide`);
+    const where = [...new Set(listedIn.get(s) ?? [])];
     if (where.length === 0) fail(`content/guides/${s}.md is in no hub; add "${s}" to one hub's guides`);
     else if (where.length > 1) fail(`content/guides/${s}.md is in ${where.length} hubs (${where.join(", ")}); keep it in one`);
   }

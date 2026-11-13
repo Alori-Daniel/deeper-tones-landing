@@ -331,6 +331,24 @@ export function h4Line(add, { path, html, expected, siteUrl = SITE_URL }) {
 // ============================================================================================================
 // H5.related-same-hub: the related list starts with min(3, visible siblings) guides of the same hub.
 // ============================================================================================================
+// H4.breadcrumb-title (measured in the browser): the current item of the visible breadcrumb stays readable. READING_SPEC 4.2
+// cuts it to one line with an ellipsis; it must never be squeezed away by the items before it (a long hub name on a phone).
+export const BREADCRUMB_TITLE_MIN_PX = 120;
+// Runs in the page (page.evaluate): width shown and full width of the current breadcrumb item, or null when there is none.
+export const readBreadcrumbTitle = () => {
+  const li = document.querySelector('nav[aria-label="Breadcrumb"] li[aria-current]');
+  return li ? { width: li.getBoundingClientRect().width, full: li.scrollWidth } : null;
+};
+export function h4TitleLine(add, { path, vw, crumb }) {
+  const need = crumb ? Math.min(BREADCRUMB_TITLE_MIN_PX, crumb.full) : null;
+  add({
+    id: "H4.breadcrumb-title", target: `${path} @${vw}`,
+    measured: crumb ? `${Math.round(crumb.width)}px of the current item shown (full ${Math.round(crumb.full)}px)` : "no current breadcrumb item",
+    threshold: `>= ${BREADCRUMB_TITLE_MIN_PX}px shown, or the whole item when it is shorter`,
+    pass: !!crumb && crumb.width + 0.5 >= need,
+  });
+}
+
 export function h5Line(add, { path, html, guide, models, guides, siteUrl = SITE_URL, limit = 3 }) {
   const id = "H5.related-same-hub", threshold = `starts with min(${limit}, visible siblings) guides of the same hub`;
   if (!models) return add({ id, target: path, measured: NO_HUB_DATA, threshold, pass: false });

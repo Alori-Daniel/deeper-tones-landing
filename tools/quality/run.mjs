@@ -13,7 +13,7 @@ import { loadCompiledGuides, loadCompiledHubs, pageList } from "./lib/pages.mjs"
 import { loadFixtures, studyPhotosFromHead, writeFixtures } from "./lib/fixtures.mjs";
 import { newPageIn, loadLikeAReader, measure, captureChunks, saveStitched, contrastScan, evalPlainText } from "./lib/browser.mjs";
 import { contractChecks } from "./checks/contract.mjs";
-import { hubChecks } from "./checks/hubs.mjs";
+import { h4TitleLine, hubChecks, readBreadcrumbTitle } from "./checks/hubs.mjs";
 import { loaderCheck, mutationCheck, sourceFamilyChecks, widthChecks } from "./checks/figures-static.mjs";
 import { clsLine, contrastLine, figureServedLines, frameLines, lazyAndFirstImageLines, layoutLines, platformFontLines, typographyLines } from "./checks/page-lines.mjs";
 import { lighthouseChecks } from "./checks/lighthouse.mjs";
@@ -228,6 +228,7 @@ try {
         if (vw === 1280) platformFontLines(add, p.path, vw, m.platform);
         const cap = await captureChunks(page);
         await saveStitched(cap, join(outDir, "pages", `${p.slug}-${vw}.png`));
+        if (p.kind === "guide" || p.kind === "hub") h4TitleLine(add, { path: p.path, vw, crumb: await page.evaluate(readBreadcrumbTitle) });
         if (vw === 1280 && p.kind === "guide") textByGuide.set(p.slug, await page.evaluate(evalPlainText));
         if (vw !== 768) { const c = await contrastScan(page); contrastLine(add, p.path, vw, c); }
       } else {

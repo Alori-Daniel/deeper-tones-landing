@@ -54,6 +54,9 @@ count toward the 3. A hub's **visible guides** are the guides of this build (pub
   - guide in a hub with a page: Home › Guides › *hub name* (→ hub page) › *guide title*;
   - guide in a hub without a page: Home › Guides › *guide title* (as today);
   - hub page: Home › Guides › *hub name*.
+- **H4.breadcrumb-title** (browser, every viewport). The current item of the visible breadcrumb shows at least 120 px
+  (or all of it, when shorter): a long hub name must never squeeze the guide title away on a phone. Added after review
+  measured the title at 0–17 px at 360–375 px.
 - **H5.related-same-hub.** "Related guides" shows up to 3 other visible guides: first the guide's hub siblings (ranked
   by shared search words, as today), then other guides. The line passes when the related list starts with
   min(3, number of visible siblings) guides from the same hub.

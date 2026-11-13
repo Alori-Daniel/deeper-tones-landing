@@ -4,7 +4,7 @@
 import { createServer } from "node:http";
 import { Checks } from "../lib/util.mjs";
 import { hubModels } from "../lib/pages.mjs";
-import { SITE_URL, expectedBreadcrumb, h1Lines, h2Line, h3AbsentLine, h3PageLine, h4Line, h5Line, h6Line, readSitemap } from "../checks/hubs.mjs";
+import { SITE_URL, expectedBreadcrumb, h1Lines, h2Line, h3AbsentLine, h3PageLine, h4Line, h4TitleLine, h5Line, h6Line, readSitemap } from "../checks/hubs.mjs";
 
 const esc = (s) => String(s).replaceAll("&", "&amp;").replaceAll("<", "&lt;");
 
@@ -174,6 +174,15 @@ export async function runHubsSelfTest(checks) {
   bad("guide-lists-itself", h5(a1, by("a1", "a2", "a3")), "lists itself");
   bad("fewer-than-expected", h5(a1, by("a2", "a3")), "shows 2 related guides");
   bad("no-hub-data", grab((add) => h5Line(add, { path: "/g", html: page, guide: a1, models: null, guides: prod.guides })), "no hub data");
+
+  // ---------- H4.breadcrumb-title (numbers as the browser measures them)
+  const t4 = (crumb) => grab((add) => h4TitleLine(add, { path: "/guides/a1", vw: 375, crumb }));
+  good("title-cut-but-readable", t4({ width: 180, full: 420 }));
+  good("short-title-shown-whole", t4({ width: 64, full: 64 }));
+  bad("title-squeezed-by-hub-name", t4({ width: 15.6, full: 420 }), "16px of the current item shown");
+  bad("title-squeezed-to-nothing", t4({ width: 0, full: 420 }), "0px of the current item shown");
+  bad("short-title-cut", t4({ width: 40, full: 64 }), "40px of the current item shown");
+  bad("no-current-item", t4(null), "no current breadcrumb item");
 
   // ---------- H6.internal-links (a local server answers 200 for the known paths, 404 for everything else)
   const server = createServer((req, res) => { res.writeHead(["/guides", "/guides/a1", "/guides/topics/alpha"].includes(req.url) ? 200 : 404); res.end("x"); });
