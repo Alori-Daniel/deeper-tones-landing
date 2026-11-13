@@ -97,8 +97,9 @@ CSS only, no JavaScript (the header already uses scroll-driven animation):
 It uses `transform` only, so it causes no layout shift.
 
 ### 4.2 Breadcrumb
-`Guides › <title>` is enough (drop "Home" visually; keep it in BreadcrumbList JSON-LD). 15 px, `#5E5E5E`, current item
-truncated to one line on 375 with an ellipsis.
+`Home › Guides › <title>`, with the guide's hub between Guides and the title (linked to its page) only when that hub has
+a page (`quality/ACCEPTANCE-HUBS.md` H4); the visible trail and the BreadcrumbList JSON-LD name the same items. 15 px,
+`#5E5E5E`, current item truncated to one line on 375 with an ellipsis.
 
 ### 4.3 H1, then the reviewer card
 Directly under the H1 (margin-top 20), a compact white card (radius 20, lift shadow, padding 16/20), one row on 768+,
@@ -210,9 +211,17 @@ description on related cards (keeps them calm).
   `6 min read · Updated 11 Nov 2026` 14 px muted), 4:3 thumbnail right at 104 × 78 px, radius 12.
 - **768:** two-column grid of cards (thumbnail on top, 4:3, then title 21 px, 2-line description 15 px muted clamped,
   meta 14 px). Gap 24.
-- **1280:** three-column grid inside a 1040 px container, same cards. The newest guide may span two columns with the
-  thumbnail on the left (a quiet "featured" row); nothing else differs.
-- Thumbnails come from the build output (first diagram, 800w). `width`/`height` set; lazy below the first row.
+- **1280:** three-column grid inside a 1040 px container, same cards.
+- **Hub sections** (`content/hubs.yaml`, `quality/ACCEPTANCE-HUBS.md` H2): under the intro, one `<section>` per topic hub,
+  in `hubs.yaml` order. Each has an H2 with the hub name (Source Serif 4 at the H2 scale, `#141414`, `id` = hub slug; a
+  link to the hub page, no underline until hover, only when the hub has a page), a 19/1.6 `#5E5E5E` intro (max 560 px,
+  12 px under the heading), then the cards 24 px below it (card titles are H3). Space between sections: 64 px at 375,
+  96 px from 768; 48 px between the page intro and the first. There is no featured card.
+- **Hub page** (`/guides/topics/<slug>`, only with 3 or more published guides): the same shell as the index: breadcrumb
+  `Home › Guides › <hub name>`, H1 = hub name, the intro in the index description style, then the same card grid
+  (card titles are H2).
+- Thumbnails come from the build output (first diagram, 800w). `width`/`height` set; eager only for the first section's
+  first row, lazy everywhere else.
 
 ## 6. CONTENT CONTRACT (shared by the content editor and the layout builder)
 

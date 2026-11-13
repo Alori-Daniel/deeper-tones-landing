@@ -1,5 +1,17 @@
 // Shape of one guide in the generated module (src/content/guides.generated.ts), written by
-// scripts/build-guides.mjs from content/guides/*.md. Keep the two in step.
+// scripts/build-guides.mjs from content/guides/*.md, and of one hub (src/content/hubs.generated.ts, from
+// content/hubs.yaml). Keep them in step.
+
+export type Hub = {
+  slug: string;
+  name: string;
+  /** <title> of the hub page, before " | Deeper Tones". */
+  title: string;
+  description: string;
+  intro: string;
+  /** Guide slugs in display order. */
+  guides: string[];
+};
 
 export type GuideSource = {
   title: string;
@@ -39,6 +51,8 @@ export type GuideFigure = {
 
 export type Guide = {
   slug: string;
+  /** Slug of the hub that lists this guide (content/hubs.yaml). */
+  hub: string;
   title: string;
   description: string;
   primaryQuery: string;
