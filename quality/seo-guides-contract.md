@@ -39,6 +39,11 @@ Body shape: a 2–3 sentence answer first (what to do, and how long it takes), t
 `## When to see a professional`, last. 900–1,400 words. Short paragraphs, plain words, lists where they help.
 Cite claims with [n] matching the `sources` order. No images, no HTML, no tables wider than 3 columns.
 
+**Hub and links.** Add the slug to exactly one hub in `content/hubs.yaml` (the build fails otherwise). Link other guides
+in the body as `[plain words](/guides/<slug>)`. Every published guide must be linked from at least one other guide's body
+(`H7.inbound-links`), so a new guide also needs a link to it from an existing guide: link a place where the topic already
+comes up, or add one plain pointer sentence with no new claim. Edits to reviewed guides are shown to the owner first.
+
 ## Content rules (from CONTEXT.md; these are hard)
 
 - **Patterns, never diagnoses.** Never "you have X". Name a pattern with honest uncertainty ("this is often the rebound

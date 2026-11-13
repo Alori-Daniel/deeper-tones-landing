@@ -5,7 +5,7 @@ slug: "azelaic-acid-dark-skin"
 primaryQuery: "azelaic acid dark skin before and after"
 secondaryQueries: ["azelaic acid for hyperpigmentation", "azelaic acid vs hydroquinone", "azelaic acid 10% vs 20%", "how long azelaic acid takes", "does azelaic acid darken skin"]
 published: "2026-11-11"
-updated: "2026-11-11"
+updated: "2026-11-13"
 draft: false
 reviewedBy: "Somtochukwu Emmanuel"
 readingMinutes: 6
@@ -92,7 +92,7 @@ In the US, a 20% cream is approved for acne and a 15% gel for rosacea, a conditi
 - **A 16-week pilot study.** A 15% gel reduced both pimples and the marks after them. It had no comparison group, so treat it as a hint, not proof [3].
 - **A review of treatments for skin of colour.** It found retinoids (vitamin A creams) and azelaic acid safe and beneficial for acne and the marks that follow [4].
 
-Most of the strongest trials looked at melasma, a patchy brown discolouration often on the cheeks and forehead, or at general facial pigment. Fewer studied marks after pimples, the pattern usually called post-inflammatory hyperpigmentation (PIH, extra pigment after skin was inflamed). That is a limit on what we can promise.
+Most of the strongest trials looked at [melasma](/guides/melasma-on-dark-skin), a patchy brown discolouration often on the cheeks and forehead, or at general facial pigment. Fewer studied marks after pimples, the pattern usually called post-inflammatory hyperpigmentation (PIH, extra pigment after skin was inflamed). That is a limit on what we can promise.
 
 ## What a realistic before and after looks like
 

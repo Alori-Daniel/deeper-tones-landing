@@ -5,7 +5,7 @@ slug: "niacinamide-for-black-skin"
 primaryQuery: "niacinamide for black skin"
 secondaryQueries: ["niacinamide for dark spots", "does niacinamide lighten skin", "niacinamide 5% vs 10%", "niacinamide and vitamin c", "how long niacinamide takes"]
 published: "2026-11-11"
-updated: "2026-11-11"
+updated: "2026-11-13"
 draft: false
 reviewedBy: "Somtochukwu Emmanuel"
 readingMinutes: 6
@@ -84,7 +84,7 @@ Niacinamide is a form of vitamin B3 [1]. It does three things in skin.
 
 ## What the evidence shows for dark marks on dark skin
 
-Most niacinamide trials were small and ran 4 to 12 weeks. Many enrolled Japanese women with sun-related brown spots or tanning, or people with melasma (dark patches, usually on the face), not Black skin with marks left after pimples or razor bumps [1][4].
+Most niacinamide trials were small and ran 4 to 12 weeks. Many enrolled Japanese women with sun-related brown spots or tanning, or people with [melasma](/guides/melasma-on-dark-skin) (dark patches, usually on the face), not Black skin with marks left after pimples or [razor bumps](/guides/razor-bumps-dark-marks-jaw) [1][4].
 
 For post-inflammatory hyperpigmentation (PIH), the dark mark left after skin is inflamed, the evidence for any treatment is limited. A 2024 review of 48 studies in skin of colour, where 70% of participants were Black, found no treatment with robust results across the board [5]. A 2026 review describes niacinamide as very well tolerated, but modest when used on its own [6].
 

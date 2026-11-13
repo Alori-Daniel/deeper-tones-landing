@@ -5,7 +5,7 @@ slug: "toning-cream-for-chocolate-skin"
 primaryQuery: "toning cream for chocolate skin"
 secondaryQueries: ["toning cream for dark skin", "what toning cream means in Nigeria", "even skin tone dark skin", "safe brightening for black skin", "ingredients to avoid in toning cream"]
 published: "2026-11-11"
-updated: "2026-11-11"
+updated: "2026-11-13"
 draft: false
 reviewedBy: "Somtochukwu Emmanuel"
 readingMinutes: 6
@@ -124,7 +124,7 @@ The American Academy of Dermatology (AAD) says effective treatment of dark spots
 
 ### Niacinamide
 
-Niacinamide is vitamin B3. A review of the evidence says it inhibits the pigmentation process in skin, reduced hyperpigmentation in clinical trials and is well tolerated by skin [7].
+[Niacinamide](/guides/niacinamide-for-black-skin) is vitamin B3. A review of the evidence says it inhibits the pigmentation process in skin, reduced hyperpigmentation in clinical trials and is well tolerated by skin [7].
 
 ### Azelaic acid
 

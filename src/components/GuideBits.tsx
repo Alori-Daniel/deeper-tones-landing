@@ -92,20 +92,17 @@ export function TocDetails({ items }: { items: TocItem[] }) {
   );
 }
 
-// Card used in the /guides index (variant "index": a row on phones; `featured` spans the grid row from 768 px up) and in
-// "Related guides". The thumbnail is the first diagram without its own title, so a card never shows two headlines.
+// Card used in the /guides index and hub pages (variant "index": a row on phones) and in "Related guides". The thumbnail is the first diagram without its own title, so a card never shows two headlines.
 export function GuideCard({
   guide,
   variant = "related",
   as: Heading = "h3",
   eager = false,
-  featured = false,
 }: {
   guide: Guide;
   variant?: "index" | "related";
   as?: "h2" | "h3";
   eager?: boolean;
-  featured?: boolean;
 }) {
   const thumb = guideThumb(guide);
   return (
@@ -113,7 +110,6 @@ export function GuideCard({
       href={guidePath(guide.slug)}
       className="g-card group"
       data-variant={variant}
-      data-featured={featured ? "true" : undefined}
     >
       {thumb && (
         <div className="g-thumb">

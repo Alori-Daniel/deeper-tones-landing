@@ -5,7 +5,7 @@ slug: "how-long-dark-spots-take-to-fade"
 primaryQuery: "how long do dark spots take to fade"
 secondaryQueries: ["how long for acne dark spots to fade", "remove dark spots overnight", "how to make dark spots fade faster", "dark spots not fading"]
 published: "2026-11-11"
-updated: "2026-11-11"
+updated: "2026-11-13"
 draft: false
 reviewedBy: "Somtochukwu Emmanuel"
 readingMinutes: 5
@@ -132,7 +132,7 @@ For marks that follow pimples, see [dark spots from pimples on dark skin](/guide
 
 First check the lists above: is something still irritating the skin, are new spots still appearing, and is sunscreen going on daily? If the routine has been gentle and steady for a few months and nothing has moved, ask a professional. The colour may also sit deeper, which takes longer.
 
-Brown or grey flat patches on the cheeks, forehead, upper lip, nose or chin that came without a spot first can have other causes. One example is melasma, a patch pattern linked to sun and hormones that often returns after treatment stops [11]. A doctor can tell which it is.
+Brown or grey flat patches on the cheeks, forehead, upper lip, nose or chin that came without a spot first can have other causes. One example is [melasma](/guides/melasma-on-dark-skin), a patch pattern linked to sun and hormones that often returns after treatment stops [11]. A doctor can tell which it is.
 
 **No routine changes your natural skin colour.** The aim is an even tone in your own colour, with fewer and fainter marks.
 
