@@ -118,7 +118,9 @@ Those studies tested lightening products, not creams sold only as "glow". But th
 
 1. **Look for an ingredient list.** The FDA says a product with no ingredient list or no label should not be used [2]. In Nigeria, cosmetic labels are meant to show the ingredient list, a batch identifier, the manufacturer's name and country, dates, and a NAFDAC registration number [5].
 2. **Read the names, not the claims.** Mercury can appear as mercury, mercurous chloride, calomel, mercuric, mercurio or Hg [1][2]. Hydroquinone is printed as "hydroquinone". Steroid names include clobetasol propionate and betamethasone [6][11].
-3. **Keep in mind what a label cannot do.** The FDA says some illegal products leave hydroquinone or mercury off the label [1]. A clean list is reassuring, not proof. If a cream lists carrot oil, our guide to [carrot oil for skin whitening](/guides/carrot-oil-for-skin-whitening) covers what the research found.
+3. **Keep in mind what a label cannot do.** The FDA says some illegal products leave hydroquinone or mercury off the label [1]. A clean list is reassuring, not proof.
+
+If a cream lists carrot oil, our guide to [carrot oil for skin whitening](/guides/carrot-oil-for-skin-whitening) covers what the research found.
 
 {{figure:read-the-label}}
 

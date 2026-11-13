@@ -92,7 +92,8 @@ export function TocDetails({ items }: { items: TocItem[] }) {
   );
 }
 
-// Card used in the /guides index and hub pages (variant "index": a row on phones) and in "Related guides". The thumbnail is the first diagram without its own title, so a card never shows two headlines.
+// Card used in the /guides index and hub pages (variant "index": a row on phones) and in "Related guides".
+// The thumbnail is the first diagram without its own title, so a card never shows two headlines.
 export function GuideCard({
   guide,
   variant = "related",
