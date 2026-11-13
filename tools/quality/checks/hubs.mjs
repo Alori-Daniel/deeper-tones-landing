@@ -1,4 +1,4 @@
-// quality/ACCEPTANCE-HUBS.md, lines H1 to H6 (topic hubs on /guides). Every line is a pure function over plain inputs
+// quality/ACCEPTANCE-HUBS.md, lines H1 to H7 (topic hubs on /guides). Every line is a pure function over plain inputs
 // (the compiled hubs and guides, the HTML of a page, the sitemap text, a status fetcher), so the self-test can drive it
 // with synthetic pages. Only `hubChecks` at the bottom touches the network: it fetches the pages and calls the pure parts.
 //
@@ -397,6 +397,39 @@ export async function h6Line(add, { pages, fetchStatus, siteUrl = SITE_URL, conc
 }
 
 // ============================================================================================================
+// H7.inbound-links: every published guide is linked from the body of at least one other published guide. The body is
+// the guide's own text (`div.guide-prose` up to the FAQ), so links from cards, related guides and breadcrumbs do not
+// count, and neither do links from drafts (they are not on the live site) or from the guide itself.
+// ============================================================================================================
+export function guideBody(html) {
+  const s = stripScripts(html);
+  const at = s.search(/<div\b[^>]*\bclass\s*=\s*"[^"]*\bguide-prose\b/i);
+  if (at < 0) return null;
+  const rest = s.slice(at);
+  const end = rest.search(/<section\b[^>]*\bid\s*=\s*"faq"|<\/article>/i);
+  return end < 0 ? rest : rest.slice(0, end);
+}
+export function h7Line(add, { slug, guides, pages, siteUrl = SITE_URL }) {
+  const path = `/guides/${slug}`;
+  const sources = guides.filter((g) => !g.draft && g.slug !== slug);
+  const noBody = [], from = [];
+  for (const g of sources) {
+    const body = guideBody(pages.get(`/guides/${g.slug}`));
+    if (body === null) { noBody.push(g.slug); continue; }
+    if (collectGuideLinks(body, siteUrl).includes(path)) from.push(g.slug);
+  }
+  const details = noBody.length ? [`no guide body found on: ${list(noBody).join(", ")}`] : [];
+  add({
+    id: "H7.inbound-links",
+    target: path,
+    measured: from.length ? `linked from ${from.length} other guide bod${from.length === 1 ? "y" : "ies"}: ${list(from, 4).join(", ")}` : `no other published guide's body links here (${sources.length - noBody.length} bodies read)`,
+    threshold: ">= 1 in-body link from another published guide",
+    pass: from.length > 0,
+    details,
+  });
+}
+
+// ============================================================================================================
 // The thin network wrapper run.mjs calls after contractChecks.
 // ============================================================================================================
 async function get(base, path) {
@@ -443,6 +476,7 @@ export async function hubChecks(checks, { base, frozen, guides, htmlStore }) {
       add({ id, target, measured: NO_HUB_DATA, threshold: "see quality/ACCEPTANCE-HUBS.md", pass: false });
     }
   }
+  for (const g of guides.filter((x) => !x.draft)) h7Line(add, { slug: g.slug, guides, pages });
   await h6Line(add, { pages, fetchStatus: async (p) => (await get(base, p)).status });
   for (const [p, html] of pages) if (!htmlStore.has(p)) htmlStore.set(p, html);
 }

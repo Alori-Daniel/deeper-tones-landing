@@ -4,7 +4,7 @@
 import { createServer } from "node:http";
 import { Checks } from "../lib/util.mjs";
 import { hubModels } from "../lib/pages.mjs";
-import { SITE_URL, expectedBreadcrumb, h1Lines, h2Line, h3AbsentLine, h3PageLine, h4Line, h4TitleLine, h5Line, h6Line, readSitemap } from "../checks/hubs.mjs";
+import { SITE_URL, expectedBreadcrumb, h1Lines, h2Line, h3AbsentLine, h3PageLine, h4Line, h4TitleLine, h5Line, h6Line, h7Line, readSitemap } from "../checks/hubs.mjs";
 
 const esc = (s) => String(s).replaceAll("&", "&amp;").replaceAll("<", "&lt;");
 
@@ -183,6 +183,21 @@ export async function runHubsSelfTest(checks) {
   bad("title-squeezed-to-nothing", t4({ width: 0, full: 420 }), "0px of the current item shown");
   bad("short-title-cut", t4({ width: 40, full: 64 }), "40px of the current item shown");
   bad("no-current-item", t4(null), "no current breadcrumb item");
+
+  // ---------- H7.inbound-links (a guide page: body, then FAQ, then sources, then related cards, as on the real site)
+  const gpage = ({ body = "", faq = "", related = "" } = {}) => shell("", `${crumbNav([{ name: "Home", path: "/" }, { name: "Guides", path: "/guides" }, { name: "x", path: "/x" }])}<h1>x</h1><article><div class="guide-prose"><p>Intro.</p><figure><div class="f">fig</div></figure><p>${body}</p></div><section id="faq" class="guide-faq-section"><p>${faq}</p></section><section id="sources"><ol><li><a href="https://example.org/s">S</a></li></ol></section></article><section class="guide-related">${related}</section>`);
+  const h7 = (bodies, { slug = "a1", guides = prod.guides } = {}) => grab((add) => h7Line(add, { slug, guides, pages: new Map(Object.entries(bodies).map(([k, v]) => [`/guides/${k}`, v])) }));
+  const plain = Object.fromEntries(ALL.map((g) => [g.slug, gpage()]));
+  good("linked-from-another-body", h7({ ...plain, b1: gpage({ body: 'See <a href="/guides/a1">a1</a>.' }) }));
+  good("absolute-link-with-fragment-counts", h7({ ...plain, d1: gpage({ body: `See <a href="${SITE_URL}/guides/a1#why">a1</a>.` }) }));
+  good("link-after-a-figure-still-in-body", h7({ ...plain, a2: gpage({ body: '</p><div class="note"><p>x</p></div><p><a href="/guides/a1">a1</a>' }) }));
+  bad("no-inbound-link", h7(plain), "no other published guide's body links here");
+  bad("only-a-related-card-links-here", h7({ ...plain, b1: gpage({ related: '<a class="g-card" href="/guides/a1">a1</a>' }) }), "no other published guide's body links here");
+  bad("only-the-faq-links-here", h7({ ...plain, b1: gpage({ faq: '<a href="/guides/a1">a1</a>' }) }), "no other published guide's body links here");
+  bad("only-links-to-itself", h7({ ...plain, a1: gpage({ body: '<a href="/guides/a1#faq">top</a>' }) }), "no other published guide's body links here");
+  bad("only-a-draft-links-here", h7({ ...plain, g3: gpage({ body: '<a href="/guides/a1">a1</a>' }) }, { guides: drafts.guides }), "no other published guide's body links here");
+  bad("a-longer-slug-is-not-a-link-here", h7({ ...plain, b1: gpage({ body: '<a href="/guides/a10">a10</a> <a href="/guides/a1-more">x</a>' }) }), "no other published guide's body links here");
+  bad("page-without-a-body-is-reported", h7({ ...plain, b2: shell("", "<h1>x</h1>") }), "no guide body found on: b2");
 
   // ---------- H6.internal-links (a local server answers 200 for the known paths, 404 for everything else)
   const server = createServer((req, res) => { res.writeHead(["/guides", "/guides/a1", "/guides/topics/alpha"].includes(req.url) ? 200 : 404); res.end("x"); });

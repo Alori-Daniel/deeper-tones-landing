@@ -65,9 +65,11 @@ count toward the 3. A hub's **visible guides** are the guides of this build (pub
 
 - **H6.internal-links.** Every `href` beginning `/guides` (or `https://deepertones.com/guides`) on every page the
   run fetched resolves to 200 (fragments ignored). Lists every broken one.
+- **H7.inbound-links.** Every published guide is linked from the body of at least one other published guide (the
+  guide text, `div.guide-prose`, before the FAQ). Links from cards, related guides, breadcrumbs, the FAQ, drafts or the
+  guide itself do not count. So a new guide ships with a link to it from an existing guide where the topic already
+  comes up: link an existing mention, or add one plain pointer sentence with no new claim. Added 13 Nov 2026.
 
 ## Not in this change
 
-- In-body links between guides, and a line requiring every published guide to have at least one in-body inbound
-  link: the next PR (content edits in reviewed guides; the owner sees the exact wording).
 - A page for "Men and shaving": arrives automatically when it has 3 published guides.
