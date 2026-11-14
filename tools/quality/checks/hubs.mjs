@@ -409,6 +409,10 @@ export function guideBody(html) {
   const end = rest.search(/<section\b[^>]*\bid\s*=\s*"faq"|<\/article>/i);
   return end < 0 ? rest : rest.slice(0, end);
 }
+// One H7 line per published guide of the build (drafts are never targets).
+export function h7Lines(add, { guides, pages, siteUrl = SITE_URL }) {
+  for (const g of guides.filter((x) => !x.draft)) h7Line(add, { slug: g.slug, guides, pages, siteUrl });
+}
 export function h7Line(add, { slug, guides, pages, siteUrl = SITE_URL }) {
   const path = `/guides/${slug}`;
   const sources = guides.filter((g) => !g.draft && g.slug !== slug);
@@ -476,7 +480,7 @@ export async function hubChecks(checks, { base, frozen, guides, htmlStore }) {
       add({ id, target, measured: NO_HUB_DATA, threshold: "see quality/ACCEPTANCE-HUBS.md", pass: false });
     }
   }
-  for (const g of guides.filter((x) => !x.draft)) h7Line(add, { slug: g.slug, guides, pages });
+  h7Lines(add, { guides, pages });
   await h6Line(add, { pages, fetchStatus: async (p) => (await get(base, p)).status });
   for (const [p, html] of pages) if (!htmlStore.has(p)) htmlStore.set(p, html);
 }

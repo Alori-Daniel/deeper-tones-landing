@@ -1,10 +1,10 @@
-// Self-test for the hub lines H1 to H6 (quality/ACCEPTANCE-HUBS.md). A synthetic site (hubs, guides, the HTML the spec
+// Self-test for the hub lines H1 to H7 (quality/ACCEPTANCE-HUBS.md). A synthetic site (hubs, guides, the HTML the spec
 // describes) must PASS every line; each rule is then broken one way at a time and the matching line must FAIL, naming the
 // fault. The pure functions of checks/hubs.mjs are driven directly; H6 uses a local server, so no network is needed.
 import { createServer } from "node:http";
 import { Checks } from "../lib/util.mjs";
 import { hubModels } from "../lib/pages.mjs";
-import { SITE_URL, expectedBreadcrumb, h1Lines, h2Line, h3AbsentLine, h3PageLine, h4Line, h4TitleLine, h5Line, h6Line, h7Line, readSitemap } from "../checks/hubs.mjs";
+import { SITE_URL, expectedBreadcrumb, h1Lines, h2Line, h3AbsentLine, h3PageLine, h4Line, h4TitleLine, h5Line, h6Line, h7Line, h7Lines, readSitemap } from "../checks/hubs.mjs";
 
 const esc = (s) => String(s).replaceAll("&", "&amp;").replaceAll("<", "&lt;");
 
@@ -185,7 +185,7 @@ export async function runHubsSelfTest(checks) {
   bad("no-current-item", t4(null), "no current breadcrumb item");
 
   // ---------- H7.inbound-links (a guide page: body, then FAQ, then sources, then related cards, as on the real site)
-  const gpage = ({ body = "", faq = "", related = "" } = {}) => shell("", `${crumbNav([{ name: "Home", path: "/" }, { name: "Guides", path: "/guides" }, { name: "x", path: "/x" }])}<h1>x</h1><article><div class="guide-prose"><p>Intro.</p><figure><div class="f">fig</div></figure><p>${body}</p></div><section id="faq" class="guide-faq-section"><p>${faq}</p></section><section id="sources"><ol><li><a href="https://example.org/s">S</a></li></ol></section></article><section class="guide-related">${related}</section>`);
+  const gpage = ({ body = "", faq = "", related = "", before = "" } = {}) => shell("", `${before}${crumbNav([{ name: "Home", path: "/" }, { name: "Guides", path: "/guides" }, { name: "x", path: "/x" }])}<h1>x</h1><article><div class="guide-prose"><p>Intro.</p><figure><div class="f">fig</div></figure><p>${body}</p></div><section id="faq" class="guide-faq-section"><p>${faq}</p></section><section id="sources"><ol><li><a href="https://example.org/s">S</a></li></ol></section></article><section class="guide-related">${related}</section>`);
   const h7 = (bodies, { slug = "a1", guides = prod.guides } = {}) => grab((add) => h7Line(add, { slug, guides, pages: new Map(Object.entries(bodies).map(([k, v]) => [`/guides/${k}`, v])) }));
   const plain = Object.fromEntries(ALL.map((g) => [g.slug, gpage()]));
   good("linked-from-another-body", h7({ ...plain, b1: gpage({ body: 'See <a href="/guides/a1">a1</a>.' }) }));
@@ -197,6 +197,18 @@ export async function runHubsSelfTest(checks) {
   bad("only-links-to-itself", h7({ ...plain, a1: gpage({ body: '<a href="/guides/a1#faq">top</a>' }) }), "no other published guide's body links here");
   bad("only-a-draft-links-here", h7({ ...plain, g3: gpage({ body: '<a href="/guides/a1">a1</a>' }) }, { guides: drafts.guides }), "no other published guide's body links here");
   bad("a-longer-slug-is-not-a-link-here", h7({ ...plain, b1: gpage({ body: '<a href="/guides/a10">a10</a> <a href="/guides/a1-more">x</a>' }) }), "no other published guide's body links here");
+  bad("only-a-link-before-the-body", h7({ ...plain, b1: gpage({ before: '<a href="/guides/a1">a1</a><div class="g-in-short"><a href="/guides/a1">x</a></div>' }) }), "no other published guide's body links here");
+  {
+    // the wrapper: one line per published guide, drafts never targets, all PASS when each is linked (drafts build too)
+    const ring = (s) => Object.fromEntries(ALL.map((g) => [g.slug, gpage({ body: s.guides.filter((x) => !x.draft && x.slug !== g.slug).map((x) => `<a href="/guides/${x.slug}">x</a>`).join(" ") })]));
+    for (const [name, s] of [["production", prod], ["drafts", drafts]]) {
+      const c = new Checks();
+      h7Lines((l) => c.add(l), { guides: s.guides, pages: new Map(Object.entries(ring(s)).map(([k, v]) => [`/guides/${k}`, v])) });
+      const targets = c.lines.map((l) => l.target).sort().join(",");
+      const want = s.guides.filter((g) => !g.draft).map((g) => `/guides/${g.slug}`).sort().join(",");
+      unit(`H7.inbound-links.one-line-per-published-guide-${name}-build`, targets === want && c.lines.every((l) => l.status === "PASS"), `${c.lines.length} lines, ${c.lines.filter((l) => l.status === "PASS").length} PASS; targets ${targets}`);
+    }
+  }
   bad("page-without-a-body-is-reported", h7({ ...plain, b2: shell("", "<h1>x</h1>") }), "no guide body found on: b2");
 
   // ---------- H6.internal-links (a local server answers 200 for the known paths, 404 for everything else)

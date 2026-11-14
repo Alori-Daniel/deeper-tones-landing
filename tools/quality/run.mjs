@@ -185,8 +185,8 @@ try {
   const htmlStore = new Map();
   const info = await contractChecks(checks, { base, frozen, guides: useGuides, allGuides: guides, fixtures, htmlStore });
   if (args.updateFixtures) writeFixtures(repoRoot, { canonicals: info.canonicals });
-  // H1 to H6 (quality/ACCEPTANCE-HUBS.md) are site-wide like A4: every built guide, whatever --only / --limit select.
-  stage("H1-H6: hubs, /guides sections, hub pages, breadcrumbs, related guides, internal links");
+  // H1 to H7 (quality/ACCEPTANCE-HUBS.md) are site-wide like A4: every built guide, whatever --only / --limit select.
+  stage("H1-H7: hubs, /guides sections, hub pages, breadcrumbs, related guides, internal and inbound links");
   await hubChecks(checks, { base, frozen, guides, htmlStore });
   stage("B2/B4 static checks on the figure sources and WebP files");
   loaderCheck(checks, frozen);
