@@ -6,7 +6,7 @@ import { DraftBanner, GuideCard, InShort, ReviewerCard, TocDetails } from "@/com
 import { GuideTocRail } from "@/components/GuideTocRail";
 import { CardButton } from "@/components/Sections";
 import { guideImageSize } from "@/lib/guide-og";
-import { allGuides, getGuide, guidePath, relatedGuides } from "@/lib/guides";
+import { allGuides, getGuide, getHubModel, guidePath, hubPath, relatedGuides } from "@/lib/guides";
 import { isLive, site } from "@/lib/site";
 
 // Every guide is prerendered at build time; there is nothing to render on demand on Workers.
@@ -57,6 +57,9 @@ export default async function GuidePage({ params }: Props) {
 
   const url = `${site.url}${guidePath(guide.slug)}`;
   const related = relatedGuides(guide);
+  // The hub joins the trail only when it has a page of its own.
+  const hubModel = getHubModel(guide.hub);
+  const hubCrumb = hubModel?.hasPage ? { name: hubModel.hub.name, path: hubPath(hubModel.hub.slug) } : null;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -92,7 +95,8 @@ export default async function GuidePage({ params }: Props) {
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Home", item: site.url },
           { "@type": "ListItem", position: 2, name: "Guides", item: `${site.url}/guides` },
-          { "@type": "ListItem", position: 3, name: guide.title, item: url },
+          ...(hubCrumb ? [{ "@type": "ListItem", position: 3, name: hubCrumb.name, item: `${site.url}${hubCrumb.path}` }] : []),
+          { "@type": "ListItem", position: hubCrumb ? 4 : 3, name: guide.title, item: url },
         ],
       },
       {
@@ -130,9 +134,21 @@ export default async function GuidePage({ params }: Props) {
             <nav aria-label="Breadcrumb" className="guide-breadcrumb">
               <ol>
                 <li>
+                  <Link href="/">Home</Link>
+                </li>
+                <li aria-hidden>›</li>
+                <li>
                   <Link href="/guides">Guides</Link>
                 </li>
                 <li aria-hidden>›</li>
+                {hubCrumb && (
+                  <>
+                    <li>
+                      <Link href={hubCrumb.path}>{hubCrumb.name}</Link>
+                    </li>
+                    <li aria-hidden>›</li>
+                  </>
+                )}
                 <li aria-current="page">{guide.title}</li>
               </ol>
             </nav>

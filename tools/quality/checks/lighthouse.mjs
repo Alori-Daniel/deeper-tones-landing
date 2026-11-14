@@ -6,7 +6,8 @@ import { chromium } from "playwright";
 import { existsSync } from "node:fs";
 import { findCachedChromium } from "../lib/util.mjs";
 
-export async function lighthouseChecks(checks, { base, slugs, outDir, runs = 1 }) {
+// extraPaths: other pages measured the same way (the hub pages, /guides/topics/<slug>).
+export async function lighthouseChecks(checks, { base, slugs, extraPaths = [], outDir, runs = 1 }) {
   let lighthouse, chromeLauncher;
   try {
     ({ default: lighthouse } = await import("lighthouse"));
@@ -23,8 +24,9 @@ export async function lighthouseChecks(checks, { base, slugs, outDir, runs = 1 }
     return;
   }
   mkdirSync(outDir, { recursive: true });
-  for (const slug of slugs) {
-    const url = `${base}/guides/${slug}`;
+  const targets = [...slugs.map((s) => ({ path: `/guides/${s}`, name: s })), ...extraPaths.map((p) => ({ path: p, name: p.replace(/^\//, "").replaceAll("/", "-") }))];
+  for (const { path: tpath, name: slug } of targets) {
+    const url = `${base}${tpath}`;
     // Performance is noisy on shared CI machines, so with runs > 1 a page below 90 is measured again and the best score
     // counts; a slow page still fails every run. Accessibility is not noisy and is judged on the first run.
     let best = null, first = null, done = 0, error = null;
@@ -52,13 +54,13 @@ export async function lighthouseChecks(checks, { base, slugs, outDir, runs = 1 }
       }
     }
     if (!best) {
-      checks.add({ id: "C4.lighthouse-performance", target: `/guides/${slug} (mobile)`, measured: `lighthouse failed: ${String(error?.message).slice(0, 200)}`, threshold: ">= 90", pass: false });
-      checks.add({ id: "C4.lighthouse-accessibility", target: `/guides/${slug} (mobile)`, measured: "lighthouse failed", threshold: ">= 95", pass: false });
+      checks.add({ id: "C4.lighthouse-performance", target: `${tpath} (mobile)`, measured: `lighthouse failed: ${String(error?.message).slice(0, 200)}`, threshold: ">= 90", pass: false });
+      checks.add({ id: "C4.lighthouse-accessibility", target: `${tpath} (mobile)`, measured: "lighthouse failed", threshold: ">= 95", pass: false });
       continue;
     }
     writeFileSync(join(outDir, `lighthouse-${slug}.json`), best.report);
     const runsNote = done > 1 ? `, best of ${done} runs` : "";
-    checks.add({ id: "C4.lighthouse-performance", target: `/guides/${slug} (mobile)`, measured: `${best.perf} (LCP ${best.lcp}, TBT ${best.tbt}, CLS ${best.cls}${runsNote})`, threshold: ">= 90", pass: best.perf >= 90 });
-    checks.add({ id: "C4.lighthouse-accessibility", target: `/guides/${slug} (mobile)`, measured: first.a11y, threshold: ">= 95", pass: first.a11y >= 95, details: first.failedA11y });
+    checks.add({ id: "C4.lighthouse-performance", target: `${tpath} (mobile)`, measured: `${best.perf} (LCP ${best.lcp}, TBT ${best.tbt}, CLS ${best.cls}${runsNote})`, threshold: ">= 90", pass: best.perf >= 90 });
+    checks.add({ id: "C4.lighthouse-accessibility", target: `${tpath} (mobile)`, measured: first.a11y, threshold: ">= 95", pass: first.a11y >= 95, details: first.failedA11y });
   }
 }

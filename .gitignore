@@ -49,6 +49,7 @@ next-env.d.ts
 
 # Generated from content/guides/*.md by scripts/build-guides.mjs
 /src/content/guides.generated.ts
+/src/content/hubs.generated.ts
 
 # Generated from content/figures-src/ by scripts/build-guides.mjs (WebP figures served as static assets)
 /public/guides/

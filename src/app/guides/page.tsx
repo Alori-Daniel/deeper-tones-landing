@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Footer, Header } from "@/components/Brand";
 import { DraftBanner, GuideCard } from "@/components/GuideBits";
-import { allGuides, guidePath } from "@/lib/guides";
+import { allGuides, guidePath, hubModels, hubPath } from "@/lib/guides";
 import { site } from "@/lib/site";
 
 const description =
@@ -10,10 +11,6 @@ const description =
 
 // A preview build with drafts in it stays out of search.
 const hasDrafts = allGuides.some((g) => g.draft);
-
-// The newest guide spans the full row (a quiet "featured" card) when that leaves no card alone in the last row of the
-// 2-column (768) and 3-column (1280) grids: that holds for 7, 13, 19 ... guides.
-const featureNewest = allGuides.length > 1 && (allGuides.length - 1) % 6 === 0;
 
 export const metadata: Metadata = {
   title: "Guides",
@@ -50,7 +47,8 @@ export default function GuidesIndex() {
         isPartOf: { "@id": `${site.url}/#organization` },
         mainEntity: {
           "@type": "ItemList",
-          itemListElement: allGuides.map((g, i) => ({
+          // Every guide, in the order the sections show them.
+          itemListElement: hubModels.flatMap((m) => m.visible).map((g, i) => ({
             "@type": "ListItem",
             position: i + 1,
             url: `${site.url}${guidePath(g.slug)}`,
@@ -79,11 +77,17 @@ export default function GuidesIndex() {
         {hasDrafts && <DraftBanner />}
         <h1>Guides</h1>
         <p className="guides-intro">{description}</p>
-        <div className="guides-grid">
-          {allGuides.map((g, i) => (
-            <GuideCard key={g.slug} guide={g} variant="index" as="h2" eager={i < 3} featured={featureNewest && i === 0} />
-          ))}
-        </div>
+        {hubModels.map(({ hub, visible, hasPage }, si) => (
+          <section key={hub.slug} className="guides-hub" aria-labelledby={hub.slug}>
+            <h2 id={hub.slug}>{hasPage ? <Link href={hubPath(hub.slug)}>{hub.name}</Link> : hub.name}</h2>
+            <p className="guides-hub-intro">{hub.intro}</p>
+            <div className="guides-grid">
+              {visible.map((g, i) => (
+                <GuideCard key={g.slug} guide={g} variant="index" as="h3" eager={si === 0 && i < 3} />
+              ))}
+            </div>
+          </section>
+        ))}
       </main>
       <Footer />
     </>

@@ -41,7 +41,7 @@ Guides live in `content/guides/<slug>.md`: YAML frontmatter (title, description,
 
 `scripts/build-guides.mjs` validates every file and writes `src/content/guides.generated.ts` (gitignored). It runs automatically before `dev`, `build`, `lint` and `typecheck`, so a fresh clone works; run `npm run guides` to run it by hand. A bad file fails the build with a message naming the file and the problem. Guides are rendered to HTML at build time, so nothing reads files at request time on Workers.
 
-- **Add a guide:** create the file with `draft: true`, then run `npm run dev`. Files starting with `_` are scratch files and are only built when drafts are shown.
+- **Add a guide:** create the file with `draft: true`, add its slug to exactly one hub in `content/hubs.yaml` (the build fails for a guide in no hub or in two; a hub with 3 or more published guides gets its own page at `/guides/topics/<slug>`), then run `npm run dev`. Files starting with `_` are scratch files and are only built when drafts are shown.
 - **Drafts:** a guide with `draft: true` is left out of the build. With `GUIDES_SHOW_DRAFTS=1` set at build time (for preview deploys, or `GUIDES_SHOW_DRAFTS=1 npm run dev` locally) drafts are included with a "Draft, not yet reviewed" banner and `noindex`, and stay out of the sitemap.
 - **Go live:** after a human has reviewed a guide, set `draft: false` (and `reviewedBy` if a named professional reviewed it) and deploy. The "Guides" nav link, the `/guides` index and the sitemap entries only appear once a build has at least one guide.
 

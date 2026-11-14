@@ -604,8 +604,9 @@ details > summary::-webkit-details-marker {
 }
 .guide-breadcrumb ol {
   display: flex;
+  flex-wrap: wrap;
   align-items: baseline;
-  gap: 8px;
+  gap: 4px 8px;
   min-width: 0;
 }
 .guide-breadcrumb a {
@@ -619,7 +620,8 @@ details > summary::-webkit-details-marker {
 .guide-breadcrumb li {
   flex: none;
 }
-/* The current title is cut to one line with an ellipsis (the H1 right below carries it in full). */
+/* The current title is cut to one line with an ellipsis (the H1 right below carries it in full). When the trail before it
+   is long (a hub name on a phone), it moves to its own line rather than being squeezed away (H4.breadcrumb-title). */
 .guide-breadcrumb li[aria-current] {
   flex: 0 1 auto;
   min-width: 0;
@@ -1424,33 +1426,6 @@ details[open] > .chevron::after {
     margin-top: auto;
     padding-top: 4px;
   }
-  /* The featured card spans the whole row: thumbnail left, text right. */
-  .g-card[data-featured] {
-    grid-column: 1 / -1;
-    flex-direction: row;
-  }
-  .g-card[data-featured] .g-thumb {
-    flex: none;
-    width: 50%;
-  }
-  .g-card[data-featured] .g-body {
-    justify-content: center;
-    gap: 12px;
-    padding: 32px;
-  }
-  .g-card[data-featured] .g-title {
-    font-size: 28px;
-    line-height: 1.2;
-  }
-  .g-card[data-featured] .g-desc {
-    font-size: 17px;
-    line-height: 1.55;
-    -webkit-line-clamp: 4;
-  }
-  .g-card[data-featured] .g-meta {
-    margin-top: 8px;
-    padding-top: 0;
-  }
 }
 
 /* ----- /guides index ----- */
@@ -1502,6 +1477,69 @@ details[open] > .chevron::after {
   display: grid;
   gap: 12px;
   margin-top: 48px;
+}
+/* One section per topic hub (READING_SPEC 5): a serif heading, a muted intro, then the cards. */
+.guides-hub {
+  margin-top: 56px;
+}
+.guides-hub + .guides-hub {
+  margin-top: 64px;
+}
+@media (min-width: 768px) {
+  .guides-hub {
+    margin-top: 64px;
+  }
+  .guides-hub + .guides-hub {
+    margin-top: 96px;
+  }
+}
+/* 48 px from the page intro to the first section (READING_SPEC 5). */
+.guides-index .guides-intro + .guides-hub {
+  margin-top: 48px;
+}
+.guides-hub h2 {
+  font-family: var(--font-source-serif);
+  font-size: 27px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--g-ink);
+  scroll-margin-top: 96px;
+}
+@media (min-width: 768px) {
+  .guides-hub h2 {
+    font-size: 31px;
+    line-height: 1.18;
+  }
+}
+@media (min-width: 1180px) {
+  .guides-hub h2 {
+    font-size: 32px;
+    line-height: 1.16;
+  }
+}
+.guides-hub h2 a {
+  color: inherit;
+  text-decoration: none;
+}
+.guides-hub h2 a:hover {
+  color: var(--g-accent-text);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+.guides-hub .guides-hub-intro {
+  max-width: var(--g-card-text);
+  margin-top: 12px;
+  font-size: 19px;
+  line-height: 1.6;
+  color: var(--g-muted);
+}
+.guides-hub .guides-grid {
+  margin-top: 24px;
+}
+/* Hub page: breadcrumb above the H1. */
+.guides-index .guides-hub-title {
+  margin-top: 20px;
 }
 @media (min-width: 768px) {
   .guides-grid {

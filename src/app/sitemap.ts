@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { publishedGuides } from "@/lib/guides";
+import { hubPath, hubsWithPage, publishedGuides } from "@/lib/guides";
 import { site } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -11,6 +11,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...(publishedGuides.length > 0
       ? [
           { url: `${site.url}/guides`, lastModified: publishedGuides[0].updated, changeFrequency: "weekly" as const, priority: 0.7 },
+          // A hub page exists from 3 published guides; its lastmod is the newest of them.
+          ...hubsWithPage.map((m) => ({
+            url: `${site.url}${hubPath(m.hub.slug)}`,
+            lastModified: m.published.map((g) => g.updated).sort().at(-1),
+            changeFrequency: "weekly" as const,
+            priority: 0.65,
+          })),
           ...publishedGuides.map((g) => ({
             url: `${site.url}/guides/${g.slug}`,
             lastModified: g.updated,
