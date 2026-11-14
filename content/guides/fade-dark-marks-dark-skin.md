@@ -5,7 +5,7 @@ slug: "fade-dark-marks-dark-skin"
 primaryQuery: "how to fade dark marks on dark skin"
 secondaryQueries: ["hyperpigmentation routine for black skin", "post inflammatory hyperpigmentation dark skin", "how long do dark marks take to fade", "dark spots after acne black skin", "does sunscreen help dark marks"]
 published: "2026-11-04"
-updated: "2026-11-11"
+updated: "2026-11-13"
 draft: false
 reviewedBy: "Somtochukwu Emmanuel"
 readingMinutes: 6
@@ -104,7 +104,7 @@ After a pimple, a scratch, a bite, eczema or an irritating product, skin can lea
 
 PIH happens in every skin tone. It is more frequent and more marked in darker skin [1], and the marks stand out against a deeper base colour [3].
 
-This is a pattern, not a diagnosis. A flat mark that stays after a spot has healed often fits it. A doctor or pharmacist can confirm it and tell it apart from other causes of dark patches.
+This is a pattern, not a diagnosis. A flat mark that stays after a spot has healed often fits it. A doctor or pharmacist can confirm it and tell it apart from other causes of dark patches. If the darker skin is on your knees, elbows or knuckles, see our guide to [dark knees and elbows](/guides/dark-knees-and-elbows).
 
 Common starting points include:
 

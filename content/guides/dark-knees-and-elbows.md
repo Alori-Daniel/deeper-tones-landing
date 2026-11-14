@@ -5,7 +5,7 @@ slug: "dark-knees-and-elbows"
 primaryQuery: "dark knees and elbows treatment"
 secondaryQueries: ["why are my knees darker than my body", "dark knees and elbows causes", "dark knuckles", "exfoliating dark knees", "dark knees and elbows cream"]
 published: "2026-11-11"
-updated: "2026-11-11"
+updated: "2026-11-13"
 draft: false
 reviewedBy: "Somtochukwu Emmanuel"
 readingMinutes: 6
@@ -132,7 +132,7 @@ What helps is gentle. No cream changes your natural skin colour, so aim for smoo
 
 ### Moisturise
 
-The American Academy of Dermatology (AAD) suggests creams or ointments over lotions, because they add more moisture. Apply it straight after a bath or shower, once you have patted dry. Choose fragrance-free products, use warm water, and pat dry instead of rubbing [9].
+The American Academy of Dermatology (AAD) suggests creams or ointments over lotions, because they add more moisture. Apply it straight after a bath or shower, once you have patted dry. Choose fragrance-free products, use warm water, and pat dry instead of rubbing [9]. If your skin turns dry and ashy in the dry season, our guide to [harmattan skincare](/guides/harmattan-skincare) covers that.
 
 ### Reduce friction and pressure
 
